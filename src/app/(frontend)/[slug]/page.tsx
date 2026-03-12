@@ -5,6 +5,7 @@ import configPromise from '@payload-config'
 import { getPayload, type RequiredDataFromCollectionSlug } from 'payload'
 import { draftMode } from 'next/headers'
 import React, { cache } from 'react'
+import Link from 'next/link'
 import { homeStatic } from '@/endpoints/seed/home-static'
 
 import { RenderBlocks } from '@/blocks/RenderBlocks'
@@ -83,12 +84,12 @@ export default async function Page({ params: paramsPromise }: Args) {
             Your Next.js + Payload CMS + MongoDB project is successfully up and running!
           </p>
           <div className="mt-8 flex justify-center gap-4">
-            <a
+            <Link
               href="/admin"
               className="px-6 py-3 bg-black text-white rounded-lg font-semibold hover:bg-gray-800 transition"
             >
               Go to Admin Panel
-            </a>
+            </Link>
           </div>
         </div>
       )}
