@@ -13,9 +13,25 @@ export const Header: GlobalConfig = {
       name: 'navItems',
       type: 'array',
       fields: [
-        link({
-          appearances: false,
-        }),
+        link({ appearances: false }),
+        {
+          name: 'subLinks',
+          type: 'array',
+          fields: [
+            link({ appearances: false }),
+            {
+              name: 'subSubLinks',
+              type: 'array',
+              fields: [link({ appearances: false })],
+              admin: {
+                initCollapsed: true,
+              },
+            },
+          ],
+          admin: {
+            initCollapsed: true,
+          },
+        },
       ],
       maxRows: 6,
       admin: {

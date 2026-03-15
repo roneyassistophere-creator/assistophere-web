@@ -8,8 +8,9 @@ import React, { cache } from 'react'
 import { homeStatic } from '@/endpoints/seed/home-static'
 
 import { generateMeta } from '@/utilities/generateMeta'
-import PageClient from './[...slug]/page.client'
+import PageClient from './page.client'
 import { LivePreviewListener } from '@/components/LivePreviewListener'
+import { redirect } from 'next/navigation'
 import { HomeView } from '@/views/Pages/HomeView'
 import { DefaultView } from '@/views/Pages/DefaultView'
 import { ServicesView } from '@/views/Pages/ServicesView'
@@ -30,20 +31,68 @@ import { AirbnbVaView } from '@/views/Pages/AirbnbVaView'
 import { VrboVaView } from '@/views/Pages/VrboVaView'
 import { BookingComVaView } from '@/views/Pages/BookingComVaView'
 import { LocationsView } from '@/views/Pages/LocationsView'
-import type { Page as PageType } from '@/payload-types'
+import type { Page } from '@/payload-types'
 
-export default async function HomePage() {
-  const { isEnabled: draft } = await draftMode()
-  const slug = 'home'
-  const url = '/'
-
-  let page: PageType | null = await queryPageBySlug({
-    slug,
+export async function generateStaticParams() {
+  const payload = await getPayload({ config: configPromise })
+  const pages = await payload.find({
+    collection: 'pages',
+    draft: false,
+    limit: 1000,
+    overrideAccess: false,
+    pagination: false,
+    select: {
+      slug: true,
+    },
   })
 
-  // Fallback for seed script context
-  if (!page) {
-    page = homeStatic as unknown as PageType
+  const params = pages.docs
+    ?.filter((doc) => {
+      return doc.slug !== 'home'
+    })
+    .map((doc: any) => {
+      // If we have breadcrumbs, split the URL to get the full slug array
+      if (doc?.breadcrumbs && doc.breadcrumbs.length > 0) {
+        const url = doc.breadcrumbs[doc.breadcrumbs.length - 1].url
+        if (url) {
+          const split = url.split('/').filter(Boolean)
+          if (split.length > 0) return { slug: split }
+        }
+      }
+      return { slug: [doc.slug || ''] }
+    })
+
+  return params
+}
+
+type Args = {
+  params: Promise<{
+    slug?: string | string[]
+  }>
+}
+
+export default async function Page({ params: paramsPromise }: Args) {
+  const { isEnabled: draft } = await draftMode()
+  const resolvedParams = await paramsPromise
+  const slugArray = resolvedParams.slug || ['home']
+  const slug = Array.isArray(slugArray) ? slugArray[slugArray.length - 1] : slugArray
+
+  if (slug === 'home') {
+    redirect('/')
+  }
+
+  // Decode to support slugs with special characters
+  const decodedSlug = decodeURIComponent(slug)
+  const url = '/' + (Array.isArray(slugArray) ? slugArray.join('/') : slugArray)
+  let page: Page | null
+
+  page = await queryPageBySlug({
+    slug: decodedSlug,
+  })
+
+  // Remove this code once your website is seeded
+  if (!page && slug === 'home') {
+    page = homeStatic as unknown as Page
   }
 
   if (!page) {
@@ -120,6 +169,7 @@ export default async function HomePage() {
   return (
     <article className="pt-16 pb-24">
       <PageClient />
+      {/* Allows redirects for valid pages too */}
       <PayloadRedirects disableNotFound url={url} />
 
       {draft && <LivePreviewListener />}
@@ -129,9 +179,15 @@ export default async function HomePage() {
   )
 }
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({ params: paramsPromise }: Args): Promise<Metadata> {
+  const resolvedParams = await paramsPromise
+  const slugArray = resolvedParams.slug || ['home']
+  const slug = Array.isArray(slugArray) ? slugArray[slugArray.length - 1] : slugArray
+
+  // Decode to support slugs with special characters
+  const decodedSlug = decodeURIComponent(slug)
   const page = await queryPageBySlug({
-    slug: 'home',
+    slug: decodedSlug,
   })
 
   return generateMeta({ doc: page })

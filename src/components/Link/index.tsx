@@ -20,6 +20,21 @@ type CMSLinkType = {
   url?: string | null
 }
 
+/** Returns true if a CMSLink-style link object points to a valid destination */
+export function isValidLink(
+  link?: {
+    type?: 'custom' | 'reference' | null
+    url?: string | null
+    reference?: { value: unknown } | null
+  } | null,
+): boolean {
+  if (!link) return false
+  if (link.type === 'custom') return Boolean(link.url)
+  if (link.type === 'reference')
+    return typeof link.reference?.value === 'object' && link.reference.value !== null
+  return false
+}
+
 export const CMSLink: React.FC<CMSLinkType> = (props) => {
   const {
     type,
@@ -33,12 +48,22 @@ export const CMSLink: React.FC<CMSLinkType> = (props) => {
     url,
   } = props
 
-  const href =
-    type === 'reference' && typeof reference?.value === 'object' && reference.value.slug
-      ? `${reference?.relationTo !== 'pages' ? `/${reference?.relationTo}` : ''}/${
-          reference.value.slug
-        }`
-      : url
+  let href = url
+
+  if (type === 'reference' && typeof reference?.value === 'object' && reference.value.slug) {
+    if (reference.relationTo === 'pages') {
+      const pageValue = reference.value as Page
+      if (pageValue.slug === 'home') {
+        href = '/'
+      } else if (pageValue.breadcrumbs && pageValue.breadcrumbs.length > 0) {
+        href = pageValue.breadcrumbs[pageValue.breadcrumbs.length - 1]?.url || `/${pageValue.slug}`
+      } else {
+        href = `/${pageValue.slug}`
+      }
+    } else {
+      href = `/${reference.relationTo}/${reference.value.slug}`
+    }
+  }
 
   if (!href) return null
 
