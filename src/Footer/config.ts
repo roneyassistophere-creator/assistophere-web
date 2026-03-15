@@ -10,6 +10,11 @@ export const Footer: GlobalConfig = {
   },
   fields: [
     {
+      name: 'description',
+      type: 'textarea',
+      label: 'Footer Description (Under Logo)',
+    },
+    {
       name: 'columns',
       type: 'array',
       fields: [

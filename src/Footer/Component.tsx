@@ -2,7 +2,7 @@ import { getCachedGlobal } from '@/utilities/getGlobals'
 import Link from 'next/link'
 import React from 'react'
 
-import type { Footer as FooterType } from '@/payload-types'
+import type { Footer as FooterType, SiteSetting } from '@/payload-types'
 
 import { ThemeSelector } from '@/providers/Theme/ThemeSelector'
 import { CMSLink, isValidLink } from '@/components/Link'
@@ -10,19 +10,29 @@ import { Logo } from '@/components/Logo/Logo'
 
 export async function Footer() {
   const footerData: FooterType = await getCachedGlobal('footer', 1)()
+  const siteSettings = (await getCachedGlobal('site-settings', 1)()) as SiteSetting
 
   const columns = footerData?.columns || []
+
+  const lightLogoUrl =
+    typeof siteSettings?.siteLogoLight === 'object' ? siteSettings?.siteLogoLight?.url : null
+  const darkLogoUrl =
+    typeof siteSettings?.siteLogoDark === 'object' ? siteSettings?.siteLogoDark?.url : null
+  const description =
+    footerData?.description || 'Empowering your growth with performance-driven solutions.'
 
   return (
     <footer className="mt-auto border-t border-border bg-card text-card-foreground">
       <div className="container mx-auto py-12 flex flex-col md:flex-row md:justify-between items-start gap-12">
         <div className="flex flex-col items-start gap-6 max-w-sm">
           <Link className="flex items-center" href="/">
-            <Logo className="h-10 w-auto invert dark:invert-0" />
+            <Logo
+              className="h-10 w-auto"
+              lightLogoUrl={lightLogoUrl ?? undefined}
+              darkLogoUrl={darkLogoUrl ?? undefined}
+            />
           </Link>
-          <p className="text-sm text-muted-foreground w-full">
-            Empowering your growth with performance-driven solutions.
-          </p>
+          <p className="text-sm text-muted-foreground w-full">{description}</p>
           <div className="pt-2">
             <ThemeSelector />
           </div>
@@ -70,7 +80,10 @@ export async function Footer() {
       </div>
       <div className="border-t border-border mt-12 bg-muted/30">
         <div className="container mx-auto py-6 flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground gap-4">
-          <p>&copy; {new Date().getFullYear()} Assistophere. All rights reserved.</p>
+          <p>
+            &copy; {new Date().getFullYear()} {siteSettings?.siteTitle || 'Assistophere'}. All
+            rights reserved.
+          </p>
         </div>
       </div>
     </footer>

@@ -4,20 +4,26 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 
-import type { Header } from '@/payload-types'
+import type { Header, SiteSetting } from '@/payload-types'
 
 import { Logo } from '@/components/Logo/Logo'
 import { HeaderNav } from './Nav'
 
 interface HeaderClientProps {
   data: Header
+  siteSettings: SiteSetting
 }
 
-export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
+export const HeaderClient: React.FC<HeaderClientProps> = ({ data, siteSettings }) => {
   /* Storing the value in a useState to avoid hydration errors */
   const [theme, setTheme] = useState<string | null>(null)
   const { headerTheme, setHeaderTheme } = useHeaderTheme()
   const pathname = usePathname()
+
+  const lightLogoUrl =
+    typeof siteSettings?.siteLogoLight === 'object' ? siteSettings?.siteLogoLight?.url : null
+  const darkLogoUrl =
+    typeof siteSettings?.siteLogoDark === 'object' ? siteSettings?.siteLogoDark?.url : null
 
   useEffect(() => {
     setHeaderTheme(null)
@@ -36,7 +42,13 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
     >
       <div className="container mx-auto py-4 flex items-center justify-between">
         <Link href="/">
-          <Logo loading="eager" priority="high" className="invert dark:invert-0 h-8 w-auto" />
+          <Logo
+            loading="eager"
+            priority="high"
+            className="h-8 w-auto"
+            lightLogoUrl={lightLogoUrl ?? undefined}
+            darkLogoUrl={darkLogoUrl ?? undefined}
+          />
         </Link>
         <HeaderNav data={data} />
       </div>

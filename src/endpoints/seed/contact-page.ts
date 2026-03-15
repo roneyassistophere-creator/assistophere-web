@@ -11,7 +11,7 @@ export const contact: (args: ContactArgs) => RequiredDataFromCollectionSlug<'pag
   return {
     slug: 'contact',
     _status: 'published',
-    template: 'contact',
+    template: 'default',
     title: 'Contact',
   }
 }

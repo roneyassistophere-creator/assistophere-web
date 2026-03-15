@@ -1,4 +1,5 @@
-import type { Metadata } from 'next'
+import type { Metadata } from 'next';
+import type { Page as PageType } from '@/payload-types';
 
 import { PayloadRedirects } from '@/components/PayloadRedirects'
 import configPromise from '@payload-config'
@@ -12,25 +13,6 @@ import PageClient from './[...slug]/page.client'
 import { LivePreviewListener } from '@/components/LivePreviewListener'
 import { HomeView } from '@/views/Pages/HomeView'
 import { DefaultView } from '@/views/Pages/DefaultView'
-import { ServicesView } from '@/views/Pages/ServicesView'
-import { ContactView } from '@/views/Pages/ContactView'
-import { PricingView } from '@/views/Pages/PricingView'
-import { OtaManagementView } from '@/views/Pages/OtaManagementView'
-import { OtaVirtualAssistantView } from '@/views/Pages/OtaVirtualAssistantView'
-import { MultiPlatformListingView } from '@/views/Pages/MultiPlatformListingView'
-import { StrGrowthConsultancyView } from '@/views/Pages/StrGrowthConsultancyView'
-import { DirectBookingSeoView } from '@/views/Pages/DirectBookingSeoView'
-import { GuestCommunicationView } from '@/views/Pages/GuestCommunicationView'
-import { AirbnbTrainingView } from '@/views/Pages/AirbnbTrainingView'
-import { StrGrowthSystemsView } from '@/views/Pages/StrGrowthSystemsView'
-import { AirbnbManagementView } from '@/views/Pages/AirbnbManagementView'
-import { VrboManagementView } from '@/views/Pages/VrboManagementView'
-import { BookingComManagementView } from '@/views/Pages/BookingComManagementView'
-import { AirbnbVaView } from '@/views/Pages/AirbnbVaView'
-import { VrboVaView } from '@/views/Pages/VrboVaView'
-import { BookingComVaView } from '@/views/Pages/BookingComVaView'
-import { LocationsView } from '@/views/Pages/LocationsView'
-import type { Page as PageType } from '@/payload-types'
 
 export default async function HomePage() {
   const { isEnabled: draft } = await draftMode()
@@ -56,60 +38,6 @@ export default async function HomePage() {
   switch (page.template) {
     case 'home':
       ViewComponent = <HomeView page={page} />
-      break
-    case 'services':
-      ViewComponent = <ServicesView page={page} />
-      break
-    case 'contact':
-      ViewComponent = <ContactView page={page} />
-      break
-    case 'pricing':
-      ViewComponent = <PricingView page={page} />
-      break
-    case 'ota-management':
-      ViewComponent = <OtaManagementView page={page} />
-      break
-    case 'ota-virtual-assistant':
-      ViewComponent = <OtaVirtualAssistantView page={page} />
-      break
-    case 'multi-platform-listing':
-      ViewComponent = <MultiPlatformListingView page={page} />
-      break
-    case 'str-growth-consultancy':
-      ViewComponent = <StrGrowthConsultancyView page={page} />
-      break
-    case 'direct-booking-seo':
-      ViewComponent = <DirectBookingSeoView page={page} />
-      break
-    case 'guest-communication':
-      ViewComponent = <GuestCommunicationView page={page} />
-      break
-    case 'airbnb-training':
-      ViewComponent = <AirbnbTrainingView page={page} />
-      break
-    case 'str-growth-systems':
-      ViewComponent = <StrGrowthSystemsView page={page} />
-      break
-    case 'airbnb-management':
-      ViewComponent = <AirbnbManagementView page={page} />
-      break
-    case 'vrbo-management':
-      ViewComponent = <VrboManagementView page={page} />
-      break
-    case 'booking-com-management':
-      ViewComponent = <BookingComManagementView page={page} />
-      break
-    case 'airbnb-va':
-      ViewComponent = <AirbnbVaView page={page} />
-      break
-    case 'vrbo-va':
-      ViewComponent = <VrboVaView page={page} />
-      break
-    case 'booking-com-va':
-      ViewComponent = <BookingComVaView page={page} />
-      break
-    case 'locations':
-      ViewComponent = <LocationsView page={page} />
       break
     case 'default':
     default:

@@ -112,10 +112,12 @@ export interface Config {
   globals: {
     header: Header;
     footer: Footer;
+    'site-settings': SiteSetting;
   };
   globalsSelect: {
     header: HeaderSelect<false> | HeaderSelect<true>;
     footer: FooterSelect<false> | FooterSelect<true>;
+    'site-settings': SiteSettingsSelect<false> | SiteSettingsSelect<true>;
   };
   locale: null;
   widgets: {
@@ -170,27 +172,7 @@ export interface Page {
   /**
    * Choose the code template that will render this page on the frontend.
    */
-  template:
-    | 'default'
-    | 'home'
-    | 'services'
-    | 'contact'
-    | 'pricing'
-    | 'ota-management'
-    | 'ota-virtual-assistant'
-    | 'multi-platform-listing'
-    | 'str-growth-consultancy'
-    | 'direct-booking-seo'
-    | 'guest-communication'
-    | 'airbnb-training'
-    | 'str-growth-systems'
-    | 'airbnb-management'
-    | 'vrbo-management'
-    | 'booking-com-management'
-    | 'airbnb-va'
-    | 'vrbo-va'
-    | 'booking-com-va'
-    | 'locations';
+  template: 'default' | 'home';
   /**
    * When enabled, the slug will auto-generate from the title field on save and autosave.
    */
@@ -1424,6 +1406,7 @@ export interface Header {
  */
 export interface Footer {
   id: string;
+  description?: string | null;
   columns?:
     | {
         title: string;
@@ -1470,6 +1453,20 @@ export interface Footer {
         id?: string | null;
       }[]
     | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "site-settings".
+ */
+export interface SiteSetting {
+  id: string;
+  siteTitle: string;
+  siteLogoLight?: (string | null) | Media;
+  siteLogoDark?: (string | null) | Media;
+  siteIcon?: (string | null) | Media;
+  cmsIcon?: (string | null) | Media;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -1529,6 +1526,7 @@ export interface HeaderSelect<T extends boolean = true> {
  * via the `definition` "footer_select".
  */
 export interface FooterSelect<T extends boolean = true> {
+  description?: T;
   columns?:
     | T
     | {
@@ -1563,6 +1561,20 @@ export interface FooterSelect<T extends boolean = true> {
             };
         id?: T;
       };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "site-settings_select".
+ */
+export interface SiteSettingsSelect<T extends boolean = true> {
+  siteTitle?: T;
+  siteLogoLight?: T;
+  siteLogoDark?: T;
+  siteIcon?: T;
+  cmsIcon?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

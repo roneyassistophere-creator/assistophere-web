@@ -1,4 +1,6 @@
-import clsx from 'clsx'
+const fs = require('fs');
+
+const content = `import clsx from 'clsx'
 import React from 'react'
 
 interface Props {
@@ -10,13 +12,7 @@ interface Props {
 }
 
 export const Logo = (props: Props) => {
-  const {
-    loading: loadingFromProps,
-    priority: priorityFromProps,
-    className,
-    lightLogoUrl,
-    darkLogoUrl,
-  } = props
+  const { loading: loadingFromProps, priority: priorityFromProps, className, lightLogoUrl, darkLogoUrl } = props
 
   const loading = loadingFromProps || 'lazy'
   const priority = priorityFromProps || 'low'
@@ -63,12 +59,11 @@ export const Logo = (props: Props) => {
       loading={loading}
       fetchPriority={priority}
       decoding="async"
-      className={clsx(
-        'max-w-[12rem] w-full h-auto',
-        !lightLogoUrl && !darkLogoUrl && 'invert dark:invert-0',
-        className,
-      )}
+      className={clsx('max-w-[12rem] w-full h-auto', (!lightLogoUrl && !darkLogoUrl) && 'invert dark:invert-0', className)}
       src={srcUrl}
     />
   )
 }
+`;
+
+fs.writeFileSync('src/components/Logo/Logo.tsx', content, { encoding: 'utf8', flag: 'w' });
