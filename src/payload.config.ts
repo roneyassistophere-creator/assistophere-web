@@ -15,7 +15,6 @@ import { SiteSettings } from './SiteSettings/config'
 import { plugins } from './plugins'
 import { defaultLexical } from '@/fields/defaultLexical'
 import { getServerSideURL } from './utilities/getURL'
-import { getServerSecret } from '@/utilities/getEnv'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -72,13 +71,13 @@ export default buildConfig({
   // This config helps us configure global or default features that the other editors can inherit
   editor: defaultLexical,
   db: mongooseAdapter({
-    url: getServerSecret('DATABASE_URL') || '',
+    url: process.env.DATABASE_URL || '',
   }),
   collections: [Pages, Posts, Media, Categories, Users],
   cors: [getServerSideURL()].filter(Boolean),
   globals: [Header, Footer, SiteSettings],
   plugins,
-  secret: getServerSecret('PAYLOAD_SECRET') || '',
+  secret: process.env.PAYLOAD_SECRET || '',
   sharp,
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
@@ -89,7 +88,7 @@ export default buildConfig({
         // Allow logged in users to execute this endpoint (default)
         if (req.user) return true
 
-        const secret = getServerSecret('CRON_SECRET')
+        const secret = process.env.CRON_SECRET
         if (!secret) return false
 
         // If there is no logged in user, then check

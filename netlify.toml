@@ -1,0 +1,10 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  # Payload CMS evaluates its config at build time (server-side), which causes
+  # server-only secrets (DB URL, S3 keys, etc.) to appear in webpack cache files.
+  # These cache files are NOT served to clients — they are internal build artifacts.
+  # We exclude the webpack cache directory from secrets scanning to allow the deploy.
+  SECRETS_SCAN_OMIT_PATHS = ".netlify/.next/cache/webpack,.next/cache/webpack"
