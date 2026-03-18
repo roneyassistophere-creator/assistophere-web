@@ -13,6 +13,7 @@ import { s3Storage } from '@payloadcms/storage-s3'
 
 import { Page, Post } from '@/payload-types'
 import { getServerSideURL } from '@/utilities/getURL'
+import { getServerSecret } from '@/utilities/getEnv'
 
 const generateTitle: GenerateTitle<Post | Page> = ({ doc }) => {
   return doc?.title ? `${doc.title} | Assistophere` : 'Assistophere'
@@ -91,10 +92,10 @@ export const plugins: Plugin[] = [
     },
   }),
   // Only enable S3 plugin if all required vars are found
-  ...(process.env.S3_ACCESS_KEY_ID &&
-  process.env.S3_SECRET_ACCESS_KEY &&
-  process.env.S3_BUCKET &&
-  process.env.S3_ENDPOINT
+  ...(getServerSecret('S3_ACCESS_KEY_ID') &&
+  getServerSecret('S3_SECRET_ACCESS_KEY') &&
+  getServerSecret('S3_BUCKET') &&
+  getServerSecret('S3_ENDPOINT')
     ? [
         s3Storage({
           collections: {
@@ -103,14 +104,14 @@ export const plugins: Plugin[] = [
               disableLocalStorage: true,
             },
           },
-          bucket: process.env.S3_BUCKET,
+          bucket: getServerSecret('S3_BUCKET') || '',
           config: {
             credentials: {
-              accessKeyId: process.env.S3_ACCESS_KEY_ID,
-              secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,
+              accessKeyId: getServerSecret('S3_ACCESS_KEY_ID') || '',
+              secretAccessKey: getServerSecret('S3_SECRET_ACCESS_KEY') || '',
             },
-            region: process.env.S3_REGION || 'auto',
-            endpoint: process.env.S3_ENDPOINT,
+            region: getServerSecret('S3_REGION') || 'auto',
+            endpoint: getServerSecret('S3_ENDPOINT') || '',
             // For Cloudflare R2 specifically we need forcePathStyle
             forcePathStyle: true,
           },
