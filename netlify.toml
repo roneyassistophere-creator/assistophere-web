@@ -2,14 +2,7 @@
   command = "npm run build"
   publish = ".next"
 
-[build.environment]
-  # Payload CMS evaluates its config at build time (server-side), which causes
-  # server-only secrets (DB URL, S3 keys, etc.) to appear in compiled server
-  # bundles and build cache. These are NOT served to clients — they are internal
-  # server-side build artifacts that run as Netlify Functions.
-  #
-  # We exclude the entire .next build output and .netlify function bundles from
-  # secrets scanning. We also disable the "smart detection" feature which
-  # automatically scans build output for patterns that look like secrets.
-  SECRETS_SCAN_OMIT_PATHS = ".next,.netlify"
-  SECRETS_SCAN_SMART_DETECTION_ENABLED = "false"
+# NOTE: Secrets scanning configuration (SECRETS_SCAN_ENABLED, SECRETS_SCAN_OMIT_PATHS,
+# SECRETS_SCAN_SMART_DETECTION_ENABLED) must be set via the Netlify UI under
+# Project configuration > Environment variables — NOT here in netlify.toml.
+# See: https://ntl.fyi/configure-secrets-scanning
