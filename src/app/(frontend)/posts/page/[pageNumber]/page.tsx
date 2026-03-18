@@ -62,7 +62,14 @@ export default async function Page({ params: paramsPromise }: Args) {
   )
 }
 
-export function generateMetadata({ params: { pageNumber } }: Props): Metadata {
+type Props = {
+  params: Promise<{
+    pageNumber?: string
+  }>
+}
+
+export async function generateMetadata({ params: paramsPromise }: Props): Promise<Metadata> {
+  const { pageNumber } = await paramsPromise
   return {
     title: `Assistophere Posts Page ${pageNumber || ''}`,
   }
