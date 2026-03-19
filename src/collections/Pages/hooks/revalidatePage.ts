@@ -17,6 +17,8 @@ export const revalidatePage: CollectionAfterChangeHook<Page> = ({
 
       revalidatePath(path)
       revalidateTag('pages-sitemap')
+      revalidateTag('global_header') // Invalidate header cache when pages update
+      revalidateTag('global_footer') // Invalidate footer cache when pages update
     }
 
     // If the page was previously published, we need to revalidate the old path
@@ -27,6 +29,8 @@ export const revalidatePage: CollectionAfterChangeHook<Page> = ({
 
       revalidatePath(oldPath)
       revalidateTag('pages-sitemap')
+      revalidateTag('global_header') // Invalidate header cache when pages unpublish
+      revalidateTag('global_footer') // Invalidate footer cache when pages unpublish
     }
   }
   return doc
@@ -37,6 +41,8 @@ export const revalidateDelete: CollectionAfterDeleteHook<Page> = ({ doc, req: { 
     const path = doc?.slug === 'home' ? '/' : `/${doc?.slug}`
     revalidatePath(path)
     revalidateTag('pages-sitemap')
+    revalidateTag('global_header') // Invalidate header cache when pages delete
+    revalidateTag('global_footer') // Invalidate footer cache when pages delete
   }
 
   return doc

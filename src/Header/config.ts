@@ -25,11 +25,17 @@ export const Header: GlobalConfig = {
               fields: [link({ appearances: false })],
               admin: {
                 initCollapsed: true,
+                components: {
+                  RowLabel: '@/Header/RowLabel#RowLabel',
+                },
               },
             },
           ],
           admin: {
             initCollapsed: true,
+            components: {
+              RowLabel: '@/Header/RowLabel#RowLabel',
+            },
           },
         },
       ],
