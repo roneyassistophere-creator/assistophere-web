@@ -36,7 +36,7 @@ const NavItem = ({ item }: { item: NonNullable<HeaderType['navItems']>[0] }) => 
 
             return (
               <div key={i} className="relative group/sub">
-                <div className="flex items-center justify-between px-3 py-2 rounded-md hover:bg-muted transition-colors uppercase text-xs tracking-wide">
+                <div className="flex items-center justify-between px-3 py-2 rounded-md hover:bg-muted transition-colors text-xs">
                   <CMSLink {...subItem.link} appearance="link" className="w-full h-full block" />
                   {hasSubSubLinks && <ChevronDown className="w-4 h-4 opacity-50 -rotate-90" />}
                 </div>
@@ -51,7 +51,7 @@ const NavItem = ({ item }: { item: NonNullable<HeaderType['navItems']>[0] }) => 
                         <CMSLink
                           {...subSubItem.link}
                           appearance="link"
-                          className="w-full h-full block text-xs uppercase tracking-wide"
+                          className="w-full h-full block text-xs"
                         />
                       </div>
                     ))}
