@@ -25,6 +25,7 @@ const getPagesSitemap = unstable_cache(
       },
       select: {
         slug: true,
+        breadcrumbs: true,
         updatedAt: true,
       },
     })
@@ -46,8 +47,20 @@ const getPagesSitemap = unstable_cache(
       ? results.docs
           .filter((page) => Boolean(page?.slug))
           .map((page) => {
+            let path: string
+            if (page?.slug === 'home') {
+              path = '/'
+            } else if (
+              page?.breadcrumbs &&
+              page.breadcrumbs.length > 0 &&
+              page.breadcrumbs[page.breadcrumbs.length - 1]?.url
+            ) {
+              path = page.breadcrumbs[page.breadcrumbs.length - 1]!.url!
+            } else {
+              path = `/${page?.slug}`
+            }
             return {
-              loc: page?.slug === 'home' ? `${SITE_URL}/` : `${SITE_URL}/${page?.slug}`,
+              loc: `${SITE_URL}${path}`,
               lastmod: page.updatedAt || dateFallback,
             }
           })

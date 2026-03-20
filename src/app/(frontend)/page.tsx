@@ -1,9 +1,9 @@
-import type { Metadata } from 'next';
-import type { Page as PageType } from '@/payload-types';
+import type { Metadata } from 'next'
+import type { Page as PageType } from '@/payload-types'
 
 import { PayloadRedirects } from '@/components/PayloadRedirects'
 import configPromise from '@payload-config'
-import { getPayload, type RequiredDataFromCollectionSlug } from 'payload'
+import { getPayload } from 'payload'
 import { draftMode } from 'next/headers'
 import React, { cache } from 'react'
 import { homeStatic } from '@/endpoints/seed/home-static'
@@ -73,6 +73,7 @@ const queryPageBySlug = cache(async ({ slug }: { slug: string }) => {
   const result = await payload.find({
     collection: 'pages',
     draft,
+    depth: 1,
     limit: 1,
     pagination: false,
     overrideAccess: draft,

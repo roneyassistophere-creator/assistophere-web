@@ -4,6 +4,16 @@ import { revalidatePath, revalidateTag } from 'next/cache'
 
 import type { Page } from '../../../payload-types'
 
+/** Derive the public URL for a page, preferring the nested-docs breadcrumb URL */
+function getPagePath(doc: Page): string {
+  if (doc.slug === 'home') return '/'
+  if (doc.breadcrumbs && doc.breadcrumbs.length > 0) {
+    const url = doc.breadcrumbs[doc.breadcrumbs.length - 1]?.url
+    if (url) return url
+  }
+  return `/${doc.slug}`
+}
+
 export const revalidatePage: CollectionAfterChangeHook<Page> = ({
   doc,
   previousDoc,
@@ -11,26 +21,26 @@ export const revalidatePage: CollectionAfterChangeHook<Page> = ({
 }) => {
   if (!context.disableRevalidate) {
     if (doc._status === 'published') {
-      const path = doc.slug === 'home' ? '/' : `/${doc.slug}`
+      const path = getPagePath(doc)
 
       payload.logger.info(`Revalidating page at path: ${path}`)
 
       revalidatePath(path)
       revalidateTag('pages-sitemap')
-      revalidateTag('global_header') // Invalidate header cache when pages update
-      revalidateTag('global_footer') // Invalidate footer cache when pages update
+      revalidateTag('global_header')
+      revalidateTag('global_footer')
     }
 
     // If the page was previously published, we need to revalidate the old path
     if (previousDoc?._status === 'published' && doc._status !== 'published') {
-      const oldPath = previousDoc.slug === 'home' ? '/' : `/${previousDoc.slug}`
+      const oldPath = getPagePath(previousDoc)
 
       payload.logger.info(`Revalidating old page at path: ${oldPath}`)
 
       revalidatePath(oldPath)
       revalidateTag('pages-sitemap')
-      revalidateTag('global_header') // Invalidate header cache when pages unpublish
-      revalidateTag('global_footer') // Invalidate footer cache when pages unpublish
+      revalidateTag('global_header')
+      revalidateTag('global_footer')
     }
   }
   return doc
@@ -38,11 +48,11 @@ export const revalidatePage: CollectionAfterChangeHook<Page> = ({
 
 export const revalidateDelete: CollectionAfterDeleteHook<Page> = ({ doc, req: { context } }) => {
   if (!context.disableRevalidate) {
-    const path = doc?.slug === 'home' ? '/' : `/${doc?.slug}`
+    const path = getPagePath(doc)
     revalidatePath(path)
     revalidateTag('pages-sitemap')
-    revalidateTag('global_header') // Invalidate header cache when pages delete
-    revalidateTag('global_footer') // Invalidate footer cache when pages delete
+    revalidateTag('global_header')
+    revalidateTag('global_footer')
   }
 
   return doc

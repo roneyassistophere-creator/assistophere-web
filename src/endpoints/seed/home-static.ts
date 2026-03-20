@@ -6,8 +6,8 @@ export const homeStatic: RequiredDataFromCollectionSlug<'pages'> = {
   _status: 'published',
   template: 'home',
   meta: {
-    description: 'An open-source website built with Payload and Next.js.',
-    title: 'Payload Website Template',
+    description: 'Empowering your growth with performance-driven solutions.',
+    title: 'Assistophere',
   },
   title: 'Home',
 }

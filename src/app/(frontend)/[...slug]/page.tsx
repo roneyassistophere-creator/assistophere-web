@@ -1,9 +1,9 @@
-import type { Metadata } from 'next';
-import type { Page as PageType } from '@/payload-types';
+import type { Metadata } from 'next'
+import type { Page as PageType } from '@/payload-types'
 
 import { PayloadRedirects } from '@/components/PayloadRedirects'
 import configPromise from '@payload-config'
-import { getPayload, type RequiredDataFromCollectionSlug } from 'payload'
+import { getPayload } from 'payload'
 import { draftMode } from 'next/headers'
 import React, { cache } from 'react'
 import { homeStatic } from '@/endpoints/seed/home-static'
@@ -25,6 +25,7 @@ export async function generateStaticParams() {
     pagination: false,
     select: {
       slug: true,
+      breadcrumbs: true,
     },
   })
 
@@ -32,10 +33,12 @@ export async function generateStaticParams() {
     ?.filter((doc) => {
       return doc.slug !== 'home'
     })
-    .map((doc: any) => {
+    .map((doc) => {
       // If we have breadcrumbs, split the URL to get the full slug array
-      if (doc?.breadcrumbs && doc.breadcrumbs.length > 0) {
-        const url = doc.breadcrumbs[doc.breadcrumbs.length - 1].url
+      const breadcrumbs =
+        'breadcrumbs' in doc ? (doc.breadcrumbs as { url?: string | null }[] | null) : null
+      if (breadcrumbs && breadcrumbs.length > 0) {
+        const url = breadcrumbs[breadcrumbs.length - 1]?.url
         if (url) {
           const split = url.split('/').filter(Boolean)
           if (split.length > 0) return { slug: split }
@@ -129,6 +132,7 @@ const queryPageBySlug = cache(async ({ slug }: { slug: string }) => {
   const result = await payload.find({
     collection: 'pages',
     draft,
+    depth: 1,
     limit: 1,
     pagination: false,
     overrideAccess: draft,
