@@ -35,11 +35,7 @@ export const Logo = (props: Props) => {
       loading={loading}
       fetchPriority={priority}
       decoding="async"
-      className={clsx(
-        'max-w-[12rem] w-full h-auto',
-        !lightLogoUrl && !darkLogoUrl && 'invert dark:invert-0',
-        className,
-      )}
+      className={clsx('max-w-[12rem] w-full h-auto', className)}
       src={srcUrl}
     />
   )

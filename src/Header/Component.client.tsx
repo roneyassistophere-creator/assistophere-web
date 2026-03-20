@@ -7,6 +7,7 @@ import React, { useEffect, useState } from 'react'
 import type { Header, SiteSetting } from '@/payload-types'
 
 import { Logo } from '@/components/Logo/Logo'
+import { ThemeController } from '@/components/ThemeController/ThemeController'
 import { HeaderNav } from './Nav'
 
 interface HeaderClientProps {
@@ -50,7 +51,10 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data, siteSettings }
             darkLogoUrl={darkLogoUrl ?? undefined}
           />
         </Link>
-        <HeaderNav data={data} />
+        <div className="flex items-center gap-6">
+          <HeaderNav data={data} />
+          <ThemeController />
+        </div>
       </div>
     </header>
   )
