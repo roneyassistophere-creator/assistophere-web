@@ -1,6 +1,10 @@
 [build]
   command = "npm run build"
   publish = ".next"
+  environment = { NODE_VERSION = "18.20.2" }
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
 
 # NOTE: Secrets scanning configuration (SECRETS_SCAN_ENABLED, SECRETS_SCAN_OMIT_PATHS,
 # SECRETS_SCAN_SMART_DETECTION_ENABLED) must be set via the Netlify UI under
