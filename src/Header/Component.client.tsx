@@ -7,6 +7,7 @@ import React, { useEffect, useState } from 'react'
 import type { Header, SiteSetting } from '@/payload-types'
 
 import { Logo } from '@/components/Logo/Logo'
+import { Button } from '@/components/ui/button'
 import { ThemeController } from '@/components/ThemeController/ThemeController'
 import { HeaderNav } from './Nav'
 
@@ -53,6 +54,14 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data, siteSettings }
         </Link>
         <div className="flex items-center gap-6">
           <HeaderNav data={data} />
+          <div className="hidden md:flex items-center gap-4">
+            <Button asChild variant="outline" className="font-semibold">
+              <a href="tel:+447957792701">+44 7957 792701</a>
+            </Button>
+            <Button asChild className="font-semibold">
+              <Link href="/free-audit">Free Audit</Link>
+            </Button>
+          </div>
           <ThemeController />
         </div>
       </div>
