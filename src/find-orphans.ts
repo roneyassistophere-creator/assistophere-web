@@ -69,12 +69,10 @@ async function run() {
     'landlords',
   ] // Ensure core pages and standard pages are preserved
 
-  const orphans = allPages.docs.filter(
-    (p: unknown) => {
-      const page = p as { id: string; slug: string; title?: string };
-      return !referencedPageIds.has(page.id) && !safeSlugs.includes(page.slug);
-    },
-  )
+  const orphans = allPages.docs.filter((p: unknown) => {
+    const page = p as { id: string; slug: string; title?: string }
+    return !referencedPageIds.has(page.id) && !safeSlugs.includes(page.slug)
+  })
 
   if (orphans.length === 0) {
     console.log('No orphan pages found.')

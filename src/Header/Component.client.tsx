@@ -55,7 +55,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data, siteSettings }
         <div className="flex items-center gap-6">
           <HeaderNav data={data} />
           <div className="hidden md:flex items-center gap-4">
-            <Button asChild variant="outline" className="font-semibold">
+            <Button asChild variant="secondary" className="font-semibold">
               <a href="tel:+447957792701">+44 7957 792701</a>
             </Button>
             <Button asChild className="font-semibold">
