@@ -9,8 +9,7 @@ async function run() {
 
   const referencedPageIds = new Set<string>()
 
-  // @ts-ignore
-  function extractLinksFromNavItems(items: any[]) {
+  function extractLinksFromNavItems(items: unknown) {
     if (!items || !Array.isArray(items)) return
 
     for (const item of items) {
@@ -35,7 +34,11 @@ async function run() {
   }
 
   if (header?.navItems) extractLinksFromNavItems(header.navItems)
-  if (footer?.navItems) extractLinksFromNavItems(footer.navItems)
+  if (footer?.columns) {
+    for (const col of footer.columns) {
+      if (col.navItems) extractLinksFromNavItems(col.navItems)
+    }
+  }
 
   // Home page is often referenced differently, assume 'home' slug is always safe
   const allPages = await payload.find({
@@ -67,7 +70,10 @@ async function run() {
   ] // Ensure core pages and standard pages are preserved
 
   const orphans = allPages.docs.filter(
-    (p: any) => !referencedPageIds.has(p.id) && !safeSlugs.includes(p.slug),
+    (p: unknown) => {
+      const page = p as { id: string; slug: string; title?: string };
+      return !referencedPageIds.has(page.id) && !safeSlugs.includes(page.slug);
+    },
   )
 
   if (orphans.length === 0) {

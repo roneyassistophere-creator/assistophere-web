@@ -54,7 +54,7 @@ async function run() {
     },
   ]
 
-  async function getOrCreatePage(title) {
+  async function getOrCreatePage(title: string) {
     const slug = title
       .toLowerCase()
       .replace(/ & /g, '-')
@@ -67,7 +67,7 @@ async function run() {
     if (existing.docs.length > 0) return existing.docs[0]
     return await payload.create({
       collection: 'pages',
-      data: { title, slug, _status: 'published' },
+      data: { title, slug, _status: 'published' } as any,
       context: { disableRevalidate: true },
     })
   }
