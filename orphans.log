@@ -1,0 +1,168 @@
+npm warn Unknown project config "enable-pre-post-scripts". This will stop working in the next major version of npm.
+[18:51:30] [33mWARN[39m: [36mNo email adapter provided. Email will be written to console. More info at https://payloadcms.com/docs/email/overview.[39m
+
+Total Pages in DB: 61
+Total Referenced Pages in Header/Footer: 38
+
+Deleting 12 unlinked orphan pages...
+ - DELETING: ID: 69ba9cf44b33600510eff997 | Slug: guest-check-in | Title: Guest Check-in
+[18:51:36] [31mERROR[39m: [36mThere was an error removing versions for the deleted pages document with ID 69ba9cf44b33600510eff997.[39m
+    err: {
+      "type": "MongoServerError",
+      "message": "Caused by :: Write conflict during plan execution and yielding is disabled. :: Please retry your operation or multi-document transaction.",
+      "stack":
+          MongoServerError: Caused by :: Write conflict during plan execution and yielding is disabled. :: Please retry your operation or multi-document transaction.
+              at Connection.sendCommand (/Users/shohanurrahmantalukderroney/WEB PROJECTS/assistophere-web/node_modules/.pnpm/mongodb@6.16.0/node_modules/mongodb/src/cmap/connection.ts:551:17)
+              at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at async Connection.command (/Users/shohanurrahmantalukderroney/WEB PROJECTS/assistophere-web/node_modules/.pnpm/mongodb@6.16.0/node_modules/mongodb/src/cmap/connection.ts:625:22)
+              at async Server.command (/Users/shohanurrahmantalukderroney/WEB PROJECTS/assistophere-web/node_modules/.pnpm/mongodb@6.16.0/node_modules/mongodb/src/sdam/server.ts:338:21)
+              at async DeleteManyOperation.executeCommand (/Users/shohanurrahmantalukderroney/WEB PROJECTS/assistophere-web/node_modules/.pnpm/mongodb@6.16.0/node_modules/mongodb/src/operations/command.ts:179:12)
+              at async DeleteManyOperation.execute (/Users/shohanurrahmantalukderroney/WEB PROJECTS/assistophere-web/node_modules/.pnpm/mongodb@6.16.0/node_modules/mongodb/src/operations/delete.ts:100:33)
+              at async DeleteManyOperation.execute (/Users/shohanurrahmantalukderroney/WEB PROJECTS/assistophere-web/node_modules/.pnpm/mongodb@6.16.0/node_modules/mongodb/src/operations/delete.ts:141:33)
+              at async tryOperation (/Users/shohanurrahmantalukderroney/WEB PROJECTS/assistophere-web/node_modules/.pnpm/mongodb@6.16.0/node_modules/mongodb/src/operations/execute_operation.ts:283:14)
+              at async executeOperation (/Users/shohanurrahmantalukderroney/WEB PROJECTS/assistophere-web/node_modules/.pnpm/mongodb@6.16.0/node_modules/mongodb/src/operations/execute_operation.ts:115:12)
+              at async Collection.deleteMany (/Users/shohanurrahmantalukderroney/WEB PROJECTS/assistophere-web/node_modules/.pnpm/mongodb@6.16.0/node_modules/mongodb/src/collection.ts:457:12)
+      "errorLabelSet": {},
+      "errorResponse": {
+        "errorLabels": [
+          "TransientTransactionError"
+        ],
+        "ok": 0,
+        "errmsg": "Caused by :: Write conflict during plan execution and yielding is disabled. :: Please retry your operation or multi-document transaction.",
+        "code": 112,
+        "codeName": "WriteConflict",
+        "$clusterTime": {
+          "clusterTime": {
+            "$timestamp": "7623030491804860429"
+          },
+          "signature": {
+            "hash": "f9hw0eBpD6nXL8SdYYoxuWeUo4k=",
+            "keyId": {
+              "low": 9,
+              "high": 1765401384,
+              "unsigned": false
+            }
+          }
+        },
+        "operationTime": {
+          "$timestamp": "7623030491804860429"
+        }
+      },
+      "ok": 0,
+      "code": 112,
+      "codeName": "WriteConflict",
+      "$clusterTime": {
+        "clusterTime": {
+          "$timestamp": "7623030491804860429"
+        },
+        "signature": {
+          "hash": "f9hw0eBpD6nXL8SdYYoxuWeUo4k=",
+          "keyId": {
+            "low": 9,
+            "high": 1765401384,
+            "unsigned": false
+          }
+        }
+      },
+      "operationTime": {
+        "$timestamp": "7623030491804860429"
+      }
+    }
+[18:51:37] [31mERROR[39m: [36mThere was an error deleting scheduled publish jobs from the queue for pages document with ID 69ba9cf44b33600510eff997.[39m
+    err: {
+      "type": "MongoServerError",
+      "message": "Transaction with { txnNumber: 1 } has been aborted.",
+      "stack":
+          MongoServerError: Transaction with { txnNumber: 1 } has been aborted.
+              at Connection.sendCommand (/Users/shohanurrahmantalukderroney/WEB PROJECTS/assistophere-web/node_modules/.pnpm/mongodb@6.16.0/node_modules/mongodb/src/cmap/connection.ts:551:17)
+              at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at async Connection.command (/Users/shohanurrahmantalukderroney/WEB PROJECTS/assistophere-web/node_modules/.pnpm/mongodb@6.16.0/node_modules/mongodb/src/cmap/connection.ts:625:22)
+              at async Server.command (/Users/shohanurrahmantalukderroney/WEB PROJECTS/assistophere-web/node_modules/.pnpm/mongodb@6.16.0/node_modules/mongodb/src/sdam/server.ts:338:21)
+              at async DeleteManyOperation.executeCommand (/Users/shohanurrahmantalukderroney/WEB PROJECTS/assistophere-web/node_modules/.pnpm/mongodb@6.16.0/node_modules/mongodb/src/operations/command.ts:179:12)
+              at async DeleteManyOperation.execute (/Users/shohanurrahmantalukderroney/WEB PROJECTS/assistophere-web/node_modules/.pnpm/mongodb@6.16.0/node_modules/mongodb/src/operations/delete.ts:100:33)
+              at async DeleteManyOperation.execute (/Users/shohanurrahmantalukderroney/WEB PROJECTS/assistophere-web/node_modules/.pnpm/mongodb@6.16.0/node_modules/mongodb/src/operations/delete.ts:141:33)
+              at async tryOperation (/Users/shohanurrahmantalukderroney/WEB PROJECTS/assistophere-web/node_modules/.pnpm/mongodb@6.16.0/node_modules/mongodb/src/operations/execute_operation.ts:283:14)
+              at async executeOperation (/Users/shohanurrahmantalukderroney/WEB PROJECTS/assistophere-web/node_modules/.pnpm/mongodb@6.16.0/node_modules/mongodb/src/operations/execute_operation.ts:115:12)
+              at async Collection.deleteMany (/Users/shohanurrahmantalukderroney/WEB PROJECTS/assistophere-web/node_modules/.pnpm/mongodb@6.16.0/node_modules/mongodb/src/collection.ts:457:12)
+      "errorLabelSet": {},
+      "errorResponse": {
+        "errorLabels": [
+          "TransientTransactionError"
+        ],
+        "ok": 0,
+        "errmsg": "Transaction with { txnNumber: 1 } has been aborted.",
+        "code": 251,
+        "codeName": "NoSuchTransaction",
+        "$clusterTime": {
+          "clusterTime": {
+            "$timestamp": "7623030491804860430"
+          },
+          "signature": {
+            "hash": "f9hw0eBpD6nXL8SdYYoxuWeUo4k=",
+            "keyId": {
+              "low": 9,
+              "high": 1765401384,
+              "unsigned": false
+            }
+          }
+        },
+        "operationTime": {
+          "$timestamp": "7623030491804860430"
+        }
+      },
+      "ok": 0,
+      "code": 251,
+      "codeName": "NoSuchTransaction",
+      "$clusterTime": {
+        "clusterTime": {
+          "$timestamp": "7623030491804860430"
+        },
+        "signature": {
+          "hash": "f9hw0eBpD6nXL8SdYYoxuWeUo4k=",
+          "keyId": {
+            "low": 9,
+            "high": 1765401384,
+            "unsigned": false
+          }
+        }
+      },
+      "operationTime": {
+        "$timestamp": "7623030491804860430"
+      }
+    }
+MongoServerError: Transaction with { txnNumber: 1 } has been aborted.
+    at Connection.sendCommand (/Users/shohanurrahmantalukderroney/WEB PROJECTS/assistophere-web/node_modules/.pnpm/mongodb@6.16.0/node_modules/mongodb/src/cmap/connection.ts:551:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async Connection.command (/Users/shohanurrahmantalukderroney/WEB PROJECTS/assistophere-web/node_modules/.pnpm/mongodb@6.16.0/node_modules/mongodb/src/cmap/connection.ts:625:22)
+    at async Server.command (/Users/shohanurrahmantalukderroney/WEB PROJECTS/assistophere-web/node_modules/.pnpm/mongodb@6.16.0/node_modules/mongodb/src/sdam/server.ts:338:21)
+    at async FindOneAndDeleteOperation.executeCommand (/Users/shohanurrahmantalukderroney/WEB PROJECTS/assistophere-web/node_modules/.pnpm/mongodb@6.16.0/node_modules/mongodb/src/operations/command.ts:179:12)
+    at async FindOneAndDeleteOperation.execute (/Users/shohanurrahmantalukderroney/WEB PROJECTS/assistophere-web/node_modules/.pnpm/mongodb@6.16.0/node_modules/mongodb/src/operations/find_and_modify.ts:216:20)
+    at async tryOperation (/Users/shohanurrahmantalukderroney/WEB PROJECTS/assistophere-web/node_modules/.pnpm/mongodb@6.16.0/node_modules/mongodb/src/operations/execute_operation.ts:283:14)
+    at async executeOperation (/Users/shohanurrahmantalukderroney/WEB PROJECTS/assistophere-web/node_modules/.pnpm/mongodb@6.16.0/node_modules/mongodb/src/operations/execute_operation.ts:115:12)
+    at async Collection.findOneAndDelete (/Users/shohanurrahmantalukderroney/WEB PROJECTS/assistophere-web/node_modules/.pnpm/mongodb@6.16.0/node_modules/mongodb/src/collection.ts:914:12)
+    at async model.Query._findOneAndDelete (/Users/shohanurrahmantalukderroney/WEB PROJECTS/assistophere-web/node_modules/.pnpm/mongoose@8.15.1/node_modules/mongoose/lib/query.js:3607:13) {
+  errorLabelSet: Set(1) { 'TransientTransactionError' },
+  errorResponse: {
+    errorLabels: [ 'TransientTransactionError' ],
+    ok: 0,
+    errmsg: 'Transaction with { txnNumber: 1 } has been aborted.',
+    code: 251,
+    codeName: 'NoSuchTransaction',
+    '$clusterTime': {
+      clusterTime: new Timestamp({ t: 1774875096, i: 14 }),
+      signature: [Object]
+    },
+    operationTime: new Timestamp({ t: 1774875096, i: 14 })
+  },
+  ok: 0,
+  code: 251,
+  codeName: 'NoSuchTransaction',
+  '$clusterTime': {
+    clusterTime: new Timestamp({ t: 1774875096, i: 14 }),
+    signature: {
+      hash: Binary.createFromBase64('f9hw0eBpD6nXL8SdYYoxuWeUo4k=', 0),
+      keyId: new Long('7582341208593137673')
+    }
+  },
+  operationTime: new Timestamp({ t: 1774875096, i: 14 })
+}
