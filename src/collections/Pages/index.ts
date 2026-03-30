@@ -15,6 +15,19 @@ import {
   PreviewField,
 } from '@payloadcms/plugin-seo/fields'
 
+import { ArchiveBlock } from '../../blocks/ArchiveBlock/config'
+import { CallToAction } from '../../blocks/CallToAction/config'
+import { Banner } from '../../blocks/Banner/config'
+import { Code } from '../../blocks/Code/config'
+import { MediaBlock } from '../../blocks/MediaBlock/config'
+import { Hero } from '../../blocks/Hero/config'
+import { Contact } from '../../blocks/Contact/config'
+import { Faq } from '../../blocks/Faq/config'
+import { Testimonial } from '../../blocks/Testimonial/config'
+import { Feature } from '../../blocks/Feature/config'
+import { Stats } from '../../blocks/Stats/config'
+import { RelatedPosts } from '../../blocks/RelatedPosts/config'
+
 export const Pages: CollectionConfig<'pages'> = {
   slug: 'pages',
   access: {
@@ -59,6 +72,40 @@ export const Pages: CollectionConfig<'pages'> = {
       type: 'tabs',
       tabs: [
         {
+          label: 'Content',
+          fields: [
+            {
+              name: 'content',
+              type: 'richText',
+              admin: {
+                condition: (data) => data?.template !== 'master',
+              },
+            },
+            {
+              name: 'layout',
+              label: 'Page Blocks',
+              type: 'blocks',
+              blocks: [
+                ArchiveBlock,
+                CallToAction,
+                Banner,
+                Code,
+                MediaBlock,
+                Hero,
+                Contact,
+                Faq,
+                Testimonial,
+                Feature,
+                Stats,
+                RelatedPosts,
+              ],
+              admin: {
+                condition: (data) => data?.template === 'master',
+              },
+            },
+          ],
+        },
+        {
           name: 'meta',
           label: 'SEO',
           fields: [
@@ -102,6 +149,7 @@ export const Pages: CollectionConfig<'pages'> = {
       options: [
         { label: 'Default Page', value: 'default' },
         { label: 'Home Page', value: 'home' },
+        { label: 'Master (Page Builder)', value: 'master' },
       ],
       admin: {
         position: 'sidebar',

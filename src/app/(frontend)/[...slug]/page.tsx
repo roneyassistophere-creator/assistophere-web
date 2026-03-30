@@ -14,6 +14,7 @@ import { LivePreviewListener } from '@/components/LivePreviewListener'
 import { redirect } from 'next/navigation'
 import { HomeView } from '@/views/Pages/HomeView'
 import { DefaultView } from '@/views/Pages/DefaultView'
+import { MasterView } from '@/views/Pages/MasterView'
 
 export async function generateStaticParams() {
   const payload = await getPayload({ config: configPromise })
@@ -90,6 +91,9 @@ export default async function Page({ params: paramsPromise }: Args) {
   switch (page.template) {
     case 'home':
       ViewComponent = <HomeView page={page} />
+      break
+    case 'master':
+      ViewComponent = <MasterView page={page} />
       break
     case 'default':
     default:
