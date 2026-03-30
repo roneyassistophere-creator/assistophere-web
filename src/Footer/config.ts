@@ -15,6 +15,34 @@ export const Footer: GlobalConfig = {
       label: 'Footer Description (Under Logo)',
     },
     {
+      name: 'contactInfo',
+      type: 'group',
+      label: 'Contact Information',
+      fields: [
+        {
+          name: 'title',
+          type: 'text',
+          label: 'Column Title',
+          defaultValue: 'Contact Info',
+        },
+        {
+          name: 'address',
+          type: 'textarea',
+          label: 'Address',
+        },
+        {
+          name: 'phone',
+          type: 'text',
+          label: 'Phone Number',
+        },
+        {
+          name: 'email',
+          type: 'text',
+          label: 'Email Address',
+        },
+      ],
+    },
+    {
       name: 'columns',
       type: 'array',
       fields: [

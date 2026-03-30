@@ -1,6 +1,7 @@
 import { getCachedGlobal } from '@/utilities/getGlobals'
 import Link from 'next/link'
 import React from 'react'
+import { Mail, MapPin, Phone } from 'lucide-react'
 
 import type { Footer as FooterType, SiteSetting } from '@/payload-types'
 
@@ -11,8 +12,8 @@ import { Logo } from '@/components/Logo/Logo'
 export async function Footer() {
   const footerData: FooterType = await getCachedGlobal('footer', 1)()
   const siteSettings = (await getCachedGlobal('site-settings', 1)()) as SiteSetting
-
   const columns = footerData?.columns || []
+  const contactInfo = footerData?.contactInfo
 
   const lightLogoUrl =
     typeof siteSettings?.siteLogoLight === 'object' ? siteSettings?.siteLogoLight?.url : null
@@ -39,6 +40,46 @@ export async function Footer() {
         </div>
 
         <div className="flex flex-wrap md:flex-nowrap gap-12 sm:gap-16 w-full md:w-auto">
+          {Boolean(contactInfo) && (
+            <div className="flex flex-col gap-4 min-w-[200px] max-w-xs">
+              <h3 className="text-sm font-semibold tracking-wider text-foreground uppercase">
+                {contactInfo?.title || 'Contact Info'}
+              </h3>
+              <div className="flex flex-col gap-4">
+                {contactInfo?.address && (
+                  <div className="flex gap-3 items-start">
+                    <MapPin className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                    <p className="text-sm text-muted-foreground whitespace-pre-line">
+                      {contactInfo.address}
+                    </p>
+                  </div>
+                )}
+                {contactInfo?.phone && (
+                  <div className="flex gap-3 items-center">
+                    <Phone className="h-5 w-5 text-primary shrink-0" />
+                    <a
+                      href={`tel:${contactInfo.phone.replace(/\s+/g, '')}`}
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      {contactInfo.phone}
+                    </a>
+                  </div>
+                )}
+                {contactInfo?.email && (
+                  <div className="flex gap-3 items-center">
+                    <Mail className="h-5 w-5 text-primary shrink-0" />
+                    <a
+                      href={`mailto:${contactInfo.email}`}
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      {contactInfo.email}
+                    </a>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+
           {columns
             .filter((col) => col.navItems?.some((item) => isValidLink(item.link)))
             .map((column, i) => (

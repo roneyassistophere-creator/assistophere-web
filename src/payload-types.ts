@@ -1407,6 +1407,12 @@ export interface Header {
 export interface Footer {
   id: string;
   description?: string | null;
+  contactInfo?: {
+    title?: string | null;
+    address?: string | null;
+    phone?: string | null;
+    email?: string | null;
+  };
   columns?:
     | {
         title: string;
@@ -1527,6 +1533,14 @@ export interface HeaderSelect<T extends boolean = true> {
  */
 export interface FooterSelect<T extends boolean = true> {
   description?: T;
+  contactInfo?:
+    | T
+    | {
+        title?: T;
+        address?: T;
+        phone?: T;
+        email?: T;
+      };
   columns?:
     | T
     | {
