@@ -160,6 +160,12 @@ export const Pages: CollectionConfig<'pages'> = {
         { label: 'Our Clients', value: 'our-clients' },
         { label: 'Client Reviews', value: 'client-reviews' },
         { label: 'Case Studies', value: 'case-studies' },
+        { label: 'Services', value: 'services' },
+        { label: 'Airbnb VA', value: 'airbnb-va' },
+        { label: 'Direct Booking Engine', value: 'direct-booking-engine' },      
+        { label: 'Lead Generation', value: 'lead-generation' },
+        { label: 'Social Media Management & Strategy', value: 'social-media-mgt-and-str' },
+        { label: 'Systems Building', value: 'systems-building' },
         // ROI and Performance Templates
         { label: 'ROI Calculator UK', value: 'roi-calculator-uk' },
         { label: 'Enter Airbnb Market', value: 'enter-airbnb-market' },
