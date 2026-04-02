@@ -284,13 +284,7 @@ export interface Page {
     | 'enter-airbnb-market'
     | 'airbnb-consultancy-and-training'
     | 'boost-airbnb'
-    | 'airbnb-performance-optimization'
-    | 'services'
-    | 'airbnb-va'
-    | 'direct-booking-engine'
-    | 'lead-generation'
-    | 'social-media-mgt-and-str'
-    | 'systems-building';
+    | 'airbnb-performance-optimization';
   /**
    * When enabled, the slug will auto-generate from the title field on save and autosave.
    */
