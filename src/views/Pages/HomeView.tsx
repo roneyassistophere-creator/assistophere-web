@@ -19,7 +19,7 @@ import {
   Award
 } from 'lucide-react'
 
-export const HomeView: React.FC<{ page: Page }> = ({ page: _page }) => {
+export const HomeView: React.FC<{ page: Page }> = () => {
   return (
     <div className="flex flex-col w-full overflow-hidden font-sans">
       {/* Decorative Top Gradient */}
@@ -27,8 +27,8 @@ export const HomeView: React.FC<{ page: Page }> = ({ page: _page }) => {
 
       {/* 1. Hero Section */}
       <section className="relative pt-28 pb-20 md:pt-40 md:pb-32 overflow-hidden">
-        <div className="absolute top-10 left-10 w-96 h-96 bg-primary/10 rounded-full blur-[100px] -z-10 animate-pulse" />
-        <div className="absolute top-40 right-10 w-96 h-96 bg-primary/10 rounded-full blur-[100px] -z-10 animate-pulse" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-10 left-10 w-96 h-96 bg-primary/20 rounded-full blur-[100px] -z-10 animate-pulse" />
+        <div className="absolute top-40 right-10 w-96 h-96 bg-secondary/20 rounded-full blur-[100px] -z-10 animate-pulse" style={{ animationDelay: '2s' }} />
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-5xl mx-auto text-center">
@@ -39,7 +39,7 @@ export const HomeView: React.FC<{ page: Page }> = ({ page: _page }) => {
             
             <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 text-foreground leading-[1.1] animate-fade-up">
               Your Behind the Scenes Team<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-transparent">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
                 for Short Term Rental Growth
               </span>
             </h1>
@@ -70,28 +70,28 @@ export const HomeView: React.FC<{ page: Page }> = ({ page: _page }) => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                icon: <MessageSquare className="size-7 text-primary" />,
+                icon: <MessageSquare className="size-7 text-blue-600" />,
                 text: 'Guest messaging & booking support',
-                bg: 'bg-primary/5 dark:bg-primary/10',
-                border: 'border-primary/20 dark:border-primary/20'
+                bg: 'bg-blue-50 dark:bg-blue-900/20',
+                border: 'border-blue-100 dark:border-blue-900/30'
               },
               {
-                icon: <Wrench className="size-7 text-primary" />,
+                icon: <Wrench className="size-7 text-emerald-600" />,
                 text: 'Cleaning & maintenance coordination',
-                bg: 'bg-primary/5 dark:bg-primary/10',
-                border: 'border-primary/20 dark:border-primary/20'
+                bg: 'bg-emerald-50 dark:bg-emerald-900/20',
+                border: 'border-emerald-100 dark:border-emerald-900/30'
               },
               {
-                icon: <TrendingUp className="size-7 text-primary" />,
+                icon: <TrendingUp className="size-7 text-amber-600" />,
                 text: 'Listing optimisation & pricing support',
-                bg: 'bg-primary/5 dark:bg-primary/10',
-                border: 'border-primary/20 dark:border-primary/20'
+                bg: 'bg-amber-50 dark:bg-amber-900/20',
+                border: 'border-amber-100 dark:border-amber-900/30'
               },
               {
-                icon: <Globe className="size-7 text-primary" />,
+                icon: <Globe className="size-7 text-purple-600" />,
                 text: 'Direct booking & backend systems',
-                bg: 'bg-primary/5 dark:bg-primary/10',
-                border: 'border-primary/20 dark:border-primary/20'
+                bg: 'bg-purple-50 dark:bg-purple-900/20',
+                border: 'border-purple-100 dark:border-purple-900/30'
               },
             ].map((item, idx) => (
               <div
@@ -114,7 +114,7 @@ export const HomeView: React.FC<{ page: Page }> = ({ page: _page }) => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-primary/10 text-primary font-bold text-xs uppercase tracking-wider mb-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-primary/20 text-primary font-bold text-xs uppercase tracking-wider mb-6">
                 The Problem
               </div>
               <h2 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">
@@ -133,8 +133,8 @@ export const HomeView: React.FC<{ page: Page }> = ({ page: _page }) => {
                   'No clear systems for scaling',
                   'Reliance on the host for every issue',
                 ].map((point, idx) => (
-                  <div key={idx} className="flex items-center gap-3 p-4 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 hover:border-primary/20 transition-colors">
-                    <div className="size-2 rounded-full bg-primary/10 shrink-0 animate-pulse" />
+                  <div key={idx} className="flex items-center gap-3 p-4 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 hover:border-primary/50 transition-colors">
+                    <div className="size-2 rounded-full bg-primary shrink-0 animate-pulse" />
                     <span className="font-medium text-sm md:text-base">{point}</span>
                   </div>
                 ))}
@@ -142,12 +142,12 @@ export const HomeView: React.FC<{ page: Page }> = ({ page: _page }) => {
             </div>
             
             <div className="relative lg:h-[600px] flex items-center justify-center">
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-[3rem] transform rotate-3" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-blue-500/20 rounded-[3rem] transform rotate-3" />
               <div className="absolute inset-0 bg-background rounded-[3rem] transform -rotate-3 border border-border shadow-2xl flex flex-col items-center justify-center p-12 hover:rotate-0 transition-transform duration-500">
-                <div className="size-32 bg-gradient-to-br from-primary/20 to-transparent shadow-xl shadow-primary/20 rounded-3xl flex items-center justify-center mb-8 rotate-12 hover:rotate-0 transition-transform duration-500">
+                <div className="size-32 bg-gradient-to-br from-primary to-secondary shadow-xl shadow-blue-500/30 rounded-3xl flex items-center justify-center mb-8 rotate-12 hover:rotate-0 transition-transform duration-500">
                   <Clock className="size-16 text-white" />
                 </div>
-                <h3 className="text-3xl font-black uppercase tracking-widest bg-clip-text text-transparent bg-gradient-to-r from-primary/20 to-transparent mb-4">
+                <h3 className="text-3xl font-black uppercase tracking-widest bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 mb-4">
                   Get Time Back
                 </h3>
                 <p className="text-center font-medium text-muted-foreground">That&apos;s where Assistophere comes in.</p>
@@ -161,11 +161,11 @@ export const HomeView: React.FC<{ page: Page }> = ({ page: _page }) => {
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-20 max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-primary/10 text-primary font-bold text-xs uppercase tracking-wider mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-100 text-emerald-700 font-bold text-xs uppercase tracking-wider mb-6">
               The Solution
             </div>
             <h2 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">
-              A More Organised, <br /><span className="text-primary">More Profitable</span> STR Business
+              A More Organised, <br /><span className="text-emerald-600">More Profitable</span> STR Business
             </h2>
             <p className="text-xl text-muted-foreground font-light">
               We work as your remote support team. We handle the daily operations while helping you build better systems for long-term growth.
@@ -177,23 +177,23 @@ export const HomeView: React.FC<{ page: Page }> = ({ page: _page }) => {
               {
                 title: 'Daily Operations',
                 desc: 'We handle guest communication and cleaner coordination so things stay on track without your constant input.',
-                icon: <Settings className="size-8 text-primary" />,
-                bg: 'bg-primary/5 dark:bg-primary/10',
-                border: 'hover:border-primary/20'
+                icon: <Settings className="size-8 text-blue-600" />,
+                bg: 'bg-blue-50 dark:bg-blue-900/20',
+                border: 'hover:border-blue-400'
               },
               {
                 title: 'Listing & Revenue',
                 desc: 'We improve listing presentation, booking flows, and visibility to keep occupancy and revenue strong.',
-                icon: <Layout className="size-8 text-primary" />,
-                bg: 'bg-primary/5 dark:bg-primary/10',
-                border: 'hover:border-primary/20'
+                icon: <Layout className="size-8 text-emerald-600" />,
+                bg: 'bg-emerald-50 dark:bg-emerald-900/20',
+                border: 'hover:border-emerald-400'
               },
               {
                 title: 'Growth & Systems',
                 desc: 'We build a stronger setup overall through direct booking support, SOP structures, and workflow automation.',
-                icon: <Sparkles className="size-8 text-primary" />,
-                bg: 'bg-primary/5 dark:bg-primary/10',
-                border: 'hover:border-primary/20'
+                icon: <Sparkles className="size-8 text-purple-600" />,
+                bg: 'bg-purple-50 dark:bg-purple-900/20',
+                border: 'hover:border-purple-400'
               },
             ].map((block, idx) => (
               <div
@@ -271,7 +271,7 @@ export const HomeView: React.FC<{ page: Page }> = ({ page: _page }) => {
           </div>
           
           <div className="max-w-5xl mx-auto relative">
-            <div className="hidden md:block absolute top-[45px] left-[10%] right-[10%] h-1 bg-gradient-to-r from-primary/20 via-primary to-transparent rounded-full" />
+            <div className="hidden md:block absolute top-[45px] left-[10%] right-[10%] h-1 bg-gradient-to-r from-blue-100 via-primary to-purple-100 rounded-full" />
             
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {[
@@ -304,7 +304,7 @@ export const HomeView: React.FC<{ page: Page }> = ({ page: _page }) => {
       </section>
 
       {/* 7. Why Assistophere & 8. Outcomes (Combined Value visually) */}
-      <section className="py-24 bg-gradient-to-br from-primary/20 to-white dark:from-slate-900 dark:to-background overflow-hidden relative">
+      <section className="py-24 bg-gradient-to-br from-indigo-50 to-white dark:from-slate-900 dark:to-background overflow-hidden relative">
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
@@ -328,7 +328,7 @@ export const HomeView: React.FC<{ page: Page }> = ({ page: _page }) => {
                   </div>
                 ))}
               </div>
-              <div className="mt-10 p-6 rounded-2xl bg-gradient-to-r from-primary to-transparent text-white shadow-xl shadow-primary/30">
+              <div className="mt-10 p-6 rounded-2xl bg-gradient-to-r from-primary to-indigo-600 text-white shadow-xl shadow-primary/30">
                 <h3 className="text-2xl font-bold mb-2">You stay in control.</h3>
                 <p className="text-primary-foreground/80 text-lg">We help carry the heavy operational load.</p>
               </div>
@@ -339,19 +339,19 @@ export const HomeView: React.FC<{ page: Page }> = ({ page: _page }) => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-4 pt-8">
                   <div className="p-8 rounded-3xl bg-white dark:bg-slate-800 shadow-xl border border-slate-100 dark:border-slate-700">
-                    <MessageSquare className="size-10 text-primary mb-4" />
+                    <MessageSquare className="size-10 text-blue-500 mb-4" />
                     <h4 className="font-bold text-lg mb-2">Smoother Journeys</h4>
                     <p className="text-sm text-muted-foreground">Fewer missed messages, highly responsive guest relations.</p>
                   </div>
                   <div className="p-8 rounded-3xl bg-white dark:bg-slate-800 shadow-xl border border-slate-100 dark:border-slate-700">
-                    <CheckCircle2 className="size-10 text-primary mb-4" />
+                    <CheckCircle2 className="size-10 text-emerald-500 mb-4" />
                     <h4 className="font-bold text-lg mb-2">Better Operations</h4>
                     <p className="text-sm text-muted-foreground">Organised cleaning, maintenance, and daily ops structure.</p>
                   </div>
                 </div>
                 <div className="space-y-4">
                   <div className="p-8 rounded-3xl bg-white dark:bg-slate-800 shadow-xl border border-slate-100 dark:border-slate-700">
-                    <Globe className="size-10 text-primary mb-4" />
+                    <Globe className="size-10 text-purple-500 mb-4" />
                     <h4 className="font-bold text-lg mb-2">Stronger Listings</h4>
                     <p className="text-sm text-muted-foreground">Polished presentations ready to capture more bookings.</p>
                   </div>
@@ -401,12 +401,12 @@ export const HomeView: React.FC<{ page: Page }> = ({ page: _page }) => {
                 </p>
                 <div className="grid sm:grid-cols-2 gap-6 relative z-10">
                   <div className="p-6 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/10 hover:bg-white/20 transition-colors">
-                    <Globe className="text-primary size-8 mb-4" />
+                    <Globe className="text-blue-400 size-8 mb-4" />
                     <h4 className="text-white font-bold text-xl mb-2">Direct Booking Setup</h4>
                     <p className="text-slate-400 text-sm">Website support, flow ideation, and improving user booking journeys.</p>
                   </div>
                   <div className="p-6 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/10 hover:bg-white/20 transition-colors">
-                    <Settings className="text-primary size-8 mb-4" />
+                    <Settings className="text-purple-400 size-8 mb-4" />
                     <h4 className="text-white font-bold text-xl mb-2">Business Systems</h4>
                     <p className="text-slate-400 text-sm">SOP creation, workflow optimisations, and team support structures.</p>
                   </div>
@@ -471,7 +471,7 @@ export const HomeView: React.FC<{ page: Page }> = ({ page: _page }) => {
         <div className="absolute inset-0 bg-slate-950" />
         <div className="absolute top-0 left-0 w-full h-full">
           <div className="absolute top-1/2 left-1/4 w-[800px] h-[800px] bg-primary/40 rounded-full blur-[150px] -translate-y-1/2 -translate-x-1/2 mix-blend-screen" />
-          <div className="absolute top-1/2 right-1/4 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 mix-blend-screen" />
+          <div className="absolute top-1/2 right-1/4 w-[600px] h-[600px] bg-blue-600/30 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 mix-blend-screen" />
         </div>
         
         <div className="container mx-auto px-4 relative z-10 text-center">
