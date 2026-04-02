@@ -267,7 +267,30 @@ export interface Page {
   /**
    * Choose the code template that will render this page on the frontend.
    */
-  template: 'default' | 'home' | 'master';
+  template:
+    | 'default'
+    | 'home'
+    | 'master'
+    | 'about-us'
+    | 'faq'
+    | 'blogs-and-topics'
+    | 'terms-and-conditions'
+    | 'privacy-policy'
+    | 'our-team'
+    | 'our-clients'
+    | 'client-reviews'
+    | 'case-studies'
+    | 'roi-calculator-uk'
+    | 'enter-airbnb-market'
+    | 'airbnb-consultancy-and-training'
+    | 'boost-airbnb'
+    | 'airbnb-performance-optimization'
+    | 'services'
+    | 'airbnb-va'
+    | 'direct-booking-engine'
+    | 'lead-generation'
+    | 'social-media-mgt-and-str'
+    | 'systems-building';
   /**
    * When enabled, the slug will auto-generate from the title field on save and autosave.
    */

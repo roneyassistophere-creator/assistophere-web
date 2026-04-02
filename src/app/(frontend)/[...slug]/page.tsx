@@ -5,7 +5,7 @@ import { PayloadRedirects } from '@/components/PayloadRedirects'
 import configPromise from '@payload-config'
 import { getPayload } from 'payload'
 import { draftMode } from 'next/headers'
-import React, { cache } from 'react'
+import React from 'react'
 import { homeStatic } from '@/endpoints/seed/home-static'
 
 import { generateMeta } from '@/utilities/generateMeta'
@@ -15,6 +15,26 @@ import { redirect } from 'next/navigation'
 import { HomeView } from '@/views/Pages/HomeView'
 import { DefaultView } from '@/views/Pages/DefaultView'
 import { MasterView } from '@/views/Pages/MasterView'
+import { AboutUsView } from '@/views/Pages/Company/AboutUs/AboutUsView'
+import { FaqView } from '@/views/Pages/Company/FaqView'
+import { BlogsAndTopicsView } from '@/views/Pages/Company/BlogsAndTopicsView'
+import { TermsAndConditionsView } from '@/views/Pages/Company/TermsAndConditionsView'
+import { PrivacyPolicyView } from '@/views/Pages/Company/PrivacyPolicyView'
+import { OurTeamView } from '@/views/Pages/Company/AboutUs/OurTeamView'
+import { OurClientsView } from '@/views/Pages/Company/AboutUs/OurClientsView'
+import { ClientReviewsView } from '@/views/Pages/Company/AboutUs/ClientReviewsView'
+import { CaseStudiesView } from '@/views/Pages/Company/AboutUs/CaseStudiesView'
+import { RoiCalculatorUkView } from '@/views/Pages/RoiAndPerformance/RoiCalculatorUkView'
+import { EnterAirbnbMarketView } from '@/views/Pages/RoiAndPerformance/EnterAirbnbMarketView'
+import { AirbnbConsultancyAndTrainingView } from '@/views/Pages/RoiAndPerformance/AirbnbConsultancyAndTrainingView'
+import { BoostAirbnbView } from '@/views/Pages/RoiAndPerformance/BoostAirbnbView'
+import { AirbnbPerformanceOptimizationView } from '@/views/Pages/RoiAndPerformance/AirbnbPerformanceOptimizationView'
+import { ServicesView } from '@/views/Pages/Services/ServicesView'
+import { AirbnbVaView } from '@/views/Pages/Services/AirbnbVa/AirbnbVaView'
+import { DirectBookingEngineView } from '@/views/Pages/Services/DirectBookingEngine/DirectBookingEngineView'
+import { LeadGenerationView } from '@/views/Pages/Services/LeadGeneration/LeadGenerationView'
+import { SocialMediaManagementAndStrategyView } from '@/views/Pages/Services/SocialMediaMgtAndStr/SocialMediaManagementAndStrategyView'
+import { SystemsBuildingView } from '@/views/Pages/Services/SystemsBuilding/SystemsBuildingView'
 
 export async function generateStaticParams() {
   const payload = await getPayload({ config: configPromise })
@@ -95,6 +115,66 @@ export default async function Page({ params: paramsPromise }: Args) {
     case 'master':
       ViewComponent = <MasterView page={page} />
       break
+    case 'about-us':
+      ViewComponent = <AboutUsView page={page} />
+      break
+    case 'faq':
+      ViewComponent = <FaqView page={page} />
+      break
+    case 'blogs-and-topics':
+      ViewComponent = <BlogsAndTopicsView page={page} />
+      break
+    case 'terms-and-conditions':
+      ViewComponent = <TermsAndConditionsView page={page} />
+      break
+    case 'privacy-policy':
+      ViewComponent = <PrivacyPolicyView page={page} />
+      break
+    case 'our-team':
+      ViewComponent = <OurTeamView page={page} />
+      break
+    case 'our-clients':
+      ViewComponent = <OurClientsView page={page} />
+      break
+    case 'client-reviews':
+      ViewComponent = <ClientReviewsView page={page} />
+      break
+    case 'case-studies':
+      ViewComponent = <CaseStudiesView page={page} />
+      break
+    case 'roi-calculator-uk':
+      ViewComponent = <RoiCalculatorUkView page={page} />
+      break
+    case 'enter-airbnb-market':
+      ViewComponent = <EnterAirbnbMarketView page={page} />
+      break
+    case 'airbnb-consultancy-and-training':
+      ViewComponent = <AirbnbConsultancyAndTrainingView page={page} />
+      break
+    case 'boost-airbnb':
+      ViewComponent = <BoostAirbnbView page={page} />
+      break
+    case 'airbnb-performance-optimization':
+      ViewComponent = <AirbnbPerformanceOptimizationView page={page} />
+      break
+    case 'services':
+      ViewComponent = <ServicesView page={page} />
+      break
+    case 'airbnb-va':
+      ViewComponent = <AirbnbVaView page={page} />
+      break
+    case 'direct-booking-engine':
+      ViewComponent = <DirectBookingEngineView page={page} />
+      break
+    case 'lead-generation':
+      ViewComponent = <LeadGenerationView page={page} />
+      break
+    case 'social-media-mgt-and-str':
+      ViewComponent = <SocialMediaManagementAndStrategyView page={page} />
+      break
+    case 'systems-building':
+      ViewComponent = <SystemsBuildingView page={page} />
+      break
     case 'default':
     default:
       ViewComponent = <DefaultView page={page} />
@@ -128,7 +208,8 @@ export async function generateMetadata({ params: paramsPromise }: Args): Promise
   return generateMeta({ doc: page })
 }
 
-const queryPageBySlug = cache(async ({ slug }: { slug: string }) => {
+// Remove cache() wrapper to allow instant hot reload in development
+const queryPageBySlug = async ({ slug }: { slug: string }) => {
   const { isEnabled: draft } = await draftMode()
 
   const payload = await getPayload({ config: configPromise })
@@ -148,4 +229,4 @@ const queryPageBySlug = cache(async ({ slug }: { slug: string }) => {
   })
 
   return result.docs?.[0] || null
-})
+}
