@@ -70,27 +70,27 @@ export const HomeView: React.FC<{ page: Page }> = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                icon: <MessageSquare className="size-7 text-blue-600" />,
+                icon: <MessageSquare className="size-7 text-primary" />,
                 text: 'Guest messaging & booking support',
-                bg: 'bg-blue-50 dark:bg-blue-900/20',
+                bg: 'bg-primary/5 dark:bg-primary/10',
                 border: 'border-blue-100 dark:border-blue-900/30'
               },
               {
-                icon: <Wrench className="size-7 text-emerald-600" />,
+                icon: <Wrench className="size-7 text-primary" />,
                 text: 'Cleaning & maintenance coordination',
-                bg: 'bg-emerald-50 dark:bg-emerald-900/20',
+                bg: 'bg-primary/10 dark:bg-primary/10',
                 border: 'border-emerald-100 dark:border-emerald-900/30'
               },
               {
-                icon: <TrendingUp className="size-7 text-amber-600" />,
+                icon: <TrendingUp className="size-7 text-primary" />,
                 text: 'Listing optimisation & pricing support',
                 bg: 'bg-amber-50 dark:bg-amber-900/20',
                 border: 'border-amber-100 dark:border-amber-900/30'
               },
               {
-                icon: <Globe className="size-7 text-purple-600" />,
+                icon: <Globe className="size-7 text-primary" />,
                 text: 'Direct booking & backend systems',
-                bg: 'bg-purple-50 dark:bg-purple-900/20',
+                bg: 'bg-primary/5 dark:bg-primary/10',
                 border: 'border-purple-100 dark:border-purple-900/30'
               },
             ].map((item, idx) => (
@@ -161,11 +161,11 @@ export const HomeView: React.FC<{ page: Page }> = () => {
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-20 max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-100 text-emerald-700 font-bold text-xs uppercase tracking-wider mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-primary/10 text-primary font-bold text-xs uppercase tracking-wider mb-6">
               The Solution
             </div>
             <h2 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">
-              A More Organised, <br /><span className="text-emerald-600">More Profitable</span> STR Business
+              A More Organised, <br /><span className="text-primary">More Profitable</span> STR Business
             </h2>
             <p className="text-xl text-muted-foreground font-light">
               We work as your remote support team. We handle the daily operations while helping you build better systems for long-term growth.
@@ -177,23 +177,23 @@ export const HomeView: React.FC<{ page: Page }> = () => {
               {
                 title: 'Daily Operations',
                 desc: 'We handle guest communication and cleaner coordination so things stay on track without your constant input.',
-                icon: <Settings className="size-8 text-blue-600" />,
-                bg: 'bg-blue-50 dark:bg-blue-900/20',
-                border: 'hover:border-blue-400'
+                icon: <Settings className="size-8 text-primary" />,
+                bg: 'bg-primary/5 dark:bg-primary/10',
+                border: 'hover:border-primary/50'
               },
               {
                 title: 'Listing & Revenue',
                 desc: 'We improve listing presentation, booking flows, and visibility to keep occupancy and revenue strong.',
-                icon: <Layout className="size-8 text-emerald-600" />,
-                bg: 'bg-emerald-50 dark:bg-emerald-900/20',
-                border: 'hover:border-emerald-400'
+                icon: <Layout className="size-8 text-primary" />,
+                bg: 'bg-primary/10 dark:bg-primary/10',
+                border: 'hover:border-primary/50'
               },
               {
                 title: 'Growth & Systems',
                 desc: 'We build a stronger setup overall through direct booking support, SOP structures, and workflow automation.',
-                icon: <Sparkles className="size-8 text-purple-600" />,
-                bg: 'bg-purple-50 dark:bg-purple-900/20',
-                border: 'hover:border-purple-400'
+                icon: <Sparkles className="size-8 text-primary" />,
+                bg: 'bg-primary/5 dark:bg-primary/10',
+                border: 'hover:border-primary/50'
               },
             ].map((block, idx) => (
               <div
@@ -251,7 +251,7 @@ export const HomeView: React.FC<{ page: Page }> = () => {
                   </div>
                   <div>
                     <h3 className="font-bold text-lg mb-2 text-white">{service.title}</h3>
-                    <p className="text-slate-400 text-sm leading-relaxed group-hover:text-primary-foreground/80 transition-colors">
+                    <p className="text-primary-content/80 text-sm leading-relaxed group-hover:text-primary-foreground/80 transition-colors">
                       {service.desc}
                     </p>
                   </div>
@@ -271,7 +271,7 @@ export const HomeView: React.FC<{ page: Page }> = () => {
           </div>
           
           <div className="max-w-5xl mx-auto relative">
-            <div className="hidden md:block absolute top-[45px] left-[10%] right-[10%] h-1 bg-gradient-to-r from-blue-100 via-primary to-purple-100 rounded-full" />
+            <div className="hidden md:block absolute top-[45px] left-[10%] right-[10%] h-1 bg-gradient-to-r from-primary/20 via-primary to-primary/20 rounded-full" />
             
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {[
@@ -304,7 +304,7 @@ export const HomeView: React.FC<{ page: Page }> = () => {
       </section>
 
       {/* 7. Why Assistophere & 8. Outcomes (Combined Value visually) */}
-      <section className="py-24 bg-gradient-to-br from-indigo-50 to-white dark:from-slate-900 dark:to-background overflow-hidden relative">
+      <section className="py-24 bg-gradient-to-br from-primary/5 to-white dark:from-slate-900 dark:to-background overflow-hidden relative">
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
@@ -328,7 +328,7 @@ export const HomeView: React.FC<{ page: Page }> = () => {
                   </div>
                 ))}
               </div>
-              <div className="mt-10 p-6 rounded-2xl bg-gradient-to-r from-primary to-indigo-600 text-white shadow-xl shadow-primary/30">
+              <div className="mt-10 p-6 rounded-2xl bg-gradient-to-r from-primary to-primary/80 text-white shadow-xl shadow-primary/30">
                 <h3 className="text-2xl font-bold mb-2">You stay in control.</h3>
                 <p className="text-primary-foreground/80 text-lg">We help carry the heavy operational load.</p>
               </div>
@@ -339,19 +339,19 @@ export const HomeView: React.FC<{ page: Page }> = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-4 pt-8">
                   <div className="p-8 rounded-3xl bg-white dark:bg-slate-800 shadow-xl border border-slate-100 dark:border-slate-700">
-                    <MessageSquare className="size-10 text-blue-500 mb-4" />
+                    <MessageSquare className="size-10 text-primary mb-4" />
                     <h4 className="font-bold text-lg mb-2">Smoother Journeys</h4>
                     <p className="text-sm text-muted-foreground">Fewer missed messages, highly responsive guest relations.</p>
                   </div>
                   <div className="p-8 rounded-3xl bg-white dark:bg-slate-800 shadow-xl border border-slate-100 dark:border-slate-700">
-                    <CheckCircle2 className="size-10 text-emerald-500 mb-4" />
+                    <CheckCircle2 className="size-10 text-primary mb-4" />
                     <h4 className="font-bold text-lg mb-2">Better Operations</h4>
                     <p className="text-sm text-muted-foreground">Organised cleaning, maintenance, and daily ops structure.</p>
                   </div>
                 </div>
                 <div className="space-y-4">
                   <div className="p-8 rounded-3xl bg-white dark:bg-slate-800 shadow-xl border border-slate-100 dark:border-slate-700">
-                    <Globe className="size-10 text-purple-500 mb-4" />
+                    <Globe className="size-10 text-primary mb-4" />
                     <h4 className="font-bold text-lg mb-2">Stronger Listings</h4>
                     <p className="text-sm text-muted-foreground">Polished presentations ready to capture more bookings.</p>
                   </div>
@@ -393,22 +393,22 @@ export const HomeView: React.FC<{ page: Page }> = () => {
             </div>
             
             <div className="lg:col-span-8">
-              <div className="p-10 rounded-[2.5rem] bg-slate-900 overflow-hidden relative">
+              <div className="p-10 rounded-[2.5rem] bg-primary text-primary-content overflow-hidden relative">
                 <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[100px] pointer-events-none" />
                 <h3 className="text-3xl font-bold text-white mb-4 relative z-10">Beyond Daily Operations</h3>
-                <p className="text-slate-300 text-lg mb-10 max-w-2xl relative z-10">
+                <p className="text-primary-content/90 text-lg mb-10 max-w-2xl relative z-10">
                   We don&apos;t just help you survive the daily workload. We strengthen the backend of your brand for incredible long-term growth.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-6 relative z-10">
                   <div className="p-6 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/10 hover:bg-white/20 transition-colors">
-                    <Globe className="text-blue-400 size-8 mb-4" />
+                    <Globe className="text-primary-content size-8 mb-4" />
                     <h4 className="text-white font-bold text-xl mb-2">Direct Booking Setup</h4>
-                    <p className="text-slate-400 text-sm">Website support, flow ideation, and improving user booking journeys.</p>
+                    <p className="text-primary-content/80 text-sm">Website support, flow ideation, and improving user booking journeys.</p>
                   </div>
                   <div className="p-6 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/10 hover:bg-white/20 transition-colors">
-                    <Settings className="text-purple-400 size-8 mb-4" />
+                    <Settings className="text-primary-content size-8 mb-4" />
                     <h4 className="text-white font-bold text-xl mb-2">Business Systems</h4>
-                    <p className="text-slate-400 text-sm">SOP creation, workflow optimisations, and team support structures.</p>
+                    <p className="text-primary-content/80 text-sm">SOP creation, workflow optimisations, and team support structures.</p>
                   </div>
                 </div>
               </div>
@@ -471,7 +471,7 @@ export const HomeView: React.FC<{ page: Page }> = () => {
         <div className="absolute inset-0 bg-slate-950" />
         <div className="absolute top-0 left-0 w-full h-full">
           <div className="absolute top-1/2 left-1/4 w-[800px] h-[800px] bg-primary/40 rounded-full blur-[150px] -translate-y-1/2 -translate-x-1/2 mix-blend-screen" />
-          <div className="absolute top-1/2 right-1/4 w-[600px] h-[600px] bg-blue-600/30 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 mix-blend-screen" />
+          <div className="absolute top-1/2 right-1/4 w-[600px] h-[600px] bg-primary/30 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 mix-blend-screen" />
         </div>
         
         <div className="container mx-auto px-4 relative z-10 text-center">
