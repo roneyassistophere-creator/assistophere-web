@@ -162,7 +162,7 @@ export const Pages: CollectionConfig<'pages'> = {
         { label: 'Case Studies', value: 'case-studies' },
         { label: 'Services', value: 'services' },
         { label: 'Airbnb VA', value: 'airbnb-va' },
-        { label: 'Direct Booking Engine', value: 'direct-booking-engine' },      
+        { label: 'Direct Booking Engine', value: 'direct-booking-engine' },
         { label: 'Lead Generation', value: 'lead-generation' },
         { label: 'Social Media Management & Strategy', value: 'social-media-mgt-and-str' },
         { label: 'Systems Building', value: 'systems-building' },
