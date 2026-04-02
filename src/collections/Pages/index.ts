@@ -150,29 +150,22 @@ export const Pages: CollectionConfig<'pages'> = {
         { label: 'Default Page', value: 'default' },
         { label: 'Home Page', value: 'home' },
         { label: 'Master (Page Builder)', value: 'master' },
-        // Company
+        // Company Templates
         { label: 'About Us', value: 'about-us' },
         { label: 'FAQ', value: 'faq' },
-        { label: 'Blogs & Topics', value: 'blogs-and-topics' },
-        { label: 'Terms & Conditions', value: 'terms-and-conditions' },
+        { label: 'Blogs and Topics', value: 'blogs-and-topics' },
+        { label: 'Terms and Conditions', value: 'terms-and-conditions' },
         { label: 'Privacy Policy', value: 'privacy-policy' },
         { label: 'Our Team', value: 'our-team' },
         { label: 'Our Clients', value: 'our-clients' },
         { label: 'Client Reviews', value: 'client-reviews' },
         { label: 'Case Studies', value: 'case-studies' },
-        // ROI
+        // ROI and Performance Templates
         { label: 'ROI Calculator UK', value: 'roi-calculator-uk' },
         { label: 'Enter Airbnb Market', value: 'enter-airbnb-market' },
         { label: 'Airbnb Consultancy & Training', value: 'airbnb-consultancy-and-training' },
         { label: 'Boost Airbnb', value: 'boost-airbnb' },
         { label: 'Airbnb Performance Optimization', value: 'airbnb-performance-optimization' },
-        // Services
-        { label: 'Services', value: 'services' },
-        { label: 'Airbnb VA', value: 'airbnb-va' },
-        { label: 'Direct Booking Engine', value: 'direct-booking-engine' },
-        { label: 'Lead Generation', value: 'lead-generation' },
-        { label: 'Social Media Mgt & Str', value: 'social-media-mgt-and-str' },
-        { label: 'Systems Building', value: 'systems-building' },
       ],
       admin: {
         position: 'sidebar',
