@@ -282,7 +282,14 @@ export interface Page {
     | 'case-studies'
     | 'services'
     | 'airbnb-va'
+    | 'multi-platform-listing'
+    | 'listing-creation-optimisation'
     | 'direct-booking-engine'
+    | 'direct-booking-website'
+    | 'booking-engine-integration'
+    | 'payment-setup'
+    | 'seo-organic-growth'
+    | 'google-ads'
     | 'lead-generation'
     | 'social-media-mgt-and-str'
     | 'systems-building'
@@ -290,7 +297,9 @@ export interface Page {
     | 'enter-airbnb-market'
     | 'airbnb-consultancy-and-training'
     | 'boost-airbnb'
-    | 'airbnb-performance-optimization';
+    | 'airbnb-performance-optimization'
+    | 'contact'
+    | 'why-us';
   /**
    * When enabled, the slug will auto-generate from the title field on save and autosave.
    */

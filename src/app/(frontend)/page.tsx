@@ -46,7 +46,7 @@ export default async function HomePage() {
   }
 
   return (
-    <article className="pt-16 pb-24">
+    <article className="pb-24">
       <PageClient />
       <PayloadRedirects disableNotFound url={url} />
 

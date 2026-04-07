@@ -31,10 +31,19 @@ import { BoostAirbnbView } from '@/views/Pages/RoiAndPerformance/BoostAirbnbView
 import { AirbnbPerformanceOptimizationView } from '@/views/Pages/RoiAndPerformance/AirbnbPerformanceOptimizationView'
 import { ServicesView } from '@/views/Pages/Services/ServicesView'
 import { AirbnbVaView } from '@/views/Pages/Services/AirbnbVa/AirbnbVaView'
+import { MultiPlatformListingView } from '@/views/Pages/Services/AirbnbVa/MultiPlatformListingView'
+import { ListingCreationOptimisationView } from '@/views/Pages/Services/AirbnbVa/ListingCreationOptimisationView'
 import { DirectBookingEngineView } from '@/views/Pages/Services/DirectBookingEngine/DirectBookingEngineView'
+import { DirectBookingWebsiteView } from '@/views/Pages/Services/DirectBookingEngine/DirectBookingWebsiteView'
+import { BookingEngineIntegrationView } from '@/views/Pages/Services/DirectBookingEngine/BookingEngineIntegrationView'
+import { PaymentSetupView } from '@/views/Pages/Services/DirectBookingEngine/PaymentSetupView'
+import { SeoOrganicGrowthView } from '@/views/Pages/Services/DirectBookingEngine/SeoOrganicGrowthView'
+import { GoogleAdsView } from '@/views/Pages/Services/DirectBookingEngine/GoogleAdsView'
 import { LeadGenerationView } from '@/views/Pages/Services/LeadGeneration/LeadGenerationView'
 import { SocialMediaManagementAndStrategyView } from '@/views/Pages/Services/SocialMediaMgtAndStr/SocialMediaManagementAndStrategyView'
 import { SystemsBuildingView } from '@/views/Pages/Services/SystemsBuilding/SystemsBuildingView'
+import { ContactView } from '@/views/Pages/ContactView'
+import { WhyUsView } from '@/views/Pages/Company/WhyUsView'
 
 export async function generateStaticParams() {
   const payload = await getPayload({ config: configPromise })
@@ -163,8 +172,29 @@ export default async function Page({ params: paramsPromise }: Args) {
     case 'airbnb-va':
       ViewComponent = <AirbnbVaView page={page} />
       break
+    case 'multi-platform-listing':
+      ViewComponent = <MultiPlatformListingView page={page} />
+      break
+    case 'listing-creation-optimisation':
+      ViewComponent = <ListingCreationOptimisationView page={page} />
+      break
     case 'direct-booking-engine':
       ViewComponent = <DirectBookingEngineView page={page} />
+      break
+    case 'direct-booking-website':
+      ViewComponent = <DirectBookingWebsiteView page={page} />
+      break
+    case 'booking-engine-integration':
+      ViewComponent = <BookingEngineIntegrationView page={page} />
+      break
+    case 'payment-setup':
+      ViewComponent = <PaymentSetupView page={page} />
+      break
+    case 'seo-organic-growth':
+      ViewComponent = <SeoOrganicGrowthView page={page} />
+      break
+    case 'google-ads':
+      ViewComponent = <GoogleAdsView page={page} />
       break
     case 'lead-generation':
       ViewComponent = <LeadGenerationView page={page} />
@@ -175,6 +205,12 @@ export default async function Page({ params: paramsPromise }: Args) {
     case 'systems-building':
       ViewComponent = <SystemsBuildingView page={page} />
       break
+    case 'contact':
+      ViewComponent = <ContactView page={page} />
+      break
+    case 'why-us':
+      ViewComponent = <WhyUsView page={page} />
+      break
     case 'default':
     default:
       ViewComponent = <DefaultView page={page} />
@@ -182,7 +218,7 @@ export default async function Page({ params: paramsPromise }: Args) {
   }
 
   return (
-    <article className="pt-16 pb-24">
+    <article className="pb-24">
       <PageClient />
       {/* Allows redirects for valid pages too */}
       <PayloadRedirects disableNotFound url={url} />

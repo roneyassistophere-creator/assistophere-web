@@ -3,6 +3,7 @@ import { useHeaderTheme } from '@/providers/HeaderTheme'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
+import { Phone } from 'lucide-react'
 
 import type { Header, SiteSetting } from '@/payload-types'
 
@@ -39,30 +40,52 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data, siteSettings }
 
   return (
     <header
-      className="sticky top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border"
+      className="sticky top-0 w-full z-50 bg-background/75 backdrop-blur-xl border-b border-white/6 shadow-[0_1px_0_rgba(255,255,255,0.04)]"
       {...(theme ? { 'data-theme': theme } : {})}
     >
-      <div className="container mx-auto px-4 md:px-6 lg:px-8 py-3 md:py-4 flex items-center justify-between gap-4 lg:gap-8">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 py-2.5 md:py-3 flex items-center justify-between gap-4 lg:gap-8">
         <Link href="/" className="shrink-0 flex items-center">
           <Logo
             loading="eager"
             priority="high"
-            className="h-6 sm:h-7 md:h-8 w-auto object-contain transition-all"
+            className="h-9 sm:h-10 w-auto object-contain transition-all"
             lightLogoUrl={lightLogoUrl ?? undefined}
             darkLogoUrl={darkLogoUrl ?? undefined}
           />
         </Link>
-        <div className="flex items-center justify-end flex-1 gap-3 md:gap-6">
+        <div className="flex items-center justify-end flex-1 gap-3 md:gap-5">
           <HeaderNav data={data} />
-          <div className="hidden lg:flex items-center gap-3 shrink-0">
-            <Button asChild variant="ghost" className="font-medium text-sm hidden xl:inline-flex">
-              <a href="tel:+447957792701">+44 7957 792701</a>
-            </Button>
-            <Button asChild size="sm" className="font-semibold rounded-full px-5">
+          <div className="hidden lg:flex items-center gap-2.5 shrink-0">
+            <a
+              href="tel:+447957792701"
+              className="hidden xl:inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/12 hover:bg-emerald-500/22 border border-emerald-500/25 hover:border-emerald-500/45 text-emerald-400 text-xs font-semibold transition-all duration-200 group"
+            >
+              <style>{`
+                @keyframes ring {
+                  0%, 100% { transform: rotate(0deg); }
+                  10% { transform: rotate(-18deg); }
+                  20% { transform: rotate(18deg); }
+                  30% { transform: rotate(-12deg); }
+                  40% { transform: rotate(12deg); }
+                  50% { transform: rotate(0deg); }
+                }
+                .phone-ring {
+                  animation: ring 3s ease-in-out infinite;
+                  transform-origin: top center;
+                }
+              `}</style>
+              <Phone className="phone-ring w-3 h-3 shrink-0" />
+              +44 7957 792701
+            </a>
+            <Button
+              asChild
+              size="sm"
+              className="font-semibold rounded-full px-5 h-8 text-xs bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20 hover:shadow-primary/35 transition-all duration-200"
+            >
               <Link href="/free-audit">Free Audit</Link>
             </Button>
           </div>
-          <div className="shrink-0 border-l border-border pl-3 md:pl-4 ml-1 md:ml-2">
+          <div className="shrink-0 border-l border-white/8 pl-3 md:pl-3.5 ml-0.5">
             <ThemeController />
           </div>
         </div>

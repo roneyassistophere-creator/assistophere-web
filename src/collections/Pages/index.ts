@@ -162,7 +162,14 @@ export const Pages: CollectionConfig<'pages'> = {
         { label: 'Case Studies', value: 'case-studies' },
         { label: 'Services', value: 'services' },
         { label: 'Airbnb VA', value: 'airbnb-va' },
+        { label: 'Multi-Platform Listing', value: 'multi-platform-listing' },
+        { label: 'Listing Creation & Optimisation', value: 'listing-creation-optimisation' },
         { label: 'Direct Booking Engine', value: 'direct-booking-engine' },
+        { label: 'Direct Booking Website', value: 'direct-booking-website' },
+        { label: 'Booking Engine Integration', value: 'booking-engine-integration' },
+        { label: 'Payment Setup', value: 'payment-setup' },
+        { label: 'SEO & Organic Growth', value: 'seo-organic-growth' },
+        { label: 'Google Ads', value: 'google-ads' },
         { label: 'Lead Generation', value: 'lead-generation' },
         { label: 'Social Media Management & Strategy', value: 'social-media-mgt-and-str' },
         { label: 'Systems Building', value: 'systems-building' },
@@ -172,6 +179,10 @@ export const Pages: CollectionConfig<'pages'> = {
         { label: 'Airbnb Consultancy & Training', value: 'airbnb-consultancy-and-training' },
         { label: 'Boost Airbnb', value: 'boost-airbnb' },
         { label: 'Airbnb Performance Optimization', value: 'airbnb-performance-optimization' },
+        // Contact
+        { label: 'Contact', value: 'contact' },
+        // Why Us
+        { label: 'Why Us', value: 'why-us' },
       ],
       admin: {
         position: 'sidebar',
