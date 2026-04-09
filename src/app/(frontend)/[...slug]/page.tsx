@@ -33,8 +33,19 @@ import { ServicesView } from '@/views/Pages/Services/ServicesView'
 import { AirbnbVaView } from '@/views/Pages/Services/AirbnbVa/AirbnbVaView'
 import { MultiPlatformListingView } from '@/views/Pages/Services/AirbnbVa/MultiPlatformListingView'
 import { ListingCreationOptimisationView } from '@/views/Pages/Services/AirbnbVa/ListingCreationOptimisationView'
+import { PricingOptimisationView } from '@/views/Pages/Services/AirbnbVa/PricingOptimisationView'
+import { ProfessionalPhotographyView } from '@/views/Pages/Services/AirbnbVa/ProfessionalPhotographyView'
+import { GuestCommunicationView } from '@/views/Pages/Services/AirbnbVa/GuestCommunicationView'
+import { GuestVettingView } from '@/views/Pages/Services/AirbnbVa/GuestVettingView'
+import { GuestCheckInOutView } from '@/views/Pages/Services/AirbnbVa/GuestCheckInOutView'
+import { CalendarManagementView } from '@/views/Pages/Services/AirbnbVa/CalendarManagementView'
+import { CleaningCoordinationView } from '@/views/Pages/Services/AirbnbVa/CleaningCoordinationView'
+import { LinenToiletriesView } from '@/views/Pages/Services/AirbnbVa/LinenToiletriesView'
+import { PropertyMaintenanceView } from '@/views/Pages/Services/AirbnbVa/PropertyMaintenanceView'
+import { MonthlyFinanceReportingView } from '@/views/Pages/Services/AirbnbVa/MonthlyFinanceReportingView'
 import { DirectBookingEngineView } from '@/views/Pages/Services/DirectBookingEngine/DirectBookingEngineView'
 import { DirectBookingWebsiteView } from '@/views/Pages/Services/DirectBookingEngine/DirectBookingWebsiteView'
+import { DirectBookingConversionsView } from '@/views/Pages/Services/AirbnbVa/DirectBookingConversionsView'
 import { BookingEngineIntegrationView } from '@/views/Pages/Services/DirectBookingEngine/BookingEngineIntegrationView'
 import { PaymentSetupView } from '@/views/Pages/Services/DirectBookingEngine/PaymentSetupView'
 import { SeoOrganicGrowthView } from '@/views/Pages/Services/DirectBookingEngine/SeoOrganicGrowthView'
@@ -178,11 +189,44 @@ export default async function Page({ params: paramsPromise }: Args) {
     case 'listing-creation-optimisation':
       ViewComponent = <ListingCreationOptimisationView page={page} />
       break
+    case 'pricing-optimisation':
+      ViewComponent = <PricingOptimisationView page={page} />
+      break
+    case 'professional-photography':
+      ViewComponent = <ProfessionalPhotographyView page={page} />
+      break
+    case 'guest-communication':
+      ViewComponent = <GuestCommunicationView page={page} />
+      break
+    case 'guest-vetting':
+      ViewComponent = <GuestVettingView page={page} />
+      break
+    case 'guest-check-in-check-out':
+      ViewComponent = <GuestCheckInOutView page={page} />
+      break
+    case 'calendar-management':
+      ViewComponent = <CalendarManagementView page={page} />
+      break
+    case 'cleaning-coordination':
+      ViewComponent = <CleaningCoordinationView page={page} />
+      break
+    case 'linen-toiletries':
+      ViewComponent = <LinenToiletriesView page={page} />
+      break
+    case 'property-maintenance':
+      ViewComponent = <PropertyMaintenanceView page={page} />
+      break
+    case 'monthly-finance-reporting':
+      ViewComponent = <MonthlyFinanceReportingView page={page} />
+      break
     case 'direct-booking-engine':
       ViewComponent = <DirectBookingEngineView page={page} />
       break
     case 'direct-booking-website':
       ViewComponent = <DirectBookingWebsiteView page={page} />
+      break
+    case 'direct-booking-conversions':
+      ViewComponent = <DirectBookingConversionsView page={page} />
       break
     case 'booking-engine-integration':
       ViewComponent = <BookingEngineIntegrationView page={page} />
