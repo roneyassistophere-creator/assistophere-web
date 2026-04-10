@@ -1,85 +1,88 @@
 import React from 'react'
+import Link from 'next/link'
 import {
-  Instagram,
+  Palette,
   LayoutGrid,
   Star,
   Phone,
   ArrowRight,
   CheckCircle2,
   XCircle,
-  Calendar,
-  Palette,
   MessageSquare,
   ChevronRight,
   AlertTriangle,
   TrendingUp,
-  Megaphone,
   Target,
   Building2,
-  Zap,
-  Smartphone,
   Layers,
-  Globe,
+  Zap,
   BarChart3,
+  Globe,
+  Sparkles,
+  ShieldCheck,
+  Users,
 } from 'lucide-react'
 import type { Page } from '@/payload-types'
 
-export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = () => {
+export const BrandGrowthView: React.FC<{ page: Page }> = () => {
   return (
     <div className="min-h-screen text-base-content overflow-x-hidden">
       <style>{`
-        @keyframes pulse-ring-smm {
+        @keyframes pulse-ring-bg {
           0%,100% { box-shadow: 0 0 0 0 hsl(var(--p)/.35); }
           50%      { box-shadow: 0 0 0 10px hsl(var(--p)/0); }
         }
-        @keyframes smm-fade-up {
+        @keyframes bg-fade-up {
           from { opacity:0; transform:translateY(22px); }
           to   { opacity:1; transform:translateY(0); }
         }
-        .smm-fade-1 { animation: smm-fade-up .55s ease both .10s; }
-        .smm-fade-2 { animation: smm-fade-up .55s ease both .22s; }
-        .smm-fade-3 { animation: smm-fade-up .55s ease both .34s; }
-        .smm-fade-4 { animation: smm-fade-up .55s ease both .46s; }
-        .smm-fade-5 { animation: smm-fade-up .55s ease both .58s; }
-        .pulse-cta-smm { animation: pulse-ring-smm 2.4s ease-in-out infinite; }
+        .bg-fade-1 { animation: bg-fade-up .55s ease both .10s; }
+        .bg-fade-2 { animation: bg-fade-up .55s ease both .22s; }
+        .bg-fade-3 { animation: bg-fade-up .55s ease both .34s; }
+        .bg-fade-4 { animation: bg-fade-up .55s ease both .46s; }
+        .bg-fade-5 { animation: bg-fade-up .55s ease both .58s; }
+        .pulse-cta-bg { animation: pulse-ring-bg 2.4s ease-in-out infinite; }
       `}</style>
 
       {/* ── HERO ─────────────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden pt-16 pb-16 lg:pt-20 lg:pb-20">
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-          <div className="absolute -top-32 -left-32 w-[520px] h-[520px] bg-linear-to-br from-primary/13 via-primary/4 to-transparent rounded-full blur-[140px]" />
-          <div className="absolute top-1/2 -right-40 w-[420px] h-[420px] bg-linear-to-bl from-secondary/10 via-secondary/3 to-transparent rounded-full blur-[120px]" />
+          <div className="absolute -top-32 -left-32 w-130 h-130 bg-linear-to-br from-primary/13 via-primary/4 to-transparent rounded-full blur-[140px]" />
+          <div className="absolute top-1/2 -right-40 w-105 h-105 bg-linear-to-bl from-secondary/10 via-secondary/3 to-transparent rounded-full blur-[120px]" />
         </div>
         <div className="container max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="space-y-6">
-              <div className="smm-fade-1 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium">
-                <Instagram className="w-4 h-4" />
-                Social Media Management · UK STR
+              <div className="bg-fade-1 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium">
+                <Sparkles className="w-4 h-4" />
+                Brand Growth · UK STR
               </div>
-              <h1 className="smm-fade-2 text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-[1.08] tracking-tight">
-                Social Media Management That Supports Your{' '}
+              <h1 className="bg-fade-2 text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-[1.08] tracking-tight">
+                Build a Brand That Goes{' '}
                 <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary">
-                  STR Growth
+                  Beyond Just Listings
                 </span>
               </h1>
-              <p className="smm-fade-3 text-lg text-base-content/70 leading-relaxed max-w-lg">
-                Assistophere helps UK hosts manage social media with structured content and
-                strategy, building brand presence and supporting direct booking growth.
+              <p className="bg-fade-3 text-lg text-base-content/70 leading-relaxed max-w-lg">
+                Assistophere helps UK hosts grow their STR brand, making their business more
+                recognisable, trusted, and positioned for long-term growth.
               </p>
-              <div className="smm-fade-4 p-4 rounded-xl border border-primary/20 bg-primary/6 text-sm italic text-base-content/65">
-                Social media management for STR businesses involves creating content, maintaining
-                consistency, and building a brand presence to attract and convert potential guests.
+              <div className="bg-fade-4 p-4 rounded-xl border border-primary/20 bg-primary/6 text-sm italic text-base-content/65">
+                Brand growth in STR businesses involves building a consistent identity, improving
+                visibility, and creating trust that supports direct bookings and long-term success.
               </div>
-              <div className="smm-fade-5 flex flex-wrap gap-3 pt-1">
-                <button className="pulse-cta-smm btn btn-primary btn-lg rounded-full px-8 gap-2">
+              <div className="bg-fade-5 flex flex-wrap gap-3 pt-1">
+                <button className="pulse-cta-bg btn btn-primary btn-lg rounded-full px-8 gap-2">
                   <Phone className="w-4 h-4" /> Book a Discovery Call
                 </button>
-                <button className="btn btn-outline btn-lg rounded-full px-8 gap-2">
-                  <ArrowRight className="w-4 h-4" /> See How It Works
-                </button>
+                <Link
+                  href="/services/social-media-management"
+                  className="btn btn-outline btn-lg rounded-full px-8 gap-2"
+                >
+                  <ArrowRight className="w-4 h-4" /> Back to Social Media Management
+                </Link>
               </div>
-              <div className="smm-fade-5 flex items-center gap-3 pt-2">
+              <div className="bg-fade-5 flex items-center gap-3 pt-2">
                 <div className="flex -space-x-2">
                   {['bg-primary', 'bg-secondary', 'bg-accent', 'bg-neutral'].map((c, i) => (
                     <div
@@ -97,63 +100,72 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
                     ))}
                   </div>
                   <p className="text-xs text-base-content/55 mt-0.5">
-                    Trusted by UK STR hosts and SA operators
+                    Building STR brands across the UK
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Hero visual — Instagram-style grid preview */}
+            {/* Hero visual — brand identity card */}
             <div className="hidden lg:block">
-              <div className="relative rounded-3xl border border-base-300 bg-base-200/60 backdrop-blur-sm p-6 shadow-xl">
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="w-9 h-9 rounded-full bg-linear-to-br from-primary to-secondary flex items-center justify-center">
-                    <Instagram className="w-4 h-4 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold">@yourstrbrand</p>
-                    <p className="text-[10px] text-base-content/40">Serviced Accommodation · UK</p>
-                  </div>
-                  <div className="ml-auto flex gap-4 text-center">
-                    {[
-                      ['24', 'Posts'],
-                      ['1.2k', 'Followers'],
-                      ['340', 'Reach'],
-                    ].map(([v, l]) => (
-                      <div key={l}>
-                        <p className="text-xs font-extrabold">{v}</p>
-                        <p className="text-[9px] text-base-content/40">{l}</p>
-                      </div>
-                    ))}
+              <div className="relative rounded-3xl border border-base-300 bg-base-200/60 backdrop-blur-sm p-6 shadow-xl space-y-4">
+                {/* Mock brand kit */}
+                <div className="flex items-center justify-between mb-1">
+                  <p className="text-xs font-bold">Brand Identity Overview</p>
+                  <span className="badge badge-primary badge-sm">Active</span>
+                </div>
+                {/* Colour palette */}
+                <div className="bg-base-100 rounded-2xl border border-base-300 p-4 space-y-2">
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-base-content/40">
+                    Colour Palette
+                  </p>
+                  <div className="flex gap-2">
+                    {['bg-primary', 'bg-secondary', 'bg-accent', 'bg-neutral', 'bg-base-300'].map(
+                      (c, i) => (
+                        <div key={i} className={`w-8 h-8 rounded-lg ${c} border border-base-300`} />
+                      ),
+                    )}
                   </div>
                 </div>
-                {/* 3×3 grid */}
-                <div className="grid grid-cols-3 gap-1.5 mb-4">
+                {/* Platform scores */}
+                <div className="bg-base-100 rounded-2xl border border-base-300 p-4 space-y-2">
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-base-content/40">
+                    Brand Presence
+                  </p>
                   {[
-                    { bg: 'bg-primary/15', label: 'Property Showcase', icon: Building2 },
-                    { bg: 'bg-secondary/12', label: 'Guest Experience', icon: Star },
-                    { bg: 'bg-success/10', label: 'Local Area', icon: Globe },
-                    { bg: 'bg-warning/12', label: 'Behind the Scenes', icon: Layers },
-                    { bg: 'bg-primary/20', label: 'Amenities', icon: Zap },
-                    { bg: 'bg-accent/10', label: 'Direct Booking', icon: TrendingUp },
-                    { bg: 'bg-secondary/15', label: 'Review Feature', icon: MessageSquare },
-                    { bg: 'bg-success/12', label: 'Seasonal Promo', icon: Calendar },
-                    { bg: 'bg-primary/10', label: 'Brand Story', icon: Palette },
-                  ].map(({ bg, label, icon: Icon }, i) => (
-                    <div
-                      key={i}
-                      className={`${bg} rounded-xl aspect-square flex flex-col items-center justify-center gap-1 p-2`}
-                    >
-                      <Icon className="w-4 h-4 text-base-content/40" />
-                      <p className="text-[9px] text-base-content/40 text-center leading-tight">
-                        {label}
-                      </p>
+                    { label: 'Visual Consistency', val: 92 },
+                    { label: 'Messaging Clarity', val: 87 },
+                    { label: 'Platform Activity', val: 95 },
+                  ].map(({ label, val }) => (
+                    <div key={label}>
+                      <div className="flex justify-between mb-1">
+                        <span className="text-[10px] text-base-content/60">{label}</span>
+                        <span className="text-[10px] font-bold text-primary">{val}%</span>
+                      </div>
+                      <div className="h-1.5 rounded-full bg-base-300 overflow-hidden">
+                        <div
+                          className="h-full rounded-full bg-primary"
+                          style={{ width: `${val}%` }}
+                        />
+                      </div>
                     </div>
                   ))}
                 </div>
-                <div className="bg-base-100 rounded-xl border border-primary/20 px-4 py-2.5 flex items-center justify-between">
-                  <span className="text-xs text-base-content/50">Content scheduled this week</span>
-                  <span className="text-xs font-bold text-primary">5 posts</span>
+                {/* Brand pillars */}
+                <div className="grid grid-cols-3 gap-2">
+                  {[
+                    { icon: Palette, label: 'Visual', colour: 'bg-primary/10' },
+                    { icon: MessageSquare, label: 'Messaging', colour: 'bg-secondary/10' },
+                    { icon: ShieldCheck, label: 'Trust', colour: 'bg-success/10' },
+                  ].map(({ icon: Icon, label, colour }) => (
+                    <div
+                      key={label}
+                      className={`${colour} rounded-xl py-3 flex flex-col items-center gap-1`}
+                    >
+                      <Icon className="w-4 h-4 text-base-content/50" />
+                      <p className="text-[9px] text-base-content/40">{label}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -164,50 +176,77 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
       {/* ── CLARITY ──────────────────────────────────────────────────────────── */}
       <section className="bg-base-200 border-y border-base-300 py-20 lg:py-28">
         <div className="container max-w-7xl mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center space-y-6">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-2">
-              <LayoutGrid className="w-4 h-4" /> The Real Picture
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-10">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-4">
+                <LayoutGrid className="w-4 h-4" /> The Distinction
+              </div>
+              <h2 className="text-3xl lg:text-4xl font-bold">
+                Listings Get Bookings. Brands Build Businesses.
+              </h2>
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold">
-              Social Media Isn&apos;t Just Posting Content
-            </h2>
-            <p className="text-base-content/65 text-lg leading-relaxed">
-              Most STR businesses either don&apos;t post at all, or post inconsistently without any
-              clear direction. For short-term rentals, social media is one of the few channels you
-              fully control — but only if it&apos;s managed properly.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-              {[
-                {
-                  icon: TrendingUp,
-                  title: 'Build trust',
-                  desc: 'Consistent, professional content signals that your property and business are credible.',
-                },
-                {
-                  icon: Building2,
-                  title: 'Showcase properties',
-                  desc: 'Show potential guests exactly what they&apos;re booking before they ever visit a listing.',
-                },
-                {
-                  icon: Target,
-                  title: 'Attract direct bookings',
-                  desc: 'Social media builds the audience and brand presence that drives traffic outside of Airbnb.',
-                },
-              ].map(({ icon: Icon, title, desc }) => (
-                <div
-                  key={title}
-                  className="bg-base-100 rounded-2xl border border-primary/15 p-5 text-left"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-3">
-                    <Icon className="w-5 h-5 text-primary" />
-                  </div>
-                  <p className="font-semibold text-sm">{title}</p>
-                  <p className="text-xs text-base-content/55 mt-1 leading-relaxed">{desc}</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-base-100 rounded-2xl border border-error/20 p-6">
+                <p className="text-xs font-bold uppercase tracking-widest text-error/70 mb-4">
+                  Listing-only approach
+                </p>
+                <div className="space-y-3">
+                  {[
+                    [
+                      'Platform dependent',
+                      "Your entire revenue depends on Airbnb, OTAs, and platforms you don't own or control. Algorithm changes affect you directly.",
+                    ],
+                    [
+                      'No recognition',
+                      "Guests don't remember who you are — they just remember the platform they booked through. You're interchangeable with every other host.",
+                    ],
+                    [
+                      'No audience',
+                      'Without a brand, you have no way to market directly, build repeat guests, or create the loyalty that drives long-term growth.',
+                    ],
+                  ].map(([label, detail]) => (
+                    <div key={label} className="flex gap-3">
+                      <XCircle className="w-4 h-4 text-error shrink-0 mt-0.5" />
+                      <div>
+                        <p className="text-sm font-semibold">{label}</p>
+                        <p className="text-xs text-base-content/55 mt-0.5">{detail}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+              <div className="bg-base-100 rounded-2xl border border-success/20 p-6">
+                <p className="text-xs font-bold uppercase tracking-widest text-success/70 mb-4">
+                  Brand-based approach
+                </p>
+                <div className="space-y-3">
+                  {[
+                    [
+                      'Builds recognition',
+                      'A consistent brand means guests know who you are before they book — and remember you when they want to book again.',
+                    ],
+                    [
+                      'Creates trust',
+                      'Trust is the most powerful booking signal. A visible, professional brand communicates credibility before a guest reads a single review.',
+                    ],
+                    [
+                      'Supports direct bookings',
+                      "A recognisable brand is what enables direct booking growth — it's the asset that makes guests choose you over the platform.",
+                    ],
+                  ].map(([label, detail]) => (
+                    <div key={label} className="flex gap-3">
+                      <CheckCircle2 className="w-4 h-4 text-success shrink-0 mt-0.5" />
+                      <div>
+                        <p className="text-sm font-semibold">{label}</p>
+                        <p className="text-xs text-base-content/55 mt-0.5">{detail}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
-            <p className="text-base-content/55 text-sm italic">
-              Without structure, social media becomes inconsistent and ineffective.
+            <p className="text-center text-base-content/55 mt-6 italic text-sm">
+              Without a brand, growth depends entirely on platforms you don&apos;t control.
             </p>
           </div>
         </div>
@@ -222,35 +261,35 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
                 <XCircle className="w-4 h-4" /> The Problem
               </div>
               <h2 className="text-3xl lg:text-4xl font-bold">
-                Why Most STR Social Media Doesn&apos;t Work
+                Why Most STR Businesses Stay Invisible
               </h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 {
-                  point: 'Inconsistent posting',
+                  point: 'No clear identity',
                   detail:
-                    "Sporadic content signals an inactive brand. The algorithm deprioritises irregular accounts, and potential guests don't build familiarity or trust.",
+                    "Most STR businesses have no defined brand — no name beyond the property address, no visual identity, no consistent voice. There's nothing to recognise or remember.",
                 },
                 {
-                  point: 'No clear strategy',
+                  point: 'Inconsistent visuals',
                   detail:
-                    "Posting without a plan means content doesn't connect to any business goal — it's activity for the sake of activity, not results.",
+                    'Photos that vary by season, logos that change, social posts with no cohesion — inconsistency destroys the trust that brand building requires.',
                 },
                 {
-                  point: 'Low-quality content',
+                  point: 'No brand messaging',
                   detail:
-                    'Blurry photos, poor captions, and generic text fail to communicate what makes your property worth booking.',
+                    "Without a defined message — who you serve, what makes you different, why guests should choose you — there's nothing compelling to communicate.",
                 },
                 {
-                  point: 'No branding',
+                  point: 'Reliance on Airbnb only',
                   detail:
-                    "When your content looks different every week, there's no recognition. A cohesive visual identity is what makes a brand memorable.",
+                    'Hosts who depend entirely on OTAs have no direct relationship with their guests. Platform changes, commission increases, or algorithm shifts immediately threaten the business.',
                 },
                 {
-                  point: 'No connection to bookings',
+                  point: 'No audience building',
                   detail:
-                    "Social media only drives revenue when it's structured with a clear path from content to enquiry to booking.",
+                    "Without social media, email, or any owned channel, there's no audience to market to. Every booking starts from scratch with a cold stranger on a platform.",
                 },
               ].map(({ point, detail }) => (
                 <div
@@ -266,44 +305,42 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
               ))}
             </div>
             <p className="text-center text-base-content/55 mt-8 italic text-sm">
-              Posting without direction doesn&apos;t lead to results.
+              Without a brand, you are just another listing.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ── WHAT IT SHOULD LOOK LIKE ─────────────────────────────────────────── */}
+      {/* ── WHAT BRAND GROWTH ACTUALLY MEANS ────────────────────────────────── */}
       <section className="bg-base-200 border-y border-base-300 py-20 lg:py-28">
         <div className="container max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-4">
-              <CheckCircle2 className="w-4 h-4" /> The Standard
+              <Zap className="w-4 h-4" /> What It Involves
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold">
-              What Proper Social Media Management Looks Like
-            </h2>
+            <h2 className="text-3xl lg:text-4xl font-bold">What Building an STR Brand Involves</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">
             {[
               {
-                icon: Calendar,
-                title: 'Consistent Presence',
-                desc: 'Regular, scheduled posting maintained week on week — no gaps, no missed weeks. The algorithm rewards consistency, and so do potential guests.',
-              },
-              {
                 icon: Palette,
-                title: 'Clear Branding',
-                desc: 'A recognisable visual identity across every post — colour palette, typography, photography style, and tone all aligned to your property and audience.',
-              },
-              {
-                icon: Building2,
-                title: 'Property Showcase',
-                desc: "Content that deliberately highlights your property's best features, spaces, and guest experience — turning followers into enquiries.",
+                title: 'Visual Identity',
+                desc: 'A consistent look across every touchpoint — social content, listing photos, website, communications. Recognisability is built through visual repetition.',
               },
               {
                 icon: MessageSquare,
-                title: 'Audience Engagement',
-                desc: 'Content that connects with the right people — potential guests, returning guests, and referral sources — not just empty impressions.',
+                title: 'Messaging',
+                desc: "A clear, consistent voice and message that tells potential guests who you are, what you offer, and why you're the right choice over a generic listing.",
+              },
+              {
+                icon: LayoutGrid,
+                title: 'Consistency',
+                desc: "Brand growth requires showing up regularly — across platforms, content types, and audience touchpoints. Sporadic presence doesn't build recognition.",
+              },
+              {
+                icon: ShieldCheck,
+                title: 'Trust Building',
+                desc: "Trust is the outcome of consistent, professional brand presence over time. It's what converts a warm audience into a direct booking.",
               },
             ].map(({ icon: Icon, title, desc }, i) => (
               <div
@@ -324,20 +361,18 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
         </div>
       </section>
 
-      {/* ── WHAT WE HANDLE ───────────────────────────────────────────────────── */}
+      {/* ── WHAT WE BUILD ────────────────────────────────────────────────────── */}
       <section className="py-20 lg:py-28">
         <div className="container max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-4">
               <Layers className="w-4 h-4" /> Our Scope
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold">
-              What Our Social Media Management Covers
-            </h2>
+            <h2 className="text-3xl lg:text-4xl font-bold">What Our Brand Growth Covers</h2>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr_1.5fr] gap-px bg-base-300 rounded-3xl overflow-hidden border border-base-300">
             <div className="bg-base-200 px-5 py-3 text-xs font-bold uppercase tracking-widest text-base-content/40">
-              Area
+              Brand Area
             </div>
             <div className="bg-base-200 px-5 py-3 text-xs font-bold uppercase tracking-widest text-base-content/40">
               What We Do
@@ -347,56 +382,59 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
             </div>
             {[
               {
-                area: 'Content Creation',
-                icon: Palette,
-                tasks: [
-                  'Designing branded post graphics and visuals',
-                  'Writing captions and copy aligned to your audience',
-                  'Structuring content themes to cover different aspects of your property',
-                ],
-                outcome:
-                  'Professional, on-brand content that showcases your property consistently.',
-              },
-              {
-                area: 'Posting & Scheduling',
-                icon: Calendar,
-                tasks: [
-                  'Maintaining a consistent posting schedule across platforms',
-                  'Planning content calendars in advance',
-                  'Managing publish times for maximum reach',
-                ],
-                outcome: 'No gaps, no last-minute scrambles — your content runs like clockwork.',
-              },
-              {
-                area: 'Brand Development',
-                icon: Palette,
-                tasks: [
-                  'Creating or refining your visual identity for social',
-                  'Aligning content style across all posts and platforms',
-                  'Improving the overall presentation and professionalism',
-                ],
-                outcome: 'A recognisable, credible brand that guests remember.',
-              },
-              {
-                area: 'Platform Management',
-                icon: Smartphone,
-                tasks: [
-                  'Managing your Instagram, Facebook, or TikTok accounts',
-                  'Keeping content organised and accounts active',
-                  'Monitoring performance and adjusting accordingly',
-                ],
-                outcome: 'Accounts that stay active, consistent, and growing.',
-              },
-              {
-                area: 'Strategy Alignment',
+                area: 'Brand Positioning',
                 icon: Target,
                 tasks: [
-                  'Linking content themes with your booking and revenue goals',
-                  'Supporting direct booking growth through social presence',
-                  'Connecting social activity to broader marketing activity',
+                  'Defining your brand identity and what makes you distinct',
+                  "Clarifying your offering and who it's built for",
+                  'Standing out in a market full of generic listings',
                 ],
                 outcome:
-                  'Social media that contributes to your business — not just vanity metrics.',
+                  'A clear brand position that differentiates your property and business from competitors.',
+              },
+              {
+                area: 'Visual Consistency',
+                icon: Palette,
+                tasks: [
+                  'Aligning content style, colours, and visual tone across all platforms',
+                  'Improving presentation quality across posts and listings',
+                  'Maintaining a consistent brand look over time',
+                ],
+                outcome:
+                  'A recognisable visual identity that builds familiarity and professionalism with every piece of content.',
+              },
+              {
+                area: 'Content Alignment',
+                icon: LayoutGrid,
+                tasks: [
+                  'Ensuring messaging is consistent across all content',
+                  'Structuring content to reinforce your brand identity',
+                  'Supporting brand-building through every post published',
+                ],
+                outcome:
+                  'Content that actively builds your brand rather than just filling a schedule.',
+              },
+              {
+                area: 'Platform Presence',
+                icon: Globe,
+                tasks: [
+                  'Building sustained visibility across social media platforms',
+                  'Maintaining consistent account activity to grow recognition',
+                  'Strengthening brand presence in the STR market',
+                ],
+                outcome:
+                  'An active, visible brand presence that grows your audience and builds long-term trust.',
+              },
+              {
+                area: 'Direct Booking Support',
+                icon: TrendingUp,
+                tasks: [
+                  'Aligning brand strategy with your direct booking website',
+                  'Improving trust signals that convert social followers to bookers',
+                  'Supporting direct booking growth through brand authority',
+                ],
+                outcome:
+                  'A brand that reduces platform dependency and drives bookings through channels you own.',
               },
             ].map(({ area, icon: Icon, tasks, outcome }) => (
               <React.Fragment key={area}>
@@ -422,52 +460,60 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
             ))}
           </div>
           <p className="text-center mt-8 text-base-content/60 text-sm">
-            The result: a structured social media presence that actively supports your business.
+            The result: a recognisable STR brand that supports growth beyond platforms.
           </p>
         </div>
       </section>
 
-      {/* ── CONNECTS TO BUSINESS ─────────────────────────────────────────────── */}
+      {/* ── HOW BRAND CONNECTS TO BUSINESS ──────────────────────────────────── */}
       <section className="bg-base-200 border-y border-base-300 py-20 lg:py-28">
         <div className="container max-w-7xl mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-10">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-success/10 border border-success/25 text-success text-sm font-medium mb-4">
-                <TrendingUp className="w-4 h-4" /> Business Impact
+                <TrendingUp className="w-4 h-4" /> Long-Term Impact
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold">
-                Social Media Supports Direct Bookings
-              </h2>
+              <h2 className="text-3xl lg:text-4xl font-bold">Brand Drives Long-Term Growth</h2>
               <p className="text-base-content/60 mt-4 leading-relaxed">
-                Social media doesn&apos;t exist in isolation. It works alongside every other part of
-                your business to build the visibility and trust that convert strangers into paying
-                guests.
+                A strong brand isn&apos;t just a nice-to-have. It&apos;s the infrastructure that
+                separates a scalable STR business from a host who&apos;s always one algorithm change
+                away from lost revenue.
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 {
                   icon: Globe,
-                  title: 'Your website',
-                  desc: 'Social drives traffic to your direct booking site, reducing reliance on Airbnb and OTAs.',
+                  title: 'Reduces reliance on platforms',
+                  desc: 'A recognised brand means guests seek you out directly — not through Airbnb. That reduces commission costs and gives you control.',
                 },
                 {
-                  icon: Megaphone,
-                  title: 'Your listings',
-                  desc: 'Strong social proof and branding increases trust in your listings before guests even click book.',
+                  icon: TrendingUp,
+                  title: 'Improves direct bookings',
+                  desc: "Direct bookings become achievable when potential guests know and trust your brand before they've even visited a listing.",
                 },
                 {
-                  icon: Palette,
-                  title: 'Your overall brand',
-                  desc: 'Consistent social media is what turns a property into a recognised, trusted hospitality brand.',
+                  icon: ShieldCheck,
+                  title: 'Increases trust',
+                  desc: 'A consistent, visible brand communicates professionalism and reliability — the two things guests need to feel confident booking directly.',
+                },
+                {
+                  icon: Users,
+                  title: 'Supports scaling',
+                  desc: "A brand can scale across multiple properties. A listing can't. Hosts who build a brand can grow their portfolio without starting from scratch each time.",
                 },
               ].map(({ icon: Icon, title, desc }) => (
-                <div key={title} className="bg-base-100 rounded-2xl border border-success/15 p-5">
-                  <div className="w-10 h-10 rounded-xl bg-success/10 flex items-center justify-center mb-3">
+                <div
+                  key={title}
+                  className="bg-base-100 rounded-2xl border border-success/15 p-5 flex gap-4"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-success/10 flex items-center justify-center shrink-0">
                     <Icon className="w-5 h-5 text-success" />
                   </div>
-                  <p className="font-semibold text-sm">{title}</p>
-                  <p className="text-xs text-base-content/55 mt-1 leading-relaxed">{desc}</p>
+                  <div>
+                    <p className="font-semibold text-sm">{title}</p>
+                    <p className="text-xs text-base-content/55 mt-1 leading-relaxed">{desc}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -483,29 +529,29 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-warning/15 border border-warning/30 text-warning text-sm font-medium mb-4">
                 <AlertTriangle className="w-4 h-4" /> Common Mistakes
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold">Where Social Media Goes Wrong</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold">Where Brand Growth Goes Wrong</h2>
             </div>
             <div className="space-y-3">
               {[
                 {
-                  mistake: 'Posting randomly',
-                  why: "No schedule means no habit and no audience growth. Followers who see one post a month forget you exist by the time they're ready to book.",
-                },
-                {
                   mistake: 'Inconsistent visuals',
-                  why: "When every post looks different, there's no brand recognition. Guests need to recognise your content instantly — that only happens with consistency.",
+                  why: "When your property photos, social posts, and listing images all look different, there's no brand for guests to recognise. Consistency is the foundation — without it, nothing builds.",
                 },
                 {
-                  mistake: 'No clear messaging',
-                  why: "Content that doesn't say anything specific doesn't motivate anyone to do anything. Every post should have a purpose.",
+                  mistake: 'No clear identity',
+                  why: "A brand without a defined position is just noise. If you can't articulate what makes your property different or who it's for, neither can potential guests.",
                 },
                 {
-                  mistake: 'Focusing only on aesthetics',
-                  why: "Looking good is necessary but not sufficient. Without a strategy connecting content to bookings, beautiful posts don't pay the bills.",
+                  mistake: 'Copying competitors',
+                  why: 'Emulating other hosts produces a generic result. A brand is by definition distinctive — it needs to communicate something specific about you, not reflect everyone else.',
                 },
                 {
-                  mistake: 'No link to business goals',
-                  why: 'Social media managed in isolation from your booking strategy, website, and revenue targets is just a hobby — not a business channel.',
+                  mistake: 'Focusing only on listings',
+                  why: "Optimising listings improves conversions on the platform — but it doesn't build a brand. Brand growth happens outside the listing, through owned content and channels.",
+                },
+                {
+                  mistake: 'No long-term strategy',
+                  why: "Brand building requires sustained effort over months and years. Short bursts of activity followed by silence don't compound — only consistent presence does.",
                 },
               ].map(({ mistake, why }) => (
                 <div
@@ -523,7 +569,7 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
               ))}
             </div>
             <p className="text-center text-base-content/55 mt-8 italic text-sm">
-              Social media fails when it lacks structure.
+              Brand growth fails when it&apos;s not consistent.
             </p>
           </div>
         </div>
@@ -537,31 +583,29 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-4">
                 <CheckCircle2 className="w-4 h-4" /> Our Method
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold">
-                How We Manage Social Media Properly
-              </h2>
+              <h2 className="text-3xl lg:text-4xl font-bold">How We Build STR Brands Properly</h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 {
-                  step: '1. Structured content plans',
+                  step: '1. Define your positioning',
                   detail:
-                    'We build a monthly content calendar that covers your property, audience, and goals — so every post has a reason to exist.',
+                    'We start by clarifying who you are, who you serve, and what makes you different. Your brand position shapes everything that follows.',
                 },
                 {
-                  step: '2. Maintained consistency',
+                  step: '2. Maintain visual consistency',
                   detail:
-                    'We post on schedule, every week, across agreed platforms. No gaps, no exceptions — the algorithm and your audience both depend on it.',
+                    'Every piece of content is produced to a consistent visual standard — colour, typography, layout, photography style — so recognition builds over time.',
                 },
                 {
-                  step: '3. Brand-aligned visuals',
+                  step: '3. Align content with your brand',
                   detail:
-                    'Every piece of content follows your brand guidelines — or we help you build them. Cohesion across every post creates recognisability.',
+                    'Content is never generic. Every post reinforces your positioning, communicates your identity, and moves your audience closer to trust.',
                 },
                 {
-                  step: '4. Goal-connected content',
+                  step: '4. Focus on long-term growth',
                   detail:
-                    'Content themes are mapped to your booking calendar, seasonal demand, and direct booking goals — not just what looks good.',
+                    'We build brands with a long-term lens — consistent activity, compounding recognition, and a strategy that supports growth over months and years, not weeks.',
                 },
               ].map(({ step, detail }) => (
                 <div
@@ -587,25 +631,28 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-4">
               <BarChart3 className="w-4 h-4" /> Side by Side
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold">Unmanaged vs Managed Social Media</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold">
+              Listing-Based vs Brand-Based Business
+            </h2>
           </div>
+          {/* Desktop */}
           <div className="hidden md:block overflow-hidden rounded-3xl border border-base-300 max-w-3xl mx-auto">
             <div className="grid grid-cols-3">
               <div className="bg-base-200 px-5 py-3 text-xs font-bold uppercase tracking-widest text-base-content/50">
                 Area
               </div>
               <div className="bg-error/8 px-5 py-3 text-xs font-bold uppercase tracking-widest text-error/70 text-center">
-                Unmanaged
+                Listing-Based
               </div>
               <div className="bg-success/8 px-5 py-3 text-xs font-bold uppercase tracking-widest text-success/70 text-center">
-                Managed
+                Brand-Based
               </div>
             </div>
             {[
-              ['Posting cadence', 'Inconsistent', 'Structured'],
-              ['Audience growth', 'Low engagement', 'Improved presence'],
-              ['Content direction', 'No direction', 'Clear strategy'],
-              ['Brand perception', 'Weak branding', 'Strong identity'],
+              ['Growth model', 'Platform dependent', 'Independent growth'],
+              ['Guest recognition', 'Low recognition', 'Strong identity'],
+              ['Content approach', 'Inconsistent', 'Structured'],
+              ['Growth potential', 'Limited growth', 'Scalable'],
             ].map(([area, bad, good]) => (
               <div key={area} className="grid grid-cols-3 border-t border-base-300">
                 <div className="bg-base-100 px-5 py-4 text-sm font-medium">{area}</div>
@@ -619,10 +666,10 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
           {/* Mobile */}
           <div className="md:hidden space-y-3 max-w-sm mx-auto">
             {[
-              ['Posting cadence', 'Inconsistent', 'Structured'],
-              ['Audience growth', 'Low engagement', 'Improved presence'],
-              ['Content direction', 'No direction', 'Clear strategy'],
-              ['Brand perception', 'Weak branding', 'Strong identity'],
+              ['Growth model', 'Platform dependent', 'Independent growth'],
+              ['Guest recognition', 'Low recognition', 'Strong identity'],
+              ['Content approach', 'Inconsistent', 'Structured'],
+              ['Growth potential', 'Limited growth', 'Scalable'],
             ].map(([area, bad, good]) => (
               <div key={area} className="rounded-2xl border border-base-300 overflow-hidden">
                 <div className="bg-base-200 px-4 py-2 text-xs font-bold uppercase tracking-wider text-base-content/50">
@@ -654,22 +701,22 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
               {
                 icon: TrendingUp,
                 who: 'Hosts wanting direct bookings',
-                desc: 'If you want to reduce Airbnb dependency and build a channel you control, social media is a core part of that strategy.',
+                desc: 'Brand growth is the foundation of a direct booking strategy. Without a recognisable brand, direct bookings remain aspirational rather than achievable.',
               },
               {
                 icon: Building2,
                 who: 'SA businesses',
-                desc: 'Serviced accommodation operators who want a professional, consistent presence that reflects the quality of their properties.',
+                desc: 'Serviced accommodation operators who want a professional, established brand presence that reflects the quality and consistency of their properties.',
               },
               {
-                icon: Palette,
-                who: 'Operators building a brand',
-                desc: 'Those who understand that a recognisable brand compounds over time — and want to start building it now.',
+                icon: Users,
+                who: 'Operators scaling portfolios',
+                desc: 'Those adding properties who want a brand infrastructure that scales with them — not a fragmented set of individual listings.',
               },
               {
-                icon: Calendar,
-                who: 'Hosts needing consistency',
-                desc: "Hosts who know they should be active on social media but don't have the time, skills, or systems to maintain it.",
+                icon: Sparkles,
+                who: 'Hosts building long-term brands',
+                desc: 'Hosts who understand that a brand is an asset that appreciates over time — and want to start building it now, before the competition does.',
               },
             ].map(({ icon: Icon, who, desc }) => (
               <div
@@ -699,25 +746,25 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
               {
-                initials: 'JB',
-                name: 'James B.',
-                role: 'STR Host · Manchester',
+                initials: 'CL',
+                name: 'Claire L.',
+                role: 'STR Host · Bath',
                 quote:
-                  'I had no idea how much difference consistent Instagram content would make. Within three months of having Assistophere manage it, I had my first direct booking enquiry come in through DMs. That never happened before.',
+                  'Before Assistophere I was just a listing. Now I have a brand people recognise. Guests who find me on Instagram message me directly to book — that never happened before I had a proper brand.',
               },
               {
-                initials: 'NK',
-                name: 'Natalie K.',
-                role: 'SA Operator · London',
+                initials: 'JP',
+                name: 'James P.',
+                role: 'SA Operator · Birmingham',
                 quote:
-                  'My accounts looked amateur before. Now they look professional and consistent. The branding work they did has completely changed how my business comes across online. Guests comment on it.',
+                  'The visual consistency work completely changed how my business looks online. Everything is aligned now — social, website, listings. It looks like a real business, not just someone renting out a flat.',
               },
               {
-                initials: 'DR',
-                name: 'David R.',
-                role: 'Property Investor · Leeds',
+                initials: 'MH',
+                name: 'Maya H.',
+                role: 'Property Investor · Brighton',
                 quote:
-                  'I tried to manage social media myself but kept falling behind. Handing it over meant it actually gets done, every week, without me thinking about it. The consistency alone was worth it.',
+                  "I was sceptical about brand work until I saw the results. Six months in, my direct bookings have genuinely increased and I'm less dependent on Airbnb. The brand is doing real work.",
               },
             ].map(({ initials, name, role, quote }) => (
               <div
@@ -760,20 +807,20 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
             <div className="space-y-3">
               {[
                 {
-                  q: 'Which platforms do you manage?',
-                  a: "We primarily manage Instagram and Facebook for STR businesses, as these are the highest-value platforms for property showcase and direct booking growth. TikTok management is available depending on your business type and goals. We'll recommend the right platforms based on your audience during the discovery call.",
+                  q: 'How long does brand growth take?',
+                  a: 'Brand growth is a long-term investment. Most clients begin to see meaningful recognition and direct enquiry growth within three to six months of consistent brand activity. The compounding effect accelerates significantly after the six-month mark when audience familiarity builds.',
                 },
                 {
-                  q: 'Do you create the content?',
-                  a: "Yes — we handle content creation end to end, including post design, caption writing, hashtag strategy, and scheduling. For property photography, we'll advise on what we need and how to supply it, or we can recommend a local photographer if required.",
+                  q: 'Can you work with my current brand?',
+                  a: "Yes — we work with whatever brand assets you already have, whether that's a logo, colour palette, or just a property name. We improve, align, and build on what exists rather than starting from scratch unless a full rebrand is needed.",
                 },
                 {
-                  q: 'Can social media generate bookings?',
-                  a: 'Yes, though it works differently from paid advertising. Social media builds brand awareness, trust, and an audience over time — which then converts through DM enquiries, website traffic, and direct booking links. Most clients begin to see direct enquiries within two to four months of consistent, structured management.',
+                  q: 'Does this help with direct bookings?',
+                  a: "Yes — brand growth is directly connected to direct booking success. A recognised, trusted brand is what makes guests confident enough to book outside of Airbnb. It's the long-term asset that makes direct booking sustainable.",
                 },
                 {
-                  q: 'How often do you post?',
-                  a: 'Posting frequency is agreed as part of your package. Standard management includes three to five posts per week, with stories and engagement activity on top. We build a content calendar monthly so you can review and approve the plan before anything goes live.',
+                  q: 'Is this only for social media?',
+                  a: 'No — brand growth covers your entire presence, including how your brand translates across social media, your direct booking website, listing photos, and guest communications. Social media is the primary channel for building visibility, but the brand work extends across everything.',
                 },
               ].map(({ q, a }) => (
                 <details
@@ -804,29 +851,32 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
             </div>
             <div className="max-w-2xl mx-auto space-y-6">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/15 border border-primary/30 text-primary text-sm font-semibold">
-                <Instagram className="w-4 h-4" /> Social Media Management
+                <Sparkles className="w-4 h-4" /> Brand Growth for STR
               </div>
               <h2 className="text-3xl lg:text-4xl font-extrabold">
-                Ready to Build a Strong{' '}
+                Ready to Build a Brand That{' '}
                 <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary">
-                  Social Media Presence?
+                  Grows Your STR Business?
                 </span>
               </h2>
               <p className="text-base-content/65 text-lg leading-relaxed">
-                Let&apos;s create a structured approach that supports your growth. We don&apos;t
-                just manage social media — we structure it to support your business.
+                Let&apos;s create a brand that supports your growth long-term. We don&apos;t just
+                grow accounts — we build STR brands.
               </p>
               <div className="flex flex-wrap justify-center gap-4 pt-2">
-                <button className="pulse-cta-smm btn btn-primary btn-lg rounded-full px-10 gap-2 shadow-lg">
+                <button className="pulse-cta-bg btn btn-primary btn-lg rounded-full px-10 gap-2 shadow-lg">
                   <Phone className="w-4 h-4" /> Book a Discovery Call
                 </button>
-                <button className="btn btn-outline btn-lg rounded-full px-8 gap-2">
-                  <ArrowRight className="w-4 h-4" /> See How It Works
-                </button>
+                <Link
+                  href="/services/social-media-management"
+                  className="btn btn-outline btn-lg rounded-full px-8 gap-2"
+                >
+                  <ArrowRight className="w-4 h-4" /> Back to Social Media Management
+                </Link>
               </div>
               <p className="text-xs text-base-content/40 pt-2">
-                Airbnb Social Media Management UK · STR Social Media Marketing · Serviced
-                Accommodation Social Media · Direct Booking Strategy
+                Airbnb Brand Growth UK · STR Brand Building · Serviced Accommodation Branding ·
+                Direct Booking Brand Strategy
               </p>
             </div>
           </div>

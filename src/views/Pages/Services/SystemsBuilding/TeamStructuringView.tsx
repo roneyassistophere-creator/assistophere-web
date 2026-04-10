@@ -1,85 +1,85 @@
 import React from 'react'
 import {
-  Instagram,
-  LayoutGrid,
-  Star,
-  Phone,
-  ArrowRight,
+  Users,
+  Settings,
   CheckCircle2,
   XCircle,
-  Calendar,
-  Palette,
+  Star,
+  ArrowRight,
+  Phone,
   MessageSquare,
-  ChevronRight,
-  AlertTriangle,
+  ClipboardList,
+  LayoutDashboard,
   TrendingUp,
-  Megaphone,
-  Target,
   Building2,
-  Zap,
-  Smartphone,
-  Layers,
-  Globe,
+  Target,
   BarChart3,
+  AlertTriangle,
+  Layers,
+  UserCheck,
+  GitBranch,
+  UserPlus,
+  ShieldCheck,
 } from 'lucide-react'
+import { FaqItem } from './FaqItem'
 import type { Page } from '@/payload-types'
 
-export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = () => {
+export const TeamStructuringView: React.FC<{ page: Page }> = () => {
   return (
     <div className="min-h-screen text-base-content overflow-x-hidden">
       <style>{`
-        @keyframes pulse-ring-smm {
+        @keyframes pulse-ring-ts {
           0%,100% { box-shadow: 0 0 0 0 hsl(var(--p)/.35); }
           50%      { box-shadow: 0 0 0 10px hsl(var(--p)/0); }
         }
-        @keyframes smm-fade-up {
+        @keyframes ts-fade-up {
           from { opacity:0; transform:translateY(22px); }
           to   { opacity:1; transform:translateY(0); }
         }
-        .smm-fade-1 { animation: smm-fade-up .55s ease both .10s; }
-        .smm-fade-2 { animation: smm-fade-up .55s ease both .22s; }
-        .smm-fade-3 { animation: smm-fade-up .55s ease both .34s; }
-        .smm-fade-4 { animation: smm-fade-up .55s ease both .46s; }
-        .smm-fade-5 { animation: smm-fade-up .55s ease both .58s; }
-        .pulse-cta-smm { animation: pulse-ring-smm 2.4s ease-in-out infinite; }
+        .ts-fade-1 { animation: ts-fade-up .55s ease both .10s; }
+        .ts-fade-2 { animation: ts-fade-up .55s ease both .22s; }
+        .ts-fade-3 { animation: ts-fade-up .55s ease both .34s; }
+        .ts-fade-4 { animation: ts-fade-up .55s ease both .46s; }
+        .ts-fade-5 { animation: ts-fade-up .55s ease both .58s; }
+        .pulse-cta-ts { animation: pulse-ring-ts 2.4s ease-in-out infinite; }
       `}</style>
 
       {/* ── HERO ─────────────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden pt-16 pb-16 lg:pt-20 lg:pb-20">
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-          <div className="absolute -top-32 -left-32 w-[520px] h-[520px] bg-linear-to-br from-primary/13 via-primary/4 to-transparent rounded-full blur-[140px]" />
-          <div className="absolute top-1/2 -right-40 w-[420px] h-[420px] bg-linear-to-bl from-secondary/10 via-secondary/3 to-transparent rounded-full blur-[120px]" />
+          <div className="absolute -top-32 -left-32 w-130 h-130 bg-linear-to-br from-primary/13 via-primary/4 to-transparent rounded-full blur-[140px]" />
+          <div className="absolute top-1/2 -right-40 w-105 h-105 bg-linear-to-bl from-secondary/10 via-secondary/3 to-transparent rounded-full blur-[120px]" />
         </div>
         <div className="container max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="space-y-6">
-              <div className="smm-fade-1 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium">
-                <Instagram className="w-4 h-4" />
-                Social Media Management · UK STR
+              <div className="ts-fade-1 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium">
+                <Users className="w-4 h-4" />
+                Team Structuring · STR Systems Building · UK
               </div>
-              <h1 className="smm-fade-2 text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-[1.08] tracking-tight">
-                Social Media Management That Supports Your{' '}
+              <h1 className="ts-fade-2 text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-[1.08] tracking-tight">
+                Build a Team That Runs Your STR Business{' '}
                 <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary">
-                  STR Growth
+                  Properly
                 </span>
               </h1>
-              <p className="smm-fade-3 text-lg text-base-content/70 leading-relaxed max-w-lg">
-                Assistophere helps UK hosts manage social media with structured content and
-                strategy, building brand presence and supporting direct booking growth.
+              <p className="ts-fade-3 text-lg text-base-content/70 leading-relaxed max-w-lg">
+                Assistophere helps UK hosts structure their team with clear roles, responsibilities,
+                and workflows, allowing operations to run smoothly without constant oversight.
               </p>
-              <div className="smm-fade-4 p-4 rounded-xl border border-primary/20 bg-primary/6 text-sm italic text-base-content/65">
-                Social media management for STR businesses involves creating content, maintaining
-                consistency, and building a brand presence to attract and convert potential guests.
+              <div className="ts-fade-4 p-4 rounded-xl border border-primary/20 bg-primary/6 text-sm italic text-base-content/65">
+                Team structuring in STR businesses involves defining roles, responsibilities, and
+                workflows so operations can run efficiently without relying on a single person.
               </div>
-              <div className="smm-fade-5 flex flex-wrap gap-3 pt-1">
-                <button className="pulse-cta-smm btn btn-primary btn-lg rounded-full px-8 gap-2">
+              <div className="ts-fade-5 flex flex-wrap gap-3 pt-1">
+                <button className="pulse-cta-ts btn btn-primary btn-lg rounded-full px-8 gap-2">
                   <Phone className="w-4 h-4" /> Book a Discovery Call
                 </button>
                 <button className="btn btn-outline btn-lg rounded-full px-8 gap-2">
-                  <ArrowRight className="w-4 h-4" /> See How It Works
+                  <ArrowRight className="w-4 h-4" /> Back to STR Systems Building
                 </button>
               </div>
-              <div className="smm-fade-5 flex items-center gap-3 pt-2">
+              <div className="ts-fade-5 flex items-center gap-3 pt-2">
                 <div className="flex -space-x-2">
                   {['bg-primary', 'bg-secondary', 'bg-accent', 'bg-neutral'].map((c, i) => (
                     <div
@@ -96,64 +96,55 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
                       <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                     ))}
                   </div>
-                  <p className="text-xs text-base-content/55 mt-0.5">
-                    Trusted by UK STR hosts and SA operators
-                  </p>
+                  <p className="text-xs text-base-content/55 mt-0.5">Trusted by UK STR operators</p>
                 </div>
               </div>
             </div>
 
-            {/* Hero visual — Instagram-style grid preview */}
+            {/* Hero visual — team structure org chart */}
             <div className="hidden lg:block">
               <div className="relative rounded-3xl border border-base-300 bg-base-200/60 backdrop-blur-sm p-6 shadow-xl">
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="w-9 h-9 rounded-full bg-linear-to-br from-primary to-secondary flex items-center justify-center">
-                    <Instagram className="w-4 h-4 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold">@yourstrbrand</p>
-                    <p className="text-[10px] text-base-content/40">Serviced Accommodation · UK</p>
-                  </div>
-                  <div className="ml-auto flex gap-4 text-center">
-                    {[
-                      ['24', 'Posts'],
-                      ['1.2k', 'Followers'],
-                      ['340', 'Reach'],
-                    ].map(([v, l]) => (
-                      <div key={l}>
-                        <p className="text-xs font-extrabold">{v}</p>
-                        <p className="text-[9px] text-base-content/40">{l}</p>
-                      </div>
-                    ))}
+                <div className="flex items-center gap-2 mb-5">
+                  <div className="w-3 h-3 rounded-full bg-error/70" />
+                  <div className="w-3 h-3 rounded-full bg-warning/70" />
+                  <div className="w-3 h-3 rounded-full bg-success/70" />
+                  <span className="ml-2 text-xs text-base-content/40 font-mono">
+                    team.structure
+                  </span>
+                </div>
+                {/* Operator row */}
+                <div className="flex justify-center mb-3">
+                  <div className="px-4 py-2.5 rounded-xl border border-primary/30 bg-primary/8 text-xs font-bold text-primary flex items-center gap-2">
+                    <UserCheck className="w-3.5 h-3.5" /> Operator / Host
                   </div>
                 </div>
-                {/* 3×3 grid */}
-                <div className="grid grid-cols-3 gap-1.5 mb-4">
+                {/* Connector */}
+                <div className="flex justify-center mb-1">
+                  <div className="w-px h-4 bg-base-300" />
+                </div>
+                {/* Three roles row */}
+                <div className="grid grid-cols-3 gap-2 mb-1">
                   {[
-                    { bg: 'bg-primary/15', label: 'Property Showcase', icon: Building2 },
-                    { bg: 'bg-secondary/12', label: 'Guest Experience', icon: Star },
-                    { bg: 'bg-success/10', label: 'Local Area', icon: Globe },
-                    { bg: 'bg-warning/12', label: 'Behind the Scenes', icon: Layers },
-                    { bg: 'bg-primary/20', label: 'Amenities', icon: Zap },
-                    { bg: 'bg-accent/10', label: 'Direct Booking', icon: TrendingUp },
-                    { bg: 'bg-secondary/15', label: 'Review Feature', icon: MessageSquare },
-                    { bg: 'bg-success/12', label: 'Seasonal Promo', icon: Calendar },
-                    { bg: 'bg-primary/10', label: 'Brand Story', icon: Palette },
-                  ].map(({ bg, label, icon: Icon }, i) => (
-                    <div
-                      key={i}
-                      className={`${bg} rounded-xl aspect-square flex flex-col items-center justify-center gap-1 p-2`}
-                    >
-                      <Icon className="w-4 h-4 text-base-content/40" />
-                      <p className="text-[9px] text-base-content/40 text-center leading-tight">
-                        {label}
-                      </p>
+                    { label: 'Guest Comms VA', tasks: ['Messages', 'Enquiries', 'Reviews'] },
+                    { label: 'Operations VA', tasks: ['Check-in', 'Cleaning', 'Maintenance'] },
+                    { label: 'Admin VA', tasks: ['Calendar', 'Pricing', 'Reporting'] },
+                  ].map(({ label, tasks }) => (
+                    <div key={label} className="flex flex-col items-center gap-1.5">
+                      <div className="w-px h-4 bg-base-300" />
+                      <div className="w-full px-2 py-2 rounded-xl border border-base-300 bg-base-100 text-center">
+                        <p className="text-[10px] font-bold text-base-content/70 mb-1.5">{label}</p>
+                        {tasks.map((t) => (
+                          <p key={t} className="text-[9px] text-base-content/45 leading-tight">
+                            {t}
+                          </p>
+                        ))}
+                      </div>
                     </div>
                   ))}
                 </div>
-                <div className="bg-base-100 rounded-xl border border-primary/20 px-4 py-2.5 flex items-center justify-between">
-                  <span className="text-xs text-base-content/50">Content scheduled this week</span>
-                  <span className="text-xs font-bold text-primary">5 posts</span>
+                <div className="mt-4 flex items-center justify-between px-1">
+                  <span className="text-xs text-base-content/40">3 roles · 9 responsibilities</span>
+                  <span className="text-xs text-primary font-semibold">→ Fully structured</span>
                 </div>
               </div>
             </div>
@@ -166,49 +157,47 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
         <div className="container max-w-7xl mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-2">
-              <LayoutGrid className="w-4 h-4" /> The Real Picture
+              <Users className="w-4 h-4" /> The Missing Layer
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold">
-              Social Media Isn&apos;t Just Posting Content
+              A Team Without Structure Creates More Work
             </h2>
             <p className="text-base-content/65 text-lg leading-relaxed">
-              Most STR businesses either don&apos;t post at all, or post inconsistently without any
-              clear direction. For short-term rentals, social media is one of the few channels you
-              fully control — but only if it&apos;s managed properly.
+              Hiring people doesn&apos;t solve operational problems. Without structure, more people
+              just means more coordination — and more room for things to go wrong. Structure is what
+              makes a team effective.
             </p>
+            <p className="text-base-content/60 text-sm">Without structure:</p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
               {[
                 {
-                  icon: TrendingUp,
-                  title: 'Build trust',
-                  desc: 'Consistent, professional content signals that your property and business are credible.',
+                  icon: Layers,
+                  label: 'Tasks overlap',
+                  desc: 'Multiple people handle the same thing without knowing it.',
                 },
                 {
-                  icon: Building2,
-                  title: 'Showcase properties',
-                  desc: 'Show potential guests exactly what they&apos;re booking before they ever visit a listing.',
+                  icon: XCircle,
+                  label: 'Responsibilities unclear',
+                  desc: 'Nobody knows who owns what, so things fall through the gaps.',
                 },
                 {
-                  icon: Target,
-                  title: 'Attract direct bookings',
-                  desc: 'Social media builds the audience and brand presence that drives traffic outside of Airbnb.',
+                  icon: AlertTriangle,
+                  label: 'Mistakes increase',
+                  desc: 'Without defined process, errors become a regular occurrence.',
                 },
-              ].map(({ icon: Icon, title, desc }) => (
+              ].map(({ icon: Icon, label, desc }) => (
                 <div
-                  key={title}
-                  className="bg-base-100 rounded-2xl border border-primary/15 p-5 text-left"
+                  key={label}
+                  className="bg-base-100 rounded-2xl border border-error/15 p-5 text-left"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-3">
-                    <Icon className="w-5 h-5 text-primary" />
+                  <div className="w-10 h-10 rounded-xl bg-error/10 flex items-center justify-center mb-3">
+                    <Icon className="w-5 h-5 text-error" />
                   </div>
-                  <p className="font-semibold text-sm">{title}</p>
+                  <p className="font-semibold text-sm">{label}</p>
                   <p className="text-xs text-base-content/55 mt-1 leading-relaxed">{desc}</p>
                 </div>
               ))}
             </div>
-            <p className="text-base-content/55 text-sm italic">
-              Without structure, social media becomes inconsistent and ineffective.
-            </p>
           </div>
         </div>
       </section>
@@ -219,38 +208,36 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-error/10 border border-error/25 text-error text-sm font-medium mb-4">
-                <XCircle className="w-4 h-4" /> The Problem
+                <XCircle className="w-4 h-4" /> Why Teams Break Down
               </div>
               <h2 className="text-3xl lg:text-4xl font-bold">
-                Why Most STR Social Media Doesn&apos;t Work
+                Why STR Teams Become Difficult to Manage
               </h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 {
-                  point: 'Inconsistent posting',
+                  point: 'No clear roles',
                   detail:
-                    "Sporadic content signals an inactive brand. The algorithm deprioritises irregular accounts, and potential guests don't build familiarity or trust.",
+                    'Every team member interprets their job differently, creating inconsistency across operations.',
                 },
                 {
-                  point: 'No clear strategy',
-                  detail:
-                    "Posting without a plan means content doesn't connect to any business goal — it's activity for the sake of activity, not results.",
+                  point: 'Tasks not assigned properly',
+                  detail: 'Work lands on whoever is available rather than whoever is responsible.',
                 },
                 {
-                  point: 'Low-quality content',
+                  point: 'Poor communication',
                   detail:
-                    'Blurry photos, poor captions, and generic text fail to communicate what makes your property worth booking.',
+                    'Without a defined communication flow, updates get missed and actions are duplicated.',
                 },
                 {
-                  point: 'No branding',
-                  detail:
-                    "When your content looks different every week, there's no recognition. A cohesive visual identity is what makes a brand memorable.",
+                  point: 'No accountability',
+                  detail: 'When ownership is unclear, mistakes go unresolved and standards drop.',
                 },
                 {
-                  point: 'No connection to bookings',
+                  point: 'Reliance on the host',
                   detail:
-                    "Social media only drives revenue when it's structured with a clear path from content to enquiry to booking.",
+                    'Everything flows back to the host because nobody else has authority or clarity to act.',
                 },
               ].map(({ point, detail }) => (
                 <div
@@ -260,61 +247,59 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
                   <XCircle className="w-5 h-5 text-error shrink-0 mt-0.5" />
                   <div>
                     <p className="font-semibold text-sm">{point}</p>
-                    <p className="text-xs text-base-content/55 mt-0.5 leading-relaxed">{detail}</p>
+                    <p className="text-xs text-base-content/55 mt-0.5">{detail}</p>
                   </div>
                 </div>
               ))}
             </div>
-            <p className="text-center text-base-content/55 mt-8 italic text-sm">
-              Posting without direction doesn&apos;t lead to results.
+            <p className="text-center text-base-content/60 mt-8 italic text-sm">
+              A team without structure creates confusion, not efficiency.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ── WHAT IT SHOULD LOOK LIKE ─────────────────────────────────────────── */}
+      {/* ── WHAT A PROPER TEAM STRUCTURE LOOKS LIKE ──────────────────────────── */}
       <section className="bg-base-200 border-y border-base-300 py-20 lg:py-28">
         <div className="container max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-4">
-              <CheckCircle2 className="w-4 h-4" /> The Standard
+              <CheckCircle2 className="w-4 h-4" /> What Good Looks Like
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold">
-              What Proper Social Media Management Looks Like
-            </h2>
+            <h2 className="text-3xl lg:text-4xl font-bold">What Makes an STR Team Work</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">
             {[
               {
-                icon: Calendar,
-                title: 'Consistent Presence',
-                desc: 'Regular, scheduled posting maintained week on week — no gaps, no missed weeks. The algorithm rewards consistency, and so do potential guests.',
+                icon: UserCheck,
+                title: 'Defined Roles',
+                desc: 'Each person knows exactly what they handle and what falls outside their remit.',
               },
               {
-                icon: Palette,
-                title: 'Clear Branding',
-                desc: 'A recognisable visual identity across every post — colour palette, typography, photography style, and tone all aligned to your property and audience.',
+                icon: ShieldCheck,
+                title: 'Clear Responsibilities',
+                desc: 'No overlap, no confusion — every task has a clear owner.',
               },
               {
-                icon: Building2,
-                title: 'Property Showcase',
-                desc: "Content that deliberately highlights your property's best features, spaces, and guest experience — turning followers into enquiries.",
+                icon: GitBranch,
+                title: 'Structured Workflows',
+                desc: 'Tasks follow a consistent, documented process regardless of who is doing them.',
               },
               {
-                icon: MessageSquare,
-                title: 'Audience Engagement',
-                desc: 'Content that connects with the right people — potential guests, returning guests, and referral sources — not just empty impressions.',
+                icon: ClipboardList,
+                title: 'Accountability',
+                desc: 'Ownership of tasks is explicit — mistakes are caught and resolved at the right level.',
               },
             ].map(({ icon: Icon, title, desc }, i) => (
               <div
                 key={title}
-                className="bg-base-100 rounded-2xl border border-base-300 p-5 relative"
+                className="bg-base-100 rounded-2xl border border-base-300 p-6 relative"
               >
                 <div className="absolute -top-3 -left-3 w-7 h-7 rounded-full bg-primary text-primary-content text-xs font-bold flex items-center justify-center shadow">
                   {i + 1}
                 </div>
-                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-3 mt-1">
-                  <Icon className="w-5 h-5 text-primary" />
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <Icon className="w-6 h-6 text-primary" />
                 </div>
                 <h3 className="font-bold text-sm mb-2">{title}</h3>
                 <p className="text-xs text-base-content/60 leading-relaxed">{desc}</p>
@@ -324,79 +309,77 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
         </div>
       </section>
 
-      {/* ── WHAT WE HANDLE ───────────────────────────────────────────────────── */}
+      {/* ── WHAT WE BUILD ────────────────────────────────────────────────────── */}
       <section className="py-20 lg:py-28">
         <div className="container max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-4">
-              <Layers className="w-4 h-4" /> Our Scope
+              <Settings className="w-4 h-4" /> Our Scope
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold">
-              What Our Social Media Management Covers
-            </h2>
+            <h2 className="text-3xl lg:text-4xl font-bold">What Our Team Structuring Covers</h2>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr_1.5fr] gap-px bg-base-300 rounded-3xl overflow-hidden border border-base-300">
             <div className="bg-base-200 px-5 py-3 text-xs font-bold uppercase tracking-widest text-base-content/40">
               Area
             </div>
             <div className="bg-base-200 px-5 py-3 text-xs font-bold uppercase tracking-widest text-base-content/40">
-              What We Do
+              What We Define
             </div>
             <div className="bg-base-200 px-5 py-3 text-xs font-bold uppercase tracking-widest text-base-content/40">
               Outcome
             </div>
             {[
               {
-                area: 'Content Creation',
-                icon: Palette,
+                area: 'Role Definition',
+                icon: UserCheck,
                 tasks: [
-                  'Designing branded post graphics and visuals',
-                  'Writing captions and copy aligned to your audience',
-                  'Structuring content themes to cover different aspects of your property',
+                  'Identifying what roles your operation actually needs',
+                  'Assigning clear responsibilities to each role',
+                  'Removing overlaps and gaps in coverage',
                 ],
                 outcome:
-                  'Professional, on-brand content that showcases your property consistently.',
+                  'Every person on the team knows exactly what they own and what they do not.',
               },
               {
-                area: 'Posting & Scheduling',
-                icon: Calendar,
+                area: 'Task Allocation',
+                icon: ClipboardList,
                 tasks: [
-                  'Maintaining a consistent posting schedule across platforms',
-                  'Planning content calendars in advance',
-                  'Managing publish times for maximum reach',
-                ],
-                outcome: 'No gaps, no last-minute scrambles — your content runs like clockwork.',
-              },
-              {
-                area: 'Brand Development',
-                icon: Palette,
-                tasks: [
-                  'Creating or refining your visual identity for social',
-                  'Aligning content style across all posts and platforms',
-                  'Improving the overall presentation and professionalism',
-                ],
-                outcome: 'A recognisable, credible brand that guests remember.',
-              },
-              {
-                area: 'Platform Management',
-                icon: Smartphone,
-                tasks: [
-                  'Managing your Instagram, Facebook, or TikTok accounts',
-                  'Keeping content organised and accounts active',
-                  'Monitoring performance and adjusting accordingly',
-                ],
-                outcome: 'Accounts that stay active, consistent, and growing.',
-              },
-              {
-                area: 'Strategy Alignment',
-                icon: Target,
-                tasks: [
-                  'Linking content themes with your booking and revenue goals',
-                  'Supporting direct booking growth through social presence',
-                  'Connecting social activity to broader marketing activity',
+                  'Mapping every operational task to the right role',
+                  'Ensuring nothing is left unassigned',
+                  'Improving efficiency through clear ownership',
                 ],
                 outcome:
-                  'Social media that contributes to your business — not just vanity metrics.',
+                  'Tasks are handled by the right person every time without the host deciding.',
+              },
+              {
+                area: 'Workflow Alignment',
+                icon: GitBranch,
+                tasks: [
+                  'Aligning each team role with your existing systems',
+                  'Ensuring smooth handoffs between team members',
+                  'Reducing friction in day-to-day coordination',
+                ],
+                outcome: 'The team works as a coordinated unit, not a collection of individuals.',
+              },
+              {
+                area: 'Communication Structure',
+                icon: MessageSquare,
+                tasks: [
+                  'Defining how updates and decisions flow through the team',
+                  'Reducing unnecessary back-and-forth',
+                  'Improving response times and decision clarity',
+                ],
+                outcome: 'Communication is structured, predictable, and efficient.',
+              },
+              {
+                area: 'Scalability Planning',
+                icon: TrendingUp,
+                tasks: [
+                  'Designing the team structure with growth in mind',
+                  'Ensuring roles can expand without rebuilding',
+                  'Preparing the operation for additional properties or team members',
+                ],
+                outcome: 'The team structure holds as your business grows.',
               },
             ].map(({ area, icon: Icon, tasks, outcome }) => (
               <React.Fragment key={area}>
@@ -422,55 +405,58 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
             ))}
           </div>
           <p className="text-center mt-8 text-base-content/60 text-sm">
-            The result: a structured social media presence that actively supports your business.
+            The result: a team that works together efficiently without constant input.
           </p>
         </div>
       </section>
 
-      {/* ── CONNECTS TO BUSINESS ─────────────────────────────────────────────── */}
+      {/* ── CONNECTION TO STR SYSTEMS BUILDING ───────────────────────────────── */}
       <section className="bg-base-200 border-y border-base-300 py-20 lg:py-28">
         <div className="container max-w-7xl mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-10">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-success/10 border border-success/25 text-success text-sm font-medium mb-4">
-                <TrendingUp className="w-4 h-4" /> Business Impact
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-4">
+                <Layers className="w-4 h-4" /> The Execution Layer
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold">
-                Social Media Supports Direct Bookings
-              </h2>
-              <p className="text-base-content/60 mt-4 leading-relaxed">
-                Social media doesn&apos;t exist in isolation. It works alongside every other part of
-                your business to build the visibility and trust that convert strangers into paying
-                guests.
-              </p>
+              <h2 className="text-3xl lg:text-4xl font-bold">Teams Execute the System</h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {[
                 {
-                  icon: Globe,
-                  title: 'Your website',
-                  desc: 'Social drives traffic to your direct booking site, reducing reliance on Airbnb and OTAs.',
+                  icon: LayoutDashboard,
+                  label: 'Systems define structure',
+                  colour: 'border-primary/20 bg-primary/4',
+                  iconBg: 'bg-primary/10',
+                  iconCol: 'text-primary',
                 },
                 {
-                  icon: Megaphone,
-                  title: 'Your listings',
-                  desc: 'Strong social proof and branding increases trust in your listings before guests even click book.',
+                  icon: ClipboardList,
+                  label: 'SOPs define execution',
+                  colour: 'border-secondary/20 bg-secondary/4',
+                  iconBg: 'bg-secondary/10',
+                  iconCol: 'text-secondary',
                 },
                 {
-                  icon: Palette,
-                  title: 'Your overall brand',
-                  desc: 'Consistent social media is what turns a property into a recognised, trusted hospitality brand.',
+                  icon: Users,
+                  label: 'Teams make it happen',
+                  colour: 'border-success/20 bg-success/4',
+                  iconBg: 'bg-success/10',
+                  iconCol: 'text-success',
                 },
-              ].map(({ icon: Icon, title, desc }) => (
-                <div key={title} className="bg-base-100 rounded-2xl border border-success/15 p-5">
-                  <div className="w-10 h-10 rounded-xl bg-success/10 flex items-center justify-center mb-3">
-                    <Icon className="w-5 h-5 text-success" />
+              ].map(({ icon: Icon, label, colour, iconBg, iconCol }) => (
+                <div key={label} className={`rounded-2xl border p-5 text-center ${colour}`}>
+                  <div
+                    className={`w-10 h-10 rounded-xl flex items-center justify-center mx-auto mb-3 ${iconBg}`}
+                  >
+                    <Icon className={`w-5 h-5 ${iconCol}`} />
                   </div>
-                  <p className="font-semibold text-sm">{title}</p>
-                  <p className="text-xs text-base-content/55 mt-1 leading-relaxed">{desc}</p>
+                  <p className="font-semibold text-sm">{label}</p>
                 </div>
               ))}
             </div>
+            <p className="text-center text-base-content/55 mt-8 italic text-sm">
+              Without proper team structure, systems cannot function properly.
+            </p>
           </div>
         </div>
       </section>
@@ -483,29 +469,29 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-warning/15 border border-warning/30 text-warning text-sm font-medium mb-4">
                 <AlertTriangle className="w-4 h-4" /> Common Mistakes
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold">Where Social Media Goes Wrong</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold">Where Team Structuring Goes Wrong</h2>
             </div>
             <div className="space-y-3">
               {[
                 {
-                  mistake: 'Posting randomly',
-                  why: "No schedule means no habit and no audience growth. Followers who see one post a month forget you exist by the time they're ready to book.",
+                  mistake: 'Hiring without planning roles',
+                  why: 'Bringing people in before defining what they are responsible for creates immediate confusion.',
                 },
                 {
-                  mistake: 'Inconsistent visuals',
-                  why: "When every post looks different, there's no brand recognition. Guests need to recognise your content instantly — that only happens with consistency.",
+                  mistake: 'Unclear responsibilities',
+                  why: 'When ownership is vague, tasks either get duplicated or fall through the cracks entirely.',
                 },
                 {
-                  mistake: 'No clear messaging',
-                  why: "Content that doesn't say anything specific doesn't motivate anyone to do anything. Every post should have a purpose.",
+                  mistake: 'No workflows',
+                  why: 'Without defined processes, each team member invents their own approach to every task.',
                 },
                 {
-                  mistake: 'Focusing only on aesthetics',
-                  why: "Looking good is necessary but not sufficient. Without a strategy connecting content to bookings, beautiful posts don't pay the bills.",
+                  mistake: 'Lack of accountability',
+                  why: 'If nobody owns a task, nobody is responsible when it goes wrong — and standards erode.',
                 },
                 {
-                  mistake: 'No link to business goals',
-                  why: 'Social media managed in isolation from your booking strategy, website, and revenue targets is just a hobby — not a business channel.',
+                  mistake: 'Over-reliance on the host',
+                  why: 'If all decisions and approvals flow through the host, the team adds headcount but not capacity.',
                 },
               ].map(({ mistake, why }) => (
                 <div
@@ -517,13 +503,13 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
                   </div>
                   <div>
                     <p className="font-semibold text-sm">{mistake}</p>
-                    <p className="text-xs text-base-content/55 mt-0.5 leading-relaxed">{why}</p>
+                    <p className="text-xs text-base-content/55 mt-0.5">{why}</p>
                   </div>
                 </div>
               ))}
             </div>
             <p className="text-center text-base-content/55 mt-8 italic text-sm">
-              Social media fails when it lacks structure.
+              Teams fail when structure is missing.
             </p>
           </div>
         </div>
@@ -537,31 +523,29 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-4">
                 <CheckCircle2 className="w-4 h-4" /> Our Method
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold">
-                How We Manage Social Media Properly
-              </h2>
+              <h2 className="text-3xl lg:text-4xl font-bold">How We Structure Teams Properly</h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 {
-                  step: '1. Structured content plans',
+                  step: '1. Define roles clearly',
                   detail:
-                    'We build a monthly content calendar that covers your property, audience, and goals — so every post has a reason to exist.',
+                    'We map your operation and identify exactly which roles are needed and what each covers.',
                 },
                 {
-                  step: '2. Maintained consistency',
+                  step: '2. Align tasks with systems',
                   detail:
-                    'We post on schedule, every week, across agreed platforms. No gaps, no exceptions — the algorithm and your audience both depend on it.',
+                    'Every role is connected to the workflows and systems already in place in your business.',
                 },
                 {
-                  step: '3. Brand-aligned visuals',
+                  step: '3. Create structured workflows',
                   detail:
-                    'Every piece of content follows your brand guidelines — or we help you build them. Cohesion across every post creates recognisability.',
+                    'We document how each role executes their responsibilities so there is no ambiguity.',
                 },
                 {
-                  step: '4. Goal-connected content',
+                  step: '4. Build for scalability',
                   detail:
-                    'Content themes are mapped to your booking calendar, seasonal demand, and direct booking goals — not just what looks good.',
+                    'The structure is designed to grow with your business without needing to be rebuilt.',
                 },
               ].map(({ step, detail }) => (
                 <div
@@ -571,7 +555,7 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
                   <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                   <div>
                     <p className="font-semibold text-sm">{step}</p>
-                    <p className="text-xs text-base-content/55 mt-0.5 leading-relaxed">{detail}</p>
+                    <p className="text-xs text-base-content/55 mt-0.5">{detail}</p>
                   </div>
                 </div>
               ))}
@@ -587,7 +571,7 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-4">
               <BarChart3 className="w-4 h-4" /> Side by Side
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold">Unmanaged vs Managed Social Media</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold">Unstructured Team vs Structured Team</h2>
           </div>
           <div className="hidden md:block overflow-hidden rounded-3xl border border-base-300 max-w-3xl mx-auto">
             <div className="grid grid-cols-3">
@@ -595,17 +579,17 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
                 Area
               </div>
               <div className="bg-error/8 px-5 py-3 text-xs font-bold uppercase tracking-widest text-error/70 text-center">
-                Unmanaged
+                Unstructured
               </div>
               <div className="bg-success/8 px-5 py-3 text-xs font-bold uppercase tracking-widest text-success/70 text-center">
-                Managed
+                Structured
               </div>
             </div>
             {[
-              ['Posting cadence', 'Inconsistent', 'Structured'],
-              ['Audience growth', 'Low engagement', 'Improved presence'],
-              ['Content direction', 'No direction', 'Clear strategy'],
-              ['Brand perception', 'Weak branding', 'Strong identity'],
+              ['Operations', 'Confusion', 'Clarity'],
+              ['Task ownership', 'Overlapping tasks', 'Defined roles'],
+              ['Work pattern', 'Reactive', 'Organised'],
+              ['Growth', 'Hard to manage', 'Scalable'],
             ].map(([area, bad, good]) => (
               <div key={area} className="grid grid-cols-3 border-t border-base-300">
                 <div className="bg-base-100 px-5 py-4 text-sm font-medium">{area}</div>
@@ -616,13 +600,12 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
               </div>
             ))}
           </div>
-          {/* Mobile */}
           <div className="md:hidden space-y-3 max-w-sm mx-auto">
             {[
-              ['Posting cadence', 'Inconsistent', 'Structured'],
-              ['Audience growth', 'Low engagement', 'Improved presence'],
-              ['Content direction', 'No direction', 'Clear strategy'],
-              ['Brand perception', 'Weak branding', 'Strong identity'],
+              ['Operations', 'Confusion', 'Clarity'],
+              ['Task ownership', 'Overlapping tasks', 'Defined roles'],
+              ['Work pattern', 'Reactive', 'Organised'],
+              ['Growth', 'Hard to manage', 'Scalable'],
             ].map(([area, bad, good]) => (
               <div key={area} className="rounded-2xl border border-base-300 overflow-hidden">
                 <div className="bg-base-200 px-4 py-2 text-xs font-bold uppercase tracking-wider text-base-content/50">
@@ -645,31 +628,31 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
         <div className="container max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-4">
-              <Target className="w-4 h-4" /> Ideal Fit
+              <Users className="w-4 h-4" /> Ideal Fit
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold">Who This Is Built For</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
             {[
               {
-                icon: TrendingUp,
-                who: 'Hosts wanting direct bookings',
-                desc: 'If you want to reduce Airbnb dependency and build a channel you control, social media is a core part of that strategy.',
+                icon: UserPlus,
+                who: 'Hosts hiring VAs or teams',
+                desc: 'Building a team for the first time and needing structure before onboarding anyone.',
               },
               {
                 icon: Building2,
                 who: 'SA businesses',
-                desc: 'Serviced accommodation operators who want a professional, consistent presence that reflects the quality of their properties.',
+                desc: 'Serviced accommodation operators managing teams across multiple properties.',
               },
               {
-                icon: Palette,
-                who: 'Operators building a brand',
-                desc: 'Those who understand that a recognisable brand compounds over time — and want to start building it now.',
+                icon: Target,
+                who: 'Scaling operators',
+                desc: 'Growing portfolios where the current informal approach is starting to break down.',
               },
               {
-                icon: Calendar,
-                who: 'Hosts needing consistency',
-                desc: "Hosts who know they should be active on social media but don't have the time, skills, or systems to maintain it.",
+                icon: TrendingUp,
+                who: 'Hosts reducing involvement',
+                desc: 'Operators who want to step back without operations falling apart.',
               },
             ].map(({ icon: Icon, who, desc }) => (
               <div
@@ -699,25 +682,25 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
               {
-                initials: 'JB',
-                name: 'James B.',
-                role: 'STR Host · Manchester',
+                initials: 'TW',
+                name: 'Tom W.',
+                role: 'SA Operator · Birmingham',
                 quote:
-                  'I had no idea how much difference consistent Instagram content would make. Within three months of having Assistophere manage it, I had my first direct booking enquiry come in through DMs. That never happened before.',
+                  'I had a team but nobody knew who was responsible for what. Assistophere restructured everything and within weeks the chaos had gone. Everyone knew their role.',
               },
               {
-                initials: 'NK',
-                name: 'Natalie K.',
-                role: 'SA Operator · London',
+                initials: 'CE',
+                name: 'Claire E.',
+                role: 'Multi-property Host · London',
                 quote:
-                  'My accounts looked amateur before. Now they look professional and consistent. The branding work they did has completely changed how my business comes across online. Guests comment on it.',
+                  'I was the bottleneck in my own business. Once roles were properly defined and workflows were in place, I could step back and things still ran properly.',
               },
               {
-                initials: 'DR',
-                name: 'David R.',
-                role: 'Property Investor · Leeds',
+                initials: 'MO',
+                name: 'Marcus O.',
+                role: 'STR Business · Leeds',
                 quote:
-                  'I tried to manage social media myself but kept falling behind. Handing it over meant it actually gets done, every week, without me thinking about it. The consistency alone was worth it.',
+                  'We had three VAs doing overlapping work and missing things. The team structure they built eliminated the confusion and our operations became much more consistent.',
               },
             ].map(({ initials, name, role, quote }) => (
               <div
@@ -758,37 +741,22 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
               <h2 className="text-3xl lg:text-4xl font-bold">Frequently Asked Questions</h2>
             </div>
             <div className="space-y-3">
-              {[
-                {
-                  q: 'Which platforms do you manage?',
-                  a: "We primarily manage Instagram and Facebook for STR businesses, as these are the highest-value platforms for property showcase and direct booking growth. TikTok management is available depending on your business type and goals. We'll recommend the right platforms based on your audience during the discovery call.",
-                },
-                {
-                  q: 'Do you create the content?',
-                  a: "Yes — we handle content creation end to end, including post design, caption writing, hashtag strategy, and scheduling. For property photography, we'll advise on what we need and how to supply it, or we can recommend a local photographer if required.",
-                },
-                {
-                  q: 'Can social media generate bookings?',
-                  a: 'Yes, though it works differently from paid advertising. Social media builds brand awareness, trust, and an audience over time — which then converts through DM enquiries, website traffic, and direct booking links. Most clients begin to see direct enquiries within two to four months of consistent, structured management.',
-                },
-                {
-                  q: 'How often do you post?',
-                  a: 'Posting frequency is agreed as part of your package. Standard management includes three to five posts per week, with stories and engagement activity on top. We build a content calendar monthly so you can review and approve the plan before anything goes live.',
-                },
-              ].map(({ q, a }) => (
-                <details
-                  key={q}
-                  className="group rounded-2xl border border-base-300 bg-base-100 overflow-hidden"
-                >
-                  <summary className="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer list-none font-semibold text-sm select-none">
-                    {q}
-                    <ChevronRight className="w-4 h-4 text-base-content/40 shrink-0 group-open:rotate-90 transition-transform" />
-                  </summary>
-                  <div className="px-5 pb-4 text-sm text-base-content/65 leading-relaxed border-t border-base-300 pt-3">
-                    {a}
-                  </div>
-                </details>
-              ))}
+              <FaqItem
+                q="What roles do I need in my team?"
+                a="It depends on the size and nature of your operation. Common roles in STR businesses include guest communications, operations coordination, cleaning management, and admin. We assess your current workload and operation to identify exactly which roles make sense for your business."
+              />
+              <FaqItem
+                q="Can this work with my current team?"
+                a="Yes. We can work with an existing team to redefine roles, clarify responsibilities, and align workflows. We do not require you to start from scratch — the goal is to make your current team more effective, not to replace them."
+              />
+              <FaqItem
+                q="How do you assign responsibilities?"
+                a="We map your full operational workload first, then match each task and area of responsibility to the most appropriate role. The result is a clear role structure where every task has an owner and nothing is left unassigned or duplicated."
+              />
+              <FaqItem
+                q="Will this reduce my workload?"
+                a="Yes — that is a core outcome. When roles are clearly defined and workflows are in place, your team can handle operations without constantly referring back to you. You move from being the centre of everything to overseeing a team that runs itself."
+              />
             </div>
           </div>
         </div>
@@ -804,29 +772,28 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
             </div>
             <div className="max-w-2xl mx-auto space-y-6">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/15 border border-primary/30 text-primary text-sm font-semibold">
-                <Instagram className="w-4 h-4" /> Social Media Management
+                <Users className="w-4 h-4" /> Structure Your Team
               </div>
               <h2 className="text-3xl lg:text-4xl font-extrabold">
-                Ready to Build a Strong{' '}
+                Ready to Build a Team That{' '}
                 <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary">
-                  Social Media Presence?
+                  Actually Works?
                 </span>
               </h2>
               <p className="text-base-content/65 text-lg leading-relaxed">
-                Let&apos;s create a structured approach that supports your growth. We don&apos;t
-                just manage social media — we structure it to support your business.
+                Let&apos;s create a structure that makes your team efficient and scalable. We
+                don&apos;t just help you hire — we structure how your team works.
               </p>
               <div className="flex flex-wrap justify-center gap-4 pt-2">
-                <button className="pulse-cta-smm btn btn-primary btn-lg rounded-full px-10 gap-2 shadow-lg">
+                <button className="pulse-cta-ts btn btn-primary btn-lg rounded-full px-10 gap-2 shadow-lg">
                   <Phone className="w-4 h-4" /> Book a Discovery Call
                 </button>
                 <button className="btn btn-outline btn-lg rounded-full px-8 gap-2">
-                  <ArrowRight className="w-4 h-4" /> See How It Works
+                  <ArrowRight className="w-4 h-4" /> Back to STR Systems Building
                 </button>
               </div>
               <p className="text-xs text-base-content/40 pt-2">
-                Airbnb Social Media Management UK · STR Social Media Marketing · Serviced
-                Accommodation Social Media · Direct Booking Strategy
+                Airbnb Team Structure UK · STR Team Management · VA Team Setup · Operations Team
               </p>
             </div>
           </div>

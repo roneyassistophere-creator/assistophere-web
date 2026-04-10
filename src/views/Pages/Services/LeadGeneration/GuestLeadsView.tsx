@@ -10,198 +10,188 @@ import {
   Layers,
   Users,
   Star,
-  BarChart2,
   TrendingUp,
-  TrendingDown,
-  PieChart,
-  Calendar,
-  DollarSign,
-  FileText,
-  ChevronDown,
+  Target,
+  Search,
+  MessageSquare,
   CalendarCheck,
+  ChevronDown,
+  Megaphone,
+  UserCheck,
+  MapPin,
+  Zap,
 } from 'lucide-react'
 import { FaqItem } from './FaqItem'
 
 const faqs = [
   {
-    q: 'What does the report include?',
-    a: 'Each report covers total bookings, revenue generated, occupancy rates, average nightly rate, platform-level breakdown, and key observations — all structured to give you a clear picture of that month.',
+    q: 'What are guest leads?',
+    a: 'Guest leads are prospective guests who have shown interest in booking a short-term rental property — typically via ads, landing pages, or organic channels — before they book on a platform like Airbnb. Capturing them directly lets you convert to direct bookings and reduce platform commission.',
   },
   {
-    q: 'How often do you provide reports?',
-    a: 'Reports are provided monthly, covering the previous calendar month. You receive a consistent, structured snapshot of performance so you can track trends over time.',
+    q: 'How do you generate guest leads?',
+    a: 'We use targeted digital advertising, SEO-driven landing pages, and retargeting strategies to attract guests looking for properties in your target area or dates. Leads are captured and delivered to your booking funnel.',
   },
   {
-    q: 'Is it easy to understand?',
-    a: 'Yes. Reports are structured for clarity, not complexity. Key metrics are highlighted, trends are identified, and observations are written in plain language so you can act on them without needing to interpret raw data.',
+    q: 'Do I need a direct booking website?',
+    a: 'A direct booking website significantly improves conversion of guest leads — it gives you a destination to send them where they can book without a platform in the middle. We can advise on integrating this with your existing setup.',
   },
   {
-    q: 'Can this help improve performance?',
-    a: "Absolutely. When you can see what's working and what isn't — by property, by platform, by time period — you're in a much stronger position to make changes that actually improve bookings and revenue.",
+    q: 'What areas and guest types do you target?',
+    a: 'We build targeting strategies around your specific property location, niche (leisure, business, long-stay), and target guest profile. This improves lead quality and reduces wasted ad spend.',
   },
 ]
 
-const whatWeProvide = [
+const whatWeDeliver = [
   {
-    icon: <Calendar className="w-5 h-5 text-primary" />,
-    title: 'Booking Performance',
+    icon: <Search className="w-5 h-5 text-primary" />,
+    title: 'Targeted Audience Building',
     items: [
-      'Total bookings across all properties',
-      'Booking patterns and timing trends',
-      'Month-on-month comparison',
+      'Defining your ideal guest profile',
+      'Location and intent-based targeting',
+      'Interest and behaviour segmentation',
     ],
-    outcome: 'Understand exactly how bookings are trending',
+    outcome: 'Ads and content reaching the right guests, not everyone',
   },
   {
-    icon: <DollarSign className="w-5 h-5 text-primary" />,
-    title: 'Revenue Overview',
+    icon: <Megaphone className="w-5 h-5 text-primary" />,
+    title: 'Paid & Organic Campaigns',
     items: [
-      'Total revenue generated each month',
-      'Property-level revenue breakdown',
-      'Performance comparison across units',
+      'Google and Meta ad campaigns',
+      'Retargeting for warm audiences',
+      'SEO-driven landing page traffic',
     ],
-    outcome: 'Full revenue visibility every month',
+    outcome: 'A consistent flow of inbound guest enquiries',
   },
   {
-    icon: <PieChart className="w-5 h-5 text-primary" />,
-    title: 'Occupancy Insights',
+    icon: <UserCheck className="w-5 h-5 text-primary" />,
+    title: 'Lead Capture & Qualification',
     items: [
-      'Occupancy rates per property',
-      'Gap analysis — identifying empty nights',
-      'Consistency tracking over time',
+      'Optimised landing pages for conversion',
+      'Lead forms with qualifying questions',
+      'Enquiry filtering before delivery',
     ],
-    outcome: "Know when your properties perform and when they don't",
+    outcome: 'Only relevant, interested guests enter your funnel',
   },
   {
-    icon: <BarChart2 className="w-5 h-5 text-primary" />,
-    title: 'Platform Analysis',
+    icon: <TrendingUp className="w-5 h-5 text-primary" />,
+    title: 'Funnel Tracking & Reporting',
     items: [
-      'Performance broken down by platform',
-      'Booking sources and channel data',
-      'Where your revenue is actually coming from',
+      'Cost per lead and conversion data',
+      'Channel performance breakdown',
+      'Monthly reporting on pipeline health',
     ],
-    outcome: 'Understand which platforms drive your results',
-  },
-  {
-    icon: <FileText className="w-5 h-5 text-primary" />,
-    title: 'Key Observations',
-    items: [
-      "What's working well this month",
-      'Areas that need attention or adjustment',
-      'Suggested focus areas going forward',
-    ],
-    outcome: 'Clear takeaways without needing to interpret raw data',
+    outcome: 'Full visibility of what is driving your guest bookings',
   },
 ]
 
-const reportMetrics = [
-  { label: 'Total Bookings', value: '28', delta: '+4 vs last month', up: true },
-  { label: 'Revenue Generated', value: '£6,420', delta: '+12% vs last month', up: true },
-  { label: 'Occupancy Rate', value: '84%', delta: '+6% vs last month', up: true },
-  { label: 'Avg Nightly Rate', value: '£229', delta: '-£8 vs last month', up: false },
-  { label: 'Top Platform', value: 'Airbnb', delta: '67% of bookings', up: true },
-  { label: 'Review Score', value: '4.87', delta: '+0.03 vs last month', up: true },
-]
-
-const comparisonRows = [
-  {
-    area: 'Visibility',
-    before: 'No idea how properties are actually performing',
-    after: 'Clear monthly snapshot across all metrics',
-  },
-  {
-    area: 'Decisions',
-    before: 'Guessing based on gut feel or raw data',
-    after: 'Data-backed decisions grounded in structured reports',
-  },
-  {
-    area: 'Reporting',
-    before: 'No format, no consistency, no comparison',
-    after: 'Consistent monthly reporting with trend context',
-  },
-  {
-    area: 'Clarity',
-    before: 'Buried in spreadsheets with no clear takeaway',
-    after: 'Plain-language observations with actionable flags',
-  },
+const pipelineLeads = [
+  { name: 'Emma T.', dates: '12–16 May', guests: '2 guests', type: 'Weekend break', status: 'Hot', statusColor: 'text-error' },
+  { name: 'Oliver B.', dates: '3–10 June', guests: '4 guests', type: 'Family holiday', status: 'Warm', statusColor: 'text-warning' },
+  { name: 'Priya K.', dates: '19–21 April', guests: '1 guest', type: 'Business stay', status: 'Enquired', statusColor: 'text-primary' },
+  { name: 'Ryan M.', dates: '26 Apr – 3 May', guests: '6 guests', type: 'Group break', status: 'Hot', statusColor: 'text-error' },
+  { name: 'Aisha F.', dates: 'June (flexible)', guests: '2 guests', type: 'Anniversary trip', status: 'Warm', statusColor: 'text-warning' },
 ]
 
 const problemCards = [
   {
     icon: <XCircle className="w-5 h-5 text-error flex-shrink-0 mt-0.5" />,
-    title: 'No Performance Visibility',
-    desc: 'Without structured reporting, most operators have no clear view of how their properties are actually performing month to month.',
+    title: 'Full Dependence on Platforms',
+    desc: 'Relying entirely on Airbnb and Booking.com for guests means paying commission on every booking and having no direct relationship with your audience.',
   },
   {
     icon: <XCircle className="w-5 h-5 text-error flex-shrink-0 mt-0.5" />,
-    title: 'Decisions Made Without Data',
-    desc: 'Pricing adjustments, platform changes, and property decisions get made on gut feel instead of actual performance data.',
+    title: 'No Guest Pipeline of Your Own',
+    desc: "When platforms change algorithms, increase fees, or restrict your listing, you have no fallback. Without your own guest pipeline, you're entirely at their mercy.",
   },
   {
     icon: <XCircle className="w-5 h-5 text-error flex-shrink-0 mt-0.5" />,
-    title: 'Revenue Gaps Go Unnoticed',
-    desc: 'Empty nights, underperforming properties, and low-converting platforms are invisible without consistent tracking.',
+    title: 'Seasonality With No Buffer',
+    desc: "During quiet periods, operators with no direct guest channel feel it hardest. A lead generation system helps fill gaps that platforms won't prioritise for you.",
   },
   {
     icon: <XCircle className="w-5 h-5 text-error flex-shrink-0 mt-0.5" />,
-    title: 'No Trend Awareness',
-    desc: "You can't identify seasonal patterns, platform shifts, or occupancy trends if you're not measuring consistently every month.",
+    title: 'No Retargeting Capability',
+    desc: 'Guests who browsed your listing but didn\'t book are lost forever on platforms. With your own guest lead gen, you can retarget them and recover that demand.',
   },
   {
     icon: <AlertTriangle className="w-5 h-5 text-warning flex-shrink-0 mt-0.5" />,
-    title: 'Time Lost on Manual Analysis',
-    desc: 'Pulling data from multiple platforms and assembling it into something meaningful takes hours you could spend on running your business.',
+    title: 'Untapped Long-Stay Demand',
+    desc: 'Mid-term and long-stay guests — remote workers, relocating professionals — rarely come through Airbnb searches. Targeted lead gen reaches them where they actually look.',
   },
 ]
 
 const approachPoints = [
   {
-    icon: <CalendarCheck className="w-5 h-5 text-primary" />,
-    title: 'Consistent Monthly Cadence',
-    desc: "Reports are delivered every month without you needing to ask. You get a structured snapshot of the previous month's performance, reliably and on time.",
+    icon: <Target className="w-5 h-5 text-primary" />,
+    title: 'Guest Profile-First Targeting',
+    desc: 'We start by defining who your ideal guest is — leisure, business, group, long-stay — and build every campaign around reaching that specific profile in your target area.',
   },
   {
-    icon: <Layers className="w-5 h-5 text-primary" />,
-    title: 'Cross-Property Breakdown',
-    desc: 'Whether you have one property or ten, reports are structured to show performance at the portfolio level and at the individual property level.',
+    icon: <MapPin className="w-5 h-5 text-primary" />,
+    title: 'Location and Date-Intent Signals',
+    desc: 'We target guests showing intent to travel to your area during relevant periods — so ad spend goes toward people actively planning, not passive browsers.',
+  },
+  {
+    icon: <Zap className="w-5 h-5 text-primary" />,
+    title: 'Fast Funnel, Low Friction',
+    desc: 'Landing pages and lead forms are built to convert quickly — minimal steps, clear value, and a direct path to enquiry or booking.',
   },
   {
     icon: <TrendingUp className="w-5 h-5 text-primary" />,
-    title: 'Trend Context Included',
-    desc: 'Each report includes comparisons to prior months so you can see direction — not just isolated numbers. Trends are identified and flagged clearly.',
+    title: 'Iterative Optimisation',
+    desc: 'Every campaign is tracked and improved over time. Cost per lead drops and quality improves as we refine targeting, messaging, and funnel structure.',
+  },
+]
+
+const comparisonRows = [
+  {
+    area: 'Channel Control',
+    before: 'Entirely dependent on Airbnb and Booking.com algorithms',
+    after: 'Your own direct guest pipeline independent of platforms',
   },
   {
-    icon: <FileText className="w-5 h-5 text-primary" />,
-    title: 'Plain-Language Observations',
-    desc: "Numbers alone don't tell you what to do. Every report includes structured key observations written in plain language so the insight is clear.",
+    area: 'Commission',
+    before: 'Platform fee on every booking — 10–20% per reservation',
+    after: 'Direct bookings with no commission cost',
+  },
+  {
+    area: 'Quiet Periods',
+    before: 'Empty calendar with no direct way to fill gaps',
+    after: 'Active pipeline generating demand year-round',
+  },
+  {
+    area: 'Guest Relationship',
+    before: 'Platform owns the relationship — you see a name and a date',
+    after: "You own the guest contact — and can market to them again",
   },
 ]
 
 const whoItIsFor = [
-  { icon: <Users className="w-5 h-5 text-primary" />, label: 'Multi-property STR operators who need portfolio-level visibility' },
-  { icon: <TrendingUp className="w-5 h-5 text-primary" />, label: 'Hosts who want to make data-backed decisions about pricing and platforms' },
-  { icon: <BarChart2 className="w-5 h-5 text-primary" />, label: 'Operators scaling their portfolio who need consistent tracking as they grow' },
-  { icon: <FileText className="w-5 h-5 text-primary" />, label: 'Owners who want structured reporting without building it themselves' },
+  { icon: <Users className="w-5 h-5 text-primary" />, label: 'Hosts looking to reduce platform dependence and grow direct bookings' },
+  { icon: <TrendingUp className="w-5 h-5 text-primary" />, label: 'Operators wanting to fill quiet periods without relying on platform promotions' },
+  { icon: <UserCheck className="w-5 h-5 text-primary" />, label: 'STR businesses targeting niche guests — business travellers, long-stays, groups' },
+  { icon: <Target className="w-5 h-5 text-primary" />, label: 'Anyone building a direct booking channel who needs a source of guest leads' },
 ]
 
-export const MonthlyFinanceReportingView: React.FC<{ page: Page }> = ({ page }) => {
+export const GuestLeadsView: React.FC<{ page: Page }> = ({ page }) => {
   return (
     <>
       <style>{`
-        @keyframes mfrFadeUp {
+        @keyframes glFadeUp {
           from { opacity: 0; transform: translateY(22px); }
           to   { opacity: 1; transform: translateY(0); }
         }
-        .mfr-fade-1 { animation: mfrFadeUp 0.55s ease both 0.05s; }
-        .mfr-fade-2 { animation: mfrFadeUp 0.55s ease both 0.15s; }
-        .mfr-fade-3 { animation: mfrFadeUp 0.55s ease both 0.25s; }
-        .mfr-fade-4 { animation: mfrFadeUp 0.55s ease both 0.35s; }
-        .mfr-fade-5 { animation: mfrFadeUp 0.55s ease both 0.45s; }
-        @keyframes pulse-ring-mfr {
+        .gl-fade-1 { animation: glFadeUp 0.55s ease both 0.05s; }
+        .gl-fade-2 { animation: glFadeUp 0.55s ease both 0.15s; }
+        .gl-fade-3 { animation: glFadeUp 0.55s ease both 0.25s; }
+        .gl-fade-4 { animation: glFadeUp 0.55s ease both 0.35s; }
+        .gl-fade-5 { animation: glFadeUp 0.55s ease both 0.45s; }
+        @keyframes pulse-ring-gl {
           0%, 100% { box-shadow: 0 0 0 0 oklch(var(--p)/0.45); }
           50%       { box-shadow: 0 0 0 8px oklch(var(--p)/0); }
         }
-        .pulse-cta-mfr { animation: pulse-ring-mfr 2.4s ease-in-out infinite; }
+        .pulse-cta-gl { animation: pulse-ring-gl 2.4s ease-in-out infinite; }
       `}</style>
 
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
@@ -216,39 +206,39 @@ export const MonthlyFinanceReportingView: React.FC<{ page: Page }> = ({ page }) 
 
             {/* Left */}
             <div>
-              <div className="mfr-fade-1 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-6">
-                <BarChart2 className="w-3.5 h-3.5" />
-                Financial Reporting · UK
+              <div className="gl-fade-1 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-6">
+                <Users className="w-3.5 h-3.5" />
+                Guest Leads · UK
               </div>
 
-              <h1 className="mfr-fade-2 text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-[1.08] tracking-tight mb-5">
-                Clear Financial Reporting{' '}
+              <h1 className="gl-fade-2 text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-[1.08] tracking-tight mb-5">
+                Direct Guest Leads{' '}
                 <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary">
-                  That Keeps You Informed
+                  Outside the Platforms
                 </span>
               </h1>
 
-              <p className="mfr-fade-3 text-lg text-base-content/70 leading-relaxed mb-5 max-w-lg">
-                Structured monthly reports covering bookings, revenue, occupancy, platform breakdown, and key observations — so you always know how your properties are performing.
+              <p className="gl-fade-3 text-lg text-base-content/70 leading-relaxed mb-5 max-w-lg">
+                Targeted guest lead generation for STR operators — attracting the right guests through paid and organic channels so you can fill your calendar without paying Airbnb commission on every booking.
               </p>
 
-              <div className="mfr-fade-3 p-4 rounded-xl border border-primary/20 bg-primary/6 text-sm italic text-base-content/60 mb-8 max-w-lg">
-                "Monthly finance reporting provides short term rental operators with structured performance data to support informed decision-making."
+              <div className="gl-fade-3 p-4 rounded-xl border border-primary/20 bg-primary/6 text-sm italic text-base-content/60 mb-8 max-w-lg">
+                "Guest lead generation gives short term rental operators a direct channel to attract and convert guests — reducing platform dependency and building an audience they own."
               </div>
 
-              <div className="mfr-fade-4 flex flex-wrap gap-3 mb-8">
+              <div className="gl-fade-4 flex flex-wrap gap-3 mb-8">
                 <Link
                   href="/contact"
-                  className="pulse-cta-mfr btn btn-primary btn-lg rounded-full px-8 gap-2"
+                  className="pulse-cta-gl btn btn-primary btn-lg rounded-full px-8 gap-2"
                 >
-                  Get Monthly Reports <ArrowRight className="w-4 h-4" />
+                  Start Attracting Direct Guests <ArrowRight className="w-4 h-4" />
                 </Link>
-                <Link href="/services/airbnb-va" className="btn btn-outline btn-lg rounded-full">
-                  All VA Services
+                <Link href="/services/lead-generation" className="btn btn-outline btn-lg rounded-full">
+                  All Lead Gen Services
                 </Link>
               </div>
 
-              <div className="mfr-fade-5 flex items-center gap-4">
+              <div className="gl-fade-5 flex items-center gap-4">
                 <div className="flex -space-x-2">
                   {['bg-primary/20', 'bg-secondary/20', 'bg-accent/20'].map((c, i) => (
                     <div key={i} className={`w-8 h-8 rounded-full border-2 border-base-100 ${c} flex items-center justify-center`}>
@@ -261,35 +251,39 @@ export const MonthlyFinanceReportingView: React.FC<{ page: Page }> = ({ page }) 
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                     ))}
-                    <span className="ml-1 font-medium text-base-content/80">Trusted by UK hosts</span>
+                    <span className="ml-1 font-medium text-base-content/80">Trusted by UK STR operators</span>
                   </span>
                 </div>
               </div>
             </div>
 
-            {/* Right — Finance Dashboard */}
-            <div className="mfr-fade-3 relative">
+            {/* Right — Guest Lead Pipeline */}
+            <div className="gl-fade-3 relative">
               <div className="rounded-2xl border border-base-300 bg-base-100 shadow-xl overflow-hidden">
                 <div className="flex items-center justify-between px-4 py-3 border-b border-base-300 bg-base-200">
-                  <span className="text-sm font-semibold text-base-content/80">Monthly Finance Overview</span>
-                  <span className="text-xs px-2.5 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary font-medium">April 2025</span>
+                  <span className="text-sm font-semibold text-base-content/80">Guest Lead Pipeline</span>
+                  <span className="text-xs px-2.5 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary font-medium">5 Active Leads</span>
                 </div>
-                <div className="p-4 grid grid-cols-2 gap-3">
-                  {reportMetrics.map((m, i) => (
-                    <div key={i} className="p-3 rounded-xl bg-base-200 border border-base-300">
-                      <p className="text-[11px] text-base-content/50 font-medium uppercase tracking-wide mb-1">{m.label}</p>
-                      <p className="text-xl font-extrabold text-base-content mb-0.5">{m.value}</p>
-                      <p className={`text-xs flex items-center gap-1 ${m.up ? 'text-success' : 'text-error'}`}>
-                        {m.up ? <TrendingUp className="w-3 h-3" /> : <TrendingDown className="w-3 h-3" />}
-                        {m.delta}
-                      </p>
+                <div className="divide-y divide-base-300">
+                  {pipelineLeads.map((lead, i) => (
+                    <div key={i} className="flex items-center justify-between px-4 py-3 hover:bg-base-200/40 transition-colors">
+                      <div className="flex items-center gap-2.5">
+                        <div className="w-7 h-7 rounded-full bg-secondary/15 border border-secondary/20 flex items-center justify-center flex-shrink-0 text-xs font-bold text-secondary">
+                          {lead.name.charAt(0)}
+                        </div>
+                        <div>
+                          <p className="text-sm font-medium text-base-content/80">{lead.name}</p>
+                          <p className="text-xs text-base-content/50">{lead.dates} · {lead.type}</p>
+                        </div>
+                      </div>
+                      <span className={`text-xs font-semibold ${lead.statusColor}`}>{lead.status}</span>
                     </div>
                   ))}
                 </div>
-                <div className="px-4 pb-4">
-                  <div className="p-3 rounded-xl bg-primary/8 border border-primary/20">
-                    <p className="text-xs font-semibold text-primary mb-1">Key Observation</p>
-                    <p className="text-xs text-base-content/70">Revenue up 12% month-on-month. Airbnb continues to lead. Thursday–Sunday occupancy remains strongest — consider adjusting mid-week pricing.</p>
+                <div className="px-4 pb-4 pt-3">
+                  <div className="p-3 rounded-xl bg-secondary/8 border border-secondary/20">
+                    <p className="text-xs font-semibold text-secondary mb-1">Pipeline Note</p>
+                    <p className="text-xs text-base-content/70">2 hot leads ready for follow-up. Ryan M. group booking — 6 guests, 7 nights. High-value enquiry flagged for priority response.</p>
                   </div>
                 </div>
               </div>
@@ -304,19 +298,19 @@ export const MonthlyFinanceReportingView: React.FC<{ page: Page }> = ({ page }) 
         <div className="container max-w-4xl mx-auto px-4 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/10 border border-secondary/25 text-secondary text-sm font-medium mb-5">
             <Sparkles className="w-3.5 h-3.5" />
-            Why Reporting Matters
+            Why Guest Lead Gen Matters
           </div>
           <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight mb-5">
-            You Can't Improve What You Don't Measure
+            Own Your Guest Channel — Don't Just Rent It
           </h2>
           <p className="text-lg text-base-content/65 leading-relaxed max-w-2xl mx-auto mb-8">
-            Most STR operators are flying blind. They know roughly how much they've earned, but not how occupancy varies by property, which platforms are underperforming, or whether revenue is trending up or down. Without consistent reporting, every decision is a guess.
+            Platform bookings are convenient — but every one costs 10–20% in commission, and the platform owns the guest relationship, not you. Building a direct guest pipeline gives you an audience, a channel, and a revenue stream that doesn't pay commission every time a guest books.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-left">
             {[
-              { icon: <BarChart2 className="w-5 h-5 text-primary" />, title: 'Structured Monthly Format', body: 'The same clear format every month — so you can compare periods and track direction over time.' },
-              { icon: <TrendingUp className="w-5 h-5 text-secondary" />, title: 'Portfolio-Wide Visibility', body: 'See performance across all your properties in one place, not scattered across multiple platform dashboards.' },
-              { icon: <FileText className="w-5 h-5 text-accent" />, title: 'Plain-Language Observations', body: 'Not just numbers. Each report includes clear observations so you know what the data actually means.' },
+              { icon: <TrendingUp className="w-5 h-5 text-primary" />, title: 'Commission-Free Revenue', body: 'Every direct booking you convert from your own guest pipeline saves platform fees — typically 10–20% per reservation.' },
+              { icon: <UserCheck className="w-5 h-5 text-secondary" />, title: 'You Own the Relationship', body: 'Direct guest leads are yours. You can retarget, re-market, and build loyalty without a platform intermediary.' },
+              { icon: <Layers className="w-5 h-5 text-accent" />, title: 'Platform-Proof Growth', body: "Algorithm changes, listing suppression, and fee increases don't affect demand you've built through your own channels." },
             ].map((item, i) => (
               <div key={i} className="p-5 rounded-2xl bg-base-100 border border-base-300">
                 <div className="w-9 h-9 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-3">
@@ -336,13 +330,13 @@ export const MonthlyFinanceReportingView: React.FC<{ page: Page }> = ({ page }) 
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-error/10 border border-error/25 text-error text-sm font-medium mb-4">
               <AlertTriangle className="w-3.5 h-3.5" />
-              The Real Cost of No Reporting
+              The Cost of Platform Dependence
             </div>
             <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight mb-4">
-              Operating Without Data Has Real Consequences
+              What Happens When Platforms Are Your Only Guest Source
             </h2>
             <p className="text-base-content/65 max-w-xl mx-auto">
-              Without structured reporting, most operators are making pricing, platform, and property decisions without the data to back them up.
+              Total dependence on Airbnb and Booking.com isn't just expensive — it's a vulnerability that gets worse as your portfolio grows.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -368,18 +362,18 @@ export const MonthlyFinanceReportingView: React.FC<{ page: Page }> = ({ page }) 
               What Good Looks Like
             </div>
             <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight mb-4">
-              Reporting That Actually Tells You Something
+              A Direct Guest Channel That Works Alongside Platforms
             </h2>
             <p className="text-base-content/65 max-w-xl mx-auto">
-              Good finance reporting isn't a data dump — it's a structured view that highlights performance, flags issues, and tells you what changed and why.
+              Good guest lead generation doesn't replace platforms — it supplements them with a direct channel that grows your revenue and reduces your dependency over time.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { icon: <CalendarCheck className="w-5 h-5 text-success" />, title: 'Delivered Every Month', body: 'You receive your report at the same time each month, covering the full previous period — without needing to ask.' },
-              { icon: <BarChart2 className="w-5 h-5 text-success" />, title: 'All Key Metrics Covered', body: 'Bookings, revenue, occupancy, average nightly rate, platform split, and cancellations — all in one place.' },
-              { icon: <TrendingUp className="w-5 h-5 text-success" />, title: 'Month-on-Month Trend Data', body: 'Every metric is shown with comparison to the prior month so you can see direction, not just a snapshot.' },
-              { icon: <FileText className="w-5 h-5 text-success" />, title: 'Observations Written For You', body: 'The report ends with plain-language key observations so you know exactly what to pay attention to.' },
+              { icon: <CalendarCheck className="w-5 h-5 text-success" />, title: 'Fills the Gaps Platforms Leave', body: "When Airbnb isn't prioritising your listing, your own guest pipeline keeps enquiries coming in — independent of any algorithm." },
+              { icon: <UserCheck className="w-5 h-5 text-success" />, title: 'Guests Who Are Already Interested', body: 'Leads are captured after the guest expressed intent — so every enquiry is warm, not cold.' },
+              { icon: <MessageSquare className="w-5 h-5 text-success" />, title: 'Direct Relationship From Day One', body: 'You communicate directly, without platform messaging restrictions — better for conversion and guest experience.' },
+              { icon: <TrendingUp className="w-5 h-5 text-success" />, title: 'Growing Value Over Time', body: "Every guest who books direct becomes part of your own audience — someone you can re-market to for future stays." },
             ].map((item, i) => (
               <div key={i} className="flex gap-4 p-6 rounded-2xl bg-base-100 border border-base-300 hover:border-success/30 transition-colors">
                 <div className="w-10 h-10 rounded-xl bg-success/10 border border-success/20 flex items-center justify-center flex-shrink-0">
@@ -395,30 +389,30 @@ export const MonthlyFinanceReportingView: React.FC<{ page: Page }> = ({ page }) 
         </div>
       </section>
 
-      {/* ── WHAT WE PROVIDE ──────────────────────────────────────────────── */}
+      {/* ── WHAT WE DELIVER ──────────────────────────────────────────────── */}
       <section className="py-20 lg:py-28">
         <div className="container max-w-5xl mx-auto px-4">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-4">
-              <FileText className="w-3.5 h-3.5" />
-              What Each Report Covers
+              <Layers className="w-3.5 h-3.5" />
+              What We Deliver
             </div>
             <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight mb-4">
-              Five Core Reporting Areas
+              Four Areas of Guest Lead Generation
             </h2>
             <p className="text-base-content/65 max-w-xl mx-auto">
-              Each monthly report is structured around five key areas — giving you full visibility of what happened, why, and what it means.
+              From targeting the right audience to converting enquiries into bookings, here's what each engagement covers.
             </p>
           </div>
 
           {/* Desktop table */}
           <div className="hidden md:block rounded-2xl border border-base-300 overflow-hidden">
             <div className="grid grid-cols-[1fr_2fr_1.5fr] bg-base-200 border-b border-base-300 px-6 py-3 text-xs font-semibold uppercase tracking-widest text-base-content/50">
-              <span>Reporting Area</span>
+              <span>Service Area</span>
               <span>What's Included</span>
               <span>The Outcome</span>
             </div>
-            {whatWeProvide.map((row, i) => (
+            {whatWeDeliver.map((row, i) => (
               <div key={i} className={`grid grid-cols-[1fr_2fr_1.5fr] gap-4 px-6 py-5 items-start border-b border-base-300 last:border-0 hover:bg-base-200/50 transition-colors ${i % 2 === 0 ? 'bg-base-100' : 'bg-base-50'}`}>
                 <div className="flex items-center gap-2.5">
                   <div className="w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
@@ -444,7 +438,7 @@ export const MonthlyFinanceReportingView: React.FC<{ page: Page }> = ({ page }) 
 
           {/* Mobile cards */}
           <div className="md:hidden space-y-4">
-            {whatWeProvide.map((row, i) => (
+            {whatWeDeliver.map((row, i) => (
               <div key={i} className="p-5 rounded-2xl bg-base-100 border border-base-300">
                 <div className="flex items-center gap-2.5 mb-3">
                   <div className="w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
@@ -470,79 +464,6 @@ export const MonthlyFinanceReportingView: React.FC<{ page: Page }> = ({ page }) 
         </div>
       </section>
 
-      {/* ── DATA INSIGHT ─────────────────────────────────────────────────── */}
-      <section className="bg-base-200 border-y border-base-300 py-20 lg:py-28">
-        <div className="container max-w-5xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/10 border border-secondary/25 text-secondary text-sm font-medium mb-4">
-              <TrendingUp className="w-3.5 h-3.5" />
-              Connected to Your Operations
-            </div>
-            <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight mb-4">
-              Reporting That Feeds Into Everything Else
-            </h2>
-            <p className="text-base-content/65 max-w-xl mx-auto">
-              Finance reporting doesn't sit in isolation. It connects directly to pricing reviews, platform strategy, maintenance priorities, and portfolio planning.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {[
-              { icon: <BarChart2 className="w-5 h-5 text-primary" />, label: 'Pricing Strategy', body: 'Occupancy gaps and nightly rate trends directly inform pricing adjustments.' },
-              { icon: <PieChart className="w-5 h-5 text-secondary" />, label: 'Platform Allocation', body: 'Platform-level data helps you decide where to focus listing optimisation.' },
-              { icon: <TrendingUp className="w-5 h-5 text-accent" />, label: 'Portfolio Growth', body: 'Revenue trends and performance benchmarks support decisions about scaling.' },
-              { icon: <Calendar className="w-5 h-5 text-primary" />, label: 'Seasonal Planning', body: 'Month-on-month data surfaces seasonal patterns to plan availability around.' },
-              { icon: <FileText className="w-5 h-5 text-secondary" />, label: 'Owner Reporting', body: 'For co-hosts and PMs, structured reports are ready to share with property owners.' },
-              { icon: <Layers className="w-5 h-5 text-accent" />, label: 'VA Task Prioritisation', body: 'Performance data helps the VA team focus effort where it has the most impact.' },
-            ].map((item, i) => (
-              <div key={i} className="flex gap-3 p-5 rounded-2xl bg-base-100 border border-base-300 hover:border-primary/30 transition-colors">
-                <div className="w-9 h-9 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
-                  {item.icon}
-                </div>
-                <div>
-                  <h3 className="font-semibold text-sm text-base-content mb-1">{item.label}</h3>
-                  <p className="text-sm text-base-content/60">{item.body}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── COMMON MISTAKES ───────────────────────────────────────────────── */}
-      <section className="py-20 lg:py-28">
-        <div className="container max-w-5xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-warning/10 border border-warning/25 text-warning text-sm font-medium mb-4">
-              <AlertTriangle className="w-3.5 h-3.5" />
-              Common Mistakes
-            </div>
-            <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight mb-4">
-              What Most Operators Get Wrong With Reporting
-            </h2>
-            <p className="text-base-content/65 max-w-xl mx-auto">
-              Even operators who track data often fall into patterns that undermine the value of that data.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {[
-              { title: 'Relying on Platform Dashboards', body: "Platform dashboards show you your numbers in isolation. They don't give you a cross-platform view or tell you what the trends mean." },
-              { title: 'Tracking Inconsistently', body: 'Pulling data occasionally rather than monthly means you lose the ability to track direction. Trends require consistent measurement.' },
-              { title: 'No Comparison Context', body: 'A 75% occupancy rate means nothing without context. Is that up or down? Better or worse than last quarter? Comparison makes data useful.' },
-              { title: 'Ignoring Low Performers', body: "When you're managing multiple properties, poor performers often get overlooked because there's no structured view showing them relative to others." },
-              { title: 'Sharing Raw Data With Owners', body: "Raw spreadsheets aren't owner-friendly. Structured reports with clear observations are far more useful for owner communication and trust." },
-            ].map((item, i) => (
-              <div key={i} className="flex gap-3 p-5 rounded-2xl bg-base-200 border border-base-300 hover:border-warning/30 transition-colors">
-                <AlertTriangle className="w-5 h-5 text-warning flex-shrink-0 mt-0.5" />
-                <div>
-                  <h3 className="font-semibold text-base-content mb-1">{item.title}</h3>
-                  <p className="text-sm text-base-content/60">{item.body}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── OUR APPROACH ─────────────────────────────────────────────────── */}
       <section className="bg-base-200 border-y border-base-300 py-20 lg:py-28">
         <div className="container max-w-5xl mx-auto px-4">
@@ -552,10 +473,10 @@ export const MonthlyFinanceReportingView: React.FC<{ page: Page }> = ({ page }) 
               How We Approach It
             </div>
             <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight mb-4">
-              Consistent, Clear, and Actionable
+              Intent-Led, Location-Specific, Built to Convert
             </h2>
             <p className="text-base-content/65 max-w-xl mx-auto">
-              Our reporting approach is built around giving you the information you need — in a format that's easy to act on.
+              Our guest lead generation approach targets guests who are already planning to travel — then gets them into your funnel before they land on a platform.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -583,10 +504,10 @@ export const MonthlyFinanceReportingView: React.FC<{ page: Page }> = ({ page }) 
               Before vs After
             </div>
             <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight mb-4">
-              No Reporting vs Structured Monthly Reports
+              Platform-Only vs Direct Guest Channel
             </h2>
             <p className="text-base-content/65 max-w-xl mx-auto">
-              See the difference structured reporting makes across the areas that matter most to STR operators.
+              See how adding a direct guest pipeline changes the economics and resilience of your short-term rental business.
             </p>
           </div>
 
@@ -594,8 +515,8 @@ export const MonthlyFinanceReportingView: React.FC<{ page: Page }> = ({ page }) 
           <div className="hidden md:block rounded-2xl border border-base-300 overflow-hidden">
             <div className="grid grid-cols-3 bg-base-200 border-b border-base-300 px-6 py-3 text-xs font-semibold uppercase tracking-widest text-base-content/50">
               <span>Area</span>
-              <span className="flex items-center gap-1.5"><XCircle className="w-3.5 h-3.5 text-error" /> Without Reporting</span>
-              <span className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-success" /> With Our Reports</span>
+              <span className="flex items-center gap-1.5"><XCircle className="w-3.5 h-3.5 text-error" /> Platforms Only</span>
+              <span className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-success" /> With Direct Guest Pipeline</span>
             </div>
             {comparisonRows.map((row, i) => (
               <div key={i} className={`grid grid-cols-3 gap-4 px-6 py-4 border-b border-base-300 last:border-0 ${i % 2 === 0 ? 'bg-base-100' : 'bg-base-50'}`}>
@@ -645,7 +566,7 @@ export const MonthlyFinanceReportingView: React.FC<{ page: Page }> = ({ page }) 
               Best Suited For
             </h2>
             <p className="text-base-content/65 max-w-xl mx-auto">
-              Monthly finance reporting is most valuable for operators who want structured visibility without building the system themselves.
+              Guest lead generation is most valuable for operators who are ready to build a channel they own — alongside or instead of relying entirely on platforms.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -670,14 +591,14 @@ export const MonthlyFinanceReportingView: React.FC<{ page: Page }> = ({ page }) 
               What Clients Say
             </div>
             <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight mb-4">
-              Reporting That Builds Confidence
+              Direct Guests. Less Commission. More Control.
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { quote: "I never had a clear view of how my properties were performing month to month. Now I get a structured report every month and I actually understand it — plain language, no spreadsheet interpretation needed.", name: 'James R.', role: 'Multi-property host, Manchester' },
-              { quote: "As a co-host managing properties for multiple owners, having structured monthly reports has made owner communication so much easier. I can share something professional instead of a raw data export.", name: 'Sophie T.', role: 'Co-host, London' },
-              { quote: "The platform breakdown alone was eye-opening. I didn't realise how much Booking.com had dropped off until I saw it in the report. Made a real difference to where I focused my optimisation.", name: 'Marcus L.', role: 'STR operator, Birmingham' },
+              { quote: "I was paying Airbnb 15% on every booking and had no way to reach guests directly. Since setting up a proper guest lead gen funnel I've converted around 30% of bookings as direct — the saving has been significant.", name: 'Claire T.', role: 'STR host, Lake District' },
+              { quote: "The business travel segment we were targeting wasn't coming through Airbnb at all. Once we ran targeted guest lead gen for that audience specifically, we started getting long-stay enquiries through our own channel consistently.", name: 'Robert H.', role: 'Multi-property operator, London' },
+              { quote: "We had a quiet January and no way to do anything about it — platform visibility just dropped off. Having our own guest pipeline meant we could run a targeted push in our area and fill gaps that would otherwise have stayed empty.", name: 'Natalie W.', role: 'Co-host, Edinburgh' },
             ].map((t, i) => (
               <div key={i} className="flex flex-col gap-4 p-6 rounded-2xl bg-base-100 border border-base-300 hover:border-amber-400/30 transition-colors">
                 <div className="flex gap-0.5">
@@ -728,17 +649,17 @@ export const MonthlyFinanceReportingView: React.FC<{ page: Page }> = ({ page }) 
               Get Started
             </div>
             <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight mb-4">
-              Ready to See Your Properties Clearly?
+              Ready to Build a Direct Guest Channel?
             </h2>
             <p className="text-base-content/65 max-w-xl mx-auto mb-8">
-              Get structured monthly finance reports delivered every month — clear, consistent, and ready to act on.
+              Stop letting platforms own your guests. Start building a direct pipeline that fills your calendar and puts you in control of your bookings.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
-              <Link href="/contact" className="pulse-cta-mfr btn btn-primary btn-lg rounded-full px-8 gap-2">
-                Start Monthly Reporting <ArrowRight className="w-4 h-4" />
+              <Link href="/contact" className="pulse-cta-gl btn btn-primary btn-lg rounded-full px-8 gap-2">
+                Start Attracting Direct Guests <ArrowRight className="w-4 h-4" />
               </Link>
-              <Link href="/services/airbnb-va" className="btn btn-outline btn-lg rounded-full">
-                View All VA Services
+              <Link href="/services/lead-generation" className="btn btn-outline btn-lg rounded-full">
+                View All Lead Gen Services
               </Link>
             </div>
           </div>
@@ -748,4 +669,4 @@ export const MonthlyFinanceReportingView: React.FC<{ page: Page }> = ({ page }) 
   )
 }
 
-export default MonthlyFinanceReportingView
+export default GuestLeadsView

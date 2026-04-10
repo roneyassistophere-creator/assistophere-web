@@ -43,6 +43,7 @@ import { CleaningCoordinationView } from '@/views/Pages/Services/AirbnbVa/Cleani
 import { LinenToiletriesView } from '@/views/Pages/Services/AirbnbVa/LinenToiletriesView'
 import { PropertyMaintenanceView } from '@/views/Pages/Services/AirbnbVa/PropertyMaintenanceView'
 import { MonthlyFinanceReportingView } from '@/views/Pages/Services/AirbnbVa/MonthlyFinanceReportingView'
+import { GraphicalContentCreationView } from '@/views/Pages/Services/AirbnbVa/GraphicalContentCreationView'
 import { DirectBookingEngineView } from '@/views/Pages/Services/DirectBookingEngine/DirectBookingEngineView'
 import { DirectBookingWebsiteView } from '@/views/Pages/Services/DirectBookingEngine/DirectBookingWebsiteView'
 import { DirectBookingConversionsView } from '@/views/Pages/Services/AirbnbVa/DirectBookingConversionsView'
@@ -51,8 +52,19 @@ import { PaymentSetupView } from '@/views/Pages/Services/DirectBookingEngine/Pay
 import { SeoOrganicGrowthView } from '@/views/Pages/Services/DirectBookingEngine/SeoOrganicGrowthView'
 import { GoogleAdsView } from '@/views/Pages/Services/DirectBookingEngine/GoogleAdsView'
 import { LeadGenerationView } from '@/views/Pages/Services/LeadGeneration/LeadGenerationView'
+import { LandlordLeadsView } from '@/views/Pages/Services/LeadGeneration/LandlordLeadsView'
+import { GuestLeadsView } from '@/views/Pages/Services/LeadGeneration/GuestLeadsView'
 import { SocialMediaManagementAndStrategyView } from '@/views/Pages/Services/SocialMediaMgtAndStr/SocialMediaManagementAndStrategyView'
+import { SocialMediaContentCreationView } from '@/views/Pages/Services/SocialMediaMgtAndStr/SocialMediaContentCreationView'
+import { PostingAndSchedulingView } from '@/views/Pages/Services/SocialMediaMgtAndStr/PostingAndSchedulingView'
+import { BrandGrowthView } from '@/views/Pages/Services/SocialMediaMgtAndStr/BrandGrowthView'
+import { CommunityEngagementView } from '@/views/Pages/Services/SocialMediaMgtAndStr/CommunityEngagementView'
+import { PlatformManagementView } from '@/views/Pages/Services/SocialMediaMgtAndStr/PlatformManagementView'
 import { SystemsBuildingView } from '@/views/Pages/Services/SystemsBuilding/SystemsBuildingView'
+import { STRBusinessSetupView } from '@/views/Pages/Services/SystemsBuilding/STRBusinessSetupView'
+import { STRAutomationView } from '@/views/Pages/Services/SystemsBuilding/STRAutomationView'
+import { SOPCreationView } from '@/views/Pages/Services/SystemsBuilding/SOPCreationView'
+import { TeamStructuringView } from '@/views/Pages/Services/SystemsBuilding/TeamStructuringView'
 import { ContactView } from '@/views/Pages/ContactView'
 import { WhyUsView } from '@/views/Pages/Company/WhyUsView'
 
@@ -219,6 +231,9 @@ export default async function Page({ params: paramsPromise }: Args) {
     case 'monthly-finance-reporting':
       ViewComponent = <MonthlyFinanceReportingView page={page} />
       break
+    case 'graphical-content-creation':
+      ViewComponent = <GraphicalContentCreationView page={page} />
+      break
     case 'direct-booking-engine':
       ViewComponent = <DirectBookingEngineView page={page} />
       break
@@ -243,11 +258,44 @@ export default async function Page({ params: paramsPromise }: Args) {
     case 'lead-generation':
       ViewComponent = <LeadGenerationView page={page} />
       break
+    case 'landlord-leads':
+      ViewComponent = <LandlordLeadsView page={page} />
+      break
+    case 'guest-leads':
+      ViewComponent = <GuestLeadsView page={page} />
+      break
     case 'social-media-mgt-and-str':
       ViewComponent = <SocialMediaManagementAndStrategyView page={page} />
       break
+    case 'social-media-content-creation':
+      ViewComponent = <SocialMediaContentCreationView page={page} />
+      break
+    case 'posting-and-scheduling':
+      ViewComponent = <PostingAndSchedulingView page={page} />
+      break
+    case 'brand-growth':
+      ViewComponent = <BrandGrowthView page={page} />
+      break
+    case 'community-engagement':
+      ViewComponent = <CommunityEngagementView page={page} />
+      break
+    case 'platform-management':
+      ViewComponent = <PlatformManagementView page={page} />
+      break
     case 'systems-building':
       ViewComponent = <SystemsBuildingView page={page} />
+      break
+    case 'str-business-setup':
+      ViewComponent = <STRBusinessSetupView page={page} />
+      break
+    case 'str-automation':
+      ViewComponent = <STRAutomationView page={page} />
+      break
+    case 'sop-creation':
+      ViewComponent = <SOPCreationView page={page} />
+      break
+    case 'team-structuring':
+      ViewComponent = <TeamStructuringView page={page} />
       break
     case 'contact':
       ViewComponent = <ContactView page={page} />

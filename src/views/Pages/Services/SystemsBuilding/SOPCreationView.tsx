@@ -1,48 +1,51 @@
 import React from 'react'
 import {
+  FileText,
   Settings,
-  Workflow,
-  Zap,
-  LayoutDashboard,
-  Phone,
   CheckCircle2,
   XCircle,
   Star,
-  ChevronRight,
   ArrowRight,
-  Users,
-  BarChart3,
-  RefreshCw,
+  Phone,
   MessageSquare,
+  CalendarDays,
   ClipboardList,
+  LayoutDashboard,
+  Users,
   TrendingUp,
   Building2,
-  Target,
+  BarChart3,
+  AlertTriangle,
+  Layers,
+  BookOpen,
+  GitBranch,
+  UserCheck,
+  RefreshCw,
 } from 'lucide-react'
 import { FaqItem } from './FaqItem'
 import type { Page } from '@/payload-types'
 
-export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
+export const SOPCreationView: React.FC<{ page: Page }> = () => {
   return (
     <div className="min-h-screen text-base-content overflow-x-hidden">
       <style>{`
-        @keyframes pulse-ring-sb {
+        @keyframes pulse-ring-sop {
           0%,100% { box-shadow: 0 0 0 0 hsl(var(--p)/.35); }
           50%      { box-shadow: 0 0 0 10px hsl(var(--p)/0); }
         }
-        @keyframes sb-fade-up {
+        @keyframes sop-fade-up {
           from { opacity:0; transform:translateY(22px); }
           to   { opacity:1; transform:translateY(0); }
         }
-        .sb-fade-1 { animation: sb-fade-up .55s ease both .10s; }
-        .sb-fade-2 { animation: sb-fade-up .55s ease both .22s; }
-        .sb-fade-3 { animation: sb-fade-up .55s ease both .34s; }
-        .sb-fade-4 { animation: sb-fade-up .55s ease both .46s; }
-        .sb-fade-5 { animation: sb-fade-up .55s ease both .58s; }
-        .pulse-cta-sb { animation: pulse-ring-sb 2.4s ease-in-out infinite; }
+        .sop-fade-1 { animation: sop-fade-up .55s ease both .10s; }
+        .sop-fade-2 { animation: sop-fade-up .55s ease both .22s; }
+        .sop-fade-3 { animation: sop-fade-up .55s ease both .34s; }
+        .sop-fade-4 { animation: sop-fade-up .55s ease both .46s; }
+        .sop-fade-5 { animation: sop-fade-up .55s ease both .58s; }
+        .pulse-cta-sop { animation: pulse-ring-sop 2.4s ease-in-out infinite; }
       `}</style>
 
-      {/* HERO */}
+      {/* ── HERO ─────────────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden pt-16 pb-16 lg:pt-20 lg:pb-20">
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
           <div className="absolute -top-32 -left-32 w-130 h-130 bg-linear-to-br from-primary/13 via-primary/4 to-transparent rounded-full blur-[140px]" />
@@ -51,33 +54,33 @@ export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
         <div className="container max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="space-y-6">
-              <div className="sb-fade-1 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium">
-                <Settings className="w-4 h-4" />
-                STR Systems Building · UK
+              <div className="sop-fade-1 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium">
+                <FileText className="w-4 h-4" />
+                SOP Creation · STR Systems Building · UK
               </div>
-              <h1 className="sb-fade-2 text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-[1.08] tracking-tight">
-                Build Systems That{' '}
+              <h1 className="sop-fade-2 text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-[1.08] tracking-tight">
+                SOPs That Turn Your STR Systems Into{' '}
                 <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary">
-                  Run Your STR Business Properly
+                  Real Execution
                 </span>
               </h1>
-              <p className="sb-fade-3 text-lg text-base-content/70 leading-relaxed max-w-lg">
-                Assistophere helps UK hosts build structured systems for operations, communication,
-                pricing, and growth — turning chaotic setups into organised, scalable businesses.
+              <p className="sop-fade-3 text-lg text-base-content/70 leading-relaxed max-w-lg">
+                Assistophere creates clear SOPs for UK hosts, turning your systems into structured,
+                repeatable actions that your team can follow without confusion.
               </p>
-              <div className="sb-fade-4 p-4 rounded-xl border border-primary/20 bg-primary/6 text-sm italic text-base-content/65">
-                STR systems building involves creating structured workflows, automation, and
-                processes that allow short term rental businesses to operate efficiently and scale.
+              <div className="sop-fade-4 p-4 rounded-xl border border-primary/20 bg-primary/6 text-sm italic text-base-content/65">
+                SOPs in STR businesses define how systems are executed, ensuring consistent
+                operations, clear workflows, and scalable processes.
               </div>
-              <div className="sb-fade-5 flex flex-wrap gap-3 pt-1">
-                <button className="pulse-cta-sb btn btn-primary btn-lg rounded-full px-8 gap-2">
+              <div className="sop-fade-5 flex flex-wrap gap-3 pt-1">
+                <button className="pulse-cta-sop btn btn-primary btn-lg rounded-full px-8 gap-2">
                   <Phone className="w-4 h-4" /> Book a Discovery Call
                 </button>
                 <button className="btn btn-outline btn-lg rounded-full px-8 gap-2">
-                  See How It Works <ChevronRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4" /> Back to STR Systems Building
                 </button>
               </div>
-              <div className="sb-fade-5 flex items-center gap-3 pt-2">
+              <div className="sop-fade-5 flex items-center gap-3 pt-2">
                 <div className="flex -space-x-2">
                   {['bg-primary', 'bg-secondary', 'bg-accent', 'bg-neutral'].map((c, i) => (
                     <div
@@ -99,7 +102,7 @@ export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
               </div>
             </div>
 
-            {/* Hero visual — workflow dashboard */}
+            {/* Hero visual — SOP execution document */}
             <div className="hidden lg:block">
               <div className="relative rounded-3xl border border-base-300 bg-base-200/60 backdrop-blur-sm p-6 shadow-xl">
                 <div className="flex items-center gap-2 mb-5">
@@ -107,61 +110,37 @@ export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
                   <div className="w-3 h-3 rounded-full bg-warning/70" />
                   <div className="w-3 h-3 rounded-full bg-success/70" />
                   <span className="ml-2 text-xs text-base-content/40 font-mono">
-                    str-systems.dashboard
+                    sop.check-in-process
                   </span>
                 </div>
-                <div className="space-y-3">
+                <div className="space-y-2">
+                  <div className="text-xs font-bold text-base-content/50 uppercase tracking-widest mb-3">
+                    Guest Check-In SOP — v1.2
+                  </div>
                   {[
-                    {
-                      label: 'Guest Communication',
-                      status: 'Automated',
-                      color: 'text-success',
-                      bar: 'bg-success/70',
-                      pct: '100%',
-                    },
-                    {
-                      label: 'Cleaning Coordination',
-                      status: 'Structured',
-                      color: 'text-primary',
-                      bar: 'bg-primary/70',
-                      pct: '90%',
-                    },
-                    {
-                      label: 'Pricing & Calendar',
-                      status: 'Optimised',
-                      color: 'text-secondary',
-                      bar: 'bg-secondary/70',
-                      pct: '85%',
-                    },
-                    {
-                      label: 'Task Management',
-                      status: 'Active',
-                      color: 'text-warning',
-                      bar: 'bg-warning/70',
-                      pct: '95%',
-                    },
-                    {
-                      label: 'Reporting',
-                      status: 'Running',
-                      color: 'text-success',
-                      bar: 'bg-success/70',
-                      pct: '80%',
-                    },
-                  ].map(({ label, status, color, bar, pct }) => (
-                    <div key={label} className="bg-base-100 rounded-xl p-3 border border-base-300">
-                      <div className="flex items-center justify-between mb-1.5">
-                        <span className="text-xs font-medium text-base-content/70">{label}</span>
-                        <span className={`text-xs font-semibold ${color}`}>{status}</span>
+                    { step: '1. Send check-in instructions 24h before', done: true },
+                    { step: '2. Confirm access code is active', done: true },
+                    { step: '3. Verify cleaning is completed', done: true },
+                    { step: '4. Check welcome pack is in place', done: true },
+                    { step: '5. Message guest on day of arrival', done: false },
+                    { step: '6. Confirm guest has arrived safely', done: false },
+                  ].map(({ step, done }) => (
+                    <div
+                      key={step}
+                      className={`flex items-center gap-3 px-3 py-2.5 rounded-xl border text-xs ${done ? 'bg-success/6 border-success/20 text-base-content/70' : 'bg-base-100 border-base-300 text-base-content/45'}`}
+                    >
+                      <div
+                        className={`w-4 h-4 rounded-full flex items-center justify-center shrink-0 ${done ? 'bg-success/20' : 'border border-base-300'}`}
+                      >
+                        {done && <CheckCircle2 className="w-3 h-3 text-success" />}
                       </div>
-                      <div className="w-full h-1.5 bg-base-300 rounded-full overflow-hidden">
-                        <div className={`h-full rounded-full ${bar}`} style={{ width: pct }} />
-                      </div>
+                      {step}
                     </div>
                   ))}
                 </div>
                 <div className="mt-4 flex items-center justify-between px-1">
-                  <span className="text-xs text-base-content/40">5 systems active</span>
-                  <span className="text-xs text-success font-semibold">↑ All running smoothly</span>
+                  <span className="text-xs text-base-content/40">4 of 6 steps complete</span>
+                  <span className="text-xs text-primary font-semibold">→ In progress</span>
                 </div>
               </div>
             </div>
@@ -169,85 +148,93 @@ export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
         </div>
       </section>
 
-      {/* CLARITY */}
+      {/* ── CLARITY ──────────────────────────────────────────────────────────── */}
       <section className="bg-base-200 border-y border-base-300 py-20 lg:py-28">
         <div className="container max-w-7xl mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-2">
-              <LayoutDashboard className="w-4 h-4" /> The Scaling Reality
+              <BookOpen className="w-4 h-4" /> The Missing Layer
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold">
-              Most STR Businesses Don&apos;t Have a System
-            </h2>
+            <h2 className="text-3xl lg:text-4xl font-bold">Systems Without SOPs Don&apos;t Work</h2>
             <p className="text-base-content/65 text-lg leading-relaxed">
-              They rely on manual processes, scattered tools, and constant involvement from the
-              host. This works at the start. It breaks as you scale.
+              You can have the right tools, automation, and workflows in place — but without SOPs,
+              none of it gets followed consistently. SOPs are what turn systems into real execution.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+            <p className="text-base-content/60 text-sm">You can have:</p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
               {[
                 {
-                  icon: ClipboardList,
-                  label: 'Manual processes',
-                  desc: 'Every task handled by hand, every time.',
+                  icon: LayoutDashboard,
+                  label: 'Tools',
+                  desc: 'Platforms, software, and technology in place.',
                 },
                 {
-                  icon: Settings,
-                  label: 'Scattered tools',
-                  desc: 'No centralised setup — everything is disconnected.',
+                  icon: GitBranch,
+                  label: 'Automation',
+                  desc: 'Triggered workflows and scheduled actions.',
                 },
                 {
-                  icon: Users,
-                  label: 'Host dependency',
-                  desc: 'The business stops when the host steps away.',
+                  icon: Layers,
+                  label: 'Workflows',
+                  desc: 'Defined sequences for how tasks should flow.',
                 },
               ].map(({ icon: Icon, label, desc }) => (
                 <div
                   key={label}
-                  className="bg-base-100 rounded-2xl border border-base-300 p-5 text-left"
+                  className="bg-base-100 rounded-2xl border border-base-300 p-5 text-left relative"
                 >
                   <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-3">
                     <Icon className="w-5 h-5 text-primary" />
                   </div>
                   <p className="font-semibold text-sm">{label}</p>
-                  <p className="text-xs text-base-content/55 mt-1">{desc}</p>
+                  <p className="text-xs text-base-content/55 mt-1 leading-relaxed">{desc}</p>
+                  <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-warning/20 border border-warning/30 flex items-center justify-center">
+                    <XCircle className="w-3 h-3 text-warning" />
+                  </div>
                 </div>
               ))}
             </div>
+            <p className="text-base-content/55 text-sm italic pt-4">
+              Without SOPs, nothing is followed consistently.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* THE REAL PROBLEM */}
+      {/* ── THE REAL PROBLEM ─────────────────────────────────────────────────── */}
       <section className="py-20 lg:py-28">
         <div className="container max-w-7xl mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-error/10 border border-error/25 text-error text-sm font-medium mb-4">
-                <XCircle className="w-4 h-4" /> Root Causes
+                <XCircle className="w-4 h-4" /> Where It Breaks Down
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold">Why Operations Become Chaotic</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold">Why Systems Break Without SOPs</h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 {
-                  point: 'No standard processes',
-                  detail: 'Every task is done differently each time — no consistency.',
+                  point: 'Tasks done differently every time',
+                  detail: 'No consistent standard means every person handles things their own way.',
                 },
                 {
-                  point: 'Repeated manual tasks',
-                  detail: 'Time is spent on the same work over and over.',
+                  point: 'Team confusion',
+                  detail:
+                    'Without clear instructions, people guess — and guessing creates mistakes.',
                 },
                 {
-                  point: 'Inconsistent communication',
-                  detail: 'Guest experience varies depending on the day.',
+                  point: 'No clear instructions',
+                  detail: 'Systems tell you what needs doing but not how to do it properly.',
                 },
                 {
-                  point: 'Disconnected tools',
-                  detail: 'Multiple platforms with no central overview.',
+                  point: 'Reliance on individuals',
+                  detail:
+                    'When only one person knows how something works, the whole operation is at risk.',
                 },
                 {
-                  point: 'Reliance on the host',
-                  detail: 'Nothing moves unless the owner is involved.',
+                  point: 'Inconsistent results',
+                  detail:
+                    'Guests receive different experiences depending on who handled their booking.',
                 },
               ].map(({ point, detail }) => (
                 <div
@@ -263,42 +250,42 @@ export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
               ))}
             </div>
             <p className="text-center text-base-content/60 mt-8 italic text-sm">
-              Without systems, growth creates pressure instead of progress.
+              Without SOPs, systems exist but are not followed.
             </p>
           </div>
         </div>
       </section>
 
-      {/* WHAT STR SYSTEMS ACTUALLY MEAN */}
+      {/* ── WHAT SOPs DO WITHIN SYSTEMS ──────────────────────────────────────── */}
       <section className="bg-base-200 border-y border-base-300 py-20 lg:py-28">
         <div className="container max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-4">
-              <Workflow className="w-4 h-4" /> The Foundation
+              <CheckCircle2 className="w-4 h-4" /> The Role of SOPs
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold">What a Proper STR System Includes</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold">How SOPs Fit Into Your STR Systems</h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">
             {[
               {
-                icon: Workflow,
-                title: 'Structured Workflows',
-                desc: 'Clear, repeatable processes for every daily operation — nothing left to chance.',
+                icon: ClipboardList,
+                title: 'Define Execution',
+                desc: 'Clear, step-by-step instructions for every task within your system.',
               },
               {
-                icon: Zap,
-                title: 'Automation',
-                desc: 'Reducing manual work across tasks so the business runs with less effort.',
+                icon: RefreshCw,
+                title: 'Maintain Consistency',
+                desc: 'The same standard process is followed every time, by everyone.',
               },
               {
-                icon: LayoutDashboard,
-                title: 'Centralised Management',
-                desc: 'Everything organised in one place — visible, trackable, accessible.',
+                icon: UserCheck,
+                title: 'Enable Delegation',
+                desc: 'Tasks can be handed off and completed correctly without your direct input.',
               },
               {
-                icon: TrendingUp,
-                title: 'Scalable Setup',
-                desc: 'Built to handle portfolio growth without the system breaking under load.',
+                icon: GitBranch,
+                title: 'Support Automation',
+                desc: 'Automation performs better when the underlying process is clearly defined.',
               },
             ].map(({ icon: Icon, title, desc }, i) => (
               <div
@@ -311,71 +298,87 @@ export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
                   <Icon className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-bold text-base mb-2">{title}</h3>
-                <p className="text-sm text-base-content/60 leading-relaxed">{desc}</p>
+                <h3 className="font-bold text-sm mb-2">{title}</h3>
+                <p className="text-xs text-base-content/60 leading-relaxed">{desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* WHAT WE BUILD */}
+      {/* ── WHAT WE BUILD ────────────────────────────────────────────────────── */}
       <section className="py-20 lg:py-28">
         <div className="container max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-4">
-              <Settings className="w-4 h-4" /> Our Scope
+              <FileText className="w-4 h-4" /> Our Scope
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold">What Our STR Systems Building Covers</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold">
+              What Our SOP Creation Covers Within Your Systems
+            </h2>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr_1.5fr] gap-px bg-base-300 rounded-3xl overflow-hidden border border-base-300">
             <div className="bg-base-200 px-5 py-3 text-xs font-bold uppercase tracking-widest text-base-content/40">
-              System
+              SOP Area
             </div>
             <div className="bg-base-200 px-5 py-3 text-xs font-bold uppercase tracking-widest text-base-content/40">
-              What We Build
+              What We Document
             </div>
             <div className="bg-base-200 px-5 py-3 text-xs font-bold uppercase tracking-widest text-base-content/40">
               Outcome
             </div>
             {[
               {
-                area: 'Operations System',
-                icon: ClipboardList,
+                area: 'Guest Communication',
+                icon: MessageSquare,
                 tasks: [
-                  'Guest communication flow',
-                  'Check-in and check-out processes',
-                  'Cleaning coordination',
+                  'Structured message flows for every guest stage',
+                  'Response handling for common scenarios',
+                  'Scenario-based communication processes',
                 ],
-                outcome: 'A smooth, consistent guest experience from booking to checkout.',
+                outcome:
+                  'Consistent, professional guest communication handled by anyone on the team.',
+              },
+              {
+                area: 'Operations',
+                icon: Settings,
+                tasks: [
+                  'Check-in and check-out step-by-step processes',
+                  'Cleaning coordination and sign-off procedures',
+                  'Maintenance reporting and handling workflows',
+                ],
+                outcome: 'Every operational task is completed to the same standard every time.',
               },
               {
                 area: 'Pricing & Calendar',
-                icon: BarChart3,
-                tasks: ['Structured pricing approach', 'Availability control', 'Gap management'],
-                outcome: 'Better occupancy, reduced gaps, and optimised revenue.',
-              },
-              {
-                area: 'Communication System',
-                icon: MessageSquare,
-                tasks: ['Message templates', 'Response structure', 'Consistent tone'],
-                outcome: 'Professional, reliable communication without manual effort.',
-              },
-              {
-                area: 'Task & Workflow Setup',
-                icon: Workflow,
-                tasks: ['Task tracking', 'Team coordination', 'Process clarity'],
-                outcome: 'Everyone knows what to do and when — no chasing required.',
-              },
-              {
-                area: 'Automation Setup',
-                icon: Zap,
+                icon: CalendarDays,
                 tasks: [
-                  'Reducing repetitive tasks',
-                  'Improving efficiency',
-                  'Ensuring consistency',
+                  'Pricing adjustment process and triggers',
+                  'Gap management rules and actions',
+                  'Availability control and calendar management steps',
                 ],
-                outcome: 'A business that operates reliably without constant manual input.',
+                outcome: 'Pricing and calendar decisions follow a documented, repeatable process.',
+              },
+              {
+                area: 'Workflow',
+                icon: GitBranch,
+                tasks: [
+                  'Task execution steps broken down by role',
+                  'Role clarity and responsibility ownership',
+                  'Process handoff and completion verification',
+                ],
+                outcome: 'Everyone knows exactly what to do and in what order.',
+              },
+              {
+                area: 'Team',
+                icon: Users,
+                tasks: [
+                  'Onboarding processes for new team members',
+                  'Training documentation for every key operation',
+                  'Day-to-day operational guidelines and references',
+                ],
+                outcome:
+                  'New team members can be onboarded quickly without relying on tribal knowledge.',
               },
             ].map(({ area, icon: Icon, tasks, outcome }) => (
               <React.Fragment key={area}>
@@ -401,106 +404,81 @@ export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
             ))}
           </div>
           <p className="text-center mt-8 text-base-content/60 text-sm">
-            The result: a structured business that runs without constant input.
+            The result: systems that are actually followed and executed properly.
           </p>
         </div>
       </section>
 
-      {/* HOW SYSTEMS CHANGE YOUR BUSINESS */}
+      {/* ── CONNECTION TO STR SYSTEMS BUILDING ───────────────────────────────── */}
       <section className="bg-base-200 border-y border-base-300 py-20 lg:py-28">
         <div className="container max-w-7xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-4">
-              <RefreshCw className="w-4 h-4" /> Before vs After
-            </div>
-            <h2 className="text-3xl lg:text-4xl font-bold">
-              What Happens When Systems Are in Place
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <div className="rounded-2xl border border-error/20 bg-error/4 p-6 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-error/15 text-error text-xs font-bold">
-                ❌ Without Systems
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-10">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-4">
+                <Layers className="w-4 h-4" /> Completing the System
               </div>
-              <ul className="space-y-3">
-                {[
-                  {
-                    p: 'Reactive operations',
-                    d: 'Problems are solved as they appear, not prevented.',
-                  },
-                  { p: 'Constant involvement', d: 'The host must be available at all times.' },
-                  {
-                    p: 'Inconsistent performance',
-                    d: 'Quality varies depending on who does what.',
-                  },
-                  { p: 'Limited growth', d: 'Scaling adds pressure rather than progress.' },
-                ].map(({ p, d }) => (
-                  <li key={p} className="flex gap-3">
-                    <XCircle className="w-4 h-4 text-error shrink-0 mt-0.5" />
-                    <div>
-                      <p className="text-sm font-semibold">{p}</p>
-                      <p className="text-xs text-base-content/55 mt-0.5">{d}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
+              <h2 className="text-3xl lg:text-4xl font-bold">SOPs Complete Your System</h2>
             </div>
-            <div className="rounded-2xl border border-success/20 bg-success/4 p-6 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-success/15 text-success text-xs font-bold">
-                ✅ With Systems
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div className="bg-base-100 rounded-2xl border border-primary/20 p-6 space-y-3">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold">
+                  <Settings className="w-3.5 h-3.5" /> STR Systems Building defines
+                </div>
+                <p className="font-semibold text-base">What needs to happen</p>
+                <p className="text-sm text-base-content/60 leading-relaxed">
+                  The structure, tools, workflows, and processes that need to exist in your
+                  business.
+                </p>
               </div>
-              <ul className="space-y-3">
-                {[
-                  { p: 'Organised operations', d: 'Processes run predictably every time.' },
-                  { p: 'Reduced workload', d: 'The host can step back without things stopping.' },
-                  { p: 'Consistent results', d: 'Every guest gets the same quality experience.' },
-                  { p: 'Scalable business', d: 'Growth adds revenue, not chaos.' },
-                ].map(({ p, d }) => (
-                  <li key={p} className="flex gap-3">
-                    <CheckCircle2 className="w-4 h-4 text-success shrink-0 mt-0.5" />
-                    <div>
-                      <p className="text-sm font-semibold">{p}</p>
-                      <p className="text-xs text-base-content/55 mt-0.5">{d}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
+              <div className="bg-base-100 rounded-2xl border border-secondary/20 p-6 space-y-3">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-bold">
+                  <FileText className="w-3.5 h-3.5" /> SOPs define
+                </div>
+                <p className="font-semibold text-base">How it happens</p>
+                <p className="text-sm text-base-content/60 leading-relaxed">
+                  The step-by-step execution layer that makes every system task clear, consistent,
+                  and delegatable.
+                </p>
+              </div>
             </div>
+            <p className="text-center text-base-content/55 mt-8 italic text-sm">
+              Without SOPs, systems remain incomplete.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* COMMON MISTAKES */}
+      {/* ── COMMON MISTAKES ──────────────────────────────────────────────────── */}
       <section className="py-20 lg:py-28">
         <div className="container max-w-7xl mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-warning/15 border border-warning/30 text-warning text-sm font-medium mb-4">
-                <XCircle className="w-4 h-4" /> Common Mistakes
+                <AlertTriangle className="w-4 h-4" /> Common Mistakes
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold">Where STR Systems Go Wrong</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold">Where SOPs Fail Inside Systems</h2>
             </div>
             <div className="space-y-3">
               {[
                 {
-                  mistake: 'Automating without structure',
-                  why: 'Automation on top of chaos just creates faster chaos.',
+                  mistake: 'Creating SOPs without real workflows',
+                  why: 'Documenting theoretical processes instead of how things actually work creates SOPs nobody uses.',
                 },
                 {
-                  mistake: 'Too many disconnected tools',
-                  why: 'More apps without a plan leads to more confusion, not less.',
+                  mistake: 'Making them too complex',
+                  why: 'Overly detailed or lengthy SOPs get ignored — usability matters as much as completeness.',
                 },
                 {
-                  mistake: 'No clear workflows',
-                  why: 'Without defined processes, tasks fall through the gaps.',
+                  mistake: 'Not aligning with systems',
+                  why: 'SOPs that do not match the tools and structure in place create friction rather than clarity.',
                 },
                 {
-                  mistake: 'No documentation',
-                  why: "If it only lives in someone's head, it cannot be delegated or scaled.",
+                  mistake: 'Not using them daily',
+                  why: 'SOPs only work when they are embedded into day-to-day operations, not filed away as reference documents.',
                 },
                 {
-                  mistake: 'Building systems too late',
-                  why: 'Trying to systemise during peak chaos is much harder than building early.',
+                  mistake: 'No updates over time',
+                  why: 'Processes evolve — SOPs that are never reviewed quickly become outdated and misleading.',
                 },
               ].map(({ mistake, why }) => (
                 <div
@@ -508,7 +486,7 @@ export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
                   className="flex gap-4 p-5 rounded-2xl border border-warning/20 bg-warning/4"
                 >
                   <div className="w-6 h-6 rounded-full bg-warning/20 flex items-center justify-center shrink-0 mt-0.5">
-                    <XCircle className="w-3.5 h-3.5 text-warning" />
+                    <AlertTriangle className="w-3.5 h-3.5 text-warning" />
                   </div>
                   <div>
                     <p className="font-semibold text-sm">{mistake}</p>
@@ -518,13 +496,13 @@ export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
               ))}
             </div>
             <p className="text-center text-base-content/55 mt-8 italic text-sm">
-              Systems fail when they are not designed properly.
+              SOPs fail when they are not practical or connected to real operations.
             </p>
           </div>
         </div>
       </section>
 
-      {/* OUR APPROACH */}
+      {/* ── OUR APPROACH ─────────────────────────────────────────────────────── */}
       <section className="bg-base-200 border-y border-base-300 py-20 lg:py-28">
         <div className="container max-w-7xl mx-auto px-4">
           <div className="max-w-3xl mx-auto">
@@ -532,27 +510,29 @@ export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-4">
                 <CheckCircle2 className="w-4 h-4" /> Our Method
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold">How We Build Systems Properly</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold">
+                How We Build SOPs Inside Your System
+              </h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 {
-                  step: '1. Map your current setup',
-                  detail: 'We audit how your business currently operates and where the gaps are.',
+                  step: '1. Map your existing workflows',
+                  detail: 'We understand how things actually work before documenting anything.',
                 },
                 {
-                  step: '2. Identify the gaps',
+                  step: '2. Document real processes',
+                  detail: 'SOPs are built from observed operations, not assumptions or templates.',
+                },
+                {
+                  step: '3. Align SOPs with your systems',
                   detail:
-                    'We pinpoint what is missing, broken, or bottlenecked before building anything.',
+                    'Every SOP is connected to the tools, workflows, and structure already in place.',
                 },
                 {
-                  step: '3. Design structured workflows',
+                  step: '4. Ensure usability and clarity',
                   detail:
-                    'We create clear, documented processes tailored to your specific operation.',
-                },
-                {
-                  step: '4. Implement and refine',
-                  detail: 'We put the systems in place and adjust based on real-world performance.',
+                    'Documents are written to be followed, not filed — clear, concise, and actionable.',
                 },
               ].map(({ step, detail }) => (
                 <div
@@ -571,14 +551,16 @@ export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
         </div>
       </section>
 
-      {/* COMPARISON */}
+      {/* ── COMPARISON ───────────────────────────────────────────────────────── */}
       <section className="py-20 lg:py-28">
         <div className="container max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-4">
               <BarChart3 className="w-4 h-4" /> Side by Side
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold">Manual Setup vs Systemised Business</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold">
+              System Without SOPs vs Complete System
+            </h2>
           </div>
           <div className="hidden md:block overflow-hidden rounded-3xl border border-base-300 max-w-3xl mx-auto">
             <div className="grid grid-cols-3">
@@ -586,17 +568,17 @@ export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
                 Area
               </div>
               <div className="bg-error/8 px-5 py-3 text-xs font-bold uppercase tracking-widest text-error/70 text-center">
-                Manual Setup
+                Without SOPs
               </div>
               <div className="bg-success/8 px-5 py-3 text-xs font-bold uppercase tracking-widest text-success/70 text-center">
-                Systemised
+                With SOPs
               </div>
             </div>
             {[
-              ['Operations', 'Reactive', 'Structured'],
-              ['Time spent', 'Time-consuming', 'Efficient'],
-              ['Consistency', 'Inconsistent', 'Reliable'],
-              ['Growth', 'Hard to scale', 'Scalable'],
+              ['Execution', 'Inconsistent execution', 'Consistent execution'],
+              ['Team clarity', 'Team confusion', 'Clear instructions'],
+              ['Dependency', 'Reliance on individuals', 'System-driven'],
+              ['Growth', 'Limited scalability', 'Scalable'],
             ].map(([area, bad, good]) => (
               <div key={area} className="grid grid-cols-3 border-t border-base-300">
                 <div className="bg-base-100 px-5 py-4 text-sm font-medium">{area}</div>
@@ -609,10 +591,10 @@ export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
           </div>
           <div className="md:hidden space-y-3 max-w-sm mx-auto">
             {[
-              ['Operations', 'Reactive', 'Structured'],
-              ['Time spent', 'Time-consuming', 'Efficient'],
-              ['Consistency', 'Inconsistent', 'Reliable'],
-              ['Growth', 'Hard to scale', 'Scalable'],
+              ['Execution', 'Inconsistent execution', 'Consistent execution'],
+              ['Team clarity', 'Team confusion', 'Clear instructions'],
+              ['Dependency', 'Reliance on individuals', 'System-driven'],
+              ['Growth', 'Limited scalability', 'Scalable'],
             ].map(([area, bad, good]) => (
               <div key={area} className="rounded-2xl border border-base-300 overflow-hidden">
                 <div className="bg-base-200 px-4 py-2 text-xs font-bold uppercase tracking-wider text-base-content/50">
@@ -630,7 +612,7 @@ export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
         </div>
       </section>
 
-      {/* WHO IT IS FOR */}
+      {/* ── WHO THIS IS FOR ───────────────────────────────────────────────────── */}
       <section className="bg-base-200 border-y border-base-300 py-20 lg:py-28">
         <div className="container max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
@@ -642,24 +624,24 @@ export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
             {[
               {
-                icon: Building2,
-                who: 'Multi-listing hosts',
-                desc: 'Managing multiple properties without a structured backend.',
+                icon: Settings,
+                who: 'Hosts building STR systems',
+                desc: 'Operators creating structure and needing the execution layer to match.',
               },
               {
-                icon: LayoutDashboard,
+                icon: Building2,
                 who: 'SA businesses',
-                desc: 'Serviced accommodation operators who need consistent operations.',
+                desc: 'Serviced accommodation businesses with teams that need consistent processes.',
+              },
+              {
+                icon: UserCheck,
+                who: 'Operators managing teams',
+                desc: 'Anyone delegating work who needs clear, followable documentation.',
               },
               {
                 icon: TrendingUp,
-                who: 'Portfolio operators',
-                desc: 'Scaling portfolios where manual processes are breaking down.',
-              },
-              {
-                icon: Target,
-                who: 'Structure-focused hosts',
-                desc: "Hosts who know they need a proper system but don't know where to start.",
+                who: 'Businesses preparing to scale',
+                desc: 'Operators who know that growth requires documented, repeatable processes.',
               },
             ].map(({ icon: Icon, who, desc }) => (
               <div
@@ -677,7 +659,7 @@ export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
+      {/* ── TESTIMONIALS ─────────────────────────────────────────────────────── */}
       <section className="py-20 lg:py-28">
         <div className="container max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
@@ -689,25 +671,25 @@ export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
               {
-                initials: 'DH',
-                name: 'Daniel H.',
-                role: 'STR Host · Birmingham',
+                initials: 'KR',
+                name: 'Karen R.',
+                role: 'SA Operator · Leeds',
                 quote:
-                  'Before we worked with Assistophere, every day was firefighting. Now we have a proper system and I actually have time to focus on growth.',
+                  'Before Assistophere, every team member did things their own way. The SOPs they created brought everything in line and now we have real consistency across the board.',
               },
               {
-                initials: 'LT',
-                name: 'Laura T.',
-                role: 'SA Operator · London',
+                initials: 'JM',
+                name: 'James M.',
+                role: 'Multi-property Host · Bristol',
                 quote:
-                  'The operations system they built for us cut our weekly admin time dramatically. Everything runs on process now, not memory.',
+                  'I was the only person who knew how everything worked. The SOPs changed that completely. I can now delegate properly and step back without worrying.',
               },
               {
-                initials: 'MK',
-                name: 'Marcus K.',
-                role: 'Portfolio Host · Leeds',
+                initials: 'SO',
+                name: 'Sandra O.',
+                role: 'STR Business · Manchester',
                 quote:
-                  'I was managing 6 properties on spreadsheets. Now we have structured workflows for everything. Night and day difference.',
+                  'What impressed me was how they built the SOPs from how we actually operate, not from a template. They work because they reflect our real processes.',
               },
             ].map(({ initials, name, role, quote }) => (
               <div
@@ -737,7 +719,7 @@ export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* ── FAQ ──────────────────────────────────────────────────────────────── */}
       <section className="bg-base-200 border-y border-base-300 py-20 lg:py-28">
         <div className="container max-w-7xl mx-auto px-4">
           <div className="max-w-2xl mx-auto">
@@ -749,27 +731,27 @@ export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
             </div>
             <div className="space-y-3">
               <FaqItem
-                q="What systems do you set up?"
-                a="We build operational systems covering guest communication, check-in and check-out processes, cleaning coordination, pricing and calendar management, task workflows, and automation. The exact scope depends on your current setup and needs."
+                q="How do SOPs fit into systems?"
+                a="SOPs are the execution layer of a system. A system defines what needs to happen — the tools, workflows, and structure. SOPs define how each part of that system is actually carried out. Without SOPs, systems exist in theory but not in practice."
               />
               <FaqItem
-                q="Can this work with my current tools?"
-                a="Yes. We work with what you already have where possible, and recommend changes only when your current tools are creating friction. We do not require you to switch platforms unnecessarily."
+                q="Can you document my current processes?"
+                a="Yes. We map how things work in your business today and document them into clear, usable SOPs. We work from real operations rather than creating generic templates, which means the SOPs reflect how your business actually runs."
               />
               <FaqItem
-                q="How long does it take?"
-                a="The timeline depends on the complexity of your operation. Simple systems can be set up in a few weeks. More complex, multi-property setups take longer. We will give you a clear timeline after reviewing your current setup."
+                q="Are SOPs easy to follow?"
+                a="That is a core part of how we write them. SOPs should be practical documents used daily, not reference files filed away. We write them to be clear, concise, and structured so anyone on your team can follow them without needing to ask questions."
               />
               <FaqItem
-                q="Will this reduce my workload?"
-                a="That is the primary goal. By replacing manual processes with structured workflows and automation, the business runs more efficiently with less of your time required day to day."
+                q="Can they evolve over time?"
+                a="Yes — and they should. We build SOPs with the expectation that they will need updating as your operations evolve. We can support ongoing reviews and updates to ensure your documentation stays aligned with how your business actually works."
               />
             </div>
           </div>
         </div>
       </section>
 
-      {/* FINAL CTA */}
+      {/* ── FINAL CTA ────────────────────────────────────────────────────────── */}
       <section className="py-20 lg:py-28">
         <div className="container max-w-7xl mx-auto px-4">
           <div className="relative overflow-hidden rounded-3xl bg-linear-to-br from-primary/22 via-base-200 to-secondary/15 border border-base-300 px-8 py-16 lg:px-16 text-center shadow-xl">
@@ -779,28 +761,29 @@ export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
             </div>
             <div className="max-w-2xl mx-auto space-y-6">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/15 border border-primary/30 text-primary text-sm font-semibold">
-                <Settings className="w-4 h-4" /> Start Building Your System
+                <FileText className="w-4 h-4" /> Build the Execution Layer
               </div>
               <h2 className="text-3xl lg:text-4xl font-extrabold">
-                Ready to Turn Your Setup{' '}
+                Ready to Turn Your Systems Into{' '}
                 <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary">
-                  Into a System?
+                  Real Execution?
                 </span>
               </h2>
               <p className="text-base-content/65 text-lg leading-relaxed">
-                Let&apos;s build a structure that allows your business to run smoothly and scale
-                properly. We don&apos;t just organise your business — we build the system behind it.
+                Let&apos;s build SOPs that make your systems work properly. Systems define your
+                business. SOPs make it run.
               </p>
               <div className="flex flex-wrap justify-center gap-4 pt-2">
-                <button className="pulse-cta-sb btn btn-primary btn-lg rounded-full px-10 gap-2 shadow-lg">
+                <button className="pulse-cta-sop btn btn-primary btn-lg rounded-full px-10 gap-2 shadow-lg">
                   <Phone className="w-4 h-4" /> Book a Discovery Call
                 </button>
                 <button className="btn btn-outline btn-lg rounded-full px-8 gap-2">
-                  Learn More <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4" /> Back to STR Systems Building
                 </button>
               </div>
               <p className="text-xs text-base-content/40 pt-2">
-                STR Systems Setup UK · Airbnb Automation Systems · STR Workflow Setup
+                Airbnb SOP Creation UK · STR Systems Documentation · Workflow SOP · Operations
+                Manual
               </p>
             </div>
           </div>

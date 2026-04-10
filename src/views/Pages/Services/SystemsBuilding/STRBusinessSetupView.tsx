@@ -1,8 +1,7 @@
 import React from 'react'
 import {
-  Settings,
-  Workflow,
-  Zap,
+  Rocket,
+  ListChecks,
   LayoutDashboard,
   Phone,
   CheckCircle2,
@@ -12,34 +11,35 @@ import {
   ArrowRight,
   Users,
   BarChart3,
-  RefreshCw,
   MessageSquare,
   ClipboardList,
   TrendingUp,
   Building2,
   Target,
+  Settings,
+  CalendarDays,
 } from 'lucide-react'
 import { FaqItem } from './FaqItem'
 import type { Page } from '@/payload-types'
 
-export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
+export const STRBusinessSetupView: React.FC<{ page: Page }> = () => {
   return (
     <div className="min-h-screen text-base-content overflow-x-hidden">
       <style>{`
-        @keyframes pulse-ring-sb {
+        @keyframes pulse-ring-sbs {
           0%,100% { box-shadow: 0 0 0 0 hsl(var(--p)/.35); }
           50%      { box-shadow: 0 0 0 10px hsl(var(--p)/0); }
         }
-        @keyframes sb-fade-up {
+        @keyframes sbs-fade-up {
           from { opacity:0; transform:translateY(22px); }
           to   { opacity:1; transform:translateY(0); }
         }
-        .sb-fade-1 { animation: sb-fade-up .55s ease both .10s; }
-        .sb-fade-2 { animation: sb-fade-up .55s ease both .22s; }
-        .sb-fade-3 { animation: sb-fade-up .55s ease both .34s; }
-        .sb-fade-4 { animation: sb-fade-up .55s ease both .46s; }
-        .sb-fade-5 { animation: sb-fade-up .55s ease both .58s; }
-        .pulse-cta-sb { animation: pulse-ring-sb 2.4s ease-in-out infinite; }
+        .sbs-fade-1 { animation: sbs-fade-up .55s ease both .10s; }
+        .sbs-fade-2 { animation: sbs-fade-up .55s ease both .22s; }
+        .sbs-fade-3 { animation: sbs-fade-up .55s ease both .34s; }
+        .sbs-fade-4 { animation: sbs-fade-up .55s ease both .46s; }
+        .sbs-fade-5 { animation: sbs-fade-up .55s ease both .58s; }
+        .pulse-cta-sbs { animation: pulse-ring-sbs 2.4s ease-in-out infinite; }
       `}</style>
 
       {/* HERO */}
@@ -51,33 +51,33 @@ export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
         <div className="container max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="space-y-6">
-              <div className="sb-fade-1 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium">
-                <Settings className="w-4 h-4" />
-                STR Systems Building · UK
+              <div className="sbs-fade-1 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium">
+                <Rocket className="w-4 h-4" />
+                STR Business Setup · UK
               </div>
-              <h1 className="sb-fade-2 text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-[1.08] tracking-tight">
-                Build Systems That{' '}
+              <h1 className="sbs-fade-2 text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-[1.08] tracking-tight">
+                Start Your STR Business With the{' '}
                 <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary">
-                  Run Your STR Business Properly
+                  Right Setup From Day One
                 </span>
               </h1>
-              <p className="sb-fade-3 text-lg text-base-content/70 leading-relaxed max-w-lg">
-                Assistophere helps UK hosts build structured systems for operations, communication,
-                pricing, and growth — turning chaotic setups into organised, scalable businesses.
+              <p className="sbs-fade-3 text-lg text-base-content/70 leading-relaxed max-w-lg">
+                Assistophere helps UK hosts set up short term rental businesses with structured
+                systems, clear processes, and everything needed to operate properly from the start.
               </p>
-              <div className="sb-fade-4 p-4 rounded-xl border border-primary/20 bg-primary/6 text-sm italic text-base-content/65">
-                STR systems building involves creating structured workflows, automation, and
-                processes that allow short term rental businesses to operate efficiently and scale.
+              <div className="sbs-fade-4 p-4 rounded-xl border border-primary/20 bg-primary/6 text-sm italic text-base-content/65">
+                STR business setup involves creating listings, systems, workflows, and operational
+                structure to launch and manage a short term rental business effectively.
               </div>
-              <div className="sb-fade-5 flex flex-wrap gap-3 pt-1">
-                <button className="pulse-cta-sb btn btn-primary btn-lg rounded-full px-8 gap-2">
+              <div className="sbs-fade-5 flex flex-wrap gap-3 pt-1">
+                <button className="pulse-cta-sbs btn btn-primary btn-lg rounded-full px-8 gap-2">
                   <Phone className="w-4 h-4" /> Book a Discovery Call
                 </button>
                 <button className="btn btn-outline btn-lg rounded-full px-8 gap-2">
                   See How It Works <ChevronRight className="w-4 h-4" />
                 </button>
               </div>
-              <div className="sb-fade-5 flex items-center gap-3 pt-2">
+              <div className="sbs-fade-5 flex items-center gap-3 pt-2">
                 <div className="flex -space-x-2">
                   {['bg-primary', 'bg-secondary', 'bg-accent', 'bg-neutral'].map((c, i) => (
                     <div
@@ -99,7 +99,7 @@ export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
               </div>
             </div>
 
-            {/* Hero visual — workflow dashboard */}
+            {/* Hero visual — setup dashboard */}
             <div className="hidden lg:block">
               <div className="relative rounded-3xl border border-base-300 bg-base-200/60 backdrop-blur-sm p-6 shadow-xl">
                 <div className="flex items-center gap-2 mb-5">
@@ -107,61 +107,35 @@ export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
                   <div className="w-3 h-3 rounded-full bg-warning/70" />
                   <div className="w-3 h-3 rounded-full bg-success/70" />
                   <span className="ml-2 text-xs text-base-content/40 font-mono">
-                    str-systems.dashboard
+                    str-setup.checklist
                   </span>
                 </div>
-                <div className="space-y-3">
+                <div className="space-y-2.5">
                   {[
-                    {
-                      label: 'Guest Communication',
-                      status: 'Automated',
-                      color: 'text-success',
-                      bar: 'bg-success/70',
-                      pct: '100%',
-                    },
-                    {
-                      label: 'Cleaning Coordination',
-                      status: 'Structured',
-                      color: 'text-primary',
-                      bar: 'bg-primary/70',
-                      pct: '90%',
-                    },
-                    {
-                      label: 'Pricing & Calendar',
-                      status: 'Optimised',
-                      color: 'text-secondary',
-                      bar: 'bg-secondary/70',
-                      pct: '85%',
-                    },
-                    {
-                      label: 'Task Management',
-                      status: 'Active',
-                      color: 'text-warning',
-                      bar: 'bg-warning/70',
-                      pct: '95%',
-                    },
-                    {
-                      label: 'Reporting',
-                      status: 'Running',
-                      color: 'text-success',
-                      bar: 'bg-success/70',
-                      pct: '80%',
-                    },
-                  ].map(({ label, status, color, bar, pct }) => (
-                    <div key={label} className="bg-base-100 rounded-xl p-3 border border-base-300">
-                      <div className="flex items-center justify-between mb-1.5">
-                        <span className="text-xs font-medium text-base-content/70">{label}</span>
-                        <span className={`text-xs font-semibold ${color}`}>{status}</span>
+                    { task: 'Listing created & optimised', done: true },
+                    { task: 'Pricing strategy configured', done: true },
+                    { task: 'Guest communication templates', done: true },
+                    { task: 'Check-in / check-out flow', done: true },
+                    { task: 'Cleaning coordination system', done: true },
+                    { task: 'Calendar & availability rules', done: false },
+                    { task: 'Backend tools connected', done: false },
+                  ].map(({ task, done }) => (
+                    <div
+                      key={task}
+                      className={`flex items-center gap-3 px-3 py-2.5 rounded-xl border text-xs ${done ? 'bg-success/6 border-success/20 text-base-content/70' : 'bg-base-100 border-base-300 text-base-content/45'}`}
+                    >
+                      <div
+                        className={`w-4 h-4 rounded-full flex items-center justify-center shrink-0 ${done ? 'bg-success/20' : 'border border-base-300'}`}
+                      >
+                        {done && <CheckCircle2 className="w-3 h-3 text-success" />}
                       </div>
-                      <div className="w-full h-1.5 bg-base-300 rounded-full overflow-hidden">
-                        <div className={`h-full rounded-full ${bar}`} style={{ width: pct }} />
-                      </div>
+                      {task}
                     </div>
                   ))}
                 </div>
                 <div className="mt-4 flex items-center justify-between px-1">
-                  <span className="text-xs text-base-content/40">5 systems active</span>
-                  <span className="text-xs text-success font-semibold">↑ All running smoothly</span>
+                  <span className="text-xs text-base-content/40">5 of 7 complete</span>
+                  <span className="text-xs text-primary font-semibold">→ On track</span>
                 </div>
               </div>
             </div>
@@ -174,31 +148,31 @@ export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
         <div className="container max-w-7xl mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-2">
-              <LayoutDashboard className="w-4 h-4" /> The Scaling Reality
+              <LayoutDashboard className="w-4 h-4" /> The Setup Reality
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold">
-              Most STR Businesses Don&apos;t Have a System
+              Starting Is Easy. Setting It Up Properly Is Not.
             </h2>
             <p className="text-base-content/65 text-lg leading-relaxed">
-              They rely on manual processes, scattered tools, and constant involvement from the
-              host. This works at the start. It breaks as you scale.
+              Most people focus on getting a property and listing it online. But a proper setup
+              includes systems, workflows, and structure — and without it, problems start early.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
               {[
                 {
-                  icon: ClipboardList,
-                  label: 'Manual processes',
-                  desc: 'Every task handled by hand, every time.',
+                  icon: ListChecks,
+                  label: 'Systems',
+                  desc: 'Structured processes that keep operations running smoothly.',
                 },
                 {
                   icon: Settings,
-                  label: 'Scattered tools',
-                  desc: 'No centralised setup — everything is disconnected.',
+                  label: 'Workflows',
+                  desc: 'Clear steps for every task from check-in to cleaning.',
                 },
                 {
-                  icon: Users,
-                  label: 'Host dependency',
-                  desc: 'The business stops when the host steps away.',
+                  icon: LayoutDashboard,
+                  label: 'Structure',
+                  desc: 'A backend that is organised and ready to scale.',
                 },
               ].map(({ icon: Icon, label, desc }) => (
                 <div
@@ -223,31 +197,31 @@ export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-error/10 border border-error/25 text-error text-sm font-medium mb-4">
-                <XCircle className="w-4 h-4" /> Root Causes
+                <XCircle className="w-4 h-4" /> Why It Fails Early
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold">Why Operations Become Chaotic</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold">Why Most STR Setups Fail Early</h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 {
-                  point: 'No standard processes',
-                  detail: 'Every task is done differently each time — no consistency.',
+                  point: 'No operational structure',
+                  detail: 'The business launches with no defined processes in place.',
                 },
                 {
-                  point: 'Repeated manual tasks',
-                  detail: 'Time is spent on the same work over and over.',
+                  point: 'Poor listing setup',
+                  detail: 'Listings are incomplete, unoptimised, or inconsistent across platforms.',
                 },
                 {
-                  point: 'Inconsistent communication',
-                  detail: 'Guest experience varies depending on the day.',
+                  point: 'No pricing strategy',
+                  detail: 'Pricing is set arbitrarily with no structure or review process.',
                 },
                 {
-                  point: 'Disconnected tools',
-                  detail: 'Multiple platforms with no central overview.',
+                  point: 'Unclear processes',
+                  detail: 'Nobody knows what to do or when — every situation is handled ad hoc.',
                 },
                 {
-                  point: 'Reliance on the host',
-                  detail: 'Nothing moves unless the owner is involved.',
+                  point: 'Reliance on manual work',
+                  detail: 'Everything requires the host personally, making scale impossible.',
                 },
               ].map(({ point, detail }) => (
                 <div
@@ -263,42 +237,49 @@ export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
               ))}
             </div>
             <p className="text-center text-base-content/60 mt-8 italic text-sm">
-              Without systems, growth creates pressure instead of progress.
+              Starting without structure creates issues from day one.
             </p>
           </div>
         </div>
       </section>
 
-      {/* WHAT STR SYSTEMS ACTUALLY MEAN */}
+      {/* WHAT A PROPER SETUP INCLUDES */}
       <section className="bg-base-200 border-y border-base-300 py-20 lg:py-28">
         <div className="container max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-4">
-              <Workflow className="w-4 h-4" /> The Foundation
+              <CheckCircle2 className="w-4 h-4" /> The Complete Picture
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold">What a Proper STR System Includes</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold">
+              What a Complete STR Setup Should Cover
+            </h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
             {[
               {
-                icon: Workflow,
-                title: 'Structured Workflows',
-                desc: 'Clear, repeatable processes for every daily operation — nothing left to chance.',
+                icon: ListChecks,
+                title: 'Listing Setup',
+                desc: 'Clear, optimised listings ready to convert across every platform.',
               },
               {
-                icon: Zap,
-                title: 'Automation',
-                desc: 'Reducing manual work across tasks so the business runs with less effort.',
+                icon: Settings,
+                title: 'Operational Flow',
+                desc: 'Defined processes for every daily task from the start.',
+              },
+              {
+                icon: CalendarDays,
+                title: 'Pricing & Calendar',
+                desc: 'A structured pricing and availability approach built in from day one.',
+              },
+              {
+                icon: MessageSquare,
+                title: 'Communication System',
+                desc: 'Templates and workflows for handling guests consistently.',
               },
               {
                 icon: LayoutDashboard,
-                title: 'Centralised Management',
-                desc: 'Everything organised in one place — visible, trackable, accessible.',
-              },
-              {
-                icon: TrendingUp,
-                title: 'Scalable Setup',
-                desc: 'Built to handle portfolio growth without the system breaking under load.',
+                title: 'Backend Structure',
+                desc: 'Tools and systems organised properly and connected together.',
               },
             ].map(({ icon: Icon, title, desc }, i) => (
               <div
@@ -311,71 +292,79 @@ export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
                   <Icon className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-bold text-base mb-2">{title}</h3>
-                <p className="text-sm text-base-content/60 leading-relaxed">{desc}</p>
+                <h3 className="font-bold text-sm mb-2">{title}</h3>
+                <p className="text-xs text-base-content/60 leading-relaxed">{desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* WHAT WE BUILD */}
+      {/* WHAT WE HANDLE */}
       <section className="py-20 lg:py-28">
         <div className="container max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-4">
-              <Settings className="w-4 h-4" /> Our Scope
+              <Rocket className="w-4 h-4" /> Our Scope
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold">What Our STR Systems Building Covers</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold">What Our Business Setup Covers</h2>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr_1.5fr] gap-px bg-base-300 rounded-3xl overflow-hidden border border-base-300">
             <div className="bg-base-200 px-5 py-3 text-xs font-bold uppercase tracking-widest text-base-content/40">
-              System
+              Area
             </div>
             <div className="bg-base-200 px-5 py-3 text-xs font-bold uppercase tracking-widest text-base-content/40">
-              What We Build
+              What We Do
             </div>
             <div className="bg-base-200 px-5 py-3 text-xs font-bold uppercase tracking-widest text-base-content/40">
               Outcome
             </div>
             {[
               {
-                area: 'Operations System',
-                icon: ClipboardList,
+                area: 'Listing Creation',
+                icon: ListChecks,
                 tasks: [
-                  'Guest communication flow',
-                  'Check-in and check-out processes',
-                  'Cleaning coordination',
+                  'Setting up listings across platforms',
+                  'Structuring descriptions',
+                  'Image and content guidance',
                 ],
-                outcome: 'A smooth, consistent guest experience from booking to checkout.',
+                outcome: 'Optimised, conversion-ready listings live across all relevant platforms.',
+              },
+              {
+                area: 'System Setup',
+                icon: Settings,
+                tasks: [
+                  'Workflows for daily operations',
+                  'Communication structure',
+                  'Task organisation',
+                ],
+                outcome: 'A backend that runs on process, not memory or guesswork.',
               },
               {
                 area: 'Pricing & Calendar',
-                icon: BarChart3,
-                tasks: ['Structured pricing approach', 'Availability control', 'Gap management'],
-                outcome: 'Better occupancy, reduced gaps, and optimised revenue.',
-              },
-              {
-                area: 'Communication System',
-                icon: MessageSquare,
-                tasks: ['Message templates', 'Response structure', 'Consistent tone'],
-                outcome: 'Professional, reliable communication without manual effort.',
-              },
-              {
-                area: 'Task & Workflow Setup',
-                icon: Workflow,
-                tasks: ['Task tracking', 'Team coordination', 'Process clarity'],
-                outcome: 'Everyone knows what to do and when — no chasing required.',
-              },
-              {
-                area: 'Automation Setup',
-                icon: Zap,
+                icon: CalendarDays,
                 tasks: [
-                  'Reducing repetitive tasks',
-                  'Improving efficiency',
-                  'Ensuring consistency',
+                  'Initial pricing strategy',
+                  'Availability setup',
+                  'Booking rules configuration',
                 ],
-                outcome: 'A business that operates reliably without constant manual input.',
+                outcome: 'Structured pricing and calendar control ready from day one.',
+              },
+              {
+                area: 'Process Creation',
+                icon: ClipboardList,
+                tasks: [
+                  'Check-in and check-out flow',
+                  'Cleaning coordination',
+                  'Maintenance handling',
+                ],
+                outcome: 'Clear, repeatable processes for every operational scenario.',
+              },
+              {
+                area: 'Tool & Platform Setup',
+                icon: LayoutDashboard,
+                tasks: ['Organising systems', 'Connecting tools', 'Ensuring smooth operation'],
+                outcome: 'Everything connected, configured, and ready to run.',
               },
             ].map(({ area, icon: Icon, tasks, outcome }) => (
               <React.Fragment key={area}>
@@ -401,39 +390,31 @@ export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
             ))}
           </div>
           <p className="text-center mt-8 text-base-content/60 text-sm">
-            The result: a structured business that runs without constant input.
+            The result: a fully structured STR business ready to operate from day one.
           </p>
         </div>
       </section>
 
-      {/* HOW SYSTEMS CHANGE YOUR BUSINESS */}
+      {/* HOW THIS IMPACTS YOUR BUSINESS */}
       <section className="bg-base-200 border-y border-base-300 py-20 lg:py-28">
         <div className="container max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-4">
-              <RefreshCw className="w-4 h-4" /> Before vs After
+              <TrendingUp className="w-4 h-4" /> Before vs After
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold">
-              What Happens When Systems Are in Place
-            </h2>
+            <h2 className="text-3xl lg:text-4xl font-bold">What Happens With a Proper Setup</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <div className="rounded-2xl border border-error/20 bg-error/4 p-6 space-y-4">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-error/15 text-error text-xs font-bold">
-                ❌ Without Systems
+                ❌ Without Setup
               </div>
               <ul className="space-y-3">
                 {[
-                  {
-                    p: 'Reactive operations',
-                    d: 'Problems are solved as they appear, not prevented.',
-                  },
-                  { p: 'Constant involvement', d: 'The host must be available at all times.' },
-                  {
-                    p: 'Inconsistent performance',
-                    d: 'Quality varies depending on who does what.',
-                  },
-                  { p: 'Limited growth', d: 'Scaling adds pressure rather than progress.' },
+                  { p: 'Confusion', d: 'No clarity on what to do or in what order.' },
+                  { p: 'Mistakes', d: 'Errors happen because processes are undefined.' },
+                  { p: 'Reactive operations', d: 'Every issue is handled as a surprise.' },
+                  { p: 'Slow growth', d: 'Chaos at the start makes scaling harder later.' },
                 ].map(({ p, d }) => (
                   <li key={p} className="flex gap-3">
                     <XCircle className="w-4 h-4 text-error shrink-0 mt-0.5" />
@@ -447,14 +428,17 @@ export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
             </div>
             <div className="rounded-2xl border border-success/20 bg-success/4 p-6 space-y-4">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-success/15 text-success text-xs font-bold">
-                ✅ With Systems
+                ✅ With Setup
               </div>
               <ul className="space-y-3">
                 {[
-                  { p: 'Organised operations', d: 'Processes run predictably every time.' },
-                  { p: 'Reduced workload', d: 'The host can step back without things stopping.' },
-                  { p: 'Consistent results', d: 'Every guest gets the same quality experience.' },
-                  { p: 'Scalable business', d: 'Growth adds revenue, not chaos.' },
+                  { p: 'Clarity', d: 'Everyone knows what to do and how to do it.' },
+                  { p: 'Smooth operations', d: 'Tasks are handled by process, not by guessing.' },
+                  { p: 'Consistency', d: 'Every guest gets the same quality experience.' },
+                  {
+                    p: 'Scalable foundation',
+                    d: 'Built to grow without needing to rebuild later.',
+                  },
                 ].map(({ p, d }) => (
                   <li key={p} className="flex gap-3">
                     <CheckCircle2 className="w-4 h-4 text-success shrink-0 mt-0.5" />
@@ -478,29 +462,29 @@ export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-warning/15 border border-warning/30 text-warning text-sm font-medium mb-4">
                 <XCircle className="w-4 h-4" /> Common Mistakes
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold">Where STR Systems Go Wrong</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold">Where STR Setup Goes Wrong</h2>
             </div>
             <div className="space-y-3">
               {[
                 {
-                  mistake: 'Automating without structure',
-                  why: 'Automation on top of chaos just creates faster chaos.',
+                  mistake: 'Rushing into listing',
+                  why: 'Going live before systems are in place creates an immediate backlog of problems.',
                 },
                 {
-                  mistake: 'Too many disconnected tools',
-                  why: 'More apps without a plan leads to more confusion, not less.',
+                  mistake: 'Ignoring systems',
+                  why: 'Treating setup as just a listing task leaves the backend completely unstructured.',
                 },
                 {
-                  mistake: 'No clear workflows',
-                  why: 'Without defined processes, tasks fall through the gaps.',
+                  mistake: 'Copying others blindly',
+                  why: "Another host's setup may not suit your property type, location, or goals.",
                 },
                 {
-                  mistake: 'No documentation',
-                  why: "If it only lives in someone's head, it cannot be delegated or scaled.",
+                  mistake: 'No structure',
+                  why: "Without documented processes, everything depends on the host's memory.",
                 },
                 {
-                  mistake: 'Building systems too late',
-                  why: 'Trying to systemise during peak chaos is much harder than building early.',
+                  mistake: 'No long-term thinking',
+                  why: 'Setting up for now rather than for scale means rebuilding everything later.',
                 },
               ].map(({ mistake, why }) => (
                 <div
@@ -518,7 +502,7 @@ export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
               ))}
             </div>
             <p className="text-center text-base-content/55 mt-8 italic text-sm">
-              Systems fail when they are not designed properly.
+              Setup mistakes are harder to fix later.
             </p>
           </div>
         </div>
@@ -532,27 +516,28 @@ export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-4">
                 <CheckCircle2 className="w-4 h-4" /> Our Method
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold">How We Build Systems Properly</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold">
+                How We Set Up STR Businesses Properly
+              </h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 {
-                  step: '1. Map your current setup',
-                  detail: 'We audit how your business currently operates and where the gaps are.',
-                },
-                {
-                  step: '2. Identify the gaps',
+                  step: '1. Plan before execution',
                   detail:
-                    'We pinpoint what is missing, broken, or bottlenecked before building anything.',
+                    'We understand your goals, property, and market before building anything.',
                 },
                 {
-                  step: '3. Design structured workflows',
-                  detail:
-                    'We create clear, documented processes tailored to your specific operation.',
+                  step: '2. Build structure first',
+                  detail: 'Systems and workflows are designed before listings go live.',
                 },
                 {
-                  step: '4. Implement and refine',
-                  detail: 'We put the systems in place and adjust based on real-world performance.',
+                  step: '3. Align everything together',
+                  detail: 'Listings, systems, pricing, and communication all work as one.',
+                },
+                {
+                  step: '4. Prepare for growth',
+                  detail: 'Everything is built to scale, not just to launch.',
                 },
               ].map(({ step, detail }) => (
                 <div
@@ -578,7 +563,7 @@ export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-4">
               <BarChart3 className="w-4 h-4" /> Side by Side
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold">Manual Setup vs Systemised Business</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold">Basic Setup vs Structured Setup</h2>
           </div>
           <div className="hidden md:block overflow-hidden rounded-3xl border border-base-300 max-w-3xl mx-auto">
             <div className="grid grid-cols-3">
@@ -586,17 +571,17 @@ export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
                 Area
               </div>
               <div className="bg-error/8 px-5 py-3 text-xs font-bold uppercase tracking-widest text-error/70 text-center">
-                Manual Setup
+                Basic Setup
               </div>
               <div className="bg-success/8 px-5 py-3 text-xs font-bold uppercase tracking-widest text-success/70 text-center">
-                Systemised
+                Structured Setup
               </div>
             </div>
             {[
-              ['Operations', 'Reactive', 'Structured'],
-              ['Time spent', 'Time-consuming', 'Efficient'],
-              ['Consistency', 'Inconsistent', 'Reliable'],
-              ['Growth', 'Hard to scale', 'Scalable'],
+              ['Launch', 'Quick launch', 'Planned launch'],
+              ['Systems', 'No systems', 'Full structure'],
+              ['Operations', 'Reactive', 'Controlled'],
+              ['Growth', 'Limited', 'Scalable'],
             ].map(([area, bad, good]) => (
               <div key={area} className="grid grid-cols-3 border-t border-base-300">
                 <div className="bg-base-100 px-5 py-4 text-sm font-medium">{area}</div>
@@ -609,10 +594,10 @@ export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
           </div>
           <div className="md:hidden space-y-3 max-w-sm mx-auto">
             {[
-              ['Operations', 'Reactive', 'Structured'],
-              ['Time spent', 'Time-consuming', 'Efficient'],
-              ['Consistency', 'Inconsistent', 'Reliable'],
-              ['Growth', 'Hard to scale', 'Scalable'],
+              ['Launch', 'Quick launch', 'Planned launch'],
+              ['Systems', 'No systems', 'Full structure'],
+              ['Operations', 'Reactive', 'Controlled'],
+              ['Growth', 'Limited', 'Scalable'],
             ].map(([area, bad, good]) => (
               <div key={area} className="rounded-2xl border border-base-300 overflow-hidden">
                 <div className="bg-base-200 px-4 py-2 text-xs font-bold uppercase tracking-wider text-base-content/50">
@@ -642,24 +627,24 @@ export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
             {[
               {
+                icon: Rocket,
+                who: 'New STR hosts',
+                desc: 'Starting their first short term rental and want to do it right.',
+              },
+              {
                 icon: Building2,
-                who: 'Multi-listing hosts',
-                desc: 'Managing multiple properties without a structured backend.',
-              },
-              {
-                icon: LayoutDashboard,
-                who: 'SA businesses',
-                desc: 'Serviced accommodation operators who need consistent operations.',
-              },
-              {
-                icon: TrendingUp,
-                who: 'Portfolio operators',
-                desc: 'Scaling portfolios where manual processes are breaking down.',
+                who: 'SA startups',
+                desc: 'Entering serviced accommodation and need structure from day one.',
               },
               {
                 icon: Target,
-                who: 'Structure-focused hosts',
-                desc: "Hosts who know they need a proper system but don't know where to start.",
+                who: 'Investors',
+                desc: 'Launching their first or next property with a professional setup.',
+              },
+              {
+                icon: TrendingUp,
+                who: 'Expanding operators',
+                desc: 'Adding properties and needing a scalable setup for each one.',
               },
             ].map(({ icon: Icon, who, desc }) => (
               <div
@@ -689,25 +674,25 @@ export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
               {
-                initials: 'DH',
-                name: 'Daniel H.',
-                role: 'STR Host · Birmingham',
+                initials: 'NB',
+                name: 'Natalie B.',
+                role: 'New STR Host · Manchester',
                 quote:
-                  'Before we worked with Assistophere, every day was firefighting. Now we have a proper system and I actually have time to focus on growth.',
+                  'I had no idea where to start. Assistophere mapped everything out and set it all up properly. I launched with confidence instead of confusion.',
               },
               {
-                initials: 'LT',
-                name: 'Laura T.',
-                role: 'SA Operator · London',
+                initials: 'RO',
+                name: 'Ryan O.',
+                role: 'SA Startup · Birmingham',
                 quote:
-                  'The operations system they built for us cut our weekly admin time dramatically. Everything runs on process now, not memory.',
+                  'The setup they built saved me months of trial and error. Everything was structured from day one and it has made a huge difference.',
               },
               {
-                initials: 'MK',
-                name: 'Marcus K.',
-                role: 'Portfolio Host · Leeds',
+                initials: 'AJ',
+                name: 'Amara J.',
+                role: 'Property Investor · London',
                 quote:
-                  'I was managing 6 properties on spreadsheets. Now we have structured workflows for everything. Night and day difference.',
+                  'I wanted my first STR done properly. They built the entire backend, set up the listing, and had everything running in weeks.',
               },
             ].map(({ initials, name, role, quote }) => (
               <div
@@ -749,20 +734,20 @@ export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
             </div>
             <div className="space-y-3">
               <FaqItem
-                q="What systems do you set up?"
-                a="We build operational systems covering guest communication, check-in and check-out processes, cleaning coordination, pricing and calendar management, task workflows, and automation. The exact scope depends on your current setup and needs."
+                q="Can you help from scratch?"
+                a="Yes. We work with hosts starting from zero — no existing listing, no systems, no tools in place. We handle the full setup from the ground up, including listings, workflows, pricing structure, and communication systems."
               />
               <FaqItem
-                q="Can this work with my current tools?"
-                a="Yes. We work with what you already have where possible, and recommend changes only when your current tools are creating friction. We do not require you to switch platforms unnecessarily."
+                q="What do I need before starting?"
+                a="Very little. You need a property and a clear goal. We take care of the rest — mapping out what needs to be built, what tools are needed, and how everything should be structured before anything goes live."
               />
               <FaqItem
-                q="How long does it take?"
-                a="The timeline depends on the complexity of your operation. Simple systems can be set up in a few weeks. More complex, multi-property setups take longer. We will give you a clear timeline after reviewing your current setup."
+                q="How long does setup take?"
+                a="A basic single-property setup typically takes two to four weeks. More complex setups involving multiple listings, custom workflows, or specific platform integrations will take longer. We provide a timeline after the initial discovery call."
               />
               <FaqItem
-                q="Will this reduce my workload?"
-                a="That is the primary goal. By replacing manual processes with structured workflows and automation, the business runs more efficiently with less of your time required day to day."
+                q="Can this scale later?"
+                a="Yes — that is specifically how we build it. Every system and workflow is designed with growth in mind, so adding properties, team members, or platforms does not require rebuilding from scratch."
               />
             </div>
           </div>
@@ -779,20 +764,20 @@ export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
             </div>
             <div className="max-w-2xl mx-auto space-y-6">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/15 border border-primary/30 text-primary text-sm font-semibold">
-                <Settings className="w-4 h-4" /> Start Building Your System
+                <Rocket className="w-4 h-4" /> Start Properly
               </div>
               <h2 className="text-3xl lg:text-4xl font-extrabold">
-                Ready to Turn Your Setup{' '}
+                Ready to Start Your STR Business{' '}
                 <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary">
-                  Into a System?
+                  Properly?
                 </span>
               </h2>
               <p className="text-base-content/65 text-lg leading-relaxed">
-                Let&apos;s build a structure that allows your business to run smoothly and scale
-                properly. We don&apos;t just organise your business — we build the system behind it.
+                Let&apos;s build a setup that works from day one and supports your growth. We
+                don&apos;t just help you start — we help you start properly.
               </p>
               <div className="flex flex-wrap justify-center gap-4 pt-2">
-                <button className="pulse-cta-sb btn btn-primary btn-lg rounded-full px-10 gap-2 shadow-lg">
+                <button className="pulse-cta-sbs btn btn-primary btn-lg rounded-full px-10 gap-2 shadow-lg">
                   <Phone className="w-4 h-4" /> Book a Discovery Call
                 </button>
                 <button className="btn btn-outline btn-lg rounded-full px-8 gap-2">
@@ -800,7 +785,7 @@ export const SystemsBuildingView: React.FC<{ page: Page }> = () => {
                 </button>
               </div>
               <p className="text-xs text-base-content/40 pt-2">
-                STR Systems Setup UK · Airbnb Automation Systems · STR Workflow Setup
+                Airbnb Business Setup UK · STR Business Setup · Serviced Accommodation Setup
               </p>
             </div>
           </div>

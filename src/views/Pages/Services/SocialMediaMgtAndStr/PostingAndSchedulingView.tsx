@@ -1,85 +1,88 @@
 import React from 'react'
+import Link from 'next/link'
 import {
-  Instagram,
+  Calendar,
   LayoutGrid,
   Star,
   Phone,
   ArrowRight,
   CheckCircle2,
   XCircle,
-  Calendar,
-  Palette,
   MessageSquare,
   ChevronRight,
   AlertTriangle,
   TrendingUp,
-  Megaphone,
   Target,
   Building2,
-  Zap,
-  Smartphone,
   Layers,
-  Globe,
+  Clock,
   BarChart3,
+  Repeat,
+  Timer,
+  CheckSquare,
+  Zap,
 } from 'lucide-react'
 import type { Page } from '@/payload-types'
 
-export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = () => {
+export const PostingAndSchedulingView: React.FC<{ page: Page }> = () => {
   return (
     <div className="min-h-screen text-base-content overflow-x-hidden">
       <style>{`
-        @keyframes pulse-ring-smm {
+        @keyframes pulse-ring-pas {
           0%,100% { box-shadow: 0 0 0 0 hsl(var(--p)/.35); }
           50%      { box-shadow: 0 0 0 10px hsl(var(--p)/0); }
         }
-        @keyframes smm-fade-up {
+        @keyframes pas-fade-up {
           from { opacity:0; transform:translateY(22px); }
           to   { opacity:1; transform:translateY(0); }
         }
-        .smm-fade-1 { animation: smm-fade-up .55s ease both .10s; }
-        .smm-fade-2 { animation: smm-fade-up .55s ease both .22s; }
-        .smm-fade-3 { animation: smm-fade-up .55s ease both .34s; }
-        .smm-fade-4 { animation: smm-fade-up .55s ease both .46s; }
-        .smm-fade-5 { animation: smm-fade-up .55s ease both .58s; }
-        .pulse-cta-smm { animation: pulse-ring-smm 2.4s ease-in-out infinite; }
+        .pas-fade-1 { animation: pas-fade-up .55s ease both .10s; }
+        .pas-fade-2 { animation: pas-fade-up .55s ease both .22s; }
+        .pas-fade-3 { animation: pas-fade-up .55s ease both .34s; }
+        .pas-fade-4 { animation: pas-fade-up .55s ease both .46s; }
+        .pas-fade-5 { animation: pas-fade-up .55s ease both .58s; }
+        .pulse-cta-pas { animation: pulse-ring-pas 2.4s ease-in-out infinite; }
       `}</style>
 
       {/* ── HERO ─────────────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden pt-16 pb-16 lg:pt-20 lg:pb-20">
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-          <div className="absolute -top-32 -left-32 w-[520px] h-[520px] bg-linear-to-br from-primary/13 via-primary/4 to-transparent rounded-full blur-[140px]" />
-          <div className="absolute top-1/2 -right-40 w-[420px] h-[420px] bg-linear-to-bl from-secondary/10 via-secondary/3 to-transparent rounded-full blur-[120px]" />
+          <div className="absolute -top-32 -left-32 w-130 h-130 bg-linear-to-br from-primary/13 via-primary/4 to-transparent rounded-full blur-[140px]" />
+          <div className="absolute top-1/2 -right-40 w-105 h-105 bg-linear-to-bl from-secondary/10 via-secondary/3 to-transparent rounded-full blur-[120px]" />
         </div>
         <div className="container max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="space-y-6">
-              <div className="smm-fade-1 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium">
-                <Instagram className="w-4 h-4" />
-                Social Media Management · UK STR
+              <div className="pas-fade-1 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium">
+                <Calendar className="w-4 h-4" />
+                Posting &amp; Scheduling · UK STR
               </div>
-              <h1 className="smm-fade-2 text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-[1.08] tracking-tight">
-                Social Media Management That Supports Your{' '}
+              <h1 className="pas-fade-2 text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-[1.08] tracking-tight">
+                Posting &amp; Scheduling That Keeps Your STR Brand{' '}
                 <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary">
-                  STR Growth
+                  Consistent
                 </span>
               </h1>
-              <p className="smm-fade-3 text-lg text-base-content/70 leading-relaxed max-w-lg">
-                Assistophere helps UK hosts manage social media with structured content and
-                strategy, building brand presence and supporting direct booking growth.
+              <p className="pas-fade-3 text-lg text-base-content/70 leading-relaxed max-w-lg">
+                Assistophere manages posting and scheduling for UK hosts, ensuring your content goes
+                live consistently without gaps or manual effort.
               </p>
-              <div className="smm-fade-4 p-4 rounded-xl border border-primary/20 bg-primary/6 text-sm italic text-base-content/65">
-                Social media management for STR businesses involves creating content, maintaining
-                consistency, and building a brand presence to attract and convert potential guests.
+              <div className="pas-fade-4 p-4 rounded-xl border border-primary/20 bg-primary/6 text-sm italic text-base-content/65">
+                Social media posting and scheduling involve planning, organising, and publishing
+                content consistently to maintain an active and reliable online presence.
               </div>
-              <div className="smm-fade-5 flex flex-wrap gap-3 pt-1">
-                <button className="pulse-cta-smm btn btn-primary btn-lg rounded-full px-8 gap-2">
+              <div className="pas-fade-5 flex flex-wrap gap-3 pt-1">
+                <button className="pulse-cta-pas btn btn-primary btn-lg rounded-full px-8 gap-2">
                   <Phone className="w-4 h-4" /> Book a Discovery Call
                 </button>
-                <button className="btn btn-outline btn-lg rounded-full px-8 gap-2">
-                  <ArrowRight className="w-4 h-4" /> See How It Works
-                </button>
+                <Link
+                  href="/services/social-media-management"
+                  className="btn btn-outline btn-lg rounded-full px-8 gap-2"
+                >
+                  <ArrowRight className="w-4 h-4" /> Back to Social Media Management
+                </Link>
               </div>
-              <div className="smm-fade-5 flex items-center gap-3 pt-2">
+              <div className="pas-fade-5 flex items-center gap-3 pt-2">
                 <div className="flex -space-x-2">
                   {['bg-primary', 'bg-secondary', 'bg-accent', 'bg-neutral'].map((c, i) => (
                     <div
@@ -97,62 +100,63 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
                     ))}
                   </div>
                   <p className="text-xs text-base-content/55 mt-0.5">
-                    Trusted by UK STR hosts and SA operators
+                    Consistent posting for UK STR businesses
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Hero visual — Instagram-style grid preview */}
+            {/* Hero visual — scheduling dashboard */}
             <div className="hidden lg:block">
               <div className="relative rounded-3xl border border-base-300 bg-base-200/60 backdrop-blur-sm p-6 shadow-xl">
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="w-9 h-9 rounded-full bg-linear-to-br from-primary to-secondary flex items-center justify-center">
-                    <Instagram className="w-4 h-4 text-white" />
-                  </div>
+                <div className="flex items-center justify-between mb-5">
                   <div>
-                    <p className="text-xs font-bold">@yourstrbrand</p>
-                    <p className="text-[10px] text-base-content/40">Serviced Accommodation · UK</p>
+                    <p className="text-xs font-bold">Posting Schedule</p>
+                    <p className="text-[10px] text-base-content/40">April 2026 · Week 2</p>
                   </div>
-                  <div className="ml-auto flex gap-4 text-center">
-                    {[
-                      ['24', 'Posts'],
-                      ['1.2k', 'Followers'],
-                      ['340', 'Reach'],
-                    ].map(([v, l]) => (
-                      <div key={l}>
-                        <p className="text-xs font-extrabold">{v}</p>
-                        <p className="text-[9px] text-base-content/40">{l}</p>
-                      </div>
-                    ))}
+                  <div className="flex items-center gap-1.5 text-[10px] font-semibold text-success">
+                    <div className="w-1.5 h-1.5 rounded-full bg-success animate-pulse" />
+                    Active
                   </div>
                 </div>
-                {/* 3×3 grid */}
-                <div className="grid grid-cols-3 gap-1.5 mb-4">
+                {/* Week grid */}
+                <div className="grid grid-cols-7 gap-1 mb-4">
+                  {['M', 'T', 'W', 'T', 'F', 'S', 'S'].map((d, i) => (
+                    <div key={i} className="text-center">
+                      <p className="text-[9px] text-base-content/40 mb-1">{d}</p>
+                      <div
+                        className={`rounded-lg aspect-square flex items-center justify-center text-[9px] font-bold
+                        ${[0, 2, 4].includes(i) ? 'bg-primary/20 text-primary' : i === 5 ? 'bg-secondary/15 text-secondary' : 'bg-base-300 text-base-content/30'}`}
+                      >
+                        {[0, 2, 4].includes(i) ? '✓' : i === 5 ? '◎' : '–'}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                {/* Upcoming posts */}
+                <div className="space-y-2 mb-4">
                   {[
-                    { bg: 'bg-primary/15', label: 'Property Showcase', icon: Building2 },
-                    { bg: 'bg-secondary/12', label: 'Guest Experience', icon: Star },
-                    { bg: 'bg-success/10', label: 'Local Area', icon: Globe },
-                    { bg: 'bg-warning/12', label: 'Behind the Scenes', icon: Layers },
-                    { bg: 'bg-primary/20', label: 'Amenities', icon: Zap },
-                    { bg: 'bg-accent/10', label: 'Direct Booking', icon: TrendingUp },
-                    { bg: 'bg-secondary/15', label: 'Review Feature', icon: MessageSquare },
-                    { bg: 'bg-success/12', label: 'Seasonal Promo', icon: Calendar },
-                    { bg: 'bg-primary/10', label: 'Brand Story', icon: Palette },
-                  ].map(({ bg, label, icon: Icon }, i) => (
+                    { time: '09:00', label: 'Property Showcase · Instagram', done: true },
+                    { time: '11:00', label: 'Guest Tip · Facebook', done: true },
+                    { time: '18:00', label: 'Direct Booking Prompt · Instagram', done: false },
+                    { time: '20:00', label: 'Evening Reel · Instagram', done: false },
+                  ].map(({ time, label, done }) => (
                     <div
-                      key={i}
-                      className={`${bg} rounded-xl aspect-square flex flex-col items-center justify-center gap-1 p-2`}
+                      key={time}
+                      className="flex items-center gap-3 bg-base-100 rounded-xl px-3 py-2 border border-base-300"
                     >
-                      <Icon className="w-4 h-4 text-base-content/40" />
-                      <p className="text-[9px] text-base-content/40 text-center leading-tight">
-                        {label}
-                      </p>
+                      <span className="text-[10px] text-base-content/40 w-10 shrink-0">{time}</span>
+                      <span className="text-xs flex-1 text-base-content/70">{label}</span>
+                      {done ? (
+                        <CheckSquare className="w-3.5 h-3.5 text-success shrink-0" />
+                      ) : (
+                        <Clock className="w-3.5 h-3.5 text-primary/50 shrink-0" />
+                      )}
                     </div>
                   ))}
                 </div>
                 <div className="bg-base-100 rounded-xl border border-primary/20 px-4 py-2.5 flex items-center justify-between">
-                  <span className="text-xs text-base-content/50">Content scheduled this week</span>
+                  <span className="text-xs text-base-content/50">Posts scheduled this week</span>
                   <span className="text-xs font-bold text-primary">5 posts</span>
                 </div>
               </div>
@@ -166,48 +170,49 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
         <div className="container max-w-7xl mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-2">
-              <LayoutGrid className="w-4 h-4" /> The Real Picture
+              <Repeat className="w-4 h-4" /> The Real Driver
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold">
-              Social Media Isn&apos;t Just Posting Content
+              Consistency Matters More Than Frequency
             </h2>
             <p className="text-base-content/65 text-lg leading-relaxed">
-              Most STR businesses either don&apos;t post at all, or post inconsistently without any
-              clear direction. For short-term rentals, social media is one of the few channels you
-              fully control — but only if it&apos;s managed properly.
+              Posting five times in one week then going silent for three weeks is worse than posting
+              twice a week, every week. Algorithms reward reliability — and so do potential guests.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2 text-left">
               {[
                 {
-                  icon: TrendingUp,
-                  title: 'Build trust',
-                  desc: 'Consistent, professional content signals that your property and business are credible.',
+                  icon: XCircle,
+                  colour: 'text-error',
+                  bg: 'border-error/15 bg-error/4',
+                  label: 'Posts are irregular',
+                  desc: 'Bursts of content followed by silence break any momentum your account builds.',
                 },
                 {
-                  icon: Building2,
-                  title: 'Showcase properties',
-                  desc: 'Show potential guests exactly what they&apos;re booking before they ever visit a listing.',
+                  icon: XCircle,
+                  colour: 'text-error',
+                  bg: 'border-error/15 bg-error/4',
+                  label: 'Content is delayed',
+                  desc: 'Last-minute scrambles lead to rushed posts — or no posts at all when life gets busy.',
                 },
                 {
-                  icon: Target,
-                  title: 'Attract direct bookings',
-                  desc: 'Social media builds the audience and brand presence that drives traffic outside of Airbnb.',
+                  icon: XCircle,
+                  colour: 'text-error',
+                  bg: 'border-error/15 bg-error/4',
+                  label: 'Schedules are inconsistent',
+                  desc: 'Without a fixed rhythm, your audience never builds familiarity or anticipation.',
                 },
-              ].map(({ icon: Icon, title, desc }) => (
-                <div
-                  key={title}
-                  className="bg-base-100 rounded-2xl border border-primary/15 p-5 text-left"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-3">
-                    <Icon className="w-5 h-5 text-primary" />
-                  </div>
-                  <p className="font-semibold text-sm">{title}</p>
+              ].map(({ icon: Icon, colour, bg, label, desc }) => (
+                <div key={label} className={`rounded-2xl border p-4 ${bg}`}>
+                  <Icon className={`w-4 h-4 ${colour} mb-2`} />
+                  <p className="font-semibold text-sm">{label}</p>
                   <p className="text-xs text-base-content/55 mt-1 leading-relaxed">{desc}</p>
                 </div>
               ))}
             </div>
             <p className="text-base-content/55 text-sm italic">
-              Without structure, social media becomes inconsistent and ineffective.
+              Consistency builds trust and visibility — posting once a week, every week, outperforms
+              erratic bursts.
             </p>
           </div>
         </div>
@@ -221,36 +226,34 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-error/10 border border-error/25 text-error text-sm font-medium mb-4">
                 <XCircle className="w-4 h-4" /> The Problem
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold">
-                Why Most STR Social Media Doesn&apos;t Work
-              </h2>
+              <h2 className="text-3xl lg:text-4xl font-bold">Why Posting Becomes Inconsistent</h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 {
-                  point: 'Inconsistent posting',
+                  point: 'Lack of time',
                   detail:
-                    "Sporadic content signals an inactive brand. The algorithm deprioritises irregular accounts, and potential guests don't build familiarity or trust.",
+                    'Running a short-term rental business is demanding. Social media always gets pushed to tomorrow — and tomorrow never comes.',
                 },
                 {
-                  point: 'No clear strategy',
+                  point: 'No content calendar',
                   detail:
-                    "Posting without a plan means content doesn't connect to any business goal — it's activity for the sake of activity, not results.",
+                    'Without a plan, every post requires starting from scratch. The absence of a calendar means the absence of consistency.',
                 },
                 {
-                  point: 'Low-quality content',
+                  point: 'Manual posting',
                   detail:
-                    'Blurry photos, poor captions, and generic text fail to communicate what makes your property worth booking.',
+                    'Relying on remembering to post manually guarantees gaps. Life interrupts, priorities shift, and the posting habit breaks.',
                 },
                 {
-                  point: 'No branding',
+                  point: 'No planning system',
                   detail:
-                    "When your content looks different every week, there's no recognition. A cohesive visual identity is what makes a brand memorable.",
+                    "Content that's improvised on the day gets deprioritised under operational pressure. Systems are what make posting non-negotiable.",
                 },
                 {
-                  point: 'No connection to bookings',
+                  point: 'Missed posting days',
                   detail:
-                    "Social media only drives revenue when it's structured with a clear path from content to enquiry to booking.",
+                    'One missed day becomes two, then a week. The algorithm deprioritises the account and rebuilding momentum requires starting again.',
                 },
               ].map(({ point, detail }) => (
                 <div
@@ -266,44 +269,42 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
               ))}
             </div>
             <p className="text-center text-base-content/55 mt-8 italic text-sm">
-              Posting without direction doesn&apos;t lead to results.
+              Without a system, posting always becomes secondary.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ── WHAT IT SHOULD LOOK LIKE ─────────────────────────────────────────── */}
+      {/* ── WHAT PROPER SCHEDULING DOES ──────────────────────────────────────── */}
       <section className="bg-base-200 border-y border-base-300 py-20 lg:py-28">
         <div className="container max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-4">
-              <CheckCircle2 className="w-4 h-4" /> The Standard
+              <Zap className="w-4 h-4" /> The Standard
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold">
-              What Proper Social Media Management Looks Like
-            </h2>
+            <h2 className="text-3xl lg:text-4xl font-bold">What Structured Posting Achieves</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">
             {[
               {
-                icon: Calendar,
+                icon: Repeat,
                 title: 'Consistent Presence',
-                desc: 'Regular, scheduled posting maintained week on week — no gaps, no missed weeks. The algorithm rewards consistency, and so do potential guests.',
+                desc: 'Regular activity across your platforms keeps your account visible to the algorithm and familiar to your audience — week in, week out.',
               },
               {
-                icon: Palette,
-                title: 'Clear Branding',
-                desc: 'A recognisable visual identity across every post — colour palette, typography, photography style, and tone all aligned to your property and audience.',
+                icon: Calendar,
+                title: 'Better Planning',
+                desc: 'Content prepared in advance means every post has a purpose, a theme, and a place in the wider content strategy. Nothing reactive.',
               },
               {
-                icon: Building2,
-                title: 'Property Showcase',
-                desc: "Content that deliberately highlights your property's best features, spaces, and guest experience — turning followers into enquiries.",
+                icon: Timer,
+                title: 'Reduced Effort',
+                desc: 'No daily check-ins, no scrambles, no manual uploads. Scheduling takes the operational burden completely off your plate.',
               },
               {
-                icon: MessageSquare,
-                title: 'Audience Engagement',
-                desc: 'Content that connects with the right people — potential guests, returning guests, and referral sources — not just empty impressions.',
+                icon: CheckSquare,
+                title: 'Reliable Output',
+                desc: 'Content goes live exactly as planned — at the right time, on the right platform, every week without exception or manual intervention.',
               },
             ].map(({ icon: Icon, title, desc }, i) => (
               <div
@@ -332,12 +333,12 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
               <Layers className="w-4 h-4" /> Our Scope
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold">
-              What Our Social Media Management Covers
+              What Our Posting &amp; Scheduling Covers
             </h2>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr_1.5fr] gap-px bg-base-300 rounded-3xl overflow-hidden border border-base-300">
             <div className="bg-base-200 px-5 py-3 text-xs font-bold uppercase tracking-widest text-base-content/40">
-              Area
+              Service Area
             </div>
             <div className="bg-base-200 px-5 py-3 text-xs font-bold uppercase tracking-widest text-base-content/40">
               What We Do
@@ -347,56 +348,59 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
             </div>
             {[
               {
-                area: 'Content Creation',
-                icon: Palette,
-                tasks: [
-                  'Designing branded post graphics and visuals',
-                  'Writing captions and copy aligned to your audience',
-                  'Structuring content themes to cover different aspects of your property',
-                ],
-                outcome:
-                  'Professional, on-brand content that showcases your property consistently.',
-              },
-              {
-                area: 'Posting & Scheduling',
+                area: 'Content Scheduling',
                 icon: Calendar,
                 tasks: [
-                  'Maintaining a consistent posting schedule across platforms',
-                  'Planning content calendars in advance',
-                  'Managing publish times for maximum reach',
-                ],
-                outcome: 'No gaps, no last-minute scrambles — your content runs like clockwork.',
-              },
-              {
-                area: 'Brand Development',
-                icon: Palette,
-                tasks: [
-                  'Creating or refining your visual identity for social',
-                  'Aligning content style across all posts and platforms',
-                  'Improving the overall presentation and professionalism',
-                ],
-                outcome: 'A recognisable, credible brand that guests remember.',
-              },
-              {
-                area: 'Platform Management',
-                icon: Smartphone,
-                tasks: [
-                  'Managing your Instagram, Facebook, or TikTok accounts',
-                  'Keeping content organised and accounts active',
-                  'Monitoring performance and adjusting accordingly',
-                ],
-                outcome: 'Accounts that stay active, consistent, and growing.',
-              },
-              {
-                area: 'Strategy Alignment',
-                icon: Target,
-                tasks: [
-                  'Linking content themes with your booking and revenue goals',
-                  'Supporting direct booking growth through social presence',
-                  'Connecting social activity to broader marketing activity',
+                  'Planning specific publishing dates for every post',
+                  'Organising content timelines across the month',
+                  'Structuring consistency so no week is left empty',
                 ],
                 outcome:
-                  'Social media that contributes to your business — not just vanity metrics.',
+                  'A reliable posting rhythm that keeps your account active without any day-to-day input from you.',
+              },
+              {
+                area: 'Platform Posting',
+                icon: CheckSquare,
+                tasks: [
+                  'Uploading and publishing content across agreed platforms',
+                  'Managing post formats tailored to each platform',
+                  'Maintaining regular activity on Instagram and Facebook',
+                ],
+                outcome:
+                  'Content that goes live correctly, consistently, and without manual uploads on your end.',
+              },
+              {
+                area: 'Content Calendar Management',
+                icon: LayoutGrid,
+                tasks: [
+                  'Building a structured monthly posting plan',
+                  'Organising themes, post types, and publishing days',
+                  "Giving you clear visibility of what's going live and when",
+                ],
+                outcome:
+                  'Full clarity over your content pipeline — reviewed and approved monthly before anything publishes.',
+              },
+              {
+                area: 'Timing Optimisation',
+                icon: Timer,
+                tasks: [
+                  'Selecting posting times based on audience activity',
+                  'Maintaining consistent scheduling windows across the week',
+                  'Adjusting publish times to maximise organic reach',
+                ],
+                outcome:
+                  'Posts that go live when your audience is most active — improving visibility and engagement.',
+              },
+              {
+                area: 'Ongoing Management',
+                icon: Repeat,
+                tasks: [
+                  'Ensuring scheduled posts go live as planned',
+                  'Monitoring for any scheduling issues or platform errors',
+                  'Adjusting schedules when content needs to change',
+                ],
+                outcome:
+                  "Continuous management so nothing slips — your account stays active regardless of what's happening in your business.",
               },
             ].map(({ area, icon: Icon, tasks, outcome }) => (
               <React.Fragment key={area}>
@@ -422,44 +426,42 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
             ))}
           </div>
           <p className="text-center mt-8 text-base-content/60 text-sm">
-            The result: a structured social media presence that actively supports your business.
+            The result: a consistent and active social media presence — managed end to end.
           </p>
         </div>
       </section>
 
-      {/* ── CONNECTS TO BUSINESS ─────────────────────────────────────────────── */}
+      {/* ── CONNECTS TO STR STRATEGY ─────────────────────────────────────────── */}
       <section className="bg-base-200 border-y border-base-300 py-20 lg:py-28">
         <div className="container max-w-7xl mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-10">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-success/10 border border-success/25 text-success text-sm font-medium mb-4">
-                <TrendingUp className="w-4 h-4" /> Business Impact
+                <TrendingUp className="w-4 h-4" /> Strategic Impact
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold">
-                Social Media Supports Direct Bookings
-              </h2>
+              <h2 className="text-3xl lg:text-4xl font-bold">Posting Supports Brand Growth</h2>
               <p className="text-base-content/60 mt-4 leading-relaxed">
-                Social media doesn&apos;t exist in isolation. It works alongside every other part of
-                your business to build the visibility and trust that convert strangers into paying
-                guests.
+                Consistent posting isn&apos;t just about looking active. It&apos;s the foundation
+                that every other part of your social media strategy depends on — without it, nothing
+                else compounds.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {[
                 {
-                  icon: Globe,
-                  title: 'Your website',
-                  desc: 'Social drives traffic to your direct booking site, reducing reliance on Airbnb and OTAs.',
+                  icon: CheckSquare,
+                  title: 'Build trust',
+                  desc: 'Guests who see your account posting regularly interpret it as a sign of a credible, professional, active business.',
                 },
                 {
-                  icon: Megaphone,
-                  title: 'Your listings',
-                  desc: 'Strong social proof and branding increases trust in your listings before guests even click book.',
+                  icon: TrendingUp,
+                  title: 'Maintain visibility',
+                  desc: 'Consistent posting keeps your account in front of followers and the algorithm rewards regular activity with organic reach.',
                 },
                 {
-                  icon: Palette,
-                  title: 'Your overall brand',
-                  desc: 'Consistent social media is what turns a property into a recognised, trusted hospitality brand.',
+                  icon: Target,
+                  title: 'Support direct booking strategy',
+                  desc: 'An active, reliable social presence is what moves followers from passive awareness to direct booking enquiry over time.',
                 },
               ].map(({ icon: Icon, title, desc }) => (
                 <div key={title} className="bg-base-100 rounded-2xl border border-success/15 p-5">
@@ -471,6 +473,10 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
                 </div>
               ))}
             </div>
+            <p className="text-center text-base-content/55 mt-6 italic text-sm">
+              Without consistency, growth slows — and rebuilding momentum is harder than maintaining
+              it.
+            </p>
           </div>
         </div>
       </section>
@@ -483,29 +489,29 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-warning/15 border border-warning/30 text-warning text-sm font-medium mb-4">
                 <AlertTriangle className="w-4 h-4" /> Common Mistakes
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold">Where Social Media Goes Wrong</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold">Where Posting Goes Wrong</h2>
             </div>
             <div className="space-y-3">
               {[
                 {
                   mistake: 'Posting randomly',
-                  why: "No schedule means no habit and no audience growth. Followers who see one post a month forget you exist by the time they're ready to book.",
+                  why: "Random posts with no schedule create an unpredictable feed. Followers don't build a habit of checking, and the algorithm doesn't favour accounts without a reliable cadence.",
                 },
                 {
-                  mistake: 'Inconsistent visuals',
-                  why: "When every post looks different, there's no brand recognition. Guests need to recognise your content instantly — that only happens with consistency.",
+                  mistake: 'Skipping weeks',
+                  why: 'A week without posts signals inactivity to both the algorithm and potential guests. Recovery takes longer than the gap itself — consistency lost is hard to rebuild.',
                 },
                 {
-                  mistake: 'No clear messaging',
-                  why: "Content that doesn't say anything specific doesn't motivate anyone to do anything. Every post should have a purpose.",
+                  mistake: 'No content calendar',
+                  why: 'Without a calendar, every post requires a decision. That decision overhead is what causes delays, missed days, and eventual abandonment of the schedule entirely.',
                 },
                 {
-                  mistake: 'Focusing only on aesthetics',
-                  why: "Looking good is necessary but not sufficient. Without a strategy connecting content to bookings, beautiful posts don't pay the bills.",
+                  mistake: 'Manual uploads only',
+                  why: 'Relying on manual posting means your social media depends entirely on your availability. One busy week or difficult month breaks the habit permanently.',
                 },
                 {
-                  mistake: 'No link to business goals',
-                  why: 'Social media managed in isolation from your booking strategy, website, and revenue targets is just a hobby — not a business channel.',
+                  mistake: 'Inconsistent timing',
+                  why: 'Posting at different times each day prevents the algorithm from optimising your content. Consistent posting windows build audience habit and improve reach over time.',
                 },
               ].map(({ mistake, why }) => (
                 <div
@@ -523,7 +529,7 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
               ))}
             </div>
             <p className="text-center text-base-content/55 mt-8 italic text-sm">
-              Social media fails when it lacks structure.
+              Posting fails when it&apos;s not planned.
             </p>
           </div>
         </div>
@@ -537,31 +543,29 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-4">
                 <CheckCircle2 className="w-4 h-4" /> Our Method
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold">
-                How We Manage Social Media Properly
-              </h2>
+              <h2 className="text-3xl lg:text-4xl font-bold">How We Handle Posting Properly</h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 {
-                  step: '1. Structured content plans',
+                  step: '1. Plan content in advance',
                   detail:
-                    'We build a monthly content calendar that covers your property, audience, and goals — so every post has a reason to exist.',
+                    "Every month is planned before it begins. Content themes, post types, and publish dates are locked in — so there's no decision-making on the day.",
                 },
                 {
-                  step: '2. Maintained consistency',
+                  step: '2. Maintain a clear schedule',
                   detail:
-                    'We post on schedule, every week, across agreed platforms. No gaps, no exceptions — the algorithm and your audience both depend on it.',
+                    'We build and manage a structured posting calendar across agreed platforms. Every week has a defined posting plan — nothing is left to chance.',
                 },
                 {
-                  step: '3. Brand-aligned visuals',
+                  step: '3. Ensure consistency',
                   detail:
-                    'Every piece of content follows your brand guidelines — or we help you build them. Cohesion across every post creates recognisability.',
+                    "Posts go live as scheduled, every week, without exception. If something needs adjusting, we handle it — you don't need to think about it.",
                 },
                 {
-                  step: '4. Goal-connected content',
+                  step: '4. Remove manual effort',
                   detail:
-                    'Content themes are mapped to your booking calendar, seasonal demand, and direct booking goals — not just what looks good.',
+                    'Everything is scheduled and managed on your behalf. You review the monthly plan, approve it, and the work happens without any ongoing input from you.',
                 },
               ].map(({ step, detail }) => (
                 <div
@@ -587,25 +591,28 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-4">
               <BarChart3 className="w-4 h-4" /> Side by Side
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold">Unmanaged vs Managed Social Media</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold">
+              Inconsistent Posting vs Structured Scheduling
+            </h2>
           </div>
+          {/* Desktop */}
           <div className="hidden md:block overflow-hidden rounded-3xl border border-base-300 max-w-3xl mx-auto">
             <div className="grid grid-cols-3">
               <div className="bg-base-200 px-5 py-3 text-xs font-bold uppercase tracking-widest text-base-content/50">
                 Area
               </div>
               <div className="bg-error/8 px-5 py-3 text-xs font-bold uppercase tracking-widest text-error/70 text-center">
-                Unmanaged
+                Inconsistent
               </div>
               <div className="bg-success/8 px-5 py-3 text-xs font-bold uppercase tracking-widest text-success/70 text-center">
-                Managed
+                Structured
               </div>
             </div>
             {[
-              ['Posting cadence', 'Inconsistent', 'Structured'],
-              ['Audience growth', 'Low engagement', 'Improved presence'],
-              ['Content direction', 'No direction', 'Clear strategy'],
-              ['Brand perception', 'Weak branding', 'Strong identity'],
+              ['Posting approach', 'Random posts', 'Planned posts'],
+              ['Account activity', 'Gaps in activity', 'Consistent presence'],
+              ['Operational effort', 'Manual effort', 'Automated scheduling'],
+              ['Output reliability', 'Unreliable', 'Predictable'],
             ].map(([area, bad, good]) => (
               <div key={area} className="grid grid-cols-3 border-t border-base-300">
                 <div className="bg-base-100 px-5 py-4 text-sm font-medium">{area}</div>
@@ -619,10 +626,10 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
           {/* Mobile */}
           <div className="md:hidden space-y-3 max-w-sm mx-auto">
             {[
-              ['Posting cadence', 'Inconsistent', 'Structured'],
-              ['Audience growth', 'Low engagement', 'Improved presence'],
-              ['Content direction', 'No direction', 'Clear strategy'],
-              ['Brand perception', 'Weak branding', 'Strong identity'],
+              ['Posting approach', 'Random posts', 'Planned posts'],
+              ['Account activity', 'Gaps in activity', 'Consistent presence'],
+              ['Operational effort', 'Manual effort', 'Automated scheduling'],
+              ['Output reliability', 'Unreliable', 'Predictable'],
             ].map(([area, bad, good]) => (
               <div key={area} className="rounded-2xl border border-base-300 overflow-hidden">
                 <div className="bg-base-200 px-4 py-2 text-xs font-bold uppercase tracking-wider text-base-content/50">
@@ -652,24 +659,24 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
             {[
               {
-                icon: TrendingUp,
-                who: 'Hosts wanting direct bookings',
-                desc: 'If you want to reduce Airbnb dependency and build a channel you control, social media is a core part of that strategy.',
+                icon: Repeat,
+                who: 'Hosts struggling with consistency',
+                desc: 'If posting keeps getting deprioritised and weeks go by without content, a structured scheduling service removes the friction entirely.',
               },
               {
                 icon: Building2,
                 who: 'SA businesses',
-                desc: 'Serviced accommodation operators who want a professional, consistent presence that reflects the quality of their properties.',
+                desc: 'Serviced accommodation operators who want active, professional accounts without spending time managing platforms themselves.',
               },
               {
-                icon: Palette,
-                who: 'Operators building a brand',
-                desc: 'Those who understand that a recognisable brand compounds over time — and want to start building it now.',
+                icon: LayoutGrid,
+                who: 'Operators managing multiple platforms',
+                desc: 'Those running Instagram, Facebook, and TikTok simultaneously who need a single managed system for all scheduled output.',
               },
               {
-                icon: Calendar,
-                who: 'Hosts needing consistency',
-                desc: "Hosts who know they should be active on social media but don't have the time, skills, or systems to maintain it.",
+                icon: CheckSquare,
+                who: 'Hosts wanting reliability',
+                desc: 'Hosts who want to know their social media will be active every week — without having to think about it or chase it themselves.',
               },
             ].map(({ icon: Icon, who, desc }) => (
               <div
@@ -699,25 +706,25 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
               {
-                initials: 'JB',
-                name: 'James B.',
+                initials: 'TW',
+                name: 'Tom W.',
                 role: 'STR Host · Manchester',
                 quote:
-                  'I had no idea how much difference consistent Instagram content would make. Within three months of having Assistophere manage it, I had my first direct booking enquiry come in through DMs. That never happened before.',
+                  'I used to post maybe once a month when I remembered. Now it goes out every week without me touching it. My account looks completely different — active, consistent, professional.',
               },
               {
-                initials: 'NK',
-                name: 'Natalie K.',
+                initials: 'LC',
+                name: 'Louise C.',
                 role: 'SA Operator · London',
                 quote:
-                  'My accounts looked amateur before. Now they look professional and consistent. The branding work they did has completely changed how my business comes across online. Guests comment on it.',
+                  "The scheduling took all the pressure off. I review the plan at the start of the month, approve it, and then forget about it. Everything just happens. That's exactly what I needed.",
               },
               {
-                initials: 'DR',
-                name: 'David R.',
+                initials: 'BH',
+                name: 'Ben H.',
                 role: 'Property Investor · Leeds',
                 quote:
-                  'I tried to manage social media myself but kept falling behind. Handing it over meant it actually gets done, every week, without me thinking about it. The consistency alone was worth it.',
+                  'I had three platforms I was trying to manage manually and failing at all of them. Having one structured system across all of them has been a game changer for how my business looks online.',
               },
             ].map(({ initials, name, role, quote }) => (
               <div
@@ -760,20 +767,20 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
             <div className="space-y-3">
               {[
                 {
-                  q: 'Which platforms do you manage?',
-                  a: "We primarily manage Instagram and Facebook for STR businesses, as these are the highest-value platforms for property showcase and direct booking growth. TikTok management is available depending on your business type and goals. We'll recommend the right platforms based on your audience during the discovery call.",
-                },
-                {
-                  q: 'Do you create the content?',
-                  a: "Yes — we handle content creation end to end, including post design, caption writing, hashtag strategy, and scheduling. For property photography, we'll advise on what we need and how to supply it, or we can recommend a local photographer if required.",
-                },
-                {
-                  q: 'Can social media generate bookings?',
-                  a: 'Yes, though it works differently from paid advertising. Social media builds brand awareness, trust, and an audience over time — which then converts through DM enquiries, website traffic, and direct booking links. Most clients begin to see direct enquiries within two to four months of consistent, structured management.',
-                },
-                {
                   q: 'How often do you post?',
-                  a: 'Posting frequency is agreed as part of your package. Standard management includes three to five posts per week, with stories and engagement activity on top. We build a content calendar monthly so you can review and approve the plan before anything goes live.',
+                  a: "Posting frequency is agreed as part of your package. Standard management includes three to five posts per week across agreed platforms. We build a monthly content calendar in advance so you always know exactly what's going live and when.",
+                },
+                {
+                  q: 'Do you schedule content in advance?',
+                  a: 'Yes — all content is scheduled in advance as part of a structured monthly plan. Nothing goes live reactively. You review and approve the calendar before publishing begins, so you have full visibility and control over what goes out.',
+                },
+                {
+                  q: 'Which platforms do you manage?',
+                  a: "We primarily manage Instagram and Facebook for STR businesses. TikTok scheduling is available depending on your goals and package. We'll recommend the right platforms for your audience during the discovery call.",
+                },
+                {
+                  q: 'Can schedules be adjusted?',
+                  a: 'Yes — if your availability changes, a booking comes in, or you want to promote something specific, schedules can be adjusted. We review the calendar monthly and can make changes at any point with reasonable notice.',
                 },
               ].map(({ q, a }) => (
                 <details
@@ -804,29 +811,32 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
             </div>
             <div className="max-w-2xl mx-auto space-y-6">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/15 border border-primary/30 text-primary text-sm font-semibold">
-                <Instagram className="w-4 h-4" /> Social Media Management
+                <Calendar className="w-4 h-4" /> Posting &amp; Scheduling for STR
               </div>
               <h2 className="text-3xl lg:text-4xl font-extrabold">
-                Ready to Build a Strong{' '}
+                Ready to Stay Consistent on{' '}
                 <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary">
-                  Social Media Presence?
+                  Social Media?
                 </span>
               </h2>
               <p className="text-base-content/65 text-lg leading-relaxed">
-                Let&apos;s create a structured approach that supports your growth. We don&apos;t
-                just manage social media — we structure it to support your business.
+                Let&apos;s build a structured posting system that keeps your brand active. We
+                don&apos;t just post content — we make sure it shows up consistently.
               </p>
               <div className="flex flex-wrap justify-center gap-4 pt-2">
-                <button className="pulse-cta-smm btn btn-primary btn-lg rounded-full px-10 gap-2 shadow-lg">
+                <button className="pulse-cta-pas btn btn-primary btn-lg rounded-full px-10 gap-2 shadow-lg">
                   <Phone className="w-4 h-4" /> Book a Discovery Call
                 </button>
-                <button className="btn btn-outline btn-lg rounded-full px-8 gap-2">
-                  <ArrowRight className="w-4 h-4" /> See How It Works
-                </button>
+                <Link
+                  href="/services/social-media-management"
+                  className="btn btn-outline btn-lg rounded-full px-8 gap-2"
+                >
+                  <ArrowRight className="w-4 h-4" /> Back to Social Media Management
+                </Link>
               </div>
               <p className="text-xs text-base-content/40 pt-2">
-                Airbnb Social Media Management UK · STR Social Media Marketing · Serviced
-                Accommodation Social Media · Direct Booking Strategy
+                Social Media Scheduling Airbnb UK · STR Content Scheduling · Airbnb Instagram
+                Posting · Content Calendar Management
               </p>
             </div>
           </div>

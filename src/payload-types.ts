@@ -72,6 +72,10 @@ export interface Config {
     media: Media;
     categories: Category;
     users: User;
+    'case-studies': CaseStudy;
+    'client-reviews': ClientReview;
+    'team-members': TeamMember;
+    'our-clients': OurClient;
     redirects: Redirect;
     forms: Form;
     'form-submissions': FormSubmission;
@@ -94,6 +98,10 @@ export interface Config {
     media: MediaSelect<false> | MediaSelect<true>;
     categories: CategoriesSelect<false> | CategoriesSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
+    'case-studies': CaseStudiesSelect<false> | CaseStudiesSelect<true>;
+    'client-reviews': ClientReviewsSelect<false> | ClientReviewsSelect<true>;
+    'team-members': TeamMembersSelect<false> | TeamMembersSelect<true>;
+    'our-clients': OurClientsSelect<false> | OurClientsSelect<true>;
     redirects: RedirectsSelect<false> | RedirectsSelect<true>;
     forms: FormsSelect<false> | FormsSelect<true>;
     'form-submissions': FormSubmissionsSelect<false> | FormSubmissionsSelect<true>;
@@ -294,6 +302,7 @@ export interface Page {
     | 'linen-toiletries'
     | 'property-maintenance'
     | 'monthly-finance-reporting'
+    | 'graphical-content-creation'
     | 'direct-booking-engine'
     | 'direct-booking-website'
     | 'direct-booking-conversions'
@@ -302,8 +311,19 @@ export interface Page {
     | 'seo-organic-growth'
     | 'google-ads'
     | 'lead-generation'
+    | 'landlord-leads'
+    | 'guest-leads'
     | 'social-media-mgt-and-str'
+    | 'social-media-content-creation'
+    | 'posting-and-scheduling'
+    | 'brand-growth'
+    | 'community-engagement'
+    | 'platform-management'
     | 'systems-building'
+    | 'str-business-setup'
+    | 'str-automation'
+    | 'sop-creation'
+    | 'team-structuring'
     | 'roi-calculator-uk'
     | 'enter-airbnb-market'
     | 'airbnb-consultancy-and-training'
@@ -644,6 +664,184 @@ export interface User {
     | null;
   password?: string | null;
   collection: 'users';
+}
+/**
+ * Real-world case studies showcasing client results.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "case-studies".
+ */
+export interface CaseStudy {
+  id: string;
+  clientName: string;
+  /**
+   * URL-friendly identifier, e.g. "manchester-airbnb-scale"
+   */
+  slug?: string | null;
+  featured?: boolean | null;
+  serviceType:
+    | 'str-business-setup'
+    | 'str-automation'
+    | 'sop-creation'
+    | 'team-structuring'
+    | 'systems-building'
+    | 'performance-optimisation'
+    | 'roi-consultancy'
+    | 'graphical-content'
+    | 'lead-generation'
+    | 'virtual-assistant'
+    | 'other';
+  location?: string | null;
+  publishedDate?: string | null;
+  coverImage?: (string | null) | Media;
+  /**
+   * One sentence — e.g. "Scaled from 1 to 6 properties in 4 months"
+   */
+  tagline?: string | null;
+  /**
+   * What problem was the client facing before working with Assistophere?
+   */
+  challenge?: string | null;
+  /**
+   * What did Assistophere do to address the challenge?
+   */
+  solution?: string | null;
+  /**
+   * What measurable results did the client achieve?
+   */
+  outcome?: string | null;
+  /**
+   * Add up to 4 headline numbers — e.g. "+45% occupancy", "6 properties"
+   */
+  metrics?:
+    | {
+        value: string;
+        label: string;
+        id?: string | null;
+      }[]
+    | null;
+  clientQuote?: string | null;
+  clientTitle?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Client testimonials and reviews displayed on the Client Reviews page.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "client-reviews".
+ */
+export interface ClientReview {
+  id: string;
+  clientName: string;
+  clientTitle?: string | null;
+  avatar?: (string | null) | Media;
+  featured?: boolean | null;
+  rating: '5' | '4' | '3';
+  reviewText: string;
+  serviceType?:
+    | (
+        | 'str-business-setup'
+        | 'str-automation'
+        | 'sop-creation'
+        | 'team-structuring'
+        | 'systems-building'
+        | 'performance-optimisation'
+        | 'roi-consultancy'
+        | 'graphical-content'
+        | 'lead-generation'
+        | 'virtual-assistant'
+        | 'general'
+      )
+    | null;
+  location?: string | null;
+  platform?: ('direct' | 'google' | 'trustpilot' | 'linkedin' | 'other') | null;
+  reviewDate?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Team members displayed on the Our Team page.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "team-members".
+ */
+export interface TeamMember {
+  id: string;
+  name: string;
+  role: string;
+  department?:
+    | ('leadership' | 'operations' | 'guest-comms' | 'systems' | 'marketing' | 'admin' | 'va' | 'other')
+    | null;
+  photo?: (string | null) | Media;
+  /**
+   * 2–3 sentences describing their background and what they do at Assistophere.
+   */
+  bio?: string | null;
+  active?: boolean | null;
+  /**
+   * Lower number = shown first. Use 1 for the CEO, etc.
+   */
+  order?: number | null;
+  linkedIn?: string | null;
+  /**
+   * Up to 3 short bullet points — e.g. "5 years in STR industry"
+   */
+  highlights?:
+    | {
+        text: string;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Clients displayed on the Our Clients page.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "our-clients".
+ */
+export interface OurClient {
+  id: string;
+  name: string;
+  type:
+    | 'individual-host'
+    | 'property-investor'
+    | 'sa-operator'
+    | 'letting-agent'
+    | 'property-management'
+    | 'developer'
+    | 'other';
+  logo?: (string | null) | Media;
+  location?: string | null;
+  /**
+   * One or two sentences about this client and what they achieved.
+   */
+  description?: string | null;
+  servicesUsed?:
+    | (
+        | 'str-business-setup'
+        | 'str-automation'
+        | 'sop-creation'
+        | 'team-structuring'
+        | 'systems-building'
+        | 'performance-optimisation'
+        | 'roi-consultancy'
+        | 'graphical-content'
+        | 'lead-generation'
+        | 'virtual-assistant'
+      )[]
+    | null;
+  featured?: boolean | null;
+  active?: boolean | null;
+  websiteUrl?: string | null;
+  /**
+   * Link to a case study for this client if one exists.
+   */
+  caseStudy?: (string | null) | CaseStudy;
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1028,6 +1226,22 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'users';
         value: string | User;
+      } | null)
+    | ({
+        relationTo: 'case-studies';
+        value: string | CaseStudy;
+      } | null)
+    | ({
+        relationTo: 'client-reviews';
+        value: string | ClientReview;
+      } | null)
+    | ({
+        relationTo: 'team-members';
+        value: string | TeamMember;
+      } | null)
+    | ({
+        relationTo: 'our-clients';
+        value: string | OurClient;
       } | null)
     | ({
         relationTo: 'redirects';
@@ -1445,6 +1659,92 @@ export interface UsersSelect<T extends boolean = true> {
         createdAt?: T;
         expiresAt?: T;
       };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "case-studies_select".
+ */
+export interface CaseStudiesSelect<T extends boolean = true> {
+  clientName?: T;
+  slug?: T;
+  featured?: T;
+  serviceType?: T;
+  location?: T;
+  publishedDate?: T;
+  coverImage?: T;
+  tagline?: T;
+  challenge?: T;
+  solution?: T;
+  outcome?: T;
+  metrics?:
+    | T
+    | {
+        value?: T;
+        label?: T;
+        id?: T;
+      };
+  clientQuote?: T;
+  clientTitle?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "client-reviews_select".
+ */
+export interface ClientReviewsSelect<T extends boolean = true> {
+  clientName?: T;
+  clientTitle?: T;
+  avatar?: T;
+  featured?: T;
+  rating?: T;
+  reviewText?: T;
+  serviceType?: T;
+  location?: T;
+  platform?: T;
+  reviewDate?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "team-members_select".
+ */
+export interface TeamMembersSelect<T extends boolean = true> {
+  name?: T;
+  role?: T;
+  department?: T;
+  photo?: T;
+  bio?: T;
+  active?: T;
+  order?: T;
+  linkedIn?: T;
+  highlights?:
+    | T
+    | {
+        text?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "our-clients_select".
+ */
+export interface OurClientsSelect<T extends boolean = true> {
+  name?: T;
+  type?: T;
+  logo?: T;
+  location?: T;
+  description?: T;
+  servicesUsed?: T;
+  featured?: T;
+  active?: T;
+  websiteUrl?: T;
+  caseStudy?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

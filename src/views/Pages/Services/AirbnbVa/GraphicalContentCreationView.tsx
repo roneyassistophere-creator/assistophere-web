@@ -10,13 +10,13 @@ import {
   Layers,
   Users,
   Star,
-  BarChart2,
+  Palette,
+  ImageIcon,
+  Brush,
+  Layout,
+  Eye,
+  Megaphone,
   TrendingUp,
-  TrendingDown,
-  PieChart,
-  Calendar,
-  DollarSign,
-  FileText,
   ChevronDown,
   CalendarCheck,
 } from 'lucide-react'
@@ -24,188 +24,181 @@ import { FaqItem } from './FaqItem'
 
 const faqs = [
   {
-    q: 'What does the report include?',
-    a: 'Each report covers total bookings, revenue generated, occupancy rates, average nightly rate, platform-level breakdown, and key observations — all structured to give you a clear picture of that month.',
+    q: 'What kind of graphics do you create?',
+    a: 'We create listing visual enhancements, branded content, marketing graphics, and presentation assets — everything needed to make your short-term rental listing stand out visually across all platforms.',
   },
   {
-    q: 'How often do you provide reports?',
-    a: 'Reports are provided monthly, covering the previous calendar month. You receive a consistent, structured snapshot of performance so you can track trends over time.',
+    q: 'Can this improve bookings?',
+    a: 'Strong visuals drive attention and clicks. When a listing looks more professional and clearly communicates its features, guests are more likely to engage and book. Design directly influences how guests perceive your property.',
   },
   {
-    q: 'Is it easy to understand?',
-    a: 'Yes. Reports are structured for clarity, not complexity. Key metrics are highlighted, trends are identified, and observations are written in plain language so you can act on them without needing to interpret raw data.',
+    q: 'Do you match existing branding?',
+    a: 'Yes. We align all visual content with your existing brand identity — colour palette, style, and tone — to ensure everything looks consistent and intentional across your listings and platforms.',
   },
   {
-    q: 'Can this help improve performance?',
-    a: "Absolutely. When you can see what's working and what isn't — by property, by platform, by time period — you're in a much stronger position to make changes that actually improve bookings and revenue.",
+    q: 'Can this be used across platforms?',
+    a: 'Absolutely. The graphics we create are designed to work across Airbnb, Booking.com, VRBO, and your own direct booking channels, giving you a consistent and professional presence everywhere.',
   },
 ]
 
-const whatWeProvide = [
+const whatWeCreate = [
   {
-    icon: <Calendar className="w-5 h-5 text-primary" />,
-    title: 'Booking Performance',
-    items: [
-      'Total bookings across all properties',
-      'Booking patterns and timing trends',
-      'Month-on-month comparison',
-    ],
-    outcome: 'Understand exactly how bookings are trending',
+    icon: <ImageIcon className="w-5 h-5 text-primary" />,
+    title: 'Listing Visual Enhancements',
+    items: ['Feature highlights and callouts', 'Key information overlays', 'Structured image flow'],
+    outcome: 'Guests instantly understand what makes your property worth booking',
   },
   {
-    icon: <DollarSign className="w-5 h-5 text-primary" />,
-    title: 'Revenue Overview',
+    icon: <Brush className="w-5 h-5 text-primary" />,
+    title: 'Branded Content',
     items: [
-      'Total revenue generated each month',
-      'Property-level revenue breakdown',
-      'Performance comparison across units',
+      'Consistent visual style across all assets',
+      'Brand alignment and identity',
+      'Stronger, recognisable presence',
     ],
-    outcome: 'Full revenue visibility every month',
+    outcome: 'Your listing looks intentional, not accidental',
   },
   {
-    icon: <PieChart className="w-5 h-5 text-primary" />,
-    title: 'Occupancy Insights',
+    icon: <Megaphone className="w-5 h-5 text-primary" />,
+    title: 'Marketing Graphics',
     items: [
-      'Occupancy rates per property',
-      'Gap analysis — identifying empty nights',
-      'Consistency tracking over time',
+      'Visuals for promotional campaigns',
+      'Content designed for digital platforms',
+      'Ready-to-use design assets',
     ],
-    outcome: "Know when your properties perform and when they don't",
+    outcome: 'Professional promotional materials ready to deploy',
   },
   {
-    icon: <BarChart2 className="w-5 h-5 text-primary" />,
-    title: 'Platform Analysis',
-    items: [
-      'Performance broken down by platform',
-      'Booking sources and channel data',
-      'Where your revenue is actually coming from',
-    ],
-    outcome: 'Understand which platforms drive your results',
-  },
-  {
-    icon: <FileText className="w-5 h-5 text-primary" />,
-    title: 'Key Observations',
-    items: [
-      "What's working well this month",
-      'Areas that need attention or adjustment',
-      'Suggested focus areas going forward',
-    ],
-    outcome: 'Clear takeaways without needing to interpret raw data',
+    icon: <Layout className="w-5 h-5 text-primary" />,
+    title: 'Presentation Improvements',
+    items: ['Cleaner, clearer layouts', 'Improved visual hierarchy', 'Better readability and flow'],
+    outcome: 'Guests know exactly where to look and what to focus on',
   },
 ]
 
-const reportMetrics = [
-  { label: 'Total Bookings', value: '28', delta: '+4 vs last month', up: true },
-  { label: 'Revenue Generated', value: '£6,420', delta: '+12% vs last month', up: true },
-  { label: 'Occupancy Rate', value: '84%', delta: '+6% vs last month', up: true },
-  { label: 'Avg Nightly Rate', value: '£229', delta: '-£8 vs last month', up: false },
-  { label: 'Top Platform', value: 'Airbnb', delta: '67% of bookings', up: true },
-  { label: 'Review Score', value: '4.87', delta: '+0.03 vs last month', up: true },
-]
-
-const comparisonRows = [
-  {
-    area: 'Visibility',
-    before: 'No idea how properties are actually performing',
-    after: 'Clear monthly snapshot across all metrics',
-  },
-  {
-    area: 'Decisions',
-    before: 'Guessing based on gut feel or raw data',
-    after: 'Data-backed decisions grounded in structured reports',
-  },
-  {
-    area: 'Reporting',
-    before: 'No format, no consistency, no comparison',
-    after: 'Consistent monthly reporting with trend context',
-  },
-  {
-    area: 'Clarity',
-    before: 'Buried in spreadsheets with no clear takeaway',
-    after: 'Plain-language observations with actionable flags',
-  },
+const contentItems = [
+  { label: 'Listing Cover Graphic', status: 'Created', color: 'text-success' },
+  { label: 'Branded Feature Template', status: 'In Review', color: 'text-warning' },
+  { label: 'Marketing Banner — Summer', status: 'Created', color: 'text-success' },
+  { label: 'Property Highlight Overlay', status: 'Draft', color: 'text-base-content/50' },
+  { label: 'Platform Thumbnail Set', status: 'Created', color: 'text-success' },
 ]
 
 const problemCards = [
   {
     icon: <XCircle className="w-5 h-5 text-error flex-shrink-0 mt-0.5" />,
-    title: 'No Performance Visibility',
-    desc: 'Without structured reporting, most operators have no clear view of how their properties are actually performing month to month.',
+    title: 'No Visual Brand Identity',
+    desc: 'Listings without a consistent visual identity look like everyone else — nothing stands out, nothing feels intentional.',
   },
   {
     icon: <XCircle className="w-5 h-5 text-error flex-shrink-0 mt-0.5" />,
-    title: 'Decisions Made Without Data',
-    desc: 'Pricing adjustments, platform changes, and property decisions get made on gut feel instead of actual performance data.',
+    title: 'Inconsistent Visuals',
+    desc: 'Mixing different styles and formats undermines credibility and makes the listing look unpolished and cobbled together.',
   },
   {
     icon: <XCircle className="w-5 h-5 text-error flex-shrink-0 mt-0.5" />,
-    title: 'Revenue Gaps Go Unnoticed',
-    desc: 'Empty nights, underperforming properties, and low-converting platforms are invisible without consistent tracking.',
+    title: 'Unclear Presentation',
+    desc: "Guests can't quickly understand the key features and benefits of the property — they scroll past instead of clicking in.",
   },
   {
     icon: <XCircle className="w-5 h-5 text-error flex-shrink-0 mt-0.5" />,
-    title: 'No Trend Awareness',
-    desc: "You can't identify seasonal patterns, platform shifts, or occupancy trends if you're not measuring consistently every month.",
+    title: 'Basic Image Usage',
+    desc: 'Plain photos without structure or context fail to highlight what makes the listing worth booking over the competition.',
   },
   {
     icon: <AlertTriangle className="w-5 h-5 text-warning flex-shrink-0 mt-0.5" />,
-    title: 'Time Lost on Manual Analysis',
-    desc: 'Pulling data from multiple platforms and assembling it into something meaningful takes hours you could spend on running your business.',
+    title: 'No Visual Hierarchy',
+    desc: 'Without structure, guests struggle to know where to look, what matters most, and what makes your property different.',
   },
 ]
 
 const approachPoints = [
   {
-    icon: <CalendarCheck className="w-5 h-5 text-primary" />,
-    title: 'Consistent Monthly Cadence',
-    desc: "Reports are delivered every month without you needing to ask. You get a structured snapshot of the previous month's performance, reliably and on time.",
+    icon: <Eye className="w-5 h-5 text-primary" />,
+    title: 'Clarity and Impact First',
+    desc: 'Every visual is designed to communicate something specific. We focus on what guests need to understand — not just what looks nice.',
+  },
+  {
+    icon: <Brush className="w-5 h-5 text-primary" />,
+    title: 'Aligned to Your Listing',
+    desc: 'Design reflects what makes your property different. We use your listing details, photography, and features to build assets that are specific to you.',
   },
   {
     icon: <Layers className="w-5 h-5 text-primary" />,
-    title: 'Cross-Property Breakdown',
-    desc: 'Whether you have one property or ten, reports are structured to show performance at the portfolio level and at the individual property level.',
+    title: 'Built for Consistency',
+    desc: 'All assets work together as a cohesive visual system. Guests see the same style across listings, platforms, and promotional materials.',
   },
   {
-    icon: <TrendingUp className="w-5 h-5 text-primary" />,
-    title: 'Trend Context Included',
-    desc: 'Each report includes comparisons to prior months so you can see direction — not just isolated numbers. Trends are identified and flagged clearly.',
+    icon: <Users className="w-5 h-5 text-primary" />,
+    title: 'Designed for Real Behaviour',
+    desc: 'We design for how guests actually browse and make decisions — not for portfolio aesthetics. Function and purpose drive every choice.',
+  },
+]
+
+const comparisonRows = [
+  {
+    area: 'Presence',
+    before: 'Looks similar to every other listing in the market',
+    after: 'Stands out visually in a saturated search result',
   },
   {
-    icon: <FileText className="w-5 h-5 text-primary" />,
-    title: 'Plain-Language Observations',
-    desc: "Numbers alone don't tell you what to do. Every report includes structured key observations written in plain language so the insight is clear.",
+    area: 'Identity',
+    before: 'No visual brand — random photos, mixed styles',
+    after: 'Strong, consistent identity guests recognise and trust',
+  },
+  {
+    area: 'Visuals',
+    before: 'Average, unstructured images with no flow',
+    after: 'Structured, purposeful visuals that guide the guest',
+  },
+  {
+    area: 'First Impression',
+    before: 'Forgettable listing that blends into the rest',
+    after: 'Memorable presentation that drives more clicks',
   },
 ]
 
 const whoItIsFor = [
-  { icon: <Users className="w-5 h-5 text-primary" />, label: 'Multi-property STR operators who need portfolio-level visibility' },
-  { icon: <TrendingUp className="w-5 h-5 text-primary" />, label: 'Hosts who want to make data-backed decisions about pricing and platforms' },
-  { icon: <BarChart2 className="w-5 h-5 text-primary" />, label: 'Operators scaling their portfolio who need consistent tracking as they grow' },
-  { icon: <FileText className="w-5 h-5 text-primary" />, label: 'Owners who want structured reporting without building it themselves' },
+  {
+    icon: <TrendingUp className="w-5 h-5 text-primary" />,
+    label: 'Hosts in competitive markets who need to stand out from similar listings',
+  },
+  {
+    icon: <Palette className="w-5 h-5 text-primary" />,
+    label: 'Operators building a recognisable brand across multiple properties',
+  },
+  {
+    icon: <Megaphone className="w-5 h-5 text-primary" />,
+    label: 'Hosts running promotions who need professional marketing graphics',
+  },
+  {
+    icon: <Layout className="w-5 h-5 text-primary" />,
+    label: 'Anyone who wants a cleaner, more professional listing presentation',
+  },
 ]
 
-export const MonthlyFinanceReportingView: React.FC<{ page: Page }> = ({ page }) => {
+export const GraphicalContentCreationView: React.FC<{ page: Page }> = ({ page }) => {
   return (
     <>
       <style>{`
-        @keyframes mfrFadeUp {
+        @keyframes gccFadeUp {
           from { opacity: 0; transform: translateY(22px); }
           to   { opacity: 1; transform: translateY(0); }
         }
-        .mfr-fade-1 { animation: mfrFadeUp 0.55s ease both 0.05s; }
-        .mfr-fade-2 { animation: mfrFadeUp 0.55s ease both 0.15s; }
-        .mfr-fade-3 { animation: mfrFadeUp 0.55s ease both 0.25s; }
-        .mfr-fade-4 { animation: mfrFadeUp 0.55s ease both 0.35s; }
-        .mfr-fade-5 { animation: mfrFadeUp 0.55s ease both 0.45s; }
-        @keyframes pulse-ring-mfr {
+        .gcc-fade-1 { animation: gccFadeUp 0.55s ease both 0.05s; }
+        .gcc-fade-2 { animation: gccFadeUp 0.55s ease both 0.15s; }
+        .gcc-fade-3 { animation: gccFadeUp 0.55s ease both 0.25s; }
+        .gcc-fade-4 { animation: gccFadeUp 0.55s ease both 0.35s; }
+        .gcc-fade-5 { animation: gccFadeUp 0.55s ease both 0.45s; }
+        @keyframes pulse-ring-gcc {
           0%, 100% { box-shadow: 0 0 0 0 oklch(var(--p)/0.45); }
           50%       { box-shadow: 0 0 0 8px oklch(var(--p)/0); }
         }
-        .pulse-cta-mfr { animation: pulse-ring-mfr 2.4s ease-in-out infinite; }
+        .pulse-cta-gcc { animation: pulse-ring-gcc 2.4s ease-in-out infinite; }
       `}</style>
 
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden pt-28 pb-20 lg:pt-36 lg:pb-28">
+      <section className="relative overflow-hidden pt-16 pb-16 lg:pt-20 lg:pb-20">
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
           <div className="absolute -top-32 -left-32 w-[520px] h-[520px] bg-linear-to-br from-primary/13 via-primary/4 to-transparent rounded-full blur-[140px]" />
           <div className="absolute top-1/2 -right-40 w-[420px] h-[420px] bg-linear-to-bl from-secondary/10 via-secondary/3 to-transparent rounded-full blur-[120px]" />
@@ -213,45 +206,51 @@ export const MonthlyFinanceReportingView: React.FC<{ page: Page }> = ({ page }) 
 
         <div className="container max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-
             {/* Left */}
             <div>
-              <div className="mfr-fade-1 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-6">
-                <BarChart2 className="w-3.5 h-3.5" />
-                Financial Reporting · UK
+              <div className="gcc-fade-1 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-6">
+                <Palette className="w-3.5 h-3.5" />
+                Graphical Content · UK
               </div>
 
-              <h1 className="mfr-fade-2 text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-[1.08] tracking-tight mb-5">
-                Clear Financial Reporting{' '}
+              <h1 className="gcc-fade-2 text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-[1.08] tracking-tight mb-5">
+                Visual Content That Makes{' '}
                 <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary">
-                  That Keeps You Informed
+                  Your Listing Stand Out
                 </span>
               </h1>
 
-              <p className="mfr-fade-3 text-lg text-base-content/70 leading-relaxed mb-5 max-w-lg">
-                Structured monthly reports covering bookings, revenue, occupancy, platform breakdown, and key observations — so you always know how your properties are performing.
+              <p className="gcc-fade-3 text-lg text-base-content/70 leading-relaxed mb-5 max-w-lg">
+                Professional graphical content — from listing visuals and branded templates to
+                marketing graphics — designed to make your short-term rental look polished and get
+                more clicks.
               </p>
 
-              <div className="mfr-fade-3 p-4 rounded-xl border border-primary/20 bg-primary/6 text-sm italic text-base-content/60 mb-8 max-w-lg">
-                "Monthly finance reporting provides short term rental operators with structured performance data to support informed decision-making."
+              <div className="gcc-fade-3 p-4 rounded-xl border border-primary/20 bg-primary/6 text-sm italic text-base-content/60 mb-8 max-w-lg">
+                "Graphical content creation gives short term rental operators the visual assets they
+                need to stand out in search results and build a recognisable, professional listing
+                presence."
               </div>
 
-              <div className="mfr-fade-4 flex flex-wrap gap-3 mb-8">
+              <div className="gcc-fade-4 flex flex-wrap gap-3 mb-8">
                 <Link
                   href="/contact"
-                  className="pulse-cta-mfr btn btn-primary btn-lg rounded-full px-8 gap-2"
+                  className="pulse-cta-gcc btn btn-primary btn-lg rounded-full px-8 gap-2"
                 >
-                  Get Monthly Reports <ArrowRight className="w-4 h-4" />
+                  Get Visual Content <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link href="/services/airbnb-va" className="btn btn-outline btn-lg rounded-full">
                   All VA Services
                 </Link>
               </div>
 
-              <div className="mfr-fade-5 flex items-center gap-4">
+              <div className="gcc-fade-5 flex items-center gap-4">
                 <div className="flex -space-x-2">
                   {['bg-primary/20', 'bg-secondary/20', 'bg-accent/20'].map((c, i) => (
-                    <div key={i} className={`w-8 h-8 rounded-full border-2 border-base-100 ${c} flex items-center justify-center`}>
+                    <div
+                      key={i}
+                      className={`w-8 h-8 rounded-full border-2 border-base-100 ${c} flex items-center justify-center`}
+                    >
                       <Users className="w-3.5 h-3.5 text-base-content/50" />
                     </div>
                   ))}
@@ -261,40 +260,52 @@ export const MonthlyFinanceReportingView: React.FC<{ page: Page }> = ({ page }) 
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                     ))}
-                    <span className="ml-1 font-medium text-base-content/80">Trusted by UK hosts</span>
+                    <span className="ml-1 font-medium text-base-content/80">
+                      Trusted by UK hosts
+                    </span>
                   </span>
                 </div>
               </div>
             </div>
 
-            {/* Right — Finance Dashboard */}
-            <div className="mfr-fade-3 relative">
+            {/* Right — Content Creation Status Board */}
+            <div className="gcc-fade-3 relative">
               <div className="rounded-2xl border border-base-300 bg-base-100 shadow-xl overflow-hidden">
                 <div className="flex items-center justify-between px-4 py-3 border-b border-base-300 bg-base-200">
-                  <span className="text-sm font-semibold text-base-content/80">Monthly Finance Overview</span>
-                  <span className="text-xs px-2.5 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary font-medium">April 2025</span>
+                  <span className="text-sm font-semibold text-base-content/80">
+                    Content Creation Board
+                  </span>
+                  <span className="text-xs px-2.5 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary font-medium">
+                    5 Assets
+                  </span>
                 </div>
-                <div className="p-4 grid grid-cols-2 gap-3">
-                  {reportMetrics.map((m, i) => (
-                    <div key={i} className="p-3 rounded-xl bg-base-200 border border-base-300">
-                      <p className="text-[11px] text-base-content/50 font-medium uppercase tracking-wide mb-1">{m.label}</p>
-                      <p className="text-xl font-extrabold text-base-content mb-0.5">{m.value}</p>
-                      <p className={`text-xs flex items-center gap-1 ${m.up ? 'text-success' : 'text-error'}`}>
-                        {m.up ? <TrendingUp className="w-3 h-3" /> : <TrendingDown className="w-3 h-3" />}
-                        {m.delta}
-                      </p>
+                <div className="divide-y divide-base-300">
+                  {contentItems.map((item, i) => (
+                    <div
+                      key={i}
+                      className="flex items-center justify-between px-4 py-3 hover:bg-base-200/40 transition-colors"
+                    >
+                      <div className="flex items-center gap-2.5">
+                        <div className="w-7 h-7 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
+                          <ImageIcon className="w-3.5 h-3.5 text-primary" />
+                        </div>
+                        <span className="text-sm text-base-content/80">{item.label}</span>
+                      </div>
+                      <span className={`text-xs font-semibold ${item.color}`}>{item.status}</span>
                     </div>
                   ))}
                 </div>
-                <div className="px-4 pb-4">
+                <div className="px-4 pb-4 pt-3">
                   <div className="p-3 rounded-xl bg-primary/8 border border-primary/20">
-                    <p className="text-xs font-semibold text-primary mb-1">Key Observation</p>
-                    <p className="text-xs text-base-content/70">Revenue up 12% month-on-month. Airbnb continues to lead. Thursday–Sunday occupancy remains strongest — consider adjusting mid-week pricing.</p>
+                    <p className="text-xs font-semibold text-primary mb-1">Design Note</p>
+                    <p className="text-xs text-base-content/70">
+                      All assets aligned to brand palette. Platform thumbnail set optimised for
+                      Airbnb and Booking.com dimensions.
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -304,19 +315,34 @@ export const MonthlyFinanceReportingView: React.FC<{ page: Page }> = ({ page }) 
         <div className="container max-w-4xl mx-auto px-4 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/10 border border-secondary/25 text-secondary text-sm font-medium mb-5">
             <Sparkles className="w-3.5 h-3.5" />
-            Why Reporting Matters
+            Why Visuals Matter
           </div>
           <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight mb-5">
-            You Can't Improve What You Don't Measure
+            Guests Decide in Seconds — Visuals Win or Lose the Click
           </h2>
           <p className="text-lg text-base-content/65 leading-relaxed max-w-2xl mx-auto mb-8">
-            Most STR operators are flying blind. They know roughly how much they've earned, but not how occupancy varies by property, which platforms are underperforming, or whether revenue is trending up or down. Without consistent reporting, every decision is a guess.
+            In a competitive STR market, guests scroll fast. The listings that get clicks have
+            strong visual identities, clear presentation, and professional-looking assets.
+            Everything else gets skipped. Good graphical content isn't a luxury — it's a competitive
+            necessity.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-left">
             {[
-              { icon: <BarChart2 className="w-5 h-5 text-primary" />, title: 'Structured Monthly Format', body: 'The same clear format every month — so you can compare periods and track direction over time.' },
-              { icon: <TrendingUp className="w-5 h-5 text-secondary" />, title: 'Portfolio-Wide Visibility', body: 'See performance across all your properties in one place, not scattered across multiple platform dashboards.' },
-              { icon: <FileText className="w-5 h-5 text-accent" />, title: 'Plain-Language Observations', body: 'Not just numbers. Each report includes clear observations so you know what the data actually means.' },
+              {
+                icon: <Palette className="w-5 h-5 text-primary" />,
+                title: 'Brand Recognition',
+                body: 'A consistent visual identity makes your listing recognisable and gives it a professional presence guests trust.',
+              },
+              {
+                icon: <Eye className="w-5 h-5 text-secondary" />,
+                title: 'Clarity at a Glance',
+                body: 'Well-structured visuals communicate key features instantly — guests understand your property before reading a word.',
+              },
+              {
+                icon: <TrendingUp className="w-5 h-5 text-accent" />,
+                title: 'More Clicks',
+                body: 'Listings with professional visuals get more engagement. A better first impression leads to more bookings.',
+              },
             ].map((item, i) => (
               <div key={i} className="p-5 rounded-2xl bg-base-100 border border-base-300">
                 <div className="w-9 h-9 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-3">
@@ -336,18 +362,22 @@ export const MonthlyFinanceReportingView: React.FC<{ page: Page }> = ({ page }) 
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-error/10 border border-error/25 text-error text-sm font-medium mb-4">
               <AlertTriangle className="w-3.5 h-3.5" />
-              The Real Cost of No Reporting
+              Common Visual Problems
             </div>
             <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight mb-4">
-              Operating Without Data Has Real Consequences
+              Why Most Listings Look the Same
             </h2>
             <p className="text-base-content/65 max-w-xl mx-auto">
-              Without structured reporting, most operators are making pricing, platform, and property decisions without the data to back them up.
+              Most STR operators upload photos and call it done. Without deliberate visual strategy,
+              listings blend into search results and lose guests before the first impression lands.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {problemCards.map((card, i) => (
-              <div key={i} className="flex gap-3 p-5 rounded-2xl bg-base-200 border border-base-300 hover:border-error/30 transition-colors">
+              <div
+                key={i}
+                className="flex gap-3 p-5 rounded-2xl bg-base-200 border border-base-300 hover:border-error/30 transition-colors"
+              >
                 {card.icon}
                 <div>
                   <h3 className="font-semibold text-base-content mb-1">{card.title}</h3>
@@ -368,20 +398,40 @@ export const MonthlyFinanceReportingView: React.FC<{ page: Page }> = ({ page }) 
               What Good Looks Like
             </div>
             <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight mb-4">
-              Reporting That Actually Tells You Something
+              Visual Content That Actually Works
             </h2>
             <p className="text-base-content/65 max-w-xl mx-auto">
-              Good finance reporting isn't a data dump — it's a structured view that highlights performance, flags issues, and tells you what changed and why.
+              Good graphical content is purposeful, consistent, and built around the guest
+              experience — not just what looks nice to the host.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { icon: <CalendarCheck className="w-5 h-5 text-success" />, title: 'Delivered Every Month', body: 'You receive your report at the same time each month, covering the full previous period — without needing to ask.' },
-              { icon: <BarChart2 className="w-5 h-5 text-success" />, title: 'All Key Metrics Covered', body: 'Bookings, revenue, occupancy, average nightly rate, platform split, and cancellations — all in one place.' },
-              { icon: <TrendingUp className="w-5 h-5 text-success" />, title: 'Month-on-Month Trend Data', body: 'Every metric is shown with comparison to the prior month so you can see direction, not just a snapshot.' },
-              { icon: <FileText className="w-5 h-5 text-success" />, title: 'Observations Written For You', body: 'The report ends with plain-language key observations so you know exactly what to pay attention to.' },
+              {
+                icon: <Palette className="w-5 h-5 text-success" />,
+                title: 'Consistent Visual Identity',
+                body: 'Every asset — listing visuals, thumbnails, marketing graphics — uses a coherent style that builds recognition and trust.',
+              },
+              {
+                icon: <Eye className="w-5 h-5 text-success" />,
+                title: 'Guest-Oriented Design',
+                body: 'Assets are built around what guests need to understand, not what the host thinks looks good. Clarity comes first.',
+              },
+              {
+                icon: <Layout className="w-5 h-5 text-success" />,
+                title: 'Clear Visual Hierarchy',
+                body: "Guests immediately know what to look at, what's important, and what makes the listing worth their click.",
+              },
+              {
+                icon: <TrendingUp className="w-5 h-5 text-success" />,
+                title: 'Platform-Ready Assets',
+                body: 'Everything is sized and optimised for Airbnb, Booking.com, VRBO, and direct booking channels — no reformatting needed.',
+              },
             ].map((item, i) => (
-              <div key={i} className="flex gap-4 p-6 rounded-2xl bg-base-100 border border-base-300 hover:border-success/30 transition-colors">
+              <div
+                key={i}
+                className="flex gap-4 p-6 rounded-2xl bg-base-100 border border-base-300 hover:border-success/30 transition-colors"
+              >
                 <div className="w-10 h-10 rounded-xl bg-success/10 border border-success/20 flex items-center justify-center flex-shrink-0">
                   {item.icon}
                 </div>
@@ -395,31 +445,35 @@ export const MonthlyFinanceReportingView: React.FC<{ page: Page }> = ({ page }) 
         </div>
       </section>
 
-      {/* ── WHAT WE PROVIDE ──────────────────────────────────────────────── */}
+      {/* ── WHAT WE CREATE ───────────────────────────────────────────────── */}
       <section className="py-20 lg:py-28">
         <div className="container max-w-5xl mx-auto px-4">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-4">
-              <FileText className="w-3.5 h-3.5" />
-              What Each Report Covers
+              <Brush className="w-3.5 h-3.5" />
+              What We Create
             </div>
             <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight mb-4">
-              Five Core Reporting Areas
+              Four Categories of Visual Content
             </h2>
             <p className="text-base-content/65 max-w-xl mx-auto">
-              Each monthly report is structured around five key areas — giving you full visibility of what happened, why, and what it means.
+              From listing-specific visuals to marketing-ready graphics, every asset is built to
+              serve a clear purpose for your short-term rental business.
             </p>
           </div>
 
           {/* Desktop table */}
           <div className="hidden md:block rounded-2xl border border-base-300 overflow-hidden">
             <div className="grid grid-cols-[1fr_2fr_1.5fr] bg-base-200 border-b border-base-300 px-6 py-3 text-xs font-semibold uppercase tracking-widest text-base-content/50">
-              <span>Reporting Area</span>
+              <span>Content Type</span>
               <span>What's Included</span>
               <span>The Outcome</span>
             </div>
-            {whatWeProvide.map((row, i) => (
-              <div key={i} className={`grid grid-cols-[1fr_2fr_1.5fr] gap-4 px-6 py-5 items-start border-b border-base-300 last:border-0 hover:bg-base-200/50 transition-colors ${i % 2 === 0 ? 'bg-base-100' : 'bg-base-50'}`}>
+            {whatWeCreate.map((row, i) => (
+              <div
+                key={i}
+                className={`grid grid-cols-[1fr_2fr_1.5fr] gap-4 px-6 py-5 items-start border-b border-base-300 last:border-0 hover:bg-base-200/50 transition-colors ${i % 2 === 0 ? 'bg-base-100' : 'bg-base-50'}`}
+              >
                 <div className="flex items-center gap-2.5">
                   <div className="w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
                     {row.icon}
@@ -444,7 +498,7 @@ export const MonthlyFinanceReportingView: React.FC<{ page: Page }> = ({ page }) 
 
           {/* Mobile cards */}
           <div className="md:hidden space-y-4">
-            {whatWeProvide.map((row, i) => (
+            {whatWeCreate.map((row, i) => (
               <div key={i} className="p-5 rounded-2xl bg-base-100 border border-base-300">
                 <div className="flex items-center gap-2.5 mb-3">
                   <div className="w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
@@ -470,46 +524,8 @@ export const MonthlyFinanceReportingView: React.FC<{ page: Page }> = ({ page }) 
         </div>
       </section>
 
-      {/* ── DATA INSIGHT ─────────────────────────────────────────────────── */}
-      <section className="bg-base-200 border-y border-base-300 py-20 lg:py-28">
-        <div className="container max-w-5xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/10 border border-secondary/25 text-secondary text-sm font-medium mb-4">
-              <TrendingUp className="w-3.5 h-3.5" />
-              Connected to Your Operations
-            </div>
-            <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight mb-4">
-              Reporting That Feeds Into Everything Else
-            </h2>
-            <p className="text-base-content/65 max-w-xl mx-auto">
-              Finance reporting doesn't sit in isolation. It connects directly to pricing reviews, platform strategy, maintenance priorities, and portfolio planning.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {[
-              { icon: <BarChart2 className="w-5 h-5 text-primary" />, label: 'Pricing Strategy', body: 'Occupancy gaps and nightly rate trends directly inform pricing adjustments.' },
-              { icon: <PieChart className="w-5 h-5 text-secondary" />, label: 'Platform Allocation', body: 'Platform-level data helps you decide where to focus listing optimisation.' },
-              { icon: <TrendingUp className="w-5 h-5 text-accent" />, label: 'Portfolio Growth', body: 'Revenue trends and performance benchmarks support decisions about scaling.' },
-              { icon: <Calendar className="w-5 h-5 text-primary" />, label: 'Seasonal Planning', body: 'Month-on-month data surfaces seasonal patterns to plan availability around.' },
-              { icon: <FileText className="w-5 h-5 text-secondary" />, label: 'Owner Reporting', body: 'For co-hosts and PMs, structured reports are ready to share with property owners.' },
-              { icon: <Layers className="w-5 h-5 text-accent" />, label: 'VA Task Prioritisation', body: 'Performance data helps the VA team focus effort where it has the most impact.' },
-            ].map((item, i) => (
-              <div key={i} className="flex gap-3 p-5 rounded-2xl bg-base-100 border border-base-300 hover:border-primary/30 transition-colors">
-                <div className="w-9 h-9 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
-                  {item.icon}
-                </div>
-                <div>
-                  <h3 className="font-semibold text-sm text-base-content mb-1">{item.label}</h3>
-                  <p className="text-sm text-base-content/60">{item.body}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── COMMON MISTAKES ───────────────────────────────────────────────── */}
-      <section className="py-20 lg:py-28">
+      <section className="bg-base-200 border-y border-base-300 py-20 lg:py-28">
         <div className="container max-w-5xl mx-auto px-4">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-warning/10 border border-warning/25 text-warning text-sm font-medium mb-4">
@@ -517,21 +533,39 @@ export const MonthlyFinanceReportingView: React.FC<{ page: Page }> = ({ page }) 
               Common Mistakes
             </div>
             <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight mb-4">
-              What Most Operators Get Wrong With Reporting
+              What Most Hosts Get Wrong With Visual Content
             </h2>
             <p className="text-base-content/65 max-w-xl mx-auto">
-              Even operators who track data often fall into patterns that undermine the value of that data.
+              Even hosts who invest in photography often undermine it with poor graphic execution.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { title: 'Relying on Platform Dashboards', body: "Platform dashboards show you your numbers in isolation. They don't give you a cross-platform view or tell you what the trends mean." },
-              { title: 'Tracking Inconsistently', body: 'Pulling data occasionally rather than monthly means you lose the ability to track direction. Trends require consistent measurement.' },
-              { title: 'No Comparison Context', body: 'A 75% occupancy rate means nothing without context. Is that up or down? Better or worse than last quarter? Comparison makes data useful.' },
-              { title: 'Ignoring Low Performers', body: "When you're managing multiple properties, poor performers often get overlooked because there's no structured view showing them relative to others." },
-              { title: 'Sharing Raw Data With Owners', body: "Raw spreadsheets aren't owner-friendly. Structured reports with clear observations are far more useful for owner communication and trust." },
+              {
+                title: 'Text Overload on Images',
+                body: 'Adding too much text to visuals clutters the image, confuses the guest, and dilutes the impact of good photography.',
+              },
+              {
+                title: 'Inconsistent Styles',
+                body: 'Mixing fonts, colours, and layouts across assets makes the listing look unplanned and unprofessional.',
+              },
+              {
+                title: 'Unclear Messaging',
+                body: 'Trying to say everything in one visual means communicating nothing. Good design is specific.',
+              },
+              {
+                title: 'Aesthetics Over Function',
+                body: "Design that looks good but doesn't help the guest understand the property or make a decision is design that doesn't work.",
+              },
+              {
+                title: 'No Visual Hierarchy',
+                body: "Without structure, guests don't know where to look first or what the listing is trying to show them.",
+              },
             ].map((item, i) => (
-              <div key={i} className="flex gap-3 p-5 rounded-2xl bg-base-200 border border-base-300 hover:border-warning/30 transition-colors">
+              <div
+                key={i}
+                className="flex gap-3 p-5 rounded-2xl bg-base-100 border border-base-300 hover:border-warning/30 transition-colors"
+              >
                 <AlertTriangle className="w-5 h-5 text-warning flex-shrink-0 mt-0.5" />
                 <div>
                   <h3 className="font-semibold text-base-content mb-1">{item.title}</h3>
@@ -544,7 +578,7 @@ export const MonthlyFinanceReportingView: React.FC<{ page: Page }> = ({ page }) 
       </section>
 
       {/* ── OUR APPROACH ─────────────────────────────────────────────────── */}
-      <section className="bg-base-200 border-y border-base-300 py-20 lg:py-28">
+      <section className="py-20 lg:py-28">
         <div className="container max-w-5xl mx-auto px-4">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-4">
@@ -552,15 +586,19 @@ export const MonthlyFinanceReportingView: React.FC<{ page: Page }> = ({ page }) 
               How We Approach It
             </div>
             <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight mb-4">
-              Consistent, Clear, and Actionable
+              Purposeful Design at Every Step
             </h2>
             <p className="text-base-content/65 max-w-xl mx-auto">
-              Our reporting approach is built around giving you the information you need — in a format that's easy to act on.
+              Every visual asset we create is grounded in clarity, consistency, and real guest
+              behaviour — not just what looks polished.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {approachPoints.map((item, i) => (
-              <div key={i} className="flex gap-4 p-6 rounded-2xl bg-base-100 border border-base-300 hover:border-primary/30 transition-colors">
+              <div
+                key={i}
+                className="flex gap-4 p-6 rounded-2xl bg-base-100 border border-base-300 hover:border-primary/30 transition-colors"
+              >
                 <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
                   {item.icon}
                 </div>
@@ -575,7 +613,7 @@ export const MonthlyFinanceReportingView: React.FC<{ page: Page }> = ({ page }) 
       </section>
 
       {/* ── COMPARISON TABLE ─────────────────────────────────────────────── */}
-      <section className="py-20 lg:py-28">
+      <section className="bg-base-200 border-y border-base-300 py-20 lg:py-28">
         <div className="container max-w-5xl mx-auto px-4">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-4">
@@ -583,23 +621,33 @@ export const MonthlyFinanceReportingView: React.FC<{ page: Page }> = ({ page }) 
               Before vs After
             </div>
             <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight mb-4">
-              No Reporting vs Structured Monthly Reports
+              Generic Listing vs Designed Listing
             </h2>
             <p className="text-base-content/65 max-w-xl mx-auto">
-              See the difference structured reporting makes across the areas that matter most to STR operators.
+              The difference between a listing that gets skipped and one that gets clicked often
+              comes down to how it looks.
             </p>
           </div>
 
           {/* Desktop */}
           <div className="hidden md:block rounded-2xl border border-base-300 overflow-hidden">
-            <div className="grid grid-cols-3 bg-base-200 border-b border-base-300 px-6 py-3 text-xs font-semibold uppercase tracking-widest text-base-content/50">
+            <div className="grid grid-cols-3 bg-base-100 border-b border-base-300 px-6 py-3 text-xs font-semibold uppercase tracking-widest text-base-content/50">
               <span>Area</span>
-              <span className="flex items-center gap-1.5"><XCircle className="w-3.5 h-3.5 text-error" /> Without Reporting</span>
-              <span className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-success" /> With Our Reports</span>
+              <span className="flex items-center gap-1.5">
+                <XCircle className="w-3.5 h-3.5 text-error" /> Without Visual Content
+              </span>
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-success" /> With Our Content
+              </span>
             </div>
             {comparisonRows.map((row, i) => (
-              <div key={i} className={`grid grid-cols-3 gap-4 px-6 py-4 border-b border-base-300 last:border-0 ${i % 2 === 0 ? 'bg-base-100' : 'bg-base-50'}`}>
-                <span className="font-semibold text-sm text-base-content self-center">{row.area}</span>
+              <div
+                key={i}
+                className={`grid grid-cols-3 gap-4 px-6 py-4 border-b border-base-300 last:border-0 ${i % 2 === 0 ? 'bg-base-200/40' : 'bg-base-100'}`}
+              >
+                <span className="font-semibold text-sm text-base-content self-center">
+                  {row.area}
+                </span>
                 <div className="flex items-start gap-2 text-sm text-base-content/60">
                   <XCircle className="w-3.5 h-3.5 text-error flex-shrink-0 mt-0.5" />
                   {row.before}
@@ -616,7 +664,9 @@ export const MonthlyFinanceReportingView: React.FC<{ page: Page }> = ({ page }) 
           <div className="md:hidden space-y-4">
             {comparisonRows.map((row, i) => (
               <div key={i} className="rounded-2xl border border-base-300 overflow-hidden">
-                <div className="bg-base-200 px-4 py-2.5 text-sm font-semibold text-base-content">{row.area}</div>
+                <div className="bg-base-200 px-4 py-2.5 text-sm font-semibold text-base-content">
+                  {row.area}
+                </div>
                 <div className="p-4 space-y-3">
                   <div className="flex items-start gap-2 text-sm text-base-content/60 p-3 rounded-xl bg-error/6 border border-error/15">
                     <XCircle className="w-4 h-4 text-error flex-shrink-0 mt-0.5" />
@@ -634,7 +684,7 @@ export const MonthlyFinanceReportingView: React.FC<{ page: Page }> = ({ page }) 
       </section>
 
       {/* ── WHO IT'S FOR ─────────────────────────────────────────────────── */}
-      <section className="bg-base-200 border-y border-base-300 py-20 lg:py-28">
+      <section className="py-20 lg:py-28">
         <div className="container max-w-4xl mx-auto px-4">
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-4">
@@ -645,12 +695,16 @@ export const MonthlyFinanceReportingView: React.FC<{ page: Page }> = ({ page }) 
               Best Suited For
             </h2>
             <p className="text-base-content/65 max-w-xl mx-auto">
-              Monthly finance reporting is most valuable for operators who want structured visibility without building the system themselves.
+              Graphical content creation is most valuable for hosts who want a professional visual
+              presence without managing design work themselves.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {whoItIsFor.map((item, i) => (
-              <div key={i} className="flex items-center gap-3 p-4 rounded-2xl bg-base-100 border border-base-300 hover:border-primary/30 transition-colors">
+              <div
+                key={i}
+                className="flex items-center gap-3 p-4 rounded-2xl bg-base-100 border border-base-300 hover:border-primary/30 transition-colors"
+              >
                 <div className="w-9 h-9 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
                   {item.icon}
                 </div>
@@ -662,7 +716,7 @@ export const MonthlyFinanceReportingView: React.FC<{ page: Page }> = ({ page }) 
       </section>
 
       {/* ── TESTIMONIALS ─────────────────────────────────────────────────── */}
-      <section className="py-20 lg:py-28">
+      <section className="bg-base-200 border-y border-base-300 py-20 lg:py-28">
         <div className="container max-w-5xl mx-auto px-4">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/25 text-amber-600 text-sm font-medium mb-4">
@@ -670,22 +724,42 @@ export const MonthlyFinanceReportingView: React.FC<{ page: Page }> = ({ page }) 
               What Clients Say
             </div>
             <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight mb-4">
-              Reporting That Builds Confidence
+              Visuals That Get Results
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { quote: "I never had a clear view of how my properties were performing month to month. Now I get a structured report every month and I actually understand it — plain language, no spreadsheet interpretation needed.", name: 'James R.', role: 'Multi-property host, Manchester' },
-              { quote: "As a co-host managing properties for multiple owners, having structured monthly reports has made owner communication so much easier. I can share something professional instead of a raw data export.", name: 'Sophie T.', role: 'Co-host, London' },
-              { quote: "The platform breakdown alone was eye-opening. I didn't realise how much Booking.com had dropped off until I saw it in the report. Made a real difference to where I focused my optimisation.", name: 'Marcus L.', role: 'STR operator, Birmingham' },
+              {
+                quote:
+                  'My listings looked the same as every other property in Manchester. After getting proper graphic content done — cover visuals, branded overlays, the lot — I saw a noticeable uptick in click-through from search. It just looks more professional now.',
+                name: 'Claire H.',
+                role: 'STR host, Manchester',
+              },
+              {
+                quote:
+                  "I'm a co-host managing twelve properties and consistent branding was always something I wanted but never had time for. Having visual assets built out properly has made a huge difference to how we present across platforms.",
+                name: 'Tom A.',
+                role: 'Co-host, London',
+              },
+              {
+                quote:
+                  "The listing highlight overlays were a game changer. Guests now immediately understand what makes each property different without having to read through the whole description. We've had guests mention it specifically.",
+                name: 'Rachel F.',
+                role: 'Multi-property operator, Leeds',
+              },
             ].map((t, i) => (
-              <div key={i} className="flex flex-col gap-4 p-6 rounded-2xl bg-base-100 border border-base-300 hover:border-amber-400/30 transition-colors">
+              <div
+                key={i}
+                className="flex flex-col gap-4 p-6 rounded-2xl bg-base-100 border border-base-300 hover:border-amber-400/30 transition-colors"
+              >
                 <div className="flex gap-0.5">
                   {[...Array(5)].map((_, si) => (
                     <Star key={si} className="w-4 h-4 fill-amber-400 text-amber-400" />
                   ))}
                 </div>
-                <p className="text-sm text-base-content/70 italic leading-relaxed flex-1">"{t.quote}"</p>
+                <p className="text-sm text-base-content/70 italic leading-relaxed flex-1">
+                  "{t.quote}"
+                </p>
                 <div>
                   <p className="text-sm font-semibold text-base-content">{t.name}</p>
                   <p className="text-xs text-base-content/50">{t.role}</p>
@@ -697,7 +771,7 @@ export const MonthlyFinanceReportingView: React.FC<{ page: Page }> = ({ page }) 
       </section>
 
       {/* ── FAQ ──────────────────────────────────────────────────────────── */}
-      <section className="bg-base-200 border-y border-base-300 py-20 lg:py-28">
+      <section className="py-20 lg:py-28">
         <div className="container max-w-3xl mx-auto px-4">
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-4">
@@ -717,7 +791,7 @@ export const MonthlyFinanceReportingView: React.FC<{ page: Page }> = ({ page }) 
       </section>
 
       {/* ── FINAL CTA ────────────────────────────────────────────────────── */}
-      <section className="py-20 lg:py-28">
+      <section className="bg-base-200 border-y border-base-300 py-20 lg:py-28">
         <div className="container max-w-4xl mx-auto px-4">
           <div className="relative overflow-hidden rounded-3xl p-10 lg:p-14 text-center bg-linear-to-br from-primary/22 via-base-200 to-secondary/15 border border-base-300">
             <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
@@ -728,14 +802,18 @@ export const MonthlyFinanceReportingView: React.FC<{ page: Page }> = ({ page }) 
               Get Started
             </div>
             <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight mb-4">
-              Ready to See Your Properties Clearly?
+              Ready to Make Your Listings Stand Out?
             </h2>
             <p className="text-base-content/65 max-w-xl mx-auto mb-8">
-              Get structured monthly finance reports delivered every month — clear, consistent, and ready to act on.
+              Professional visual content that gives your STR listings a consistent, polished
+              presence — across Airbnb, Booking.com, and beyond.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
-              <Link href="/contact" className="pulse-cta-mfr btn btn-primary btn-lg rounded-full px-8 gap-2">
-                Start Monthly Reporting <ArrowRight className="w-4 h-4" />
+              <Link
+                href="/contact"
+                className="pulse-cta-gcc btn btn-primary btn-lg rounded-full px-8 gap-2"
+              >
+                Get Visual Content <ArrowRight className="w-4 h-4" />
               </Link>
               <Link href="/services/airbnb-va" className="btn btn-outline btn-lg rounded-full">
                 View All VA Services
@@ -748,4 +826,4 @@ export const MonthlyFinanceReportingView: React.FC<{ page: Page }> = ({ page }) 
   )
 }
 
-export default MonthlyFinanceReportingView
+export default GraphicalContentCreationView

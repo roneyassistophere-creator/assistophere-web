@@ -1,85 +1,87 @@
 import React from 'react'
 import {
-  Instagram,
-  LayoutGrid,
-  Star,
-  Phone,
-  ArrowRight,
+  Zap,
+  Settings,
   CheckCircle2,
   XCircle,
-  Calendar,
-  Palette,
-  MessageSquare,
+  Star,
   ChevronRight,
-  AlertTriangle,
+  ArrowRight,
+  Phone,
+  MessageSquare,
+  CalendarDays,
+  ClipboardList,
+  LayoutDashboard,
+  Users,
   TrendingUp,
-  Megaphone,
-  Target,
   Building2,
-  Zap,
-  Smartphone,
-  Layers,
-  Globe,
+  Target,
   BarChart3,
+  RefreshCw,
+  Timer,
+  AlertTriangle,
+  Layers,
+  GitBranch,
 } from 'lucide-react'
+import { FaqItem } from './FaqItem'
 import type { Page } from '@/payload-types'
 
-export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = () => {
+export const STRAutomationView: React.FC<{ page: Page }> = () => {
   return (
     <div className="min-h-screen text-base-content overflow-x-hidden">
       <style>{`
-        @keyframes pulse-ring-smm {
+        @keyframes pulse-ring-stra {
           0%,100% { box-shadow: 0 0 0 0 hsl(var(--p)/.35); }
           50%      { box-shadow: 0 0 0 10px hsl(var(--p)/0); }
         }
-        @keyframes smm-fade-up {
+        @keyframes stra-fade-up {
           from { opacity:0; transform:translateY(22px); }
           to   { opacity:1; transform:translateY(0); }
         }
-        .smm-fade-1 { animation: smm-fade-up .55s ease both .10s; }
-        .smm-fade-2 { animation: smm-fade-up .55s ease both .22s; }
-        .smm-fade-3 { animation: smm-fade-up .55s ease both .34s; }
-        .smm-fade-4 { animation: smm-fade-up .55s ease both .46s; }
-        .smm-fade-5 { animation: smm-fade-up .55s ease both .58s; }
-        .pulse-cta-smm { animation: pulse-ring-smm 2.4s ease-in-out infinite; }
+        .stra-fade-1 { animation: stra-fade-up .55s ease both .10s; }
+        .stra-fade-2 { animation: stra-fade-up .55s ease both .22s; }
+        .stra-fade-3 { animation: stra-fade-up .55s ease both .34s; }
+        .stra-fade-4 { animation: stra-fade-up .55s ease both .46s; }
+        .stra-fade-5 { animation: stra-fade-up .55s ease both .58s; }
+        .pulse-cta-stra { animation: pulse-ring-stra 2.4s ease-in-out infinite; }
       `}</style>
 
       {/* ── HERO ─────────────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden pt-16 pb-16 lg:pt-20 lg:pb-20">
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-          <div className="absolute -top-32 -left-32 w-[520px] h-[520px] bg-linear-to-br from-primary/13 via-primary/4 to-transparent rounded-full blur-[140px]" />
-          <div className="absolute top-1/2 -right-40 w-[420px] h-[420px] bg-linear-to-bl from-secondary/10 via-secondary/3 to-transparent rounded-full blur-[120px]" />
+          <div className="absolute -top-32 -left-32 w-130 h-130 bg-linear-to-br from-primary/13 via-primary/4 to-transparent rounded-full blur-[140px]" />
+          <div className="absolute top-1/2 -right-40 w-105 h-105 bg-linear-to-bl from-secondary/10 via-secondary/3 to-transparent rounded-full blur-[120px]" />
         </div>
         <div className="container max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="space-y-6">
-              <div className="smm-fade-1 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium">
-                <Instagram className="w-4 h-4" />
-                Social Media Management · UK STR
+              <div className="stra-fade-1 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium">
+                <Zap className="w-4 h-4" />
+                STR Automation Systems · UK
               </div>
-              <h1 className="smm-fade-2 text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-[1.08] tracking-tight">
-                Social Media Management That Supports Your{' '}
+              <h1 className="stra-fade-2 text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-[1.08] tracking-tight">
+                Automate Your STR Operations{' '}
                 <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary">
-                  STR Growth
+                  Without Losing Control
                 </span>
               </h1>
-              <p className="smm-fade-3 text-lg text-base-content/70 leading-relaxed max-w-lg">
-                Assistophere helps UK hosts manage social media with structured content and
-                strategy, building brand presence and supporting direct booking growth.
+              <p className="stra-fade-3 text-lg text-base-content/70 leading-relaxed max-w-lg">
+                Assistophere helps UK hosts automate repetitive tasks across guest communication,
+                bookings, and operations — making your business more efficient and easier to manage.
               </p>
-              <div className="smm-fade-4 p-4 rounded-xl border border-primary/20 bg-primary/6 text-sm italic text-base-content/65">
-                Social media management for STR businesses involves creating content, maintaining
-                consistency, and building a brand presence to attract and convert potential guests.
+              <div className="stra-fade-4 p-4 rounded-xl border border-primary/20 bg-primary/6 text-sm italic text-base-content/65">
+                STR automation involves setting up workflows and systems that handle repetitive
+                tasks automatically, improving efficiency and consistency.
               </div>
-              <div className="smm-fade-5 flex flex-wrap gap-3 pt-1">
-                <button className="pulse-cta-smm btn btn-primary btn-lg rounded-full px-8 gap-2">
+              <div className="stra-fade-5 flex flex-wrap gap-3 pt-1">
+                <button className="pulse-cta-stra btn btn-primary btn-lg rounded-full px-8 gap-2">
                   <Phone className="w-4 h-4" /> Book a Discovery Call
                 </button>
                 <button className="btn btn-outline btn-lg rounded-full px-8 gap-2">
-                  <ArrowRight className="w-4 h-4" /> See How It Works
+                  See How It Works <ChevronRight className="w-4 h-4" />
                 </button>
               </div>
-              <div className="smm-fade-5 flex items-center gap-3 pt-2">
+              <div className="stra-fade-5 flex items-center gap-3 pt-2">
                 <div className="flex -space-x-2">
                   {['bg-primary', 'bg-secondary', 'bg-accent', 'bg-neutral'].map((c, i) => (
                     <div
@@ -96,64 +98,76 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
                       <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                     ))}
                   </div>
-                  <p className="text-xs text-base-content/55 mt-0.5">
-                    Trusted by UK STR hosts and SA operators
-                  </p>
+                  <p className="text-xs text-base-content/55 mt-0.5">Trusted by UK STR operators</p>
                 </div>
               </div>
             </div>
 
-            {/* Hero visual — Instagram-style grid preview */}
+            {/* Hero visual — automation workflow */}
             <div className="hidden lg:block">
               <div className="relative rounded-3xl border border-base-300 bg-base-200/60 backdrop-blur-sm p-6 shadow-xl">
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="w-9 h-9 rounded-full bg-linear-to-br from-primary to-secondary flex items-center justify-center">
-                    <Instagram className="w-4 h-4 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold">@yourstrbrand</p>
-                    <p className="text-[10px] text-base-content/40">Serviced Accommodation · UK</p>
-                  </div>
-                  <div className="ml-auto flex gap-4 text-center">
-                    {[
-                      ['24', 'Posts'],
-                      ['1.2k', 'Followers'],
-                      ['340', 'Reach'],
-                    ].map(([v, l]) => (
-                      <div key={l}>
-                        <p className="text-xs font-extrabold">{v}</p>
-                        <p className="text-[9px] text-base-content/40">{l}</p>
-                      </div>
-                    ))}
-                  </div>
+                <div className="flex items-center gap-2 mb-5">
+                  <div className="w-3 h-3 rounded-full bg-error/70" />
+                  <div className="w-3 h-3 rounded-full bg-warning/70" />
+                  <div className="w-3 h-3 rounded-full bg-success/70" />
+                  <span className="ml-2 text-xs text-base-content/40 font-mono">
+                    automation.workflow
+                  </span>
                 </div>
-                {/* 3×3 grid */}
-                <div className="grid grid-cols-3 gap-1.5 mb-4">
+                <div className="space-y-3">
                   {[
-                    { bg: 'bg-primary/15', label: 'Property Showcase', icon: Building2 },
-                    { bg: 'bg-secondary/12', label: 'Guest Experience', icon: Star },
-                    { bg: 'bg-success/10', label: 'Local Area', icon: Globe },
-                    { bg: 'bg-warning/12', label: 'Behind the Scenes', icon: Layers },
-                    { bg: 'bg-primary/20', label: 'Amenities', icon: Zap },
-                    { bg: 'bg-accent/10', label: 'Direct Booking', icon: TrendingUp },
-                    { bg: 'bg-secondary/15', label: 'Review Feature', icon: MessageSquare },
-                    { bg: 'bg-success/12', label: 'Seasonal Promo', icon: Calendar },
-                    { bg: 'bg-primary/10', label: 'Brand Story', icon: Palette },
-                  ].map(({ bg, label, icon: Icon }, i) => (
+                    {
+                      label: 'New booking received',
+                      status: 'trigger',
+                      color: 'bg-primary/15 border-primary/25 text-primary',
+                    },
+                    {
+                      label: 'Send confirmation message',
+                      status: 'automated',
+                      color: 'bg-success/8 border-success/20 text-success',
+                    },
+                    {
+                      label: 'Assign cleaning task',
+                      status: 'automated',
+                      color: 'bg-success/8 border-success/20 text-success',
+                    },
+                    {
+                      label: 'Schedule check-in message',
+                      status: 'automated',
+                      color: 'bg-success/8 border-success/20 text-success',
+                    },
+                    {
+                      label: 'Send check-out reminder',
+                      status: 'automated',
+                      color: 'bg-success/8 border-success/20 text-success',
+                    },
+                    {
+                      label: 'Post-stay review request',
+                      status: 'automated',
+                      color: 'bg-success/8 border-success/20 text-success',
+                    },
+                  ].map(({ label, status, color }) => (
                     <div
-                      key={i}
-                      className={`${bg} rounded-xl aspect-square flex flex-col items-center justify-center gap-1 p-2`}
+                      key={label}
+                      className={`flex items-center justify-between px-3 py-2.5 rounded-xl border text-xs ${color}`}
                     >
-                      <Icon className="w-4 h-4 text-base-content/40" />
-                      <p className="text-[9px] text-base-content/40 text-center leading-tight">
+                      <div className="flex items-center gap-2">
+                        {status === 'trigger' ? (
+                          <Zap className="w-3.5 h-3.5" />
+                        ) : (
+                          <CheckCircle2 className="w-3.5 h-3.5" />
+                        )}
                         {label}
-                      </p>
+                      </div>
+                      <span className="opacity-60 font-medium uppercase tracking-wider text-[10px]">
+                        {status}
+                      </span>
                     </div>
                   ))}
                 </div>
-                <div className="bg-base-100 rounded-xl border border-primary/20 px-4 py-2.5 flex items-center justify-between">
-                  <span className="text-xs text-base-content/50">Content scheduled this week</span>
-                  <span className="text-xs font-bold text-primary">5 posts</span>
+                <div className="mt-4 flex items-center justify-between px-1">
+                  <span className="text-xs text-base-content/40">6 steps automated</span>
+                  <span className="text-xs text-primary font-semibold">→ 0 manual actions</span>
                 </div>
               </div>
             </div>
@@ -166,48 +180,48 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
         <div className="container max-w-7xl mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-2">
-              <LayoutGrid className="w-4 h-4" /> The Real Picture
+              <RefreshCw className="w-4 h-4" /> What Automation Is
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold">
-              Social Media Isn&apos;t Just Posting Content
+              Automation Isn&apos;t About Removing Control
             </h2>
             <p className="text-base-content/65 text-lg leading-relaxed">
-              Most STR businesses either don&apos;t post at all, or post inconsistently without any
-              clear direction. For short-term rentals, social media is one of the few channels you
-              fully control — but only if it&apos;s managed properly.
+              It&apos;s about removing repetition. Done properly, automation handles the routine so
+              you can focus on decisions that actually need your attention.
             </p>
+            <p className="text-base-content/60 text-base">Automation helps with:</p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
               {[
                 {
-                  icon: TrendingUp,
-                  title: 'Build trust',
-                  desc: 'Consistent, professional content signals that your property and business are credible.',
+                  icon: MessageSquare,
+                  label: 'Repetitive Messaging',
+                  desc: 'Guest messages that follow the same pattern every time.',
                 },
                 {
-                  icon: Building2,
-                  title: 'Showcase properties',
-                  desc: 'Show potential guests exactly what they&apos;re booking before they ever visit a listing.',
+                  icon: CalendarDays,
+                  label: 'Booking Processes',
+                  desc: 'Confirmations, reminders, and follow-ups handled automatically.',
                 },
                 {
-                  icon: Target,
-                  title: 'Attract direct bookings',
-                  desc: 'Social media builds the audience and brand presence that drives traffic outside of Airbnb.',
+                  icon: ClipboardList,
+                  label: 'Task Coordination',
+                  desc: 'Assigning and tracking operational tasks without manual input.',
                 },
-              ].map(({ icon: Icon, title, desc }) => (
+              ].map(({ icon: Icon, label, desc }) => (
                 <div
-                  key={title}
-                  className="bg-base-100 rounded-2xl border border-primary/15 p-5 text-left"
+                  key={label}
+                  className="bg-base-100 rounded-2xl border border-base-300 p-5 text-left"
                 >
                   <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-3">
                     <Icon className="w-5 h-5 text-primary" />
                   </div>
-                  <p className="font-semibold text-sm">{title}</p>
+                  <p className="font-semibold text-sm">{label}</p>
                   <p className="text-xs text-base-content/55 mt-1 leading-relaxed">{desc}</p>
                 </div>
               ))}
             </div>
-            <p className="text-base-content/55 text-sm italic">
-              Without structure, social media becomes inconsistent and ineffective.
+            <p className="text-base-content/55 text-sm italic pt-2">
+              But it still needs structure behind it.
             </p>
           </div>
         </div>
@@ -219,38 +233,37 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-error/10 border border-error/25 text-error text-sm font-medium mb-4">
-                <XCircle className="w-4 h-4" /> The Problem
+                <XCircle className="w-4 h-4" /> The Core Problem
               </div>
               <h2 className="text-3xl lg:text-4xl font-bold">
-                Why Most STR Social Media Doesn&apos;t Work
+                Why Manual Operations Don&apos;t Scale
               </h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 {
-                  point: 'Inconsistent posting',
+                  point: 'Repeating the same tasks daily',
                   detail:
-                    "Sporadic content signals an inactive brand. The algorithm deprioritises irregular accounts, and potential guests don't build familiarity or trust.",
+                    'Hours disappear doing the same things over and over with no end in sight.',
                 },
                 {
-                  point: 'No clear strategy',
+                  point: 'Constant manual input',
                   detail:
-                    "Posting without a plan means content doesn't connect to any business goal — it's activity for the sake of activity, not results.",
+                    'Every action requires the host — nothing runs without direct involvement.',
                 },
                 {
-                  point: 'Low-quality content',
+                  point: 'Slow response times',
                   detail:
-                    'Blurry photos, poor captions, and generic text fail to communicate what makes your property worth booking.',
+                    'Manual processes mean guests wait longer and expectations are harder to meet.',
                 },
                 {
-                  point: 'No branding',
+                  point: 'Increased errors',
                   detail:
-                    "When your content looks different every week, there's no recognition. A cohesive visual identity is what makes a brand memorable.",
+                    'The more manual the process, the more likely something gets missed or done wrong.',
                 },
                 {
-                  point: 'No connection to bookings',
-                  detail:
-                    "Social media only drives revenue when it's structured with a clear path from content to enquiry to booking.",
+                  point: 'Time pressure',
+                  detail: 'You spend more time operating than improving or growing the business.',
                 },
               ].map(({ point, detail }) => (
                 <div
@@ -260,61 +273,61 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
                   <XCircle className="w-5 h-5 text-error shrink-0 mt-0.5" />
                   <div>
                     <p className="font-semibold text-sm">{point}</p>
-                    <p className="text-xs text-base-content/55 mt-0.5 leading-relaxed">{detail}</p>
+                    <p className="text-xs text-base-content/55 mt-0.5">{detail}</p>
                   </div>
                 </div>
               ))}
             </div>
-            <p className="text-center text-base-content/55 mt-8 italic text-sm">
-              Posting without direction doesn&apos;t lead to results.
+            <p className="text-center text-base-content/60 mt-8 italic text-sm">
+              Manual work limits growth and creates bottlenecks.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ── WHAT IT SHOULD LOOK LIKE ─────────────────────────────────────────── */}
+      {/* ── WHAT AUTOMATION SHOULD DO ────────────────────────────────────────── */}
       <section className="bg-base-200 border-y border-base-300 py-20 lg:py-28">
         <div className="container max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-4">
-              <CheckCircle2 className="w-4 h-4" /> The Standard
+              <CheckCircle2 className="w-4 h-4" /> The Right Setup
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold">
-              What Proper Social Media Management Looks Like
+              What a Proper Automation Setup Looks Like
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">
             {[
               {
-                icon: Calendar,
-                title: 'Consistent Presence',
-                desc: 'Regular, scheduled posting maintained week on week — no gaps, no missed weeks. The algorithm rewards consistency, and so do potential guests.',
+                icon: Timer,
+                title: 'Reduce Repetitive Tasks',
+                desc: 'Automate routine actions so your team does less repeating and more progressing.',
               },
               {
-                icon: Palette,
-                title: 'Clear Branding',
-                desc: 'A recognisable visual identity across every post — colour palette, typography, photography style, and tone all aligned to your property and audience.',
+                icon: Zap,
+                title: 'Improve Speed',
+                desc: 'Faster responses and execution at every stage of the guest journey.',
               },
               {
-                icon: Building2,
-                title: 'Property Showcase',
-                desc: "Content that deliberately highlights your property's best features, spaces, and guest experience — turning followers into enquiries.",
+                icon: RefreshCw,
+                title: 'Maintain Consistency',
+                desc: 'Same quality output across every task, every time, without manual effort.',
               },
               {
-                icon: MessageSquare,
-                title: 'Audience Engagement',
-                desc: 'Content that connects with the right people — potential guests, returning guests, and referral sources — not just empty impressions.',
+                icon: Layers,
+                title: 'Support Operations',
+                desc: 'Work alongside your existing systems without disrupting what already works.',
               },
             ].map(({ icon: Icon, title, desc }, i) => (
               <div
                 key={title}
-                className="bg-base-100 rounded-2xl border border-base-300 p-5 relative"
+                className="bg-base-100 rounded-2xl border border-base-300 p-6 relative"
               >
                 <div className="absolute -top-3 -left-3 w-7 h-7 rounded-full bg-primary text-primary-content text-xs font-bold flex items-center justify-center shadow">
                   {i + 1}
                 </div>
-                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-3 mt-1">
-                  <Icon className="w-5 h-5 text-primary" />
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <Icon className="w-6 h-6 text-primary" />
                 </div>
                 <h3 className="font-bold text-sm mb-2">{title}</h3>
                 <p className="text-xs text-base-content/60 leading-relaxed">{desc}</p>
@@ -324,79 +337,75 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
         </div>
       </section>
 
-      {/* ── WHAT WE HANDLE ───────────────────────────────────────────────────── */}
+      {/* ── WHAT WE AUTOMATE ─────────────────────────────────────────────────── */}
       <section className="py-20 lg:py-28">
         <div className="container max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-4">
-              <Layers className="w-4 h-4" /> Our Scope
+              <Settings className="w-4 h-4" /> Our Scope
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold">
-              What Our Social Media Management Covers
-            </h2>
+            <h2 className="text-3xl lg:text-4xl font-bold">What Our Automation Setup Covers</h2>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr_1.5fr] gap-px bg-base-300 rounded-3xl overflow-hidden border border-base-300">
             <div className="bg-base-200 px-5 py-3 text-xs font-bold uppercase tracking-widest text-base-content/40">
               Area
             </div>
             <div className="bg-base-200 px-5 py-3 text-xs font-bold uppercase tracking-widest text-base-content/40">
-              What We Do
+              What We Set Up
             </div>
             <div className="bg-base-200 px-5 py-3 text-xs font-bold uppercase tracking-widest text-base-content/40">
               Outcome
             </div>
             {[
               {
-                area: 'Content Creation',
-                icon: Palette,
+                area: 'Guest Communication',
+                icon: MessageSquare,
                 tasks: [
-                  'Designing branded post graphics and visuals',
-                  'Writing captions and copy aligned to your audience',
-                  'Structuring content themes to cover different aspects of your property',
+                  'Automated replies to common enquiries',
+                  'Scheduled pre-arrival and post-stay messages',
+                  'Consistent tone across all guest touchpoints',
                 ],
-                outcome:
-                  'Professional, on-brand content that showcases your property consistently.',
+                outcome: 'Guests receive timely, professional communication without manual effort.',
               },
               {
-                area: 'Posting & Scheduling',
-                icon: Calendar,
+                area: 'Booking Processes',
+                icon: CalendarDays,
                 tasks: [
-                  'Maintaining a consistent posting schedule across platforms',
-                  'Planning content calendars in advance',
-                  'Managing publish times for maximum reach',
+                  'Automated booking confirmations',
+                  'Reminder sequences before check-in',
+                  'Post-stay follow-up and review requests',
                 ],
-                outcome: 'No gaps, no last-minute scrambles — your content runs like clockwork.',
+                outcome: 'Every booking is handled end-to-end with zero manual steps.',
               },
               {
-                area: 'Brand Development',
-                icon: Palette,
+                area: 'Task Automation',
+                icon: ClipboardList,
                 tasks: [
-                  'Creating or refining your visual identity for social',
-                  'Aligning content style across all posts and platforms',
-                  'Improving the overall presentation and professionalism',
+                  'Auto-assigning tasks to the right team members',
+                  'Tracking progress without chasing updates',
+                  'Reducing manual coordination overhead',
                 ],
-                outcome: 'A recognisable, credible brand that guests remember.',
+                outcome: 'Operational tasks run on schedule without management intervention.',
               },
               {
-                area: 'Platform Management',
-                icon: Smartphone,
+                area: 'Workflow Automation',
+                icon: GitBranch,
                 tasks: [
-                  'Managing your Instagram, Facebook, or TikTok accounts',
-                  'Keeping content organised and accounts active',
-                  'Monitoring performance and adjusting accordingly',
+                  'Building structured, repeatable process flows',
+                  'Removing bottlenecks caused by manual handoffs',
+                  'Improving overall operational rhythm',
                 ],
-                outcome: 'Accounts that stay active, consistent, and growing.',
+                outcome: 'Operations run smoothly through defined, automated workflows.',
               },
               {
-                area: 'Strategy Alignment',
-                icon: Target,
+                area: 'System Integration',
+                icon: LayoutDashboard,
                 tasks: [
-                  'Linking content themes with your booking and revenue goals',
-                  'Supporting direct booking growth through social presence',
-                  'Connecting social activity to broader marketing activity',
+                  'Connecting your tools so they share data',
+                  'Aligning platforms to avoid duplicate work',
+                  'Ensuring smooth end-to-end operation',
                 ],
-                outcome:
-                  'Social media that contributes to your business — not just vanity metrics.',
+                outcome: 'All tools working together as one joined-up system.',
               },
             ].map(({ area, icon: Icon, tasks, outcome }) => (
               <React.Fragment key={area}>
@@ -422,55 +431,54 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
             ))}
           </div>
           <p className="text-center mt-8 text-base-content/60 text-sm">
-            The result: a structured social media presence that actively supports your business.
+            The result: less manual work, more efficient operations.
           </p>
         </div>
       </section>
 
-      {/* ── CONNECTS TO BUSINESS ─────────────────────────────────────────────── */}
+      {/* ── HOW AUTOMATION FITS YOUR SYSTEM ──────────────────────────────────── */}
       <section className="bg-base-200 border-y border-base-300 py-20 lg:py-28">
         <div className="container max-w-7xl mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-10">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-success/10 border border-success/25 text-success text-sm font-medium mb-4">
-                <TrendingUp className="w-4 h-4" /> Business Impact
-              </div>
-              <h2 className="text-3xl lg:text-4xl font-bold">
-                Social Media Supports Direct Bookings
-              </h2>
-              <p className="text-base-content/60 mt-4 leading-relaxed">
-                Social media doesn&apos;t exist in isolation. It works alongside every other part of
-                your business to build the visibility and trust that convert strangers into paying
-                guests.
-              </p>
+          <div className="max-w-3xl mx-auto text-center space-y-6">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-2">
+              <Layers className="w-4 h-4" /> Prerequisites
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <h2 className="text-3xl lg:text-4xl font-bold">Automation Works With Structure</h2>
+            <p className="text-base-content/65 text-lg leading-relaxed">
+              Automation is only effective when your operation already has a foundation to build on.
+              Without it, automation layers complexity on top of chaos.
+            </p>
+            <p className="text-base-content/60 text-sm">Automation is effective only when:</p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2 text-left">
               {[
                 {
-                  icon: Globe,
-                  title: 'Your website',
-                  desc: 'Social drives traffic to your direct booking site, reducing reliance on Airbnb and OTAs.',
+                  icon: GitBranch,
+                  label: 'Workflows are clear',
+                  desc: 'Each process has a defined start, steps, and end point.',
                 },
                 {
-                  icon: Megaphone,
-                  title: 'Your listings',
-                  desc: 'Strong social proof and branding increases trust in your listings before guests even click book.',
+                  icon: ClipboardList,
+                  label: 'Processes are defined',
+                  desc: 'There is a documented way to handle every recurring task.',
                 },
                 {
-                  icon: Palette,
-                  title: 'Your overall brand',
-                  desc: 'Consistent social media is what turns a property into a recognised, trusted hospitality brand.',
+                  icon: Layers,
+                  label: 'Systems are aligned',
+                  desc: 'Your tools communicate with each other and support the same goals.',
                 },
-              ].map(({ icon: Icon, title, desc }) => (
-                <div key={title} className="bg-base-100 rounded-2xl border border-success/15 p-5">
-                  <div className="w-10 h-10 rounded-xl bg-success/10 flex items-center justify-center mb-3">
-                    <Icon className="w-5 h-5 text-success" />
+              ].map(({ icon: Icon, label, desc }) => (
+                <div key={label} className="bg-base-100 rounded-2xl border border-base-300 p-5">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-3">
+                    <Icon className="w-5 h-5 text-primary" />
                   </div>
-                  <p className="font-semibold text-sm">{title}</p>
+                  <p className="font-semibold text-sm">{label}</p>
                   <p className="text-xs text-base-content/55 mt-1 leading-relaxed">{desc}</p>
                 </div>
               ))}
             </div>
+            <p className="text-base-content/55 text-sm italic pt-2">
+              Without this, automation creates confusion.
+            </p>
           </div>
         </div>
       </section>
@@ -483,29 +491,29 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-warning/15 border border-warning/30 text-warning text-sm font-medium mb-4">
                 <AlertTriangle className="w-4 h-4" /> Common Mistakes
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold">Where Social Media Goes Wrong</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold">Where Automation Goes Wrong</h2>
             </div>
             <div className="space-y-3">
               {[
                 {
-                  mistake: 'Posting randomly',
-                  why: "No schedule means no habit and no audience growth. Followers who see one post a month forget you exist by the time they're ready to book.",
+                  mistake: 'Automating without structure',
+                  why: 'Building automation on undefined processes just speeds up the chaos.',
                 },
                 {
-                  mistake: 'Inconsistent visuals',
-                  why: "When every post looks different, there's no brand recognition. Guests need to recognise your content instantly — that only happens with consistency.",
+                  mistake: 'Over-automation',
+                  why: 'Trying to automate everything creates fragile systems that break at the edges.',
                 },
                 {
-                  mistake: 'No clear messaging',
-                  why: "Content that doesn't say anything specific doesn't motivate anyone to do anything. Every post should have a purpose.",
+                  mistake: 'Poor setup',
+                  why: 'Rushed or template-based automation often does not match how your business actually operates.',
                 },
                 {
-                  mistake: 'Focusing only on aesthetics',
-                  why: "Looking good is necessary but not sufficient. Without a strategy connecting content to bookings, beautiful posts don't pay the bills.",
+                  mistake: 'Disconnected tools',
+                  why: 'Automation across tools that do not communicate leads to duplicate work and missed triggers.',
                 },
                 {
-                  mistake: 'No link to business goals',
-                  why: 'Social media managed in isolation from your booking strategy, website, and revenue targets is just a hobby — not a business channel.',
+                  mistake: 'No monitoring',
+                  why: 'Set-and-forget automation fails silently — without oversight, problems accumulate unseen.',
                 },
               ].map(({ mistake, why }) => (
                 <div
@@ -517,13 +525,13 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
                   </div>
                   <div>
                     <p className="font-semibold text-sm">{mistake}</p>
-                    <p className="text-xs text-base-content/55 mt-0.5 leading-relaxed">{why}</p>
+                    <p className="text-xs text-base-content/55 mt-0.5">{why}</p>
                   </div>
                 </div>
               ))}
             </div>
             <p className="text-center text-base-content/55 mt-8 italic text-sm">
-              Social media fails when it lacks structure.
+              Automation fails when it replaces thinking instead of supporting it.
             </p>
           </div>
         </div>
@@ -537,31 +545,28 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-4">
                 <CheckCircle2 className="w-4 h-4" /> Our Method
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold">
-                How We Manage Social Media Properly
-              </h2>
+              <h2 className="text-3xl lg:text-4xl font-bold">How We Set Up Automation Properly</h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 {
-                  step: '1. Structured content plans',
-                  detail:
-                    'We build a monthly content calendar that covers your property, audience, and goals — so every post has a reason to exist.',
+                  step: '1. Define workflows first',
+                  detail: 'We map and document every process before any automation is built.',
                 },
                 {
-                  step: '2. Maintained consistency',
+                  step: '2. Automate only what makes sense',
                   detail:
-                    'We post on schedule, every week, across agreed platforms. No gaps, no exceptions — the algorithm and your audience both depend on it.',
+                    'Not everything should be automated — we identify what genuinely benefits from it.',
                 },
                 {
-                  step: '3. Brand-aligned visuals',
+                  step: '3. Keep systems aligned',
                   detail:
-                    'Every piece of content follows your brand guidelines — or we help you build them. Cohesion across every post creates recognisability.',
+                    'Every automation is built to work with your existing tools and structure.',
                 },
                 {
-                  step: '4. Goal-connected content',
+                  step: '4. Monitor and refine',
                   detail:
-                    'Content themes are mapped to your booking calendar, seasonal demand, and direct booking goals — not just what looks good.',
+                    'We set up oversight so automation stays accurate and improves over time.',
                 },
               ].map(({ step, detail }) => (
                 <div
@@ -571,7 +576,7 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
                   <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                   <div>
                     <p className="font-semibold text-sm">{step}</p>
-                    <p className="text-xs text-base-content/55 mt-0.5 leading-relaxed">{detail}</p>
+                    <p className="text-xs text-base-content/55 mt-0.5">{detail}</p>
                   </div>
                 </div>
               ))}
@@ -587,7 +592,9 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-4">
               <BarChart3 className="w-4 h-4" /> Side by Side
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold">Unmanaged vs Managed Social Media</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold">
+              Manual Operations vs Automated Operations
+            </h2>
           </div>
           <div className="hidden md:block overflow-hidden rounded-3xl border border-base-300 max-w-3xl mx-auto">
             <div className="grid grid-cols-3">
@@ -595,17 +602,17 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
                 Area
               </div>
               <div className="bg-error/8 px-5 py-3 text-xs font-bold uppercase tracking-widest text-error/70 text-center">
-                Unmanaged
+                Manual
               </div>
               <div className="bg-success/8 px-5 py-3 text-xs font-bold uppercase tracking-widest text-success/70 text-center">
-                Managed
+                Automated
               </div>
             </div>
             {[
-              ['Posting cadence', 'Inconsistent', 'Structured'],
-              ['Audience growth', 'Low engagement', 'Improved presence'],
-              ['Content direction', 'No direction', 'Clear strategy'],
-              ['Brand perception', 'Weak branding', 'Strong identity'],
+              ['Speed', 'Time-consuming', 'Efficient'],
+              ['Work pattern', 'Repetitive', 'Streamlined'],
+              ['Quality', 'Error-prone', 'Consistent'],
+              ['Growth', 'Hard to scale', 'Scalable'],
             ].map(([area, bad, good]) => (
               <div key={area} className="grid grid-cols-3 border-t border-base-300">
                 <div className="bg-base-100 px-5 py-4 text-sm font-medium">{area}</div>
@@ -616,13 +623,12 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
               </div>
             ))}
           </div>
-          {/* Mobile */}
           <div className="md:hidden space-y-3 max-w-sm mx-auto">
             {[
-              ['Posting cadence', 'Inconsistent', 'Structured'],
-              ['Audience growth', 'Low engagement', 'Improved presence'],
-              ['Content direction', 'No direction', 'Clear strategy'],
-              ['Brand perception', 'Weak branding', 'Strong identity'],
+              ['Speed', 'Time-consuming', 'Efficient'],
+              ['Work pattern', 'Repetitive', 'Streamlined'],
+              ['Quality', 'Error-prone', 'Consistent'],
+              ['Growth', 'Hard to scale', 'Scalable'],
             ].map(([area, bad, good]) => (
               <div key={area} className="rounded-2xl border border-base-300 overflow-hidden">
                 <div className="bg-base-200 px-4 py-2 text-xs font-bold uppercase tracking-wider text-base-content/50">
@@ -645,31 +651,31 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
         <div className="container max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-4">
-              <Target className="w-4 h-4" /> Ideal Fit
+              <Users className="w-4 h-4" /> Ideal Fit
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold">Who This Is Built For</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
             {[
               {
-                icon: TrendingUp,
-                who: 'Hosts wanting direct bookings',
-                desc: 'If you want to reduce Airbnb dependency and build a channel you control, social media is a core part of that strategy.',
+                icon: Timer,
+                who: 'Hosts with repetitive tasks',
+                desc: 'Spending hours on the same manual actions every day.',
               },
               {
                 icon: Building2,
                 who: 'SA businesses',
-                desc: 'Serviced accommodation operators who want a professional, consistent presence that reflects the quality of their properties.',
+                desc: 'Serviced accommodation operators who need consistent, scalable processes.',
               },
               {
-                icon: Palette,
-                who: 'Operators building a brand',
-                desc: 'Those who understand that a recognisable brand compounds over time — and want to start building it now.',
+                icon: Target,
+                who: 'Scaling portfolios',
+                desc: 'Operators adding properties and needing automation that grows with them.',
               },
               {
-                icon: Calendar,
-                who: 'Hosts needing consistency',
-                desc: "Hosts who know they should be active on social media but don't have the time, skills, or systems to maintain it.",
+                icon: TrendingUp,
+                who: 'Efficiency-focused hosts',
+                desc: 'Hosts who want to operate smarter without sacrificing quality.',
               },
             ].map(({ icon: Icon, who, desc }) => (
               <div
@@ -699,25 +705,25 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
               {
-                initials: 'JB',
-                name: 'James B.',
-                role: 'STR Host · Manchester',
+                initials: 'LT',
+                name: 'Laura T.',
+                role: 'SA Operator · Manchester',
                 quote:
-                  'I had no idea how much difference consistent Instagram content would make. Within three months of having Assistophere manage it, I had my first direct booking enquiry come in through DMs. That never happened before.',
+                  'The automation setup transformed how we handle bookings. We went from manual confirmations and reminders to everything running automatically overnight.',
               },
               {
-                initials: 'NK',
-                name: 'Natalie K.',
-                role: 'SA Operator · London',
+                initials: 'DK',
+                name: 'Daniel K.',
+                role: 'Multi-property Host · London',
                 quote:
-                  'My accounts looked amateur before. Now they look professional and consistent. The branding work they did has completely changed how my business comes across online. Guests comment on it.',
+                  'I was spending hours each week on the same messages. Now the whole communication flow is automated and consistent across every property.',
               },
               {
-                initials: 'DR',
-                name: 'David R.',
-                role: 'Property Investor · Leeds',
+                initials: 'PS',
+                name: 'Priya S.',
+                role: 'STR Business · Birmingham',
                 quote:
-                  'I tried to manage social media myself but kept falling behind. Handing it over meant it actually gets done, every week, without me thinking about it. The consistency alone was worth it.',
+                  'What surprised me was how structured the approach was. They built the workflow first before automating anything, which is why it actually works.',
               },
             ].map(({ initials, name, role, quote }) => (
               <div
@@ -758,37 +764,22 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
               <h2 className="text-3xl lg:text-4xl font-bold">Frequently Asked Questions</h2>
             </div>
             <div className="space-y-3">
-              {[
-                {
-                  q: 'Which platforms do you manage?',
-                  a: "We primarily manage Instagram and Facebook for STR businesses, as these are the highest-value platforms for property showcase and direct booking growth. TikTok management is available depending on your business type and goals. We'll recommend the right platforms based on your audience during the discovery call.",
-                },
-                {
-                  q: 'Do you create the content?',
-                  a: "Yes — we handle content creation end to end, including post design, caption writing, hashtag strategy, and scheduling. For property photography, we'll advise on what we need and how to supply it, or we can recommend a local photographer if required.",
-                },
-                {
-                  q: 'Can social media generate bookings?',
-                  a: 'Yes, though it works differently from paid advertising. Social media builds brand awareness, trust, and an audience over time — which then converts through DM enquiries, website traffic, and direct booking links. Most clients begin to see direct enquiries within two to four months of consistent, structured management.',
-                },
-                {
-                  q: 'How often do you post?',
-                  a: 'Posting frequency is agreed as part of your package. Standard management includes three to five posts per week, with stories and engagement activity on top. We build a content calendar monthly so you can review and approve the plan before anything goes live.',
-                },
-              ].map(({ q, a }) => (
-                <details
-                  key={q}
-                  className="group rounded-2xl border border-base-300 bg-base-100 overflow-hidden"
-                >
-                  <summary className="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer list-none font-semibold text-sm select-none">
-                    {q}
-                    <ChevronRight className="w-4 h-4 text-base-content/40 shrink-0 group-open:rotate-90 transition-transform" />
-                  </summary>
-                  <div className="px-5 pb-4 text-sm text-base-content/65 leading-relaxed border-t border-base-300 pt-3">
-                    {a}
-                  </div>
-                </details>
-              ))}
+              <FaqItem
+                q="What can be automated?"
+                a="Guest communication (replies, reminders, follow-ups), booking confirmations, task assignments, review requests, and workflow triggers between tools. We assess your current operation and identify exactly what makes sense to automate based on your setup."
+              />
+              <FaqItem
+                q="Will this replace manual work completely?"
+                a="No — and it should not. Automation handles repetitive, predictable tasks. Decisions, exceptions, and relationship management still benefit from human involvement. Our goal is to remove unnecessary manual work, not all manual work."
+              />
+              <FaqItem
+                q="Can this work with my current setup?"
+                a="In most cases, yes. We work with the tools and platforms you are already using wherever possible. If there are gaps or incompatibilities, we will flag them early and suggest adjustments before building anything."
+              />
+              <FaqItem
+                q="Is automation difficult to manage?"
+                a="Not when it is set up correctly. We build automation with monitoring in mind, so you can see what is running, catch any issues early, and make adjustments without technical knowledge. We also provide guidance on how to maintain it going forward."
+              />
             </div>
           </div>
         </div>
@@ -804,29 +795,28 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
             </div>
             <div className="max-w-2xl mx-auto space-y-6">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/15 border border-primary/30 text-primary text-sm font-semibold">
-                <Instagram className="w-4 h-4" /> Social Media Management
+                <Zap className="w-4 h-4" /> Start Automating Properly
               </div>
               <h2 className="text-3xl lg:text-4xl font-extrabold">
-                Ready to Build a Strong{' '}
+                Ready to Reduce Manual Work in Your{' '}
                 <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary">
-                  Social Media Presence?
+                  STR Business?
                 </span>
               </h2>
               <p className="text-base-content/65 text-lg leading-relaxed">
-                Let&apos;s create a structured approach that supports your growth. We don&apos;t
-                just manage social media — we structure it to support your business.
+                Let&apos;s build automation that makes your operations faster and more efficient. We
+                don&apos;t just automate tasks — we automate your workflow properly.
               </p>
               <div className="flex flex-wrap justify-center gap-4 pt-2">
-                <button className="pulse-cta-smm btn btn-primary btn-lg rounded-full px-10 gap-2 shadow-lg">
+                <button className="pulse-cta-stra btn btn-primary btn-lg rounded-full px-10 gap-2 shadow-lg">
                   <Phone className="w-4 h-4" /> Book a Discovery Call
                 </button>
                 <button className="btn btn-outline btn-lg rounded-full px-8 gap-2">
-                  <ArrowRight className="w-4 h-4" /> See How It Works
+                  Learn More <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
               <p className="text-xs text-base-content/40 pt-2">
-                Airbnb Social Media Management UK · STR Social Media Marketing · Serviced
-                Accommodation Social Media · Direct Booking Strategy
+                Airbnb Automation Systems UK · STR Automation Setup · Workflow Automation
               </p>
             </div>
           </div>

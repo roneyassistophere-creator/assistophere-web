@@ -66,10 +66,28 @@ export const Footer: GlobalConfig = {
                   appearances: false,
                 }),
               ],
+              admin: {
+                initCollapsed: true,
+                components: {
+                  RowLabel: '@/Footer/RowLabel#SubLinkRowLabel',
+                },
+              },
             },
           ],
+          admin: {
+            initCollapsed: true,
+            components: {
+              RowLabel: '@/Footer/RowLabel#RowLabel',
+            },
+          },
         },
       ],
+      admin: {
+        initCollapsed: true,
+        components: {
+          RowLabel: '@/Footer/RowLabel#ColumnRowLabel',
+        },
+      },
     },
   ],
   hooks: {

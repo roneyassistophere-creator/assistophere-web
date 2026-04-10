@@ -5,9 +5,13 @@ import { buildConfig, PayloadRequest } from 'payload'
 import { fileURLToPath } from 'url'
 
 import { Categories } from './collections/Categories'
+import { CaseStudies } from './collections/CaseStudies'
+import { ClientReviews } from './collections/ClientReviews'
 import { Media } from './collections/Media'
+import { OurClients } from './collections/OurClients'
 import { Pages } from './collections/Pages'
 import { Posts } from './collections/Posts'
+import { TeamMembers } from './collections/TeamMembers'
 import { Users } from './collections/Users'
 import { Footer } from './Footer/config'
 import { Header } from './Header/config'
@@ -72,8 +76,29 @@ export default buildConfig({
   editor: defaultLexical,
   db: mongooseAdapter({
     url: process.env.DATABASE_URL || '',
+    connectOptions: {
+      // Keep the connection alive — prevents MongoExpiredSessionError
+      // when Next.js replays unstable_cache functions long after the
+      // original connection was established.
+      serverSelectionTimeoutMS: 30000,
+      socketTimeoutMS: 45000,
+      connectTimeoutMS: 30000,
+      heartbeatFrequencyMS: 10000,
+      maxPoolSize: 10,
+      minPoolSize: 2,
+    },
   }),
-  collections: [Pages, Posts, Media, Categories, Users],
+  collections: [
+    Pages,
+    Posts,
+    Media,
+    Categories,
+    Users,
+    CaseStudies,
+    ClientReviews,
+    TeamMembers,
+    OurClients,
+  ],
   cors: [getServerSideURL()].filter(Boolean),
   globals: [Header, Footer, SiteSettings],
   plugins,
