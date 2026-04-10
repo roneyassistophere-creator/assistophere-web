@@ -47,8 +47,8 @@ export const SocialMediaManagementAndStrategyView: React.FC<{ page: Page }> = ()
       {/* ── HERO ─────────────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden pt-16 pb-16 lg:pt-20 lg:pb-20">
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-          <div className="absolute -top-32 -left-32 w-[520px] h-[520px] bg-linear-to-br from-primary/13 via-primary/4 to-transparent rounded-full blur-[140px]" />
-          <div className="absolute top-1/2 -right-40 w-[420px] h-[420px] bg-linear-to-bl from-secondary/10 via-secondary/3 to-transparent rounded-full blur-[120px]" />
+          <div className="absolute -top-32 -left-32 w-130 h-130 bg-linear-to-br from-primary/13 via-primary/4 to-transparent rounded-full blur-[140px]" />
+          <div className="absolute top-1/2 -right-40 w-105 h-105 bg-linear-to-bl from-secondary/10 via-secondary/3 to-transparent rounded-full blur-[120px]" />
         </div>
         <div className="container max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">

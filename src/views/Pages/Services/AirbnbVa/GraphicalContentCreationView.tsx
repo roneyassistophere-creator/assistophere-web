@@ -86,27 +86,27 @@ const contentItems = [
 
 const problemCards = [
   {
-    icon: <XCircle className="w-5 h-5 text-error flex-shrink-0 mt-0.5" />,
+    icon: <XCircle className="w-5 h-5 text-error shrink-0 mt-0.5" />,
     title: 'No Visual Brand Identity',
     desc: 'Listings without a consistent visual identity look like everyone else — nothing stands out, nothing feels intentional.',
   },
   {
-    icon: <XCircle className="w-5 h-5 text-error flex-shrink-0 mt-0.5" />,
+    icon: <XCircle className="w-5 h-5 text-error shrink-0 mt-0.5" />,
     title: 'Inconsistent Visuals',
     desc: 'Mixing different styles and formats undermines credibility and makes the listing look unpolished and cobbled together.',
   },
   {
-    icon: <XCircle className="w-5 h-5 text-error flex-shrink-0 mt-0.5" />,
+    icon: <XCircle className="w-5 h-5 text-error shrink-0 mt-0.5" />,
     title: 'Unclear Presentation',
     desc: "Guests can't quickly understand the key features and benefits of the property — they scroll past instead of clicking in.",
   },
   {
-    icon: <XCircle className="w-5 h-5 text-error flex-shrink-0 mt-0.5" />,
+    icon: <XCircle className="w-5 h-5 text-error shrink-0 mt-0.5" />,
     title: 'Basic Image Usage',
     desc: 'Plain photos without structure or context fail to highlight what makes the listing worth booking over the competition.',
   },
   {
-    icon: <AlertTriangle className="w-5 h-5 text-warning flex-shrink-0 mt-0.5" />,
+    icon: <AlertTriangle className="w-5 h-5 text-warning shrink-0 mt-0.5" />,
     title: 'No Visual Hierarchy',
     desc: 'Without structure, guests struggle to know where to look, what matters most, and what makes your property different.',
   },
@@ -200,8 +200,8 @@ export const GraphicalContentCreationView: React.FC<{ page: Page }> = ({ page })
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden pt-16 pb-16 lg:pt-20 lg:pb-20">
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-          <div className="absolute -top-32 -left-32 w-[520px] h-[520px] bg-linear-to-br from-primary/13 via-primary/4 to-transparent rounded-full blur-[140px]" />
-          <div className="absolute top-1/2 -right-40 w-[420px] h-[420px] bg-linear-to-bl from-secondary/10 via-secondary/3 to-transparent rounded-full blur-[120px]" />
+          <div className="absolute -top-32 -left-32 w-130 h-130 bg-linear-to-br from-primary/13 via-primary/4 to-transparent rounded-full blur-[140px]" />
+          <div className="absolute top-1/2 -right-40 w-105 h-105 bg-linear-to-bl from-secondary/10 via-secondary/3 to-transparent rounded-full blur-[120px]" />
         </div>
 
         <div className="container max-w-7xl mx-auto px-4">
@@ -227,9 +227,9 @@ export const GraphicalContentCreationView: React.FC<{ page: Page }> = ({ page })
               </p>
 
               <div className="gcc-fade-3 p-4 rounded-xl border border-primary/20 bg-primary/6 text-sm italic text-base-content/60 mb-8 max-w-lg">
-                "Graphical content creation gives short term rental operators the visual assets they
+                &ldquo;Graphical content creation gives short term rental operators the visual assets they
                 need to stand out in search results and build a recognisable, professional listing
-                presence."
+                presence.&rdquo;
               </div>
 
               <div className="gcc-fade-4 flex flex-wrap gap-3 mb-8">
@@ -286,7 +286,7 @@ export const GraphicalContentCreationView: React.FC<{ page: Page }> = ({ page })
                       className="flex items-center justify-between px-4 py-3 hover:bg-base-200/40 transition-colors"
                     >
                       <div className="flex items-center gap-2.5">
-                        <div className="w-7 h-7 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
+                        <div className="w-7 h-7 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
                           <ImageIcon className="w-3.5 h-3.5 text-primary" />
                         </div>
                         <span className="text-sm text-base-content/80">{item.label}</span>
@@ -323,7 +323,7 @@ export const GraphicalContentCreationView: React.FC<{ page: Page }> = ({ page })
           <p className="text-lg text-base-content/65 leading-relaxed max-w-2xl mx-auto mb-8">
             In a competitive STR market, guests scroll fast. The listings that get clicks have
             strong visual identities, clear presentation, and professional-looking assets.
-            Everything else gets skipped. Good graphical content isn't a luxury — it's a competitive
+            Everything else gets skipped. Good graphical content isn&apos;t a luxury — it&apos;s a competitive
             necessity.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-left">
@@ -432,7 +432,7 @@ export const GraphicalContentCreationView: React.FC<{ page: Page }> = ({ page })
                 key={i}
                 className="flex gap-4 p-6 rounded-2xl bg-base-100 border border-base-300 hover:border-success/30 transition-colors"
               >
-                <div className="w-10 h-10 rounded-xl bg-success/10 border border-success/20 flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-success/10 border border-success/20 flex items-center justify-center shrink-0">
                   {item.icon}
                 </div>
                 <div>
@@ -466,7 +466,7 @@ export const GraphicalContentCreationView: React.FC<{ page: Page }> = ({ page })
           <div className="hidden md:block rounded-2xl border border-base-300 overflow-hidden">
             <div className="grid grid-cols-[1fr_2fr_1.5fr] bg-base-200 border-b border-base-300 px-6 py-3 text-xs font-semibold uppercase tracking-widest text-base-content/50">
               <span>Content Type</span>
-              <span>What's Included</span>
+              <span>What&apos;s Included</span>
               <span>The Outcome</span>
             </div>
             {whatWeCreate.map((row, i) => (
@@ -475,7 +475,7 @@ export const GraphicalContentCreationView: React.FC<{ page: Page }> = ({ page })
                 className={`grid grid-cols-[1fr_2fr_1.5fr] gap-4 px-6 py-5 items-start border-b border-base-300 last:border-0 hover:bg-base-200/50 transition-colors ${i % 2 === 0 ? 'bg-base-100' : 'bg-base-50'}`}
               >
                 <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
                     {row.icon}
                   </div>
                   <span className="font-semibold text-sm text-base-content">{row.title}</span>
@@ -483,13 +483,13 @@ export const GraphicalContentCreationView: React.FC<{ page: Page }> = ({ page })
                 <ul className="space-y-1">
                   {row.items.map((pt, j) => (
                     <li key={j} className="flex items-start gap-2 text-sm text-base-content/65">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-primary shrink-0 mt-0.5" />
                       {pt}
                     </li>
                   ))}
                 </ul>
                 <div className="flex items-start gap-2">
-                  <TrendingUp className="w-3.5 h-3.5 text-success flex-shrink-0 mt-0.5" />
+                  <TrendingUp className="w-3.5 h-3.5 text-success shrink-0 mt-0.5" />
                   <span className="text-sm text-base-content/65 italic">{row.outcome}</span>
                 </div>
               </div>
@@ -501,7 +501,7 @@ export const GraphicalContentCreationView: React.FC<{ page: Page }> = ({ page })
             {whatWeCreate.map((row, i) => (
               <div key={i} className="p-5 rounded-2xl bg-base-100 border border-base-300">
                 <div className="flex items-center gap-2.5 mb-3">
-                  <div className="w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
                     {row.icon}
                   </div>
                   <span className="font-semibold text-base-content">{row.title}</span>
@@ -509,13 +509,13 @@ export const GraphicalContentCreationView: React.FC<{ page: Page }> = ({ page })
                 <ul className="space-y-1.5 mb-3">
                   {row.items.map((pt, j) => (
                     <li key={j} className="flex items-start gap-2 text-sm text-base-content/65">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-primary shrink-0 mt-0.5" />
                       {pt}
                     </li>
                   ))}
                 </ul>
                 <div className="flex items-start gap-2 p-3 rounded-xl bg-success/8 border border-success/20">
-                  <TrendingUp className="w-3.5 h-3.5 text-success flex-shrink-0 mt-0.5" />
+                  <TrendingUp className="w-3.5 h-3.5 text-success shrink-0 mt-0.5" />
                   <span className="text-sm text-success/80 italic">{row.outcome}</span>
                 </div>
               </div>
@@ -566,7 +566,7 @@ export const GraphicalContentCreationView: React.FC<{ page: Page }> = ({ page })
                 key={i}
                 className="flex gap-3 p-5 rounded-2xl bg-base-100 border border-base-300 hover:border-warning/30 transition-colors"
               >
-                <AlertTriangle className="w-5 h-5 text-warning flex-shrink-0 mt-0.5" />
+                <AlertTriangle className="w-5 h-5 text-warning shrink-0 mt-0.5" />
                 <div>
                   <h3 className="font-semibold text-base-content mb-1">{item.title}</h3>
                   <p className="text-sm text-base-content/60">{item.body}</p>
@@ -599,7 +599,7 @@ export const GraphicalContentCreationView: React.FC<{ page: Page }> = ({ page })
                 key={i}
                 className="flex gap-4 p-6 rounded-2xl bg-base-100 border border-base-300 hover:border-primary/30 transition-colors"
               >
-                <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
                   {item.icon}
                 </div>
                 <div>
@@ -649,11 +649,11 @@ export const GraphicalContentCreationView: React.FC<{ page: Page }> = ({ page })
                   {row.area}
                 </span>
                 <div className="flex items-start gap-2 text-sm text-base-content/60">
-                  <XCircle className="w-3.5 h-3.5 text-error flex-shrink-0 mt-0.5" />
+                  <XCircle className="w-3.5 h-3.5 text-error shrink-0 mt-0.5" />
                   {row.before}
                 </div>
                 <div className="flex items-start gap-2 text-sm text-base-content/65">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-success flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-3.5 h-3.5 text-success shrink-0 mt-0.5" />
                   {row.after}
                 </div>
               </div>
@@ -669,11 +669,11 @@ export const GraphicalContentCreationView: React.FC<{ page: Page }> = ({ page })
                 </div>
                 <div className="p-4 space-y-3">
                   <div className="flex items-start gap-2 text-sm text-base-content/60 p-3 rounded-xl bg-error/6 border border-error/15">
-                    <XCircle className="w-4 h-4 text-error flex-shrink-0 mt-0.5" />
+                    <XCircle className="w-4 h-4 text-error shrink-0 mt-0.5" />
                     {row.before}
                   </div>
                   <div className="flex items-start gap-2 text-sm text-base-content/65 p-3 rounded-xl bg-success/6 border border-success/15">
-                    <CheckCircle2 className="w-4 h-4 text-success flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-success shrink-0 mt-0.5" />
                     {row.after}
                   </div>
                 </div>
@@ -705,7 +705,7 @@ export const GraphicalContentCreationView: React.FC<{ page: Page }> = ({ page })
                 key={i}
                 className="flex items-center gap-3 p-4 rounded-2xl bg-base-100 border border-base-300 hover:border-primary/30 transition-colors"
               >
-                <div className="w-9 h-9 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
+                <div className="w-9 h-9 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
                   {item.icon}
                 </div>
                 <span className="text-sm text-base-content/80">{item.label}</span>
@@ -758,7 +758,7 @@ export const GraphicalContentCreationView: React.FC<{ page: Page }> = ({ page })
                   ))}
                 </div>
                 <p className="text-sm text-base-content/70 italic leading-relaxed flex-1">
-                  "{t.quote}"
+                  &ldquo;{t.quote}&rdquo;
                 </p>
                 <div>
                   <p className="text-sm font-semibold text-base-content">{t.name}</p>

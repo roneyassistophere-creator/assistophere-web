@@ -1,8 +1,23 @@
 import React from 'react'
 import {
-  Calculator, TrendingUp, Star, Phone, ArrowRight, CheckCircle2, XCircle,
-  MapPin, BarChart3, DollarSign, Settings, Layers, AlertTriangle, Target,
-  MessageSquare, Building2, UserPlus, ChevronRight,
+  Calculator,
+  TrendingUp,
+  Star,
+  Phone,
+  ArrowRight,
+  CheckCircle2,
+  XCircle,
+  MapPin,
+  BarChart3,
+  DollarSign,
+  Settings,
+  Layers,
+  AlertTriangle,
+  Target,
+  MessageSquare,
+  Building2,
+  UserPlus,
+  ChevronRight,
 } from 'lucide-react'
 import { RoiCalculatorWidget } from './RoiCalculatorWidget'
 import type { Page } from '@/payload-types'
@@ -30,8 +45,8 @@ export const RoiCalculatorUkView: React.FC<{ page: Page }> = () => {
       {/* ── HERO ─────────────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden pt-16 pb-16 lg:pt-20 lg:pb-20">
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-          <div className="absolute -top-32 -left-32 w-[520px] h-[520px] bg-linear-to-br from-primary/13 via-primary/4 to-transparent rounded-full blur-[140px]" />
-          <div className="absolute top-1/2 -right-40 w-[420px] h-[420px] bg-linear-to-bl from-secondary/10 via-secondary/3 to-transparent rounded-full blur-[120px]" />
+          <div className="absolute -top-32 -left-32 w-130 h-130 bg-linear-to-br from-primary/13 via-primary/4 to-transparent rounded-full blur-[140px]" />
+          <div className="absolute top-1/2 -right-40 w-105 h-105 bg-linear-to-bl from-secondary/10 via-secondary/3 to-transparent rounded-full blur-[120px]" />
         </div>
         <div className="container max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -55,7 +70,10 @@ export const RoiCalculatorUkView: React.FC<{ page: Page }> = () => {
                 occupancy rates, nightly pricing, and operating costs.
               </div>
               <div className="roi-fade-5 flex flex-wrap gap-3 pt-1">
-                <a href="#calculator" className="pulse-cta-roi btn btn-primary btn-lg rounded-full px-8 gap-2">
+                <a
+                  href="#calculator"
+                  className="pulse-cta-roi btn btn-primary btn-lg rounded-full px-8 gap-2"
+                >
                   <Calculator className="w-4 h-4" /> Start Calculating
                 </a>
                 <button className="btn btn-outline btn-lg rounded-full px-8 gap-2">
@@ -64,15 +82,24 @@ export const RoiCalculatorUkView: React.FC<{ page: Page }> = () => {
               </div>
               <div className="roi-fade-5 flex items-center gap-3 pt-2">
                 <div className="flex -space-x-2">
-                  {['bg-primary','bg-secondary','bg-accent','bg-neutral'].map((c, i) => (
-                    <div key={i} className={`w-8 h-8 rounded-full border-2 border-base-100 ${c} flex items-center justify-center text-xs font-bold text-white`}>
+                  {['bg-primary', 'bg-secondary', 'bg-accent', 'bg-neutral'].map((c, i) => (
+                    <div
+                      key={i}
+                      className={`w-8 h-8 rounded-full border-2 border-base-100 ${c} flex items-center justify-center text-xs font-bold text-white`}
+                    >
                       {String.fromCharCode(65 + i)}
                     </div>
                   ))}
                 </div>
                 <div>
-                  <div className="flex gap-0.5">{[...Array(5)].map((_, i) => <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />)}</div>
-                  <p className="text-xs text-base-content/55 mt-0.5">Used by UK STR investors and hosts</p>
+                  <div className="flex gap-0.5">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                    ))}
+                  </div>
+                  <p className="text-xs text-base-content/55 mt-0.5">
+                    Used by UK STR investors and hosts
+                  </p>
                 </div>
               </div>
             </div>
@@ -87,22 +114,43 @@ export const RoiCalculatorUkView: React.FC<{ page: Page }> = () => {
                   <span className="ml-2 text-xs text-base-content/40 font-mono">roi.formula</span>
                 </div>
                 {[
-                  { label: 'Monthly Revenue', formula: 'Nightly Rate × Booked Nights', example: '£120 × 21 = £2,520' },
-                  { label: 'Monthly Profit', formula: 'Revenue − Monthly Costs', example: '£2,520 − £800 = £1,720' },
-                  { label: 'Annual ROI', formula: 'Annual Profit ÷ Investment × 100', example: '£20,640 ÷ £15,000 = 137.6%' },
+                  {
+                    label: 'Monthly Revenue',
+                    formula: 'Nightly Rate × Booked Nights',
+                    example: '£120 × 21 = £2,520',
+                  },
+                  {
+                    label: 'Monthly Profit',
+                    formula: 'Revenue − Monthly Costs',
+                    example: '£2,520 − £800 = £1,720',
+                  },
+                  {
+                    label: 'Annual ROI',
+                    formula: 'Annual Profit ÷ Investment × 100',
+                    example: '£20,640 ÷ £15,000 = 137.6%',
+                  },
                 ].map(({ label, formula, example }, i) => (
-                  <div key={label} className="bg-base-100 rounded-2xl border border-base-300 px-5 py-4">
+                  <div
+                    key={label}
+                    className="bg-base-100 rounded-2xl border border-base-300 px-5 py-4"
+                  >
                     <div className="flex items-start justify-between gap-4">
                       <div>
-                        <p className="text-[10px] font-bold uppercase tracking-widest text-base-content/35 mb-1">{label}</p>
+                        <p className="text-[10px] font-bold uppercase tracking-widest text-base-content/35 mb-1">
+                          {label}
+                        </p>
                         <p className="text-sm font-semibold text-base-content/70">{formula}</p>
                         <p className="text-xs text-primary font-bold mt-1">{example}</p>
                       </div>
-                      <div className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center shrink-0 text-xs font-bold text-primary">{i + 1}</div>
+                      <div className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center shrink-0 text-xs font-bold text-primary">
+                        {i + 1}
+                      </div>
                     </div>
                   </div>
                 ))}
-                <p className="text-center text-xs text-base-content/35 pt-1">Use the calculator below for your own numbers</p>
+                <p className="text-center text-xs text-base-content/35 pt-1">
+                  Use the calculator below for your own numbers
+                </p>
               </div>
             </div>
           </div>
@@ -116,18 +164,35 @@ export const RoiCalculatorUkView: React.FC<{ page: Page }> = () => {
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-2">
               <TrendingUp className="w-4 h-4" /> Why Numbers Matter
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold">Understand Your Numbers Before You Scale</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold">
+              Understand Your Numbers Before You Scale
+            </h2>
             <p className="text-base-content/65 text-lg leading-relaxed">
-              Before investing in or scaling a property, you need clarity on what it will
-              actually return. Guessing leads to poor decisions. Numbers give you control.
+              Before investing in or scaling a property, you need clarity on what it will actually
+              return. Guessing leads to poor decisions. Numbers give you control.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
               {[
-                { icon: BarChart3, label: 'Expected revenue', desc: 'What the property can realistically earn based on your market and pricing.' },
-                { icon: TrendingUp, label: 'Occupancy levels', desc: 'How many nights you can realistically book in your location and season.' },
-                { icon: Calculator, label: 'Operational costs', desc: 'The full picture of what it actually costs to run the property month to month.' },
+                {
+                  icon: BarChart3,
+                  label: 'Expected revenue',
+                  desc: 'What the property can realistically earn based on your market and pricing.',
+                },
+                {
+                  icon: TrendingUp,
+                  label: 'Occupancy levels',
+                  desc: 'How many nights you can realistically book in your location and season.',
+                },
+                {
+                  icon: Calculator,
+                  label: 'Operational costs',
+                  desc: 'The full picture of what it actually costs to run the property month to month.',
+                },
               ].map(({ icon: Icon, label, desc }) => (
-                <div key={label} className="bg-base-100 rounded-2xl border border-primary/15 p-5 text-left">
+                <div
+                  key={label}
+                  className="bg-base-100 rounded-2xl border border-primary/15 p-5 text-left"
+                >
                   <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-3">
                     <Icon className="w-5 h-5 text-primary" />
                   </div>
@@ -148,15 +213,35 @@ export const RoiCalculatorUkView: React.FC<{ page: Page }> = () => {
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-4">
                 <Calculator className="w-4 h-4" /> The Maths
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold">How Short Term Rental ROI Is Calculated</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold">
+                How Short Term Rental ROI Is Calculated
+              </h2>
             </div>
             <div className="space-y-3">
               {[
-                { step: 'Step 1', formula: 'Nightly Rate × Occupancy = Monthly Revenue', detail: 'Multiply your average nightly rate by the number of nights booked in a month to get your gross revenue figure.' },
-                { step: 'Step 2', formula: 'Revenue – Expenses = Profit', detail: 'Subtract your monthly costs (platform fees, cleaning, maintenance, mortgage, etc.) to calculate your actual profit.' },
-                { step: 'Step 3', formula: 'Profit ÷ Investment = ROI', detail: 'Divide annual profit by your total investment to find your return on investment as a percentage.' },
+                {
+                  step: 'Step 1',
+                  formula: 'Nightly Rate × Occupancy = Monthly Revenue',
+                  detail:
+                    'Multiply your average nightly rate by the number of nights booked in a month to get your gross revenue figure.',
+                },
+                {
+                  step: 'Step 2',
+                  formula: 'Revenue – Expenses = Profit',
+                  detail:
+                    'Subtract your monthly costs (platform fees, cleaning, maintenance, mortgage, etc.) to calculate your actual profit.',
+                },
+                {
+                  step: 'Step 3',
+                  formula: 'Profit ÷ Investment = ROI',
+                  detail:
+                    'Divide annual profit by your total investment to find your return on investment as a percentage.',
+                },
               ].map(({ step, formula, detail }) => (
-                <div key={step} className="flex gap-5 p-5 rounded-2xl border border-primary/15 bg-primary/4">
+                <div
+                  key={step}
+                  className="flex gap-5 p-5 rounded-2xl border border-primary/15 bg-primary/4"
+                >
                   <div className="w-8 h-8 rounded-full bg-primary text-primary-content flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
                     {step.split(' ')[1]}
                   </div>
@@ -185,12 +270,36 @@ export const RoiCalculatorUkView: React.FC<{ page: Page }> = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
             {[
-              { icon: MapPin, title: 'Location & Demand', desc: 'Your market determines the ceiling on occupancy and pricing. Strong demand markets produce meaningfully higher returns.' },
-              { icon: BarChart3, title: 'Pricing Strategy', desc: 'Dynamic pricing calibrated to local demand and seasonality can increase revenue by 20–40% vs a flat nightly rate.' },
-              { icon: TrendingUp, title: 'Occupancy Rate', desc: 'The difference between 60% and 75% occupancy at the same rate can be hundreds of pounds per month.' },
-              { icon: Settings, title: 'Operational Efficiency', desc: 'Inefficient operations eat into margin. Reducing cost per turnover and maintenance spend improves profit directly.' },
-              { icon: DollarSign, title: 'Platform Fees', desc: "Airbnb's service fees, OTA commissions, and payment processing costs all reduce net revenue — factor these in." },
-              { icon: Building2, title: 'Property Costs', desc: 'Mortgage, insurance, utilities, and capital expenditure must be accounted for to calculate true profitability.' },
+              {
+                icon: MapPin,
+                title: 'Location & Demand',
+                desc: 'Your market determines the ceiling on occupancy and pricing. Strong demand markets produce meaningfully higher returns.',
+              },
+              {
+                icon: BarChart3,
+                title: 'Pricing Strategy',
+                desc: 'Dynamic pricing calibrated to local demand and seasonality can increase revenue by 20–40% vs a flat nightly rate.',
+              },
+              {
+                icon: TrendingUp,
+                title: 'Occupancy Rate',
+                desc: 'The difference between 60% and 75% occupancy at the same rate can be hundreds of pounds per month.',
+              },
+              {
+                icon: Settings,
+                title: 'Operational Efficiency',
+                desc: 'Inefficient operations eat into margin. Reducing cost per turnover and maintenance spend improves profit directly.',
+              },
+              {
+                icon: DollarSign,
+                title: 'Platform Fees',
+                desc: "Airbnb's service fees, OTA commissions, and payment processing costs all reduce net revenue — factor these in.",
+              },
+              {
+                icon: Building2,
+                title: 'Property Costs',
+                desc: 'Mortgage, insurance, utilities, and capital expenditure must be accounted for to calculate true profitability.',
+              },
             ].map(({ icon: Icon, title, desc }) => (
               <div key={title} className="bg-base-100 rounded-2xl border border-base-300 p-5">
                 <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-3">
@@ -213,7 +322,7 @@ export const RoiCalculatorUkView: React.FC<{ page: Page }> = () => {
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold">Estimate Your Potential Returns</h2>
             <p className="text-base-content/60 mt-3 max-w-xl mx-auto text-sm">
-              Enter your property's numbers below. The calculator updates in real time.
+              Enter your property&apos;s numbers below. The calculator updates in real time.
             </p>
           </div>
           <div className="max-w-3xl mx-auto">
@@ -234,12 +343,31 @@ export const RoiCalculatorUkView: React.FC<{ page: Page }> = () => {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
-                { issue: 'Unrealistic occupancy assumptions', detail: 'Most estimates assume 80–90% occupancy. In most UK markets, a well-managed property achieves 65–75%.' },
-                { issue: 'Ignoring operational costs', detail: 'Cleaning, laundry, maintenance, restocking, and management fees can consume 35–50% of gross revenue.' },
-                { issue: 'No pricing strategy', detail: 'A flat nightly rate leaves significant revenue on the table during peak demand periods.' },
-                { issue: 'No system in place', detail: 'Without systems, operational inefficiencies and errors erode margins over time — often invisibly.' },
+                {
+                  issue: 'Unrealistic occupancy assumptions',
+                  detail:
+                    'Most estimates assume 80–90% occupancy. In most UK markets, a well-managed property achieves 65–75%.',
+                },
+                {
+                  issue: 'Ignoring operational costs',
+                  detail:
+                    'Cleaning, laundry, maintenance, restocking, and management fees can consume 35–50% of gross revenue.',
+                },
+                {
+                  issue: 'No pricing strategy',
+                  detail:
+                    'A flat nightly rate leaves significant revenue on the table during peak demand periods.',
+                },
+                {
+                  issue: 'No system in place',
+                  detail:
+                    'Without systems, operational inefficiencies and errors erode margins over time — often invisibly.',
+                },
               ].map(({ issue, detail }) => (
-                <div key={issue} className="flex gap-4 p-5 rounded-2xl border border-error/15 bg-error/4">
+                <div
+                  key={issue}
+                  className="flex gap-4 p-5 rounded-2xl border border-error/15 bg-error/4"
+                >
                   <XCircle className="w-5 h-5 text-error shrink-0 mt-0.5" />
                   <div>
                     <p className="font-semibold text-sm">{issue}</p>
@@ -267,12 +395,31 @@ export const RoiCalculatorUkView: React.FC<{ page: Page }> = () => {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
-                { point: 'Optimising pricing and occupancy', detail: 'We implement dynamic pricing strategies that align your rates with real-time demand, filling calendar gaps without underpricing.' },
-                { point: 'Improving listing performance', detail: 'Stronger listings with professional content, better SEO, and optimised descriptions directly increase booking conversion rates.' },
-                { point: 'Reducing operational inefficiencies', detail: 'Structured operations reduce cost per stay, eliminate waste, and improve the consistency of your guest experience.' },
-                { point: 'Building structured systems', detail: 'Automated workflows and clear SOPs mean your operation runs efficiently with fewer errors and less host involvement.' },
+                {
+                  point: 'Optimising pricing and occupancy',
+                  detail:
+                    'We implement dynamic pricing strategies that align your rates with real-time demand, filling calendar gaps without underpricing.',
+                },
+                {
+                  point: 'Improving listing performance',
+                  detail:
+                    'Stronger listings with professional content, better SEO, and optimised descriptions directly increase booking conversion rates.',
+                },
+                {
+                  point: 'Reducing operational inefficiencies',
+                  detail:
+                    'Structured operations reduce cost per stay, eliminate waste, and improve the consistency of your guest experience.',
+                },
+                {
+                  point: 'Building structured systems',
+                  detail:
+                    'Automated workflows and clear SOPs mean your operation runs efficiently with fewer errors and less host involvement.',
+                },
               ].map(({ point, detail }) => (
-                <div key={point} className="flex gap-4 p-5 rounded-2xl border border-primary/15 bg-primary/4">
+                <div
+                  key={point}
+                  className="flex gap-4 p-5 rounded-2xl border border-primary/15 bg-primary/4"
+                >
                   <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                   <div>
                     <p className="font-semibold text-sm">{point}</p>
@@ -299,9 +446,15 @@ export const RoiCalculatorUkView: React.FC<{ page: Page }> = () => {
           </div>
           <div className="hidden md:block overflow-hidden rounded-3xl border border-base-300 max-w-3xl mx-auto">
             <div className="grid grid-cols-3">
-              <div className="bg-base-200 px-5 py-3 text-xs font-bold uppercase tracking-widest text-base-content/50">Area</div>
-              <div className="bg-error/8 px-5 py-3 text-xs font-bold uppercase tracking-widest text-error/70 text-center">Estimated</div>
-              <div className="bg-success/8 px-5 py-3 text-xs font-bold uppercase tracking-widest text-success/70 text-center">Managed</div>
+              <div className="bg-base-200 px-5 py-3 text-xs font-bold uppercase tracking-widest text-base-content/50">
+                Area
+              </div>
+              <div className="bg-error/8 px-5 py-3 text-xs font-bold uppercase tracking-widest text-error/70 text-center">
+                Estimated
+              </div>
+              <div className="bg-success/8 px-5 py-3 text-xs font-bold uppercase tracking-widest text-success/70 text-center">
+                Managed
+              </div>
             </div>
             {[
               ['Approach', 'Based on assumptions', 'Based on strategy'],
@@ -312,7 +465,9 @@ export const RoiCalculatorUkView: React.FC<{ page: Page }> = () => {
               <div key={area} className="grid grid-cols-3 border-t border-base-300">
                 <div className="bg-base-100 px-5 py-4 text-sm font-medium">{area}</div>
                 <div className="bg-error/4 px-5 py-4 text-sm text-error/80 text-center">{bad}</div>
-                <div className="bg-success/4 px-5 py-4 text-sm text-success/80 text-center font-medium">{good}</div>
+                <div className="bg-success/4 px-5 py-4 text-sm text-success/80 text-center font-medium">
+                  {good}
+                </div>
               </div>
             ))}
           </div>
@@ -325,10 +480,14 @@ export const RoiCalculatorUkView: React.FC<{ page: Page }> = () => {
               ['Risk', 'Risky', 'Optimised'],
             ].map(([area, bad, good]) => (
               <div key={area} className="rounded-2xl border border-base-300 overflow-hidden">
-                <div className="bg-base-200 px-4 py-2 text-xs font-bold uppercase tracking-wider text-base-content/50">{area}</div>
+                <div className="bg-base-200 px-4 py-2 text-xs font-bold uppercase tracking-wider text-base-content/50">
+                  {area}
+                </div>
                 <div className="grid grid-cols-2 divide-x divide-base-300">
                   <div className="px-4 py-3 bg-error/4 text-xs text-error/80">{bad}</div>
-                  <div className="px-4 py-3 bg-success/4 text-xs text-success/80 font-medium">{good}</div>
+                  <div className="px-4 py-3 bg-success/4 text-xs text-success/80 font-medium">
+                    {good}
+                  </div>
                 </div>
               </div>
             ))}
@@ -347,12 +506,31 @@ export const RoiCalculatorUkView: React.FC<{ page: Page }> = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
             {[
-              { icon: UserPlus, who: 'New STR investors', desc: 'Evaluating whether a property stacks up before committing capital.' },
-              { icon: BarChart3, who: 'Hosts analysing properties', desc: 'Current hosts comparing potential new additions to their portfolio.' },
-              { icon: Building2, who: 'SA businesses', desc: 'Serviced accommodation operators modelling scenarios across multiple units.' },
-              { icon: TrendingUp, who: 'Scaling operators', desc: 'Operators planning expansion who need to understand projected returns before acting.' },
+              {
+                icon: UserPlus,
+                who: 'New STR investors',
+                desc: 'Evaluating whether a property stacks up before committing capital.',
+              },
+              {
+                icon: BarChart3,
+                who: 'Hosts analysing properties',
+                desc: 'Current hosts comparing potential new additions to their portfolio.',
+              },
+              {
+                icon: Building2,
+                who: 'SA businesses',
+                desc: 'Serviced accommodation operators modelling scenarios across multiple units.',
+              },
+              {
+                icon: TrendingUp,
+                who: 'Scaling operators',
+                desc: 'Operators planning expansion who need to understand projected returns before acting.',
+              },
             ].map(({ icon: Icon, who, desc }) => (
-              <div key={who} className="bg-base-200 rounded-2xl border border-base-300 p-5 text-center">
+              <div
+                key={who}
+                className="bg-base-200 rounded-2xl border border-base-300 p-5 text-center"
+              >
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-3">
                   <Icon className="w-6 h-6 text-primary" />
                 </div>
@@ -375,15 +553,44 @@ export const RoiCalculatorUkView: React.FC<{ page: Page }> = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
-              { initials: 'RK', name: 'Raj K.', role: 'STR Investor · Manchester', quote: 'I used the calculator before buying my second property. After working with Assistophere on pricing and operations, my actual returns are tracking above the estimate.' },
-              { initials: 'SH', name: 'Sophie H.', role: 'SA Operator · London', quote: 'I had no idea my costs were eating so much of my revenue. The breakdown helped me see exactly where the problem was and we fixed it within two months.' },
-              { initials: 'DM', name: 'Daniel M.', role: 'Multi-property Host · Bristol', quote: 'The ROI figures I had when I started were completely wrong. Assistophere helped me model properly and then actually deliver those numbers through better operations.' },
+              {
+                initials: 'RK',
+                name: 'Raj K.',
+                role: 'STR Investor · Manchester',
+                quote:
+                  'I used the calculator before buying my second property. After working with Assistophere on pricing and operations, my actual returns are tracking above the estimate.',
+              },
+              {
+                initials: 'SH',
+                name: 'Sophie H.',
+                role: 'SA Operator · London',
+                quote:
+                  'I had no idea my costs were eating so much of my revenue. The breakdown helped me see exactly where the problem was and we fixed it within two months.',
+              },
+              {
+                initials: 'DM',
+                name: 'Daniel M.',
+                role: 'Multi-property Host · Bristol',
+                quote:
+                  'The ROI figures I had when I started were completely wrong. Assistophere helped me model properly and then actually deliver those numbers through better operations.',
+              },
             ].map(({ initials, name, role, quote }) => (
-              <div key={name} className="bg-base-100 rounded-2xl border border-base-300 p-6 space-y-4">
-                <div className="flex gap-0.5">{[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />)}</div>
-                <p className="text-sm text-base-content/70 leading-relaxed italic">"{quote}"</p>
+              <div
+                key={name}
+                className="bg-base-100 rounded-2xl border border-base-300 p-6 space-y-4"
+              >
+                <div className="flex gap-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                  ))}
+                </div>
+                <p className="text-sm text-base-content/70 leading-relaxed italic">
+                  &ldquo;{quote}&rdquo;
+                </p>
                 <div className="flex items-center gap-3 pt-1">
-                  <div className="w-9 h-9 rounded-full bg-primary text-primary-content flex items-center justify-center text-xs font-bold">{initials}</div>
+                  <div className="w-9 h-9 rounded-full bg-primary text-primary-content flex items-center justify-center text-xs font-bold">
+                    {initials}
+                  </div>
                   <div>
                     <p className="text-sm font-semibold">{name}</p>
                     <p className="text-xs text-base-content/50">{role}</p>
@@ -424,7 +631,10 @@ export const RoiCalculatorUkView: React.FC<{ page: Page }> = () => {
                   a: 'Yes. Assistophere works with UK hosts and operators on pricing strategy, listing optimisation, operational systems, and team structuring — all of which directly impact your actual returns. Book a discovery call to discuss your specific situation.',
                 },
               ].map(({ q, a }) => (
-                <details key={q} className="group rounded-2xl border border-base-300 bg-base-200 overflow-hidden">
+                <details
+                  key={q}
+                  className="group rounded-2xl border border-base-300 bg-base-200 overflow-hidden"
+                >
                   <summary className="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer list-none font-semibold text-sm select-none">
                     {q}
                     <ChevronRight className="w-4 h-4 text-base-content/40 shrink-0 group-open:rotate-90 transition-transform" />
@@ -458,8 +668,8 @@ export const RoiCalculatorUkView: React.FC<{ page: Page }> = () => {
                 </span>
               </h2>
               <p className="text-base-content/65 text-lg leading-relaxed">
-                Let's review your property and build a realistic strategy around your numbers.
-                We don't just estimate ROI — we help you improve it.
+                Let&apos;s review your property and build a realistic strategy around your numbers.
+                We don&apos;t just estimate ROI — we help you improve it.
               </p>
               <div className="flex flex-wrap justify-center gap-4 pt-2">
                 <button className="pulse-cta-roi btn btn-primary btn-lg rounded-full px-10 gap-2 shadow-lg">
@@ -470,7 +680,8 @@ export const RoiCalculatorUkView: React.FC<{ page: Page }> = () => {
                 </a>
               </div>
               <p className="text-xs text-base-content/40 pt-2">
-                Airbnb ROI Calculator UK · STR Profit Calculator · Airbnb Income Estimate · Serviced Accommodation ROI
+                Airbnb ROI Calculator UK · STR Profit Calculator · Airbnb Income Estimate · Serviced
+                Accommodation ROI
               </p>
             </div>
           </div>

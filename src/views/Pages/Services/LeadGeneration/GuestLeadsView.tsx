@@ -86,36 +86,71 @@ const whatWeDeliver = [
 ]
 
 const pipelineLeads = [
-  { name: 'Emma T.', dates: '12–16 May', guests: '2 guests', type: 'Weekend break', status: 'Hot', statusColor: 'text-error' },
-  { name: 'Oliver B.', dates: '3–10 June', guests: '4 guests', type: 'Family holiday', status: 'Warm', statusColor: 'text-warning' },
-  { name: 'Priya K.', dates: '19–21 April', guests: '1 guest', type: 'Business stay', status: 'Enquired', statusColor: 'text-primary' },
-  { name: 'Ryan M.', dates: '26 Apr – 3 May', guests: '6 guests', type: 'Group break', status: 'Hot', statusColor: 'text-error' },
-  { name: 'Aisha F.', dates: 'June (flexible)', guests: '2 guests', type: 'Anniversary trip', status: 'Warm', statusColor: 'text-warning' },
+  {
+    name: 'Emma T.',
+    dates: '12–16 May',
+    guests: '2 guests',
+    type: 'Weekend break',
+    status: 'Hot',
+    statusColor: 'text-error',
+  },
+  {
+    name: 'Oliver B.',
+    dates: '3–10 June',
+    guests: '4 guests',
+    type: 'Family holiday',
+    status: 'Warm',
+    statusColor: 'text-warning',
+  },
+  {
+    name: 'Priya K.',
+    dates: '19–21 April',
+    guests: '1 guest',
+    type: 'Business stay',
+    status: 'Enquired',
+    statusColor: 'text-primary',
+  },
+  {
+    name: 'Ryan M.',
+    dates: '26 Apr – 3 May',
+    guests: '6 guests',
+    type: 'Group break',
+    status: 'Hot',
+    statusColor: 'text-error',
+  },
+  {
+    name: 'Aisha F.',
+    dates: 'June (flexible)',
+    guests: '2 guests',
+    type: 'Anniversary trip',
+    status: 'Warm',
+    statusColor: 'text-warning',
+  },
 ]
 
 const problemCards = [
   {
-    icon: <XCircle className="w-5 h-5 text-error flex-shrink-0 mt-0.5" />,
+    icon: <XCircle className="w-5 h-5 text-error shrink-0 mt-0.5" />,
     title: 'Full Dependence on Platforms',
     desc: 'Relying entirely on Airbnb and Booking.com for guests means paying commission on every booking and having no direct relationship with your audience.',
   },
   {
-    icon: <XCircle className="w-5 h-5 text-error flex-shrink-0 mt-0.5" />,
+    icon: <XCircle className="w-5 h-5 text-error shrink-0 mt-0.5" />,
     title: 'No Guest Pipeline of Your Own',
     desc: "When platforms change algorithms, increase fees, or restrict your listing, you have no fallback. Without your own guest pipeline, you're entirely at their mercy.",
   },
   {
-    icon: <XCircle className="w-5 h-5 text-error flex-shrink-0 mt-0.5" />,
+    icon: <XCircle className="w-5 h-5 text-error shrink-0 mt-0.5" />,
     title: 'Seasonality With No Buffer',
     desc: "During quiet periods, operators with no direct guest channel feel it hardest. A lead generation system helps fill gaps that platforms won't prioritise for you.",
   },
   {
-    icon: <XCircle className="w-5 h-5 text-error flex-shrink-0 mt-0.5" />,
+    icon: <XCircle className="w-5 h-5 text-error shrink-0 mt-0.5" />,
     title: 'No Retargeting Capability',
-    desc: 'Guests who browsed your listing but didn\'t book are lost forever on platforms. With your own guest lead gen, you can retarget them and recover that demand.',
+    desc: "Guests who browsed your listing but didn't book are lost forever on platforms. With your own guest lead gen, you can retarget them and recover that demand.",
   },
   {
-    icon: <AlertTriangle className="w-5 h-5 text-warning flex-shrink-0 mt-0.5" />,
+    icon: <AlertTriangle className="w-5 h-5 text-warning shrink-0 mt-0.5" />,
     title: 'Untapped Long-Stay Demand',
     desc: 'Mid-term and long-stay guests — remote workers, relocating professionals — rarely come through Airbnb searches. Targeted lead gen reaches them where they actually look.',
   },
@@ -163,15 +198,27 @@ const comparisonRows = [
   {
     area: 'Guest Relationship',
     before: 'Platform owns the relationship — you see a name and a date',
-    after: "You own the guest contact — and can market to them again",
+    after: 'You own the guest contact — and can market to them again',
   },
 ]
 
 const whoItIsFor = [
-  { icon: <Users className="w-5 h-5 text-primary" />, label: 'Hosts looking to reduce platform dependence and grow direct bookings' },
-  { icon: <TrendingUp className="w-5 h-5 text-primary" />, label: 'Operators wanting to fill quiet periods without relying on platform promotions' },
-  { icon: <UserCheck className="w-5 h-5 text-primary" />, label: 'STR businesses targeting niche guests — business travellers, long-stays, groups' },
-  { icon: <Target className="w-5 h-5 text-primary" />, label: 'Anyone building a direct booking channel who needs a source of guest leads' },
+  {
+    icon: <Users className="w-5 h-5 text-primary" />,
+    label: 'Hosts looking to reduce platform dependence and grow direct bookings',
+  },
+  {
+    icon: <TrendingUp className="w-5 h-5 text-primary" />,
+    label: 'Operators wanting to fill quiet periods without relying on platform promotions',
+  },
+  {
+    icon: <UserCheck className="w-5 h-5 text-primary" />,
+    label: 'STR businesses targeting niche guests — business travellers, long-stays, groups',
+  },
+  {
+    icon: <Target className="w-5 h-5 text-primary" />,
+    label: 'Anyone building a direct booking channel who needs a source of guest leads',
+  },
 ]
 
 export const GuestLeadsView: React.FC<{ page: Page }> = ({ page }) => {
@@ -197,13 +244,12 @@ export const GuestLeadsView: React.FC<{ page: Page }> = ({ page }) => {
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden pt-28 pb-20 lg:pt-36 lg:pb-28">
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-          <div className="absolute -top-32 -left-32 w-[520px] h-[520px] bg-linear-to-br from-primary/13 via-primary/4 to-transparent rounded-full blur-[140px]" />
-          <div className="absolute top-1/2 -right-40 w-[420px] h-[420px] bg-linear-to-bl from-secondary/10 via-secondary/3 to-transparent rounded-full blur-[120px]" />
+          <div className="absolute -top-32 -left-32 w-130 h-130 bg-linear-to-br from-primary/13 via-primary/4 to-transparent rounded-full blur-[140px]" />
+          <div className="absolute top-1/2 -right-40 w-105 h-105 bg-linear-to-bl from-secondary/10 via-secondary/3 to-transparent rounded-full blur-[120px]" />
         </div>
 
         <div className="container max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-
             {/* Left */}
             <div>
               <div className="gl-fade-1 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-6">
@@ -219,11 +265,15 @@ export const GuestLeadsView: React.FC<{ page: Page }> = ({ page }) => {
               </h1>
 
               <p className="gl-fade-3 text-lg text-base-content/70 leading-relaxed mb-5 max-w-lg">
-                Targeted guest lead generation for STR operators — attracting the right guests through paid and organic channels so you can fill your calendar without paying Airbnb commission on every booking.
+                Targeted guest lead generation for STR operators — attracting the right guests
+                through paid and organic channels so you can fill your calendar without paying
+                Airbnb commission on every booking.
               </p>
 
               <div className="gl-fade-3 p-4 rounded-xl border border-primary/20 bg-primary/6 text-sm italic text-base-content/60 mb-8 max-w-lg">
-                "Guest lead generation gives short term rental operators a direct channel to attract and convert guests — reducing platform dependency and building an audience they own."
+                &ldquo;Guest lead generation gives short term rental operators a direct channel to
+                attract and convert guests — reducing platform dependency and building an audience
+                they own.&rdquo;
               </div>
 
               <div className="gl-fade-4 flex flex-wrap gap-3 mb-8">
@@ -233,7 +283,10 @@ export const GuestLeadsView: React.FC<{ page: Page }> = ({ page }) => {
                 >
                   Start Attracting Direct Guests <ArrowRight className="w-4 h-4" />
                 </Link>
-                <Link href="/services/lead-generation" className="btn btn-outline btn-lg rounded-full">
+                <Link
+                  href="/services/lead-generation"
+                  className="btn btn-outline btn-lg rounded-full"
+                >
                   All Lead Gen Services
                 </Link>
               </div>
@@ -241,7 +294,10 @@ export const GuestLeadsView: React.FC<{ page: Page }> = ({ page }) => {
               <div className="gl-fade-5 flex items-center gap-4">
                 <div className="flex -space-x-2">
                   {['bg-primary/20', 'bg-secondary/20', 'bg-accent/20'].map((c, i) => (
-                    <div key={i} className={`w-8 h-8 rounded-full border-2 border-base-100 ${c} flex items-center justify-center`}>
+                    <div
+                      key={i}
+                      className={`w-8 h-8 rounded-full border-2 border-base-100 ${c} flex items-center justify-center`}
+                    >
                       <Users className="w-3.5 h-3.5 text-base-content/50" />
                     </div>
                   ))}
@@ -251,7 +307,9 @@ export const GuestLeadsView: React.FC<{ page: Page }> = ({ page }) => {
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                     ))}
-                    <span className="ml-1 font-medium text-base-content/80">Trusted by UK STR operators</span>
+                    <span className="ml-1 font-medium text-base-content/80">
+                      Trusted by UK STR operators
+                    </span>
                   </span>
                 </div>
               </div>
@@ -261,34 +319,47 @@ export const GuestLeadsView: React.FC<{ page: Page }> = ({ page }) => {
             <div className="gl-fade-3 relative">
               <div className="rounded-2xl border border-base-300 bg-base-100 shadow-xl overflow-hidden">
                 <div className="flex items-center justify-between px-4 py-3 border-b border-base-300 bg-base-200">
-                  <span className="text-sm font-semibold text-base-content/80">Guest Lead Pipeline</span>
-                  <span className="text-xs px-2.5 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary font-medium">5 Active Leads</span>
+                  <span className="text-sm font-semibold text-base-content/80">
+                    Guest Lead Pipeline
+                  </span>
+                  <span className="text-xs px-2.5 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary font-medium">
+                    5 Active Leads
+                  </span>
                 </div>
                 <div className="divide-y divide-base-300">
                   {pipelineLeads.map((lead, i) => (
-                    <div key={i} className="flex items-center justify-between px-4 py-3 hover:bg-base-200/40 transition-colors">
+                    <div
+                      key={i}
+                      className="flex items-center justify-between px-4 py-3 hover:bg-base-200/40 transition-colors"
+                    >
                       <div className="flex items-center gap-2.5">
-                        <div className="w-7 h-7 rounded-full bg-secondary/15 border border-secondary/20 flex items-center justify-center flex-shrink-0 text-xs font-bold text-secondary">
+                        <div className="w-7 h-7 rounded-full bg-secondary/15 border border-secondary/20 flex items-center justify-center shrink-0 text-xs font-bold text-secondary">
                           {lead.name.charAt(0)}
                         </div>
                         <div>
                           <p className="text-sm font-medium text-base-content/80">{lead.name}</p>
-                          <p className="text-xs text-base-content/50">{lead.dates} · {lead.type}</p>
+                          <p className="text-xs text-base-content/50">
+                            {lead.dates} · {lead.type}
+                          </p>
                         </div>
                       </div>
-                      <span className={`text-xs font-semibold ${lead.statusColor}`}>{lead.status}</span>
+                      <span className={`text-xs font-semibold ${lead.statusColor}`}>
+                        {lead.status}
+                      </span>
                     </div>
                   ))}
                 </div>
                 <div className="px-4 pb-4 pt-3">
                   <div className="p-3 rounded-xl bg-secondary/8 border border-secondary/20">
                     <p className="text-xs font-semibold text-secondary mb-1">Pipeline Note</p>
-                    <p className="text-xs text-base-content/70">2 hot leads ready for follow-up. Ryan M. group booking — 6 guests, 7 nights. High-value enquiry flagged for priority response.</p>
+                    <p className="text-xs text-base-content/70">
+                      2 hot leads ready for follow-up. Ryan M. group booking — 6 guests, 7 nights.
+                      High-value enquiry flagged for priority response.
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -301,16 +372,31 @@ export const GuestLeadsView: React.FC<{ page: Page }> = ({ page }) => {
             Why Guest Lead Gen Matters
           </div>
           <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight mb-5">
-            Own Your Guest Channel — Don't Just Rent It
+            Own Your Guest Channel — Don&apos;t Just Rent It
           </h2>
           <p className="text-lg text-base-content/65 leading-relaxed max-w-2xl mx-auto mb-8">
-            Platform bookings are convenient — but every one costs 10–20% in commission, and the platform owns the guest relationship, not you. Building a direct guest pipeline gives you an audience, a channel, and a revenue stream that doesn't pay commission every time a guest books.
+            Platform bookings are convenient — but every one costs 10–20% in commission, and the
+            platform owns the guest relationship, not you. Building a direct guest pipeline gives
+            you an audience, a channel, and a revenue stream that doesn&apos;t pay commission every
+            time a guest books.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-left">
             {[
-              { icon: <TrendingUp className="w-5 h-5 text-primary" />, title: 'Commission-Free Revenue', body: 'Every direct booking you convert from your own guest pipeline saves platform fees — typically 10–20% per reservation.' },
-              { icon: <UserCheck className="w-5 h-5 text-secondary" />, title: 'You Own the Relationship', body: 'Direct guest leads are yours. You can retarget, re-market, and build loyalty without a platform intermediary.' },
-              { icon: <Layers className="w-5 h-5 text-accent" />, title: 'Platform-Proof Growth', body: "Algorithm changes, listing suppression, and fee increases don't affect demand you've built through your own channels." },
+              {
+                icon: <TrendingUp className="w-5 h-5 text-primary" />,
+                title: 'Commission-Free Revenue',
+                body: 'Every direct booking you convert from your own guest pipeline saves platform fees — typically 10–20% per reservation.',
+              },
+              {
+                icon: <UserCheck className="w-5 h-5 text-secondary" />,
+                title: 'You Own the Relationship',
+                body: 'Direct guest leads are yours. You can retarget, re-market, and build loyalty without a platform intermediary.',
+              },
+              {
+                icon: <Layers className="w-5 h-5 text-accent" />,
+                title: 'Platform-Proof Growth',
+                body: "Algorithm changes, listing suppression, and fee increases don't affect demand you've built through your own channels.",
+              },
             ].map((item, i) => (
               <div key={i} className="p-5 rounded-2xl bg-base-100 border border-base-300">
                 <div className="w-9 h-9 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-3">
@@ -336,12 +422,16 @@ export const GuestLeadsView: React.FC<{ page: Page }> = ({ page }) => {
               What Happens When Platforms Are Your Only Guest Source
             </h2>
             <p className="text-base-content/65 max-w-xl mx-auto">
-              Total dependence on Airbnb and Booking.com isn't just expensive — it's a vulnerability that gets worse as your portfolio grows.
+              Total dependence on Airbnb and Booking.com isn&apos;t just expensive — it&apos;s a
+              vulnerability that gets worse as your portfolio grows.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {problemCards.map((card, i) => (
-              <div key={i} className="flex gap-3 p-5 rounded-2xl bg-base-200 border border-base-300 hover:border-error/30 transition-colors">
+              <div
+                key={i}
+                className="flex gap-3 p-5 rounded-2xl bg-base-200 border border-base-300 hover:border-error/30 transition-colors"
+              >
                 {card.icon}
                 <div>
                   <h3 className="font-semibold text-base-content mb-1">{card.title}</h3>
@@ -365,18 +455,38 @@ export const GuestLeadsView: React.FC<{ page: Page }> = ({ page }) => {
               A Direct Guest Channel That Works Alongside Platforms
             </h2>
             <p className="text-base-content/65 max-w-xl mx-auto">
-              Good guest lead generation doesn't replace platforms — it supplements them with a direct channel that grows your revenue and reduces your dependency over time.
+              Good guest lead generation doesn&apos;t replace platforms — it supplements them with a
+              direct channel that grows your revenue and reduces your dependency over time.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { icon: <CalendarCheck className="w-5 h-5 text-success" />, title: 'Fills the Gaps Platforms Leave', body: "When Airbnb isn't prioritising your listing, your own guest pipeline keeps enquiries coming in — independent of any algorithm." },
-              { icon: <UserCheck className="w-5 h-5 text-success" />, title: 'Guests Who Are Already Interested', body: 'Leads are captured after the guest expressed intent — so every enquiry is warm, not cold.' },
-              { icon: <MessageSquare className="w-5 h-5 text-success" />, title: 'Direct Relationship From Day One', body: 'You communicate directly, without platform messaging restrictions — better for conversion and guest experience.' },
-              { icon: <TrendingUp className="w-5 h-5 text-success" />, title: 'Growing Value Over Time', body: "Every guest who books direct becomes part of your own audience — someone you can re-market to for future stays." },
+              {
+                icon: <CalendarCheck className="w-5 h-5 text-success" />,
+                title: 'Fills the Gaps Platforms Leave',
+                body: "When Airbnb isn't prioritising your listing, your own guest pipeline keeps enquiries coming in — independent of any algorithm.",
+              },
+              {
+                icon: <UserCheck className="w-5 h-5 text-success" />,
+                title: 'Guests Who Are Already Interested',
+                body: 'Leads are captured after the guest expressed intent — so every enquiry is warm, not cold.',
+              },
+              {
+                icon: <MessageSquare className="w-5 h-5 text-success" />,
+                title: 'Direct Relationship From Day One',
+                body: 'You communicate directly, without platform messaging restrictions — better for conversion and guest experience.',
+              },
+              {
+                icon: <TrendingUp className="w-5 h-5 text-success" />,
+                title: 'Growing Value Over Time',
+                body: 'Every guest who books direct becomes part of your own audience — someone you can re-market to for future stays.',
+              },
             ].map((item, i) => (
-              <div key={i} className="flex gap-4 p-6 rounded-2xl bg-base-100 border border-base-300 hover:border-success/30 transition-colors">
-                <div className="w-10 h-10 rounded-xl bg-success/10 border border-success/20 flex items-center justify-center flex-shrink-0">
+              <div
+                key={i}
+                className="flex gap-4 p-6 rounded-2xl bg-base-100 border border-base-300 hover:border-success/30 transition-colors"
+              >
+                <div className="w-10 h-10 rounded-xl bg-success/10 border border-success/20 flex items-center justify-center shrink-0">
                   {item.icon}
                 </div>
                 <div>
@@ -401,7 +511,8 @@ export const GuestLeadsView: React.FC<{ page: Page }> = ({ page }) => {
               Four Areas of Guest Lead Generation
             </h2>
             <p className="text-base-content/65 max-w-xl mx-auto">
-              From targeting the right audience to converting enquiries into bookings, here's what each engagement covers.
+              From targeting the right audience to converting enquiries into bookings, here&apos;s
+              what each engagement covers.
             </p>
           </div>
 
@@ -409,13 +520,16 @@ export const GuestLeadsView: React.FC<{ page: Page }> = ({ page }) => {
           <div className="hidden md:block rounded-2xl border border-base-300 overflow-hidden">
             <div className="grid grid-cols-[1fr_2fr_1.5fr] bg-base-200 border-b border-base-300 px-6 py-3 text-xs font-semibold uppercase tracking-widest text-base-content/50">
               <span>Service Area</span>
-              <span>What's Included</span>
+              <span>What&apos;s Included</span>
               <span>The Outcome</span>
             </div>
             {whatWeDeliver.map((row, i) => (
-              <div key={i} className={`grid grid-cols-[1fr_2fr_1.5fr] gap-4 px-6 py-5 items-start border-b border-base-300 last:border-0 hover:bg-base-200/50 transition-colors ${i % 2 === 0 ? 'bg-base-100' : 'bg-base-50'}`}>
+              <div
+                key={i}
+                className={`grid grid-cols-[1fr_2fr_1.5fr] gap-4 px-6 py-5 items-start border-b border-base-300 last:border-0 hover:bg-base-200/50 transition-colors ${i % 2 === 0 ? 'bg-base-100' : 'bg-base-50'}`}
+              >
                 <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
                     {row.icon}
                   </div>
                   <span className="font-semibold text-sm text-base-content">{row.title}</span>
@@ -423,13 +537,13 @@ export const GuestLeadsView: React.FC<{ page: Page }> = ({ page }) => {
                 <ul className="space-y-1">
                   {row.items.map((pt, j) => (
                     <li key={j} className="flex items-start gap-2 text-sm text-base-content/65">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-primary shrink-0 mt-0.5" />
                       {pt}
                     </li>
                   ))}
                 </ul>
                 <div className="flex items-start gap-2">
-                  <TrendingUp className="w-3.5 h-3.5 text-success flex-shrink-0 mt-0.5" />
+                  <TrendingUp className="w-3.5 h-3.5 text-success shrink-0 mt-0.5" />
                   <span className="text-sm text-base-content/65 italic">{row.outcome}</span>
                 </div>
               </div>
@@ -441,7 +555,7 @@ export const GuestLeadsView: React.FC<{ page: Page }> = ({ page }) => {
             {whatWeDeliver.map((row, i) => (
               <div key={i} className="p-5 rounded-2xl bg-base-100 border border-base-300">
                 <div className="flex items-center gap-2.5 mb-3">
-                  <div className="w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
                     {row.icon}
                   </div>
                   <span className="font-semibold text-base-content">{row.title}</span>
@@ -449,13 +563,13 @@ export const GuestLeadsView: React.FC<{ page: Page }> = ({ page }) => {
                 <ul className="space-y-1.5 mb-3">
                   {row.items.map((pt, j) => (
                     <li key={j} className="flex items-start gap-2 text-sm text-base-content/65">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-primary shrink-0 mt-0.5" />
                       {pt}
                     </li>
                   ))}
                 </ul>
                 <div className="flex items-start gap-2 p-3 rounded-xl bg-success/8 border border-success/20">
-                  <TrendingUp className="w-3.5 h-3.5 text-success flex-shrink-0 mt-0.5" />
+                  <TrendingUp className="w-3.5 h-3.5 text-success shrink-0 mt-0.5" />
                   <span className="text-sm text-success/80 italic">{row.outcome}</span>
                 </div>
               </div>
@@ -476,13 +590,17 @@ export const GuestLeadsView: React.FC<{ page: Page }> = ({ page }) => {
               Intent-Led, Location-Specific, Built to Convert
             </h2>
             <p className="text-base-content/65 max-w-xl mx-auto">
-              Our guest lead generation approach targets guests who are already planning to travel — then gets them into your funnel before they land on a platform.
+              Our guest lead generation approach targets guests who are already planning to travel —
+              then gets them into your funnel before they land on a platform.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {approachPoints.map((item, i) => (
-              <div key={i} className="flex gap-4 p-6 rounded-2xl bg-base-100 border border-base-300 hover:border-primary/30 transition-colors">
-                <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
+              <div
+                key={i}
+                className="flex gap-4 p-6 rounded-2xl bg-base-100 border border-base-300 hover:border-primary/30 transition-colors"
+              >
+                <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
                   {item.icon}
                 </div>
                 <div>
@@ -507,7 +625,8 @@ export const GuestLeadsView: React.FC<{ page: Page }> = ({ page }) => {
               Platform-Only vs Direct Guest Channel
             </h2>
             <p className="text-base-content/65 max-w-xl mx-auto">
-              See how adding a direct guest pipeline changes the economics and resilience of your short-term rental business.
+              See how adding a direct guest pipeline changes the economics and resilience of your
+              short-term rental business.
             </p>
           </div>
 
@@ -515,18 +634,27 @@ export const GuestLeadsView: React.FC<{ page: Page }> = ({ page }) => {
           <div className="hidden md:block rounded-2xl border border-base-300 overflow-hidden">
             <div className="grid grid-cols-3 bg-base-200 border-b border-base-300 px-6 py-3 text-xs font-semibold uppercase tracking-widest text-base-content/50">
               <span>Area</span>
-              <span className="flex items-center gap-1.5"><XCircle className="w-3.5 h-3.5 text-error" /> Platforms Only</span>
-              <span className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-success" /> With Direct Guest Pipeline</span>
+              <span className="flex items-center gap-1.5">
+                <XCircle className="w-3.5 h-3.5 text-error" /> Platforms Only
+              </span>
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-success" /> With Direct Guest Pipeline
+              </span>
             </div>
             {comparisonRows.map((row, i) => (
-              <div key={i} className={`grid grid-cols-3 gap-4 px-6 py-4 border-b border-base-300 last:border-0 ${i % 2 === 0 ? 'bg-base-100' : 'bg-base-50'}`}>
-                <span className="font-semibold text-sm text-base-content self-center">{row.area}</span>
+              <div
+                key={i}
+                className={`grid grid-cols-3 gap-4 px-6 py-4 border-b border-base-300 last:border-0 ${i % 2 === 0 ? 'bg-base-100' : 'bg-base-50'}`}
+              >
+                <span className="font-semibold text-sm text-base-content self-center">
+                  {row.area}
+                </span>
                 <div className="flex items-start gap-2 text-sm text-base-content/60">
-                  <XCircle className="w-3.5 h-3.5 text-error flex-shrink-0 mt-0.5" />
+                  <XCircle className="w-3.5 h-3.5 text-error shrink-0 mt-0.5" />
                   {row.before}
                 </div>
                 <div className="flex items-start gap-2 text-sm text-base-content/65">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-success flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-3.5 h-3.5 text-success shrink-0 mt-0.5" />
                   {row.after}
                 </div>
               </div>
@@ -537,14 +665,16 @@ export const GuestLeadsView: React.FC<{ page: Page }> = ({ page }) => {
           <div className="md:hidden space-y-4">
             {comparisonRows.map((row, i) => (
               <div key={i} className="rounded-2xl border border-base-300 overflow-hidden">
-                <div className="bg-base-200 px-4 py-2.5 text-sm font-semibold text-base-content">{row.area}</div>
+                <div className="bg-base-200 px-4 py-2.5 text-sm font-semibold text-base-content">
+                  {row.area}
+                </div>
                 <div className="p-4 space-y-3">
                   <div className="flex items-start gap-2 text-sm text-base-content/60 p-3 rounded-xl bg-error/6 border border-error/15">
-                    <XCircle className="w-4 h-4 text-error flex-shrink-0 mt-0.5" />
+                    <XCircle className="w-4 h-4 text-error shrink-0 mt-0.5" />
                     {row.before}
                   </div>
                   <div className="flex items-start gap-2 text-sm text-base-content/65 p-3 rounded-xl bg-success/6 border border-success/15">
-                    <CheckCircle2 className="w-4 h-4 text-success flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-success shrink-0 mt-0.5" />
                     {row.after}
                   </div>
                 </div>
@@ -566,13 +696,17 @@ export const GuestLeadsView: React.FC<{ page: Page }> = ({ page }) => {
               Best Suited For
             </h2>
             <p className="text-base-content/65 max-w-xl mx-auto">
-              Guest lead generation is most valuable for operators who are ready to build a channel they own — alongside or instead of relying entirely on platforms.
+              Guest lead generation is most valuable for operators who are ready to build a channel
+              they own — alongside or instead of relying entirely on platforms.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {whoItIsFor.map((item, i) => (
-              <div key={i} className="flex items-center gap-3 p-4 rounded-2xl bg-base-100 border border-base-300 hover:border-primary/30 transition-colors">
-                <div className="w-9 h-9 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
+              <div
+                key={i}
+                className="flex items-center gap-3 p-4 rounded-2xl bg-base-100 border border-base-300 hover:border-primary/30 transition-colors"
+              >
+                <div className="w-9 h-9 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
                   {item.icon}
                 </div>
                 <span className="text-sm text-base-content/80">{item.label}</span>
@@ -596,17 +730,37 @@ export const GuestLeadsView: React.FC<{ page: Page }> = ({ page }) => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { quote: "I was paying Airbnb 15% on every booking and had no way to reach guests directly. Since setting up a proper guest lead gen funnel I've converted around 30% of bookings as direct — the saving has been significant.", name: 'Claire T.', role: 'STR host, Lake District' },
-              { quote: "The business travel segment we were targeting wasn't coming through Airbnb at all. Once we ran targeted guest lead gen for that audience specifically, we started getting long-stay enquiries through our own channel consistently.", name: 'Robert H.', role: 'Multi-property operator, London' },
-              { quote: "We had a quiet January and no way to do anything about it — platform visibility just dropped off. Having our own guest pipeline meant we could run a targeted push in our area and fill gaps that would otherwise have stayed empty.", name: 'Natalie W.', role: 'Co-host, Edinburgh' },
+              {
+                quote:
+                  "I was paying Airbnb 15% on every booking and had no way to reach guests directly. Since setting up a proper guest lead gen funnel I've converted around 30% of bookings as direct — the saving has been significant.",
+                name: 'Claire T.',
+                role: 'STR host, Lake District',
+              },
+              {
+                quote:
+                  "The business travel segment we were targeting wasn't coming through Airbnb at all. Once we ran targeted guest lead gen for that audience specifically, we started getting long-stay enquiries through our own channel consistently.",
+                name: 'Robert H.',
+                role: 'Multi-property operator, London',
+              },
+              {
+                quote:
+                  'We had a quiet January and no way to do anything about it — platform visibility just dropped off. Having our own guest pipeline meant we could run a targeted push in our area and fill gaps that would otherwise have stayed empty.',
+                name: 'Natalie W.',
+                role: 'Co-host, Edinburgh',
+              },
             ].map((t, i) => (
-              <div key={i} className="flex flex-col gap-4 p-6 rounded-2xl bg-base-100 border border-base-300 hover:border-amber-400/30 transition-colors">
+              <div
+                key={i}
+                className="flex flex-col gap-4 p-6 rounded-2xl bg-base-100 border border-base-300 hover:border-amber-400/30 transition-colors"
+              >
                 <div className="flex gap-0.5">
                   {[...Array(5)].map((_, si) => (
                     <Star key={si} className="w-4 h-4 fill-amber-400 text-amber-400" />
                   ))}
                 </div>
-                <p className="text-sm text-base-content/70 italic leading-relaxed flex-1">"{t.quote}"</p>
+                <p className="text-sm text-base-content/70 italic leading-relaxed flex-1">
+                  &ldquo;{t.quote}&rdquo;
+                </p>
                 <div>
                   <p className="text-sm font-semibold text-base-content">{t.name}</p>
                   <p className="text-xs text-base-content/50">{t.role}</p>
@@ -652,13 +806,20 @@ export const GuestLeadsView: React.FC<{ page: Page }> = ({ page }) => {
               Ready to Build a Direct Guest Channel?
             </h2>
             <p className="text-base-content/65 max-w-xl mx-auto mb-8">
-              Stop letting platforms own your guests. Start building a direct pipeline that fills your calendar and puts you in control of your bookings.
+              Stop letting platforms own your guests. Start building a direct pipeline that fills
+              your calendar and puts you in control of your bookings.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
-              <Link href="/contact" className="pulse-cta-gl btn btn-primary btn-lg rounded-full px-8 gap-2">
+              <Link
+                href="/contact"
+                className="pulse-cta-gl btn btn-primary btn-lg rounded-full px-8 gap-2"
+              >
                 Start Attracting Direct Guests <ArrowRight className="w-4 h-4" />
               </Link>
-              <Link href="/services/lead-generation" className="btn btn-outline btn-lg rounded-full">
+              <Link
+                href="/services/lead-generation"
+                className="btn btn-outline btn-lg rounded-full"
+              >
                 View All Lead Gen Services
               </Link>
             </div>
