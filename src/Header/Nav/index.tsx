@@ -92,6 +92,9 @@ function getLinkLabel(link: NonNullable<HeaderType['navItems']>[0]['link']): str
   )
 }
 
+type NavItemType = NonNullable<HeaderType['navItems']>[0]
+type SubItemType = NonNullable<NavItemType['subLinks']>[0]
+
 // Render a single link with optional submenu
 const NavItem = ({ item }: { item: NonNullable<HeaderType['navItems']>[0] }) => {
   const validSubLinks = item.subLinks?.filter((sub) => isValidLink(sub.link)) || []
@@ -216,13 +219,144 @@ const NavItem = ({ item }: { item: NonNullable<HeaderType['navItems']>[0] }) => 
   )
 }
 
-export const HeaderNav: React.FC<{ data: HeaderType }> = ({ data }) => {
+const MobileSubItem = ({ item, onNavigate }: { item: SubItemType; onNavigate: () => void }) => {
+  const [isOpen, setIsOpen] = React.useState(false)
+  const validSubSubLinks = item.subSubLinks?.filter((ss) => isValidLink(ss.link)) || []
+  const hasSubSubLinks = validSubSubLinks.length > 0
+
+  if (!isValidLink(item.link)) return null
+
+  const subLabel = getLinkLabel(item.link)
+
+  return (
+    <div className="rounded-xl border border-border bg-muted/60">
+      <div className="flex items-center gap-2 px-3 py-2.5">
+        <div className="w-8 h-8 rounded-lg bg-primary/15 border border-primary/20 text-primary flex items-center justify-center shrink-0">
+          {getIcon(subLabel)}
+        </div>
+        <div className="flex-1 min-w-0" onClick={onNavigate}>
+          <CMSLink
+            {...item.link}
+            appearance="inline"
+            className="block w-full no-underline hover:no-underline text-sm font-medium text-foreground/85 hover:text-foreground transition-colors truncate"
+          />
+        </div>
+        {hasSubSubLinks && (
+          <button
+            type="button"
+            onClick={() => setIsOpen((prev) => !prev)}
+            aria-expanded={isOpen}
+            aria-label={isOpen ? 'Collapse sub menu' : 'Expand sub menu'}
+            className="w-8 h-8 rounded-lg border border-border bg-background hover:bg-muted text-foreground/70 flex items-center justify-center transition-colors shrink-0"
+          >
+            <ChevronDown
+              className={`w-4 h-4 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+            />
+          </button>
+        )}
+      </div>
+
+      {hasSubSubLinks && (
+        <div
+          className={`grid transition-all duration-300 ease-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
+        >
+          <div className="overflow-hidden">
+            <div className="px-3 pb-3 pt-0.5 space-y-1.5">
+              {validSubSubLinks.map((subSubItem, i) => (
+                <div key={i} className="pl-3 border-l-2 border-border">
+                  <div onClick={onNavigate}>
+                    <CMSLink
+                      {...subSubItem.link}
+                      appearance="inline"
+                      className="block py-1.5 text-xs text-muted-foreground hover:text-foreground no-underline hover:no-underline transition-colors"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}
+
+const MobileNavItem = ({ item, onNavigate }: { item: NavItemType; onNavigate: () => void }) => {
+  const [isOpen, setIsOpen] = React.useState(false)
+  const validSubLinks = item.subLinks?.filter((sub) => isValidLink(sub.link)) || []
+  const hasSubLinks = validSubLinks.length > 0
+
+  if (!isValidLink(item.link)) return null
+
+  return (
+    <div className="rounded-2xl border border-border bg-muted/50 overflow-hidden">
+      <div className="flex items-center gap-2 px-4 py-3">
+        <div className="flex-1 min-w-0" onClick={onNavigate}>
+          <CMSLink
+            {...item.link}
+            appearance="inline"
+            className="block w-full no-underline hover:no-underline text-sm font-semibold uppercase tracking-wide text-foreground/90 hover:text-foreground transition-colors"
+          />
+        </div>
+        {hasSubLinks && (
+          <button
+            type="button"
+            onClick={() => setIsOpen((prev) => !prev)}
+            aria-expanded={isOpen}
+            aria-label={isOpen ? 'Collapse menu section' : 'Expand menu section'}
+            className="w-8 h-8 rounded-lg border border-border bg-background hover:bg-muted text-foreground/70 flex items-center justify-center transition-colors shrink-0"
+          >
+            <ChevronDown
+              className={`w-4 h-4 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+            />
+          </button>
+        )}
+      </div>
+
+      {hasSubLinks && (
+        <div
+          className={`grid transition-all duration-300 ease-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
+        >
+          <div className="overflow-hidden">
+            <div className="px-3 pb-3 space-y-2">
+              {validSubLinks.map((subItem, i) => (
+                <MobileSubItem key={i} item={subItem} onNavigate={onNavigate} />
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}
+
+export const HeaderNav: React.FC<{ data: HeaderType; className?: string }> = ({
+  data,
+  className,
+}) => {
   const navItems = data?.navItems || []
 
   return (
-    <nav className="flex gap-4 lg:gap-7 items-center flex-row flex-nowrap whitespace-nowrap overflow-x-auto lg:overflow-visible no-scrollbar w-full justify-end h-full">
+    <nav
+      className={`flex gap-4 lg:gap-7 items-center flex-row flex-nowrap whitespace-nowrap overflow-x-auto lg:overflow-visible no-scrollbar w-full justify-end h-full ${className ?? ''}`}
+    >
       {navItems.map((item, i) => (
         <NavItem key={i} item={item} />
+      ))}
+    </nav>
+  )
+}
+
+export const MobileHeaderNav: React.FC<{ data: HeaderType; onNavigate: () => void }> = ({
+  data,
+  onNavigate,
+}) => {
+  const navItems = data?.navItems || []
+
+  return (
+    <nav className="flex flex-col gap-2.5">
+      {navItems.map((item, i) => (
+        <MobileNavItem key={i} item={item} onNavigate={onNavigate} />
       ))}
     </nav>
   )

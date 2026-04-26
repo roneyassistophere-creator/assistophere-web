@@ -221,7 +221,7 @@ const whoItIsFor = [
   },
 ]
 
-export const GuestLeadsView: React.FC<{ page: Page }> = ({ page }) => {
+export const GuestLeadsView: React.FC<{ page: Page }> = ({ page: _page }) => {
   return (
     <>
       <style>{`
@@ -796,7 +796,7 @@ export const GuestLeadsView: React.FC<{ page: Page }> = ({ page }) => {
         <div className="container max-w-4xl mx-auto px-4">
           <div className="relative overflow-hidden rounded-3xl p-10 lg:p-14 text-center bg-linear-to-br from-primary/22 via-base-200 to-secondary/15 border border-base-300">
             <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-primary/8 rounded-full blur-[80px]" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-100 h-100 bg-primary/8 rounded-full blur-[80px]" />
             </div>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-medium mb-6">
               <Sparkles className="w-3.5 h-3.5" />

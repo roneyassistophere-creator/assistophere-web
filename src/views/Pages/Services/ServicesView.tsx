@@ -56,8 +56,8 @@ export const ServicesView: React.FC<{ page: Page }> = () => {
 
       {/* SECTION 1: HERO */}
       <section className="relative pt-10 pb-14 lg:pt-14 lg:pb-20 overflow-hidden">
-        <div className="absolute top-0 left-0 w-[60%] h-[70%] bg-gradient-to-br from-primary/15 via-primary/5 to-transparent rounded-full blur-[100px] -z-10" />
-        <div className="absolute bottom-0 right-0 w-[50%] h-[60%] bg-gradient-to-tl from-secondary/15 via-secondary/5 to-transparent rounded-full blur-[100px] -z-10" />
+        <div className="absolute top-0 left-0 w-[60%] h-[70%] bg-linear-to-br from-primary/15 via-primary/5 to-transparent rounded-full blur-[100px] -z-10" />
+        <div className="absolute bottom-0 right-0 w-[50%] h-[60%] bg-linear-to-tl from-secondary/15 via-secondary/5 to-transparent rounded-full blur-[100px] -z-10" />
 
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="fade-up mx-auto lg:mx-0 w-fit px-3 py-1.5 mb-5 rounded-full border border-primary/30 bg-primary/10 flex items-center gap-2 text-xs font-semibold text-primary">
@@ -69,7 +69,7 @@ export const ServicesView: React.FC<{ page: Page }> = () => {
             <div className="text-center lg:text-left">
               <h1 className="fade-up-1 text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-4 leading-[1.08] text-base-content">
                 Every Service Your <br className="hidden lg:block" />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary to-secondary">
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-primary via-primary to-secondary">
                   STR Business Needs
                 </span>
               </h1>
@@ -117,7 +117,7 @@ export const ServicesView: React.FC<{ page: Page }> = () => {
             {/* Services visual card */}
             <div className="fade-up-5 float-anim relative">
               <div className="rounded-[2.5rem] overflow-hidden border border-base-300 shadow-2xl shadow-primary/10 bg-base-200/90 backdrop-blur-2xl p-1">
-                <div className="absolute inset-0 rounded-[2.5rem] bg-gradient-to-br from-primary/10 via-transparent to-secondary/10 pointer-events-none" />
+                <div className="absolute inset-0 rounded-[2.5rem] bg-linear-to-br from-primary/10 via-transparent to-secondary/10 pointer-events-none" />
                 <div className="flex items-center gap-2 px-5 pt-4 pb-3 border-b border-base-300">
                   <span className="w-3 h-3 rounded-full bg-error/70" />
                   <span className="w-3 h-3 rounded-full bg-warning/70" />
@@ -197,7 +197,7 @@ export const ServicesView: React.FC<{ page: Page }> = () => {
       </section>
 
       {/* SECTION 2: STATS */}
-      <section className="py-16 border-y border-base-300/50 bg-gradient-to-r from-base-200/70 via-base-200/40 to-base-200/70">
+      <section className="py-16 border-y border-base-300/50 bg-linear-to-r from-base-200/70 via-base-200/40 to-base-200/70">
         <div className="container max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
@@ -379,7 +379,7 @@ export const ServicesView: React.FC<{ page: Page }> = () => {
             ].map((s, i) => (
               <div
                 key={i}
-                className={`flex flex-col gap-5 p-8 rounded-[2rem] bg-base-200 border ${s.border} hover:shadow-xl hover:-translate-y-1 transition-all duration-300`}
+                className={`flex flex-col gap-5 p-8 rounded-4xl bg-base-200 border ${s.border} hover:shadow-xl hover:-translate-y-1 transition-all duration-300`}
               >
                 <div className="flex items-start gap-5">
                   <div
@@ -411,7 +411,7 @@ export const ServicesView: React.FC<{ page: Page }> = () => {
       </section>
 
       {/* SECTION 5: TRANSITION */}
-      <section className="py-16 bg-gradient-to-r from-primary via-primary to-secondary text-primary-content flex items-center justify-center px-4 relative overflow-hidden">
+      <section className="py-16 bg-linear-to-r from-primary via-primary to-secondary text-primary-content flex items-center justify-center px-4 relative overflow-hidden">
         <div className="absolute inset-0 opacity-5 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
         <div className="relative z-10 text-center">
           <p className="text-sm font-bold uppercase tracking-[0.2em] opacity-85 mb-3">
@@ -483,7 +483,7 @@ export const ServicesView: React.FC<{ page: Page }> = () => {
             ].map((pillar, i) => (
               <div
                 key={i}
-                className={`p-8 rounded-[2rem] bg-base-200 border ${pillar.border} shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col gap-5`}
+                className={`p-8 rounded-4xl bg-base-200 border ${pillar.border} shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col gap-5`}
               >
                 <div
                   className={`w-14 h-14 rounded-2xl ${pillar.bg} flex items-center justify-center`}
@@ -545,7 +545,7 @@ export const ServicesView: React.FC<{ page: Page }> = () => {
             ].map((who, i) => (
               <div
                 key={i}
-                className="p-7 rounded-[2rem] bg-base-100 border border-base-300 hover:border-primary/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center gap-4 text-center"
+                className="p-7 rounded-4xl bg-base-100 border border-base-300 hover:border-primary/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center gap-4 text-center"
               >
                 <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary/20 group-hover:scale-105 transition-all">
                   <who.icon className="w-7 h-7 text-primary" />
@@ -603,7 +603,7 @@ export const ServicesView: React.FC<{ page: Page }> = () => {
               </ul>
             </div>
 
-            <div className="p-8 md:p-10 rounded-[2.5rem] bg-gradient-to-br from-primary to-secondary text-primary-content shadow-2xl shadow-primary/20 md:-translate-y-4 hover:-translate-y-6 transition-transform duration-300">
+            <div className="p-8 md:p-10 rounded-[2.5rem] bg-linear-to-br from-primary to-secondary text-primary-content shadow-2xl shadow-primary/20 md:-translate-y-4 hover:-translate-y-6 transition-transform duration-300">
               <p className="text-xs font-black text-center text-primary-content/80 uppercase tracking-widest mb-8">
                 What You Will Have
               </p>
@@ -646,7 +646,7 @@ export const ServicesView: React.FC<{ page: Page }> = () => {
           </div>
 
           <div className="relative grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            <div className="hidden lg:block absolute top-10 left-[15%] right-[15%] h-[2px] bg-gradient-to-r from-primary/20 via-primary/40 to-secondary/20 -z-10" />
+            <div className="hidden lg:block absolute top-10 left-[15%] right-[15%] h-0.5 bg-linear-to-r from-primary/20 via-primary/40 to-secondary/20 -z-10" />
             {[
               {
                 title: 'Discovery Call',
@@ -675,7 +675,7 @@ export const ServicesView: React.FC<{ page: Page }> = () => {
             ].map((s, i) => (
               <div
                 key={i}
-                className="flex flex-col items-center text-center gap-4 p-7 rounded-[2rem] bg-base-100 border border-base-300 hover:border-primary/30 hover:shadow-lg transition-all"
+                className="flex flex-col items-center text-center gap-4 p-7 rounded-4xl bg-base-100 border border-base-300 hover:border-primary/30 hover:shadow-lg transition-all"
               >
                 <div className="relative">
                   <div className="w-16 h-16 bg-primary text-primary-content rounded-2xl flex items-center justify-center shadow-lg shadow-primary/25">
@@ -757,7 +757,7 @@ export const ServicesView: React.FC<{ page: Page }> = () => {
             ].map((item, i) => (
               <div
                 key={i}
-                className="relative p-8 bg-base-100 border border-base-300 rounded-[2rem] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col gap-5"
+                className="relative p-8 bg-base-100 border border-base-300 rounded-4xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col gap-5"
               >
                 <div className="flex gap-1">
                   {[...Array(5)].map((_, idx) => (
@@ -832,7 +832,7 @@ export const ServicesView: React.FC<{ page: Page }> = () => {
       </section>
 
       {/* SECTION 13: FINAL CTA */}
-      <section className="py-28 px-4 relative overflow-hidden bg-gradient-to-br from-primary via-primary to-secondary text-primary-content">
+      <section className="py-28 px-4 relative overflow-hidden bg-linear-to-br from-primary via-primary to-secondary text-primary-content">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5" />
         <div className="absolute top-0 right-0 w-[40%] h-[70%] bg-white/5 rounded-full blur-[80px]" />
         <div className="container max-w-5xl mx-auto text-center relative z-10">

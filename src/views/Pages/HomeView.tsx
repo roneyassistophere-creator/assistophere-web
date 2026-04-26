@@ -18,7 +18,6 @@ import {
   Home,
   Briefcase,
   Sparkles,
-  MessageCircle,
   ClipboardList,
   Star,
   Zap,
@@ -37,9 +36,9 @@ export const HomeView: React.FC<{ page: Page }> = () => {
           from { opacity: 0; transform: translateY(28px); }
           to { opacity: 1; transform: translateY(0); }
         }
-        @keyframes floatSlow {
+        @keyframes floatIso {
           0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-12px); }
+          50% { transform: translateY(-15px); }
         }
         .fade-up { animation: fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) both; }
         .fade-up-1 { animation: fadeUp 0.7s 0.1s cubic-bezier(0.16,1,0.3,1) both; }
@@ -47,30 +46,39 @@ export const HomeView: React.FC<{ page: Page }> = () => {
         .fade-up-3 { animation: fadeUp 0.7s 0.3s cubic-bezier(0.16,1,0.3,1) both; }
         .fade-up-4 { animation: fadeUp 0.7s 0.4s cubic-bezier(0.16,1,0.3,1) both; }
         .fade-up-5 { animation: fadeUp 0.7s 0.5s cubic-bezier(0.16,1,0.3,1) both; }
-        .float-anim { animation: floatSlow 5s ease-in-out infinite; }
+        .float-anim { animation: floatIso 6s ease-in-out infinite; }
+        .perspective-tilt { 
+          transform: perspective(1200px) rotateX(10deg) rotateY(-12deg) rotateZ(3deg) scale(0.85); 
+          transition: transform 0.6s cubic-bezier(0.16,1,0.3,1), box-shadow 0.6s ease;
+          transform-style: preserve-3d;
+        }
+        .perspective-container:hover .perspective-tilt {
+          transform: perspective(1200px) rotateX(4deg) rotateY(-6deg) rotateZ(1deg) scale(0.9);
+          box-shadow: 0 40px 80px -15px rgba(0,0,0,0.3);
+        }
       `,
         }}
       />
 
       {/* SECTION 1: HERO */}
       <section className="relative pt-10 pb-14 lg:pt-14 lg:pb-20 overflow-hidden">
-        <div className="absolute top-0 left-0 w-[60%] h-[70%] bg-gradient-to-br from-primary/15 via-primary/5 to-transparent rounded-full blur-[100px] -z-10" />
-        <div className="absolute bottom-0 right-0 w-[50%] h-[60%] bg-gradient-to-tl from-secondary/15 via-secondary/5 to-transparent rounded-full blur-[100px] -z-10" />
+        <div className="absolute top-0 left-0 w-[60%] h-[70%] bg-linear-to-br from-primary/15 via-primary/5 to-transparent rounded-full blur-[100px] -z-10" />
+        <div className="absolute bottom-0 right-0 w-[50%] h-[60%] bg-linear-to-tl from-secondary/15 via-secondary/5 to-transparent rounded-full blur-[100px] -z-10" />
 
         <div className="container mx-auto px-4 max-w-6xl">
-          <div className="fade-up mx-auto lg:mx-0 w-fit px-3 py-1.5 mb-5 rounded-full border border-emerald-500/30 bg-emerald-500/10 flex items-center gap-2 text-xs font-semibold text-emerald-700 dark:text-emerald-400">
-            <span className="flex h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-            Supporting UK hosts with 7-day operational coverage
-          </div>
-
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
             <div className="text-center lg:text-left">
               <h1 className="fade-up-1 text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-4 leading-[1.08] text-base-content">
                 Your Team for <br className="hidden lg:block" />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary to-secondary">
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-primary via-primary to-secondary">
                   Short Term Rental Growth
                 </span>
               </h1>
+
+              <div className="fade-up-1 mx-auto lg:mx-0 w-fit px-3 py-1 mb-6 rounded-md border border-emerald-500/30 bg-emerald-500/10 flex items-center gap-2 text-[11px] font-semibold text-emerald-700 dark:text-emerald-400 tracking-wide uppercase">
+                <span className="flex h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                Supporting UK hosts with 7-day operational coverage
+              </div>
 
               <p className="fade-up-2 text-base text-base-content/80 mb-7 leading-relaxed max-w-lg mx-auto lg:mx-0">
                 We handle guest communication, cleaning coordination, listing optimisation, and
@@ -115,17 +123,21 @@ export const HomeView: React.FC<{ page: Page }> = () => {
             </div>
 
             {/* Dashboard visual */}
-            <div className="fade-up-5 relative w-full float-anim">
-              <div className="relative rounded-[2.5rem] overflow-hidden border border-base-300 shadow-2xl shadow-primary/10 bg-base-200/90 backdrop-blur-2xl p-1">
-                <div className="absolute inset-0 rounded-[2.5rem] bg-gradient-to-br from-primary/10 via-transparent to-secondary/10 pointer-events-none" />
-                <div className="flex items-center gap-2 px-5 pt-4 pb-3 border-b border-base-300">
-                  <span className="w-3 h-3 rounded-full bg-error/70" />
-                  <span className="w-3 h-3 rounded-full bg-warning/70" />
-                  <span className="w-3 h-3 rounded-full bg-success/70" />
-                  <span className="ml-3 text-xs font-mono text-base-content/70 tracking-wide">
+            <div className="fade-up-5 relative w-[85%] sm:w-[75%] lg:w-[90%] max-w-lg mx-auto float-anim perspective-container z-10 lg:ml-auto mt-12 lg:mt-0">
+              <div className="absolute inset-0 bg-linear-to-br from-primary/30 to-secondary/30 rounded-[2.5rem] blur-3xl opacity-0 transition-opacity duration-700 perspective-container-hover:opacity-40 -z-10" />
+
+              <div className="perspective-tilt relative rounded-4xl overflow-hidden border border-white/10 dark:border-black/10 shadow-2xl shadow-black/40 bg-zinc-950 dark:bg-white text-zinc-100 dark:text-zinc-900 p-2 backdrop-blur-3xl ring-1 ring-white/5 dark:ring-black/5">
+                {/* Header bar */}
+                <div className="flex items-center gap-2 px-5 pt-4 pb-3 border-b border-white/10 dark:border-black/10">
+                  <span className="w-3 h-3 rounded-full bg-rose-500/80 shadow-[0_0_8px_rgba(244,63,94,0.4)]" />
+                  <span className="w-3 h-3 rounded-full bg-amber-500/80 shadow-[0_0_8px_rgba(245,158,11,0.4)]" />
+                  <span className="w-3 h-3 rounded-full bg-emerald-500/80 shadow-[0_0_8px_rgba(16,185,129,0.4)]" />
+                  <span className="ml-4 text-[11px] font-mono text-zinc-500 dark:text-zinc-400 tracking-wider">
                     assistophere · dashboard
                   </span>
                 </div>
+
+                {/* Main Stat Grid */}
                 <div className="grid grid-cols-2 gap-3 p-4">
                   {[
                     {
@@ -133,65 +145,75 @@ export const HomeView: React.FC<{ page: Page }> = () => {
                       val: '100%',
                       sub: 'This week',
                       icon: MessageSquare,
-                      color: 'text-blue-500',
-                      bg: 'bg-blue-500/10',
+                      color: 'text-blue-400 dark:text-blue-600',
+                      bg: 'bg-blue-500/10 dark:bg-blue-50',
                     },
                     {
                       title: 'Avg Occupancy',
                       val: '84%',
                       sub: 'Last 30 days',
                       icon: TrendingUp,
-                      color: 'text-emerald-500',
-                      bg: 'bg-emerald-500/10',
+                      color: 'text-emerald-400 dark:text-emerald-600',
+                      bg: 'bg-emerald-500/10 dark:bg-emerald-50',
                     },
                     {
                       title: 'Cleaners Synced',
                       val: 'Active',
                       sub: 'All properties',
                       icon: Sparkles,
-                      color: 'text-amber-500',
-                      bg: 'bg-amber-500/10',
+                      color: 'text-amber-400 dark:text-amber-600',
+                      bg: 'bg-amber-500/10 dark:bg-amber-50',
                     },
                     {
                       title: 'Direct Bookings',
                       val: '+22%',
                       sub: 'vs last month',
                       icon: Globe,
-                      color: 'text-purple-500',
-                      bg: 'bg-purple-500/10',
+                      color: 'text-purple-400 dark:text-purple-600',
+                      bg: 'bg-purple-500/10 dark:bg-purple-50',
                     },
                   ].map((stat, i) => (
                     <div
                       key={i}
-                      className="rounded-2xl p-5 flex flex-col gap-2 bg-base-200 border border-base-300 shadow-sm"
+                      className="rounded-3xl p-5 flex flex-col gap-3 bg-white/5 dark:bg-zinc-50 border border-white/5 dark:border-zinc-200/60 shadow-inner group/stat hover:bg-white/10 dark:hover:bg-zinc-100 transition-colors"
                     >
                       <div
-                        className={`w-9 h-9 rounded-xl ${stat.bg} flex items-center justify-center`}
+                        className={`w-10 h-10 rounded-2xl ${stat.bg} flex items-center justify-center`}
                       >
-                        <stat.icon className={`w-5 h-5 ${stat.color}`} />
+                        <stat.icon
+                          className={`w-5 h-5 ${stat.color} group-hover/stat:scale-110 transition-transform`}
+                        />
                       </div>
-                      <p className="text-2xl font-black text-base-content mt-1">{stat.val}</p>
-                      <div>
-                        <p className="text-xs font-bold text-base-content">{stat.title}</p>
-                        <p className="text-xs text-base-content/70">{stat.sub}</p>
+                      <div className="mt-1">
+                        <p className="text-[28px] font-black tracking-tight">{stat.val}</p>
+                        <p className="text-[13px] font-bold mt-1 tracking-wide">{stat.title}</p>
+                        <p className="text-[11px] text-zinc-400 dark:text-zinc-500">{stat.sub}</p>
                       </div>
                     </div>
                   ))}
                 </div>
-                <div className="mx-4 mb-4 p-4 rounded-2xl bg-primary/8 border border-primary/15 flex items-center gap-3">
-                  <Zap className="w-5 h-5 text-primary shrink-0" />
-                  <p className="text-sm text-primary font-semibold">
+
+                {/* Alert strip */}
+                <div className="mx-4 mb-4 mt-1 p-4 rounded-2xl bg-rose-500/10 dark:bg-rose-50 border border-rose-500/20 dark:border-rose-100 flex items-center justify-center gap-3 shadow-inner">
+                  <Zap className="w-5 h-5 text-rose-500 shrink-0 animate-pulse" />
+                  <p className="text-sm text-rose-500 dark:text-rose-600 font-bold tracking-wide">
                     All systems operational · Next check-in in 2h
                   </p>
                 </div>
               </div>
-              <div className="absolute -bottom-4 -left-4 bg-base-200 border border-base-300 shadow-xl rounded-2xl px-4 py-3 flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center">
-                  <CalendarCheck className="w-4 h-4 text-emerald-600" />
+
+              {/* Floating Element over Dashboard */}
+              <div className="absolute -bottom-4 -left-4 z-20 bg-white dark:bg-zinc-950 shadow-[0_15px_30px_-5px_rgba(0,0,0,0.3)] rounded-xl px-3.5 py-2.5 flex items-center gap-3 border border-zinc-200 dark:border-zinc-800 transition-transform hover:scale-105 duration-300">
+                <div className="w-8 h-8 rounded-lg bg-zinc-100 dark:bg-zinc-900 flex items-center justify-center border border-zinc-200 dark:border-zinc-800">
+                  <CalendarCheck className="w-4 h-4 text-zinc-900 dark:text-zinc-100" />
                 </div>
                 <div>
-                  <p className="text-xs font-bold text-base-content">3 bookings confirmed</p>
-                  <p className="text-xs text-base-content/80">last 24 hours</p>
+                  <p className="text-[13px] font-black text-zinc-900 dark:text-white leading-tight">
+                    3 bookings confirmed
+                  </p>
+                  <p className="text-[10px] font-semibold text-zinc-500 dark:text-zinc-400 mt-0.5 uppercase tracking-wide">
+                    last 24 hours
+                  </p>
                 </div>
               </div>
             </div>
@@ -222,7 +244,7 @@ export const HomeView: React.FC<{ page: Page }> = () => {
       </section>
 
       {/* SECTION 2: SOCIAL PROOF NUMBERS */}
-      <section className="py-16 border-y border-base-300/50 bg-gradient-to-r from-base-200/70 via-base-200/40 to-base-200/70">
+      <section className="py-16 border-y border-base-300/50 bg-linear-to-r from-base-200/70 via-base-200/40 to-base-200/70">
         <div className="container max-w-5xl mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
@@ -333,7 +355,7 @@ export const HomeView: React.FC<{ page: Page }> = () => {
       </section>
 
       {/* SECTION 5: TRANSITION BANNER */}
-      <section className="py-16 bg-gradient-to-r from-primary via-primary to-secondary text-primary-content flex items-center justify-center px-4 relative overflow-hidden">
+      <section className="py-16 bg-linear-to-r from-primary via-primary to-secondary text-primary-content flex items-center justify-center px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5" />
         <div className="relative z-10 text-center">
           <p className="text-sm font-bold uppercase tracking-[0.2em] opacity-70 mb-3">
@@ -405,7 +427,7 @@ export const HomeView: React.FC<{ page: Page }> = () => {
             ].map((card, i) => (
               <div
                 key={i}
-                className={`relative p-8 rounded-[2rem] bg-base-200 border ${card.border} shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col gap-5`}
+                className={`relative p-8 rounded-4xl bg-base-200 border ${card.border} shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col gap-5`}
               >
                 <div
                   className={`w-14 h-14 rounded-2xl ${card.bg} flex items-center justify-center`}
@@ -521,7 +543,7 @@ export const HomeView: React.FC<{ page: Page }> = () => {
             ].map((diff, i) => (
               <div
                 key={i}
-                className="flex gap-5 p-7 rounded-[1.5rem] bg-base-200 border border-base-300 hover:border-primary/30 hover:shadow-lg transition-all"
+                className="flex gap-5 p-7 rounded-3xl bg-base-200 border border-base-300 hover:border-primary/30 hover:shadow-lg transition-all"
               >
                 <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
                   <ShieldCheck className="w-5 h-5 text-primary" />
@@ -535,7 +557,7 @@ export const HomeView: React.FC<{ page: Page }> = () => {
           </div>
 
           <div className="text-center">
-            <div className="inline-block p-8 border-2 border-primary/20 rounded-[2rem] bg-primary/8">
+            <div className="inline-block p-8 border-2 border-primary/20 rounded-4xl bg-primary/8">
               <h3 className="text-2xl md:text-3xl font-black text-base-content">
                 You stay in control.{' '}
                 <span className="text-primary">We carry the operational load.</span>
@@ -585,7 +607,7 @@ export const HomeView: React.FC<{ page: Page }> = () => {
               </ul>
             </div>
 
-            <div className="p-8 md:p-10 rounded-[2.5rem] bg-gradient-to-br from-primary to-secondary text-primary-content shadow-2xl shadow-primary/20 md:-translate-y-4 hover:-translate-y-6 transition-transform duration-300">
+            <div className="p-8 md:p-10 rounded-[2.5rem] bg-linear-to-br from-primary to-secondary text-primary-content shadow-2xl shadow-primary/20 md:-translate-y-4 hover:-translate-y-6 transition-transform duration-300">
               <p className="text-xs font-black text-center text-primary-content/60 uppercase tracking-widest mb-8">
                 With Assistophere
               </p>
@@ -628,7 +650,7 @@ export const HomeView: React.FC<{ page: Page }> = () => {
           </div>
 
           <div className="relative grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            <div className="hidden lg:block absolute top-10 left-[15%] right-[15%] h-[2px] bg-gradient-to-r from-primary/20 via-primary/40 to-secondary/20 -z-10" />
+            <div className="hidden lg:block absolute top-10 left-[15%] right-[15%] h-0.5 bg-linear-to-r from-primary/20 via-primary/40 to-secondary/20 -z-10" />
             {[
               {
                 title: 'Audit Your Setup',
@@ -657,7 +679,7 @@ export const HomeView: React.FC<{ page: Page }> = () => {
             ].map((s, i) => (
               <div
                 key={i}
-                className="flex flex-col items-center text-center gap-4 p-7 rounded-[2rem] bg-base-200 border border-base-300 hover:border-primary/30 hover:shadow-lg transition-all"
+                className="flex flex-col items-center text-center gap-4 p-7 rounded-4xl bg-base-200 border border-base-300 hover:border-primary/30 hover:shadow-lg transition-all"
               >
                 <div className="relative">
                   <div className="w-16 h-16 bg-primary text-primary-content rounded-2xl flex items-center justify-center shadow-lg shadow-primary/25">
@@ -741,7 +763,7 @@ export const HomeView: React.FC<{ page: Page }> = () => {
             ].map((who, i) => (
               <div
                 key={i}
-                className="p-7 rounded-[2rem] bg-base-200 border border-base-300 hover:border-primary/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center gap-4 text-center"
+                className="p-7 rounded-4xl bg-base-200 border border-base-300 hover:border-primary/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center gap-4 text-center"
               >
                 <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary/20 group-hover:scale-105 transition-all">
                   <who.icon className="w-7 h-7 text-primary" />
@@ -787,7 +809,7 @@ export const HomeView: React.FC<{ page: Page }> = () => {
             ].map((item, i) => (
               <div
                 key={i}
-                className="relative p-8 bg-base-100 border border-base-300 rounded-[2rem] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col gap-5"
+                className="relative p-8 bg-base-100 border border-base-300 rounded-4xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col gap-5"
               >
                 <div className="flex gap-1">
                   {[...Array(5)].map((_, idx) => (
@@ -858,7 +880,7 @@ export const HomeView: React.FC<{ page: Page }> = () => {
       </section>
 
       {/* SECTION 15: FINAL CTA */}
-      <section className="py-28 px-4 relative overflow-hidden bg-gradient-to-br from-primary via-primary to-secondary text-primary-content">
+      <section className="py-28 px-4 relative overflow-hidden bg-linear-to-br from-primary via-primary to-secondary text-primary-content">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5" />
         <div className="absolute top-0 right-0 w-[40%] h-[70%] bg-white/5 rounded-full blur-[80px]" />
         <div className="container max-w-4xl mx-auto text-center relative z-10">
